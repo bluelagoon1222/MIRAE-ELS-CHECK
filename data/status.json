@@ -1,22 +1,24 @@
 {
- "generated": "2026-09-29 12:06",
- "elapsed_sec": 1287.9,
- "cached_products": 2984,
- "active": 1587,
+ "generated": "2026-09-29 12:40",
+ "elapsed_sec": 1140.9,
+ "cached_products": 4451,
+ "active": 2858,
  "probes": 1800,
- "new": 1499,
+ "new": 1467,
  "counts": {
-  "nodata": 1577,
-  "matured": 1,
+  "nodata": 2640,
+  "pass": 145,
+  "matured": 3,
   "ki": 6,
-  "risk": 2,
-  "redeemed": 1
+  "risk": 10,
+  "redeemed": 40,
+  "defer": 14
  },
- "scan_cursor": 9557,
+ "scan_cursor": 11357,
  "log": [
-  "[11:45:20] start: cached products=1485 FULL_SCAN=True MAX_PROBES=1800",
-  "[11:45:29] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
-  "[12:06:45] discovery: probes=1800 new=1499 total_products=2984 cursor=9557",
-  "[12:06:45] active products: 2351"
+  "[12:21:32] start: cached products=2984 FULL_SCAN=True MAX_PROBES=1800",
+  "[12:21:43] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
+  "[12:40:27] discovery: probes=1800 new=1467 total_products=4451 cursor=11357",
+  "[12:40:27] active products: 3797"
  ]
 }
