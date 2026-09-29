@@ -16,6 +16,12 @@ from datetime import datetime, date, timedelta, timezone
 import requests
 from bs4 import BeautifulSoup
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    import redeemed as redeemed_mod
+except Exception:
+    redeemed_mod = None
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 os.makedirs(DATA, exist_ok=True)
@@ -42,6 +48,8 @@ FORWARD_MISS_LIMIT = int(os.environ.get("FORWARD_MISS_LIMIT", "400" if FULL_SCAN
 REQ_SLEEP = float(os.environ.get("REQ_SLEEP", "0.25"))
 
 PRODUCTS_FILE = os.path.join(DATA, "products.json")   # parsed product cache (by ISIN)
+REDEEMED_FILE = os.path.join(DATA, "redeemed.json")   # redemption list from KSD SEIBro (by ISIN / CODE:xxxxx)
+EXCLUDED_FILE = os.path.join(DATA, "excluded.json")   # permanently excluded ISINs {isin: {reason, date}}
 SCAN_FILE = os.path.join(DATA, "scan_state.json")
 SEED_FILE = os.path.join(DATA, "seed_isins.txt")
 OUT_FILE = os.path.join(DATA, "els.json")
@@ -143,9 +151,13 @@ def parse_detail(html, isin):
 
     # ladder e.g. 90-90-85-85-80-75
     ladder = None
-    mm = re.search(r"상환조건\s*\n?\s*((?:\d{2,3}\s*-\s*){1,12}\d{2,3})\s*\n", text)
-    if mm:
-        ladder = [int(x) for x in re.split(r"\s*-\s*", mm.group(1).strip())]
+    i0 = text.find("상환조건")
+    if i0 >= 0:
+        seg = text[i0: i0 + 160]
+        mm = re.search(r"(\d{2,3}(?:\.\d)?(?:\s*-\s*\d{2,3}(?:\.\d)?){1,12})", seg)
+        if mm:
+            ladder = [float(x) for x in re.split(r"\s*-\s*", mm.group(1).strip())]
+            ladder = [int(x) if x == int(x) else x for x in ladder]
 
     # maturity / period
     mat_years = period_months = None
@@ -198,6 +210,12 @@ def parse_detail(html, isin):
         j = text.find("중도상환", i)
         payoff = text[i:j if j > 0 else i + 2500].strip()
     lizard = "리자드" in payoff or "Lizard" in payoff or "리자드" in text[:3000]
+    lizard_rules = []
+    if lizard:
+        for n, pct in re.findall(r"(\d)\s*번째\s*자동조기상환평가일까지[^%\n]{0,80}?(\d{2,3}(?:\.\d)?)\s*%\s*미만[^\n]{0,60}?하락한\s*적이\s*없", payoff):
+            lizard_rules.append([int(n), float(pct)])
+        lizard_rules = sorted(set(map(tuple, lizard_rules)))
+        lizard_rules = [list(x) for x in lizard_rules]
     monthly = "월지급" in text[:3000] or "월수익" in payoff
     principal_guard = "원금비보장" not in text[:2500]
 
@@ -226,6 +244,7 @@ def parse_detail(html, isin):
         "no_ki": no_ki,
         "assets": assets,
         "lizard": lizard,
+        "lizard_rules": lizard_rules,
         "monthly": monthly,
         "principal_guard": principal_guard,
         "payoff": payoff[:1800],
@@ -326,9 +345,11 @@ def save_json(path, obj):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(obj, f, ensure_ascii=False, indent=1)
 
-def discover(products, scan):
+def discover(products, scan, excluded=None):
+    excluded = excluded or {}
     probes = 0
     new = 0
+    excluded_seqs = set(isin_to_seq(i) for i in excluded.keys())
     # 1) seed file
     seeds = set()
     if os.path.exists(SEED_FILE):
@@ -342,7 +363,7 @@ def discover(products, scan):
     except Exception as e:
         log(f"list discovery error: {e}")
     for isin in sorted(seeds):
-        if isin in products or isin in scan.get("empty", {}):
+        if isin in products or isin in scan.get("empty", {}) or isin in excluded:
             continue
         if probes >= MAX_PROBES:
             break
@@ -352,7 +373,41 @@ def discover(products, scan):
         elif res is None:
             scan.setdefault("empty", {})[isin] = TODAY.isoformat()
 
-    # 3) sequence scan
+    # 3) recent-first scan: estimate today's sequence number from known issue dates
+    #    and probe downward from there, so newly issued products are found first.
+    known_seqs = [p["seq"] for p in products.values() if p.get("seq")]
+    pairs = sorted((date.fromisoformat(p["issue_date"]), p["seq"]) for p in products.values()
+                   if p.get("seq") and p.get("issue_date"))
+    rate = 2.8  # seq per calendar day (fallback)
+    if len(pairs) >= 2 and (pairs[-1][0] - pairs[0][0]).days >= 45:
+        rate = max(1.0, (pairs[-1][1] - pairs[0][1]) / (pairs[-1][0] - pairs[0][0]).days)
+    if pairs:
+        est_now = int(pairs[-1][1] + rate * ((TODAY - pairs[-1][0]).days + 14))
+    else:
+        est_now = int(SCAN_START_SEQ + rate * (TODAY - date(2023, 8, 1)).days) + 40
+    recent_budget = int(os.environ.get("RECENT_PROBES", str(MAX_PROBES // 2 if FULL_SCAN else 120)))
+    if not pairs:
+        recent_budget = 0  # nothing to extrapolate from yet: let the forward scan build the base first
+    empty_seqs_set = set(isin_to_seq(i) for i in scan.get("empty", {}).keys())
+    checked_all = set(known_seqs) | empty_seqs_set | excluded_seqs
+    max_known = max(known_seqs) if known_seqs else 0
+    s = est_now
+    rp = 0
+    log(f"recent scan: rate={rate:.2f}/day est_now={est_now} max_known={max_known}")
+    while rp < recent_budget and probes < MAX_PROBES and s > max(max_known, SCAN_START_SEQ):
+        if s in checked_all:
+            s -= 1; continue
+        isin = seq_to_isin(s)
+        res = probe_isin(isin); probes += 1; rp += 1; time.sleep(REQ_SLEEP)
+        if isinstance(res, dict):
+            products[isin] = res; new += 1
+        elif res is None:
+            scan.setdefault("empty", {})[isin] = TODAY.isoformat()
+        else:
+            log("network error in recent scan, stopping"); break
+        s -= 1
+
+    # 4) forward sequence scan from cursor (fills the historical range)
     known_seqs = [p["seq"] for p in products.values() if p.get("seq")]
     empty_seqs = [isin_to_seq(i) for i in scan.get("empty", {}).keys()]
     empty_seqs = [s for s in empty_seqs if s]
@@ -360,10 +415,10 @@ def discover(products, scan):
     cursor = scan.get("cursor")
     if cursor is None:
         cursor = SCAN_START_SEQ
-    # forward frontier: continue from max(cursor, max_known+1)
-    frontier = max(cursor, (max_known + 1) if max_known else 0)
+    # forward frontier: continue from the historical cursor (recent end is covered by the recent scan)
+    frontier = max(cursor, SCAN_START_SEQ)
     consecutive_miss = 0
-    checked = set(known_seqs) | set(empty_seqs)
+    checked = set(known_seqs) | set(empty_seqs) | excluded_seqs
     s = frontier
     while probes < MAX_PROBES and consecutive_miss < FORWARD_MISS_LIMIT:
         if s in checked:
@@ -381,7 +436,7 @@ def discover(products, scan):
         else:  # network error: stop scanning to avoid marking as empty
             log(f"network error at seq {s}, pausing scan"); break
         s += 1
-    # 4) back-fill holes below frontier when budget remains (full scan)
+    # 5) back-fill holes below frontier when budget remains (full scan)
     if FULL_SCAN and probes < MAX_PROBES:
         for s2 in range(SCAN_START_SEQ, frontier):
             if probes >= MAX_PROBES:
@@ -537,16 +592,57 @@ def naver_history(code, is_index=False, pages=40):
             break
     return out or None
 
+def naver_fchart(code, count=2000):
+    """Fallback for KR: classic fchart XML (symbol=KPI200 for KOSPI200, or 6-digit stock code)."""
+    url = "https://fchart.stock.naver.com/sise.nhn"
+    hdr = {"User-Agent": HEADERS["User-Agent"], "Referer": "https://finance.naver.com/"}
+    try:
+        r = requests.get(url, params={"symbol": code, "timeframe": "day", "count": count, "requestType": "0"},
+                         headers=hdr, timeout=25)
+        out = {}
+        for row in re.findall(r'data="([^"]+)"', r.text):
+            parts = row.split("|")
+            if len(parts) >= 5 and len(parts[0]) == 8:
+                d = f"{parts[0][:4]}-{parts[0][4:6]}-{parts[0][6:]}"
+                try:
+                    out[d] = float(parts[4])
+                except ValueError:
+                    pass
+        if out:
+            log(f"fchart ok {code}: {len(out)} rows, last {max(out)}")
+        return out or None
+    except Exception as e:
+        log(f"fchart fail {code}: {e}")
+        return None
+
+NOW_KST = datetime.now(KST)
+
+def drop_open_bar(h, market):
+    """Remove a bar that may still be intraday when the job runs during market hours."""
+    if not h:
+        return h
+    today = TODAY.isoformat()
+    if today in h:
+        if market in ("kr", "kr_index", "jp") and NOW_KST.hour < 16:
+            h = {k: v for k, v in h.items() if k != today}
+        elif market in ("us", "eu"):
+            h = {k: v for k, v in h.items() if k != today}
+    return h
+
 def get_history(sym, market):
     if sym in PRICE_CACHE:
         return PRICE_CACHE[sym]
     h = yahoo_history(sym)
+    if h and market in ("kr", "kr_index"):
+        # Yahoo KR data is sometimes stale/gappy: distrust if last bar older than 7 days
+        if (TODAY - date.fromisoformat(max(h))).days > 7:
+            log(f"yahoo {sym} stale (last {max(h)}), trying Naver")
+            h = None
     if (not h) and market in ("kr", "kr_index"):
-        if sym == "^KS200":
-            h = naver_history("KPI200", is_index=True)
-        else:
-            h = naver_history(sym.split(".")[0])
-    PRICE_CACHE[sym] = h or {}
+        code = "KPI200" if sym == "^KS200" else sym.split(".")[0]
+        h = naver_fchart(code) or naver_history(code, is_index=(sym == "^KS200"))
+    h = drop_open_bar(h or {}, market)
+    PRICE_CACHE[sym] = h
     return PRICE_CACHE[sym]
 
 def close_on(hist, d, forward=False, max_days=6):
@@ -590,7 +686,7 @@ def build_schedule(p):
                       "months": months})
     return sched
 
-def judge(p):
+def judge(p, red=None):
     out = {"isin": p["isin"], "code": p["code"], "type": p["type"], "name": p["name"],
            "coupon": p.get("coupon"), "ladder": p.get("ladder"), "issue_date": p.get("issue_date"),
            "ref_date": p.get("ref_date"), "mat_eval": p.get("mat_eval"), "mat_pay": p.get("mat_pay"),
@@ -599,6 +695,13 @@ def judge(p):
            "no_ki": p.get("no_ki"), "pdf": p.get("pdf"), "url": p.get("url"),
            "payoff": p.get("payoff", "")[:1200], "assets": [], "schedule": build_schedule(p),
            "flags": []}
+    if red:
+        out["assets"] = [{"name": n, "label": (map_asset(n) or (None, n))[1]} for n in (p.get("assets") or [])]
+        out["judgment"] = {"status": "redeemed_confirmed", "worst": None, "next": None, "expected": None,
+                           "knocked_in": None, "need_pct": None, "ki_room": None,
+                           "redeemed": {"date": red.get("date"), "kind": red.get("kind"), "source": red.get("source")},
+                           "message": f"예탁결제원 상환종목 공시 확인 — {red.get('kind') or '상환'} {red.get('date') or ''}".strip()}
+        return out
     ref_date = p.get("ref_date") or p.get("issue_date")
     assets_out = []
     unsupported = []
@@ -667,15 +770,33 @@ def judge(p):
     else:
         j["knocked_in"] = None
 
+    # lizard helper: min ratio of every asset from reference date up to a given date
+    lz_rules = {int(n): float(pct) for n, pct in (p.get("lizard_rules") or [])}
+    for ev in sched:
+        if ev["n"] in lz_rules:
+            ev["lizard"] = lz_rules[ev["n"]]
+
     # past evaluations: redeemed?
     last_dates = [a["last_date"] for a in valid]
     redeemed_at = None
+    lizard_hit = False
     for ev in sched:
         if ev["date"] <= min(last_dates) and ev["barrier"] is not None:
             rs = [a.get("eval_ratios", {}).get(ev["date"]) for a in valid]
             if all(r is not None for r in rs) and all(r >= ev["barrier"] for r in rs):
                 redeemed_at = ev
                 break
+            if ev["n"] in lz_rules:
+                pct = lz_rules[ev["n"]]
+                ok = True
+                for a in valid:
+                    hist = PRICE_CACHE.get(a["sym"]) or {}
+                    mins = [c for d, c in hist.items() if a["ref_date"] < d <= ev["date"]]
+                    if not mins or min(mins) / a["ref"] * 100 < pct:
+                        ok = False; break
+                if ok:
+                    redeemed_at = ev; lizard_hit = True
+                    break
             ev["result"] = "missed" if all(r is not None for r in rs) else "unknown"
     if redeemed_at:
         j["redeemed"] = {"n": redeemed_at["n"], "date": redeemed_at["date"], "is_maturity": redeemed_at["is_maturity"],
@@ -687,7 +808,10 @@ def judge(p):
         if p.get("coupon") and redeemed_at["months"]:
             ret = round(p["coupon"] * redeemed_at["months"] / 12.0, 2)
         j["status"] = "redeemed"
-        j["message"] = f"{redeemed_at['n']}차 평가일({redeemed_at['date']})에 모든 기초자산이 배리어 {redeemed_at['barrier']}% 이상 → 상환 완료로 추정" + (f" (세전 약 {ret}%)" if ret else "")
+        if lizard_hit:
+            j["message"] = f"{redeemed_at['n']}차 평가일({redeemed_at['date']}) 리자드 조건(평가일까지 {lz_rules[redeemed_at['n']]}% 미만 하락 없음) 충족 → 상환 완료로 추정" + (f" (세전 약 {ret}%)" if ret else "")
+        else:
+            j["message"] = f"{redeemed_at['n']}차 평가일({redeemed_at['date']})에 모든 기초자산이 배리어 {redeemed_at['barrier']}% 이상 → 상환 완료로 추정" + (f" (세전 약 {ret}%)" if ret else "")
         j["expected"] = {"n": redeemed_at["n"], "date": redeemed_at["date"], "months": redeemed_at["months"],
                          "barrier": redeemed_at["barrier"], "ret": ret}
         out["judgment"] = j
@@ -740,8 +864,25 @@ def judge(p):
                 j["message"] = f"현 수준(최저 {worst['label']} {wr:.1f}%)으로는 모든 배리어 미달 — 상품설명서의 만기 조건을 확인해 주세요."
     if knocked and j["status"] in ("pass", "defer"):
         j["message"] += " ※ 과거 낙인 터치 이력이 있으나 배리어 충족 시 정상 상환"
-    if p.get("lizard"):
-        out["flags"].append("리자드 조건 상품 — 리자드 조기상환 여부는 상품설명서로 별도 확인 필요")
+    # upcoming lizard chance
+    for ev in upcoming:
+        if ev["n"] in lz_rules:
+            pct = lz_rules[ev["n"]]
+            worst_min = min(a["min_ratio"] for a in valid if a.get("min_ratio") is not None) if any(a.get("min_ratio") is not None for a in valid) else None
+            if worst_min is not None:
+                if worst_min >= pct:
+                    note = f"리자드: {ev['n']}차({ev['date']})까지 {pct}% 미만 하락이 없으면 리자드 상환 — 현재 기간 최저 {worst_min:.1f}%로 조건 유지 중"
+                    if j["status"] in ("defer", "risk"):
+                        j["message"] += " · " + note
+                        if j["status"] == "defer" and (j.get("expected") or {}).get("n", 99) > ev["n"]:
+                            j["expected"] = {"n": ev["n"], "date": ev["date"], "months": ev["months"], "barrier": pct, "ret": ret_at(ev), "lizard": True}
+                    else:
+                        out["flags"].append(note)
+                else:
+                    out["flags"].append(f"리자드: {ev['n']}차 리자드 배리어 {pct}% 아래로 이미 하락한 이력 있음(기간 최저 {worst_min:.1f}%) → 리자드 상환 불가")
+            break
+    if p.get("lizard") and not lz_rules:
+        out["flags"].append("리자드 조건 상품 — 리자드 조건을 자동으로 읽지 못했으니 상품설명서로 별도 확인 필요")
     if p.get("monthly"):
         out["flags"].append("월지급식 상품 — 월 쿠폰 지급 조건은 별도")
     out["judgment"] = j
@@ -754,43 +895,83 @@ def main():
     t0 = time.time()
     products = load_json(PRODUCTS_FILE, {})
     scan = load_json(SCAN_FILE, {"cursor": None, "empty": {}})
-    log(f"start: cached products={len(products)} FULL_SCAN={FULL_SCAN} MAX_PROBES={MAX_PROBES}")
+    redeemed = load_json(REDEEMED_FILE, {})
+    excluded = load_json(EXCLUDED_FILE, {})
+    log(f"start: cached products={len(products)} excluded={len(excluded)} FULL_SCAN={FULL_SCAN} MAX_PROBES={MAX_PROBES}")
+
+    # 0) redemption list first (KSD SEIBro). Never re-read anything already excluded.
+    red_ok = False
+    if redeemed_mod and os.environ.get("SKIP_REDEEMED", "0") != "1":
+        try:
+            found, red_ok = redeemed_mod.fetch_redeemed(days_back=420, logf=log)
+            for k, v in found.items():
+                if k not in redeemed:
+                    redeemed[k] = v
+            save_json(REDEEMED_FILE, redeemed)
+        except Exception:
+            log("redeemed fetch crashed: " + traceback.format_exc().splitlines()[-1])
+    else:
+        log("redeemed cross-check skipped")
 
     probes = new = 0
     try:
-        probes, new = discover(products, scan)
+        probes, new = discover(products, scan, excluded)
     except Exception:
         log("discovery crashed: " + traceback.format_exc().splitlines()[-1])
-    save_json(PRODUCTS_FILE, products)
     save_json(SCAN_FILE, scan)
 
-    # active universe: not matured more than 45 days ago, ELS/ELB with parsed schedule
+    def red_for(p):
+        r = redeemed.get(p["isin"]) or redeemed.get("CODE:" + p["code"])
+        return r
+
+    # active universe: not excluded, ELS/ELB, not matured > 45 days ago
     active = []
-    for p in products.values():
+    for isin, p in list(products.items()):
+        if isin in excluded:
+            continue
         if p.get("type") not in ("ELS", "ELB"):
+            excluded[isin] = {"reason": "type:" + str(p.get("type")), "date": TODAY.isoformat()}
             continue
         me = p.get("mat_eval")
         if me and date.fromisoformat(me) < TODAY - timedelta(days=45):
+            excluded[isin] = {"reason": "matured", "date": TODAY.isoformat()}
             continue
         active.append(p)
-    log(f"active products: {len(active)}")
+    log(f"active products: {len(active)} (redeemed list entries={len(redeemed)}, source ok={red_ok})")
 
     results = []
     for p in sorted(active, key=lambda x: int(x["code"])):
         try:
-            results.append(judge(p))
+            results.append(judge(p, red_for(p)))
         except Exception:
             log(f"judge error {p.get('isin')}: {traceback.format_exc().splitlines()[-1]}")
 
-    # drop products judged as redeemed (keep for 45 days after redemption date for reference)
+    # exclusion bookkeeping:
+    #  - confirmed by KSD list: keep visible (search only) for 30 days after redemption date, then exclude for good
+    #  - computed (estimated) redemption: keep 45 days, then exclude for good
     kept = []
+    hidden_est = 0
     for r in results:
         j = r.get("judgment", {})
-        if j.get("status") == "redeemed":
-            d = j.get("redeemed", {}).get("date")
+        st = j.get("status")
+        d = (j.get("redeemed") or {}).get("date")
+        if st == "redeemed_confirmed":
+            if d and date.fromisoformat(d) < TODAY - timedelta(days=30):
+                excluded[r["isin"]] = {"reason": "redeemed:confirmed", "date": d}
+                continue
+        elif st == "redeemed":
+            # estimated only (price-based): hide from the site after 45 days but keep in cache,
+            # so a later KSD confirmation (or a data correction) can still act on it
             if d and date.fromisoformat(d) < TODAY - timedelta(days=45):
+                hidden_est += 1
                 continue
         kept.append(r)
+    # shrink the product cache: excluded products are never read again
+    for isin in list(products.keys()):
+        if isin in excluded:
+            products.pop(isin, None)
+    save_json(PRODUCTS_FILE, products)
+    save_json(EXCLUDED_FILE, excluded)
 
     price_asof = {}
     for sym, h in PRICE_CACHE.items():
@@ -798,15 +979,25 @@ def main():
             d = max(h.keys()); price_asof[sym] = {"date": d, "close": h[d]}
 
     counts = {}
+    unsupported = {}
     for r in kept:
-        s = r["judgment"]["status"]; counts[s] = counts.get(s, 0) + 1
+        st_ = r["judgment"]["status"]; counts[st_] = counts.get(st_, 0) + 1
+        if st_ == "nodata":
+            for f in r.get("flags", []):
+                if f.startswith("가격 데이터 미지원"):
+                    for nm in f.split(":", 1)[1].split(","):
+                        nm = nm.strip(); unsupported[nm] = unsupported.get(nm, 0) + 1
+            if not r.get("schedule") or any(e.get("barrier") is None for e in r.get("schedule", [])):
+                unsupported["(배리어 미해석)"] = unsupported.get("(배리어 미해석)", 0) + 1
+    unsupported = dict(sorted(unsupported.items(), key=lambda x: -x[1])[:25])
 
     out = {"generated": datetime.now(KST).strftime("%Y-%m-%d %H:%M"), "asof": TODAY.isoformat(),
            "prices": price_asof, "counts": counts, "products": kept}
     save_json(OUT_FILE, out)
     status = {"generated": out["generated"], "elapsed_sec": round(time.time() - t0, 1),
-              "cached_products": len(products), "active": len(kept), "probes": probes, "new": new,
-              "counts": counts, "scan_cursor": scan.get("cursor"), "log": LOG[-80:]}
+              "cached_products": len(products), "excluded": len(excluded), "redeemed_list": len(redeemed),
+              "redeemed_source_ok": red_ok, "hidden_estimated": hidden_est, "active": len(kept), "probes": probes, "new": new,
+              "counts": counts, "nodata_reasons": unsupported, "scan_cursor": scan.get("cursor"), "log": LOG[-120:]}
     save_json(STATUS_FILE, status)
     log(f"done in {status['elapsed_sec']}s — active={len(kept)} counts={counts}")
 
