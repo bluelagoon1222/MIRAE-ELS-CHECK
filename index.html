@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MIRAE ELS CHECK — ELS 조기상환 조회</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#F58220;--orange-active:#CB6015;--orange-soft:#FAB072;--blue:#043B72;
+  --ink:#1A1A1A;--body:#3D3D3D;--muted:#6C6C6C;--muted-soft:#84888B;
+  --hair:#CDCECB;--hair-soft:#E5E4E1;--soft:#ECEFF4;--subtle:#F7F8FA;--hl:#D7D7D7;
+  --ok:#2E8540;--warn:#D4A017;--err:#C62828;
+  --font:'Noto Sans KR','Spoqa Han Sans Neo','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --num:'Inter','Noto Sans KR',sans-serif;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:#fff;color:var(--body);font-family:var(--font);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
+.num{font-family:var(--num);font-variant-numeric:tabular-nums}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--hair-soft)}
+.hdr{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:18px 0 14px;flex-wrap:wrap}
+.brand{display:flex;flex-direction:column;gap:2px}
+.brand .t{font-size:24px;font-weight:700;color:var(--ink);letter-spacing:-0.3px;line-height:1.2}
+.brand .t span{color:var(--orange)}
+.brand .s{font-size:13px;color:var(--muted)}
+.asof{font-size:13px;color:var(--muted);text-align:right}
+.asof b{color:var(--blue);font-family:var(--num)}
+.rule{height:1px;background:var(--orange);margin:26px 0 14px}
+h2{font-size:20px;font-weight:700;color:var(--ink);margin:0 0 10px}
+.searchbox{display:flex;gap:8px;margin-top:18px;position:relative}
+.searchbox input{flex:1;font:inherit;font-size:18px;padding:12px 14px;border:1px solid var(--hair);border-radius:2px;outline:none;min-width:0}
+.searchbox input:focus{border-color:var(--orange)}
+.btn{background:var(--orange);color:#fff;border:0;border-radius:2px;padding:0 20px;font:inherit;font-weight:500;font-size:16px;cursor:pointer;height:50px;white-space:nowrap}
+.btn:active{background:var(--orange-active)}
+.btn.ghost{background:#fff;color:var(--muted);border:1px solid var(--hair);height:34px;padding:0 12px;font-size:13px}
+.btn.ghost.on{background:var(--orange);color:#fff;border-color:var(--orange)}
+.sugg{position:absolute;left:0;right:0;top:52px;background:#fff;border:1px solid var(--hair);z-index:20;max-height:260px;overflow:auto;display:none}
+.sugg div{padding:9px 14px;cursor:pointer;font-size:14px;border-bottom:1px solid var(--hair-soft)}
+.sugg div:hover{background:var(--subtle)}
+.hint{font-size:13px;color:var(--muted);margin-top:8px}
+.card{border:1px solid var(--hair);border-radius:4px;padding:18px;margin-top:16px;background:#fff}
+.card .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start}
+.card .name{font-size:22px;font-weight:700;color:var(--ink)}
+.card .meta{font-size:13px;color:var(--muted);margin-top:2px}
+.badge{display:inline-block;padding:4px 10px;border-radius:2px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap}
+.b-pass{background:var(--ok)}.b-defer{background:var(--warn);color:#1A1A1A}.b-ki{background:var(--err)}.b-risk{background:#AD624E}
+.b-redeemed{background:var(--blue)}.b-nodata{background:var(--muted-soft)}.b-matured{background:var(--muted-soft)}
+.verdict{margin-top:14px;padding:14px 16px;background:var(--soft);border-left:4px solid var(--orange);font-size:16px;color:var(--ink);line-height:1.6}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.kpi{border:1px solid var(--hair-soft);padding:10px 12px}
+.kpi .l{font-size:12px;color:var(--muted);letter-spacing:.3px}
+.kpi .v{font-size:22px;font-weight:700;color:var(--blue);font-family:var(--num);line-height:1.2;margin-top:2px}
+.kpi .v.o{color:var(--orange)}
+.kpi .d{font-size:12px;color:var(--muted-soft)}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}
+th{background:var(--orange-soft);color:var(--ink);font-weight:700;text-align:left;padding:9px 10px;border:1px solid var(--hair);white-space:nowrap}
+td{padding:8px 10px;border:1px solid var(--hair-soft);vertical-align:middle}
+td.r,th.r{text-align:right}
+td.num{white-space:nowrap}
+tbody tr:hover{background:var(--subtle)}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sched{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.step{flex:1 1 120px;border:1px solid var(--hair-soft);padding:8px 10px;font-size:13px;position:relative}
+.step .n{font-weight:700;color:var(--ink)}
+.step .b{font-family:var(--num);font-size:18px;font-weight:700;color:var(--blue)}
+.step .d{color:var(--muted);font-size:12px;font-family:var(--num)}
+.step.passed{background:#E8F3EA;border-color:var(--ok)}
+.step.missed{background:var(--subtle);color:var(--muted-soft)}
+.step.missed .b{color:var(--muted-soft)}
+.step.next{border:2px solid var(--orange)}
+.step.expected{background:#FDEEDF}
+.tag{display:inline-block;font-size:11px;padding:1px 6px;border-radius:2px;background:var(--hl);color:var(--ink);margin-left:4px}
+.flags{margin-top:12px;font-size:13px;color:var(--muted)}
+.flags li{margin:2px 0}
+.links{margin-top:12px;font-size:13px}
+.links a{color:var(--blue);margin-right:14px}
+details.payoff{margin-top:12px;font-size:13px;color:var(--muted)}
+details.payoff pre{white-space:pre-wrap;font-family:var(--font);background:var(--subtle);padding:10px;margin:6px 0 0}
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0 6px}
+.filters input{font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--hair);border-radius:2px;width:180px}
+.counts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.chip{font-size:12px;padding:3px 8px;border:1px solid var(--hair);border-radius:2px;color:var(--body)}
+.chip i{display:inline-block;width:8px;height:8px;margin-right:5px;border-radius:1px}
+.row-code{font-weight:700;color:var(--blue);cursor:pointer;text-decoration:underline;font-family:var(--num)}
+.mob{display:none}
+footer{margin:40px 0 30px;font-size:12px;color:var(--muted-soft);line-height:1.6;border-top:1px solid var(--hair-soft);padding-top:14px}
+.empty{padding:26px;text-align:center;color:var(--muted);border:1px dashed var(--hair)}
+.sort{cursor:pointer;user-select:none}
+.sort.on{color:var(--orange-active)}
+@media (max-width:760px){
+  body{font-size:15px}
+  .wrap{padding:0 14px}
+  .brand .t{font-size:20px}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .card{padding:14px}
+  .card .name{font-size:19px}
+  .verdict{font-size:15px}
+  .desk{display:none}.mob{display:block}
+  .mcard{border:1px solid var(--hair-soft);padding:10px 12px;margin-top:8px;font-size:14px}
+  .mcard .l1{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .mcard .l2{color:var(--muted);font-size:13px;margin-top:3px}
+  .mcard .l3{margin-top:4px;font-size:13px}
+  .btn{padding:0 14px}
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){} }
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="hdr">
+  <div class="brand"><div class="t">MIRAE <span>ELS</span> CHECK</div><div class="s">미래에셋증권 공모 ELS 조기상환 조회 · 전일 종가 기준 자동 판정</div></div>
+  <div class="asof" id="asof">데이터 불러오는 중…</div>
+</div></div></header>
+
+<main class="wrap">
+  <div class="searchbox">
+    <input id="q" type="text" inputmode="numeric" placeholder="ELS 회차번호 입력 (예: 33391) 또는 종목코드 KR6MD…" autocomplete="off">
+    <button class="btn" id="go">조회</button>
+    <div class="sugg" id="sugg"></div>
+  </div>
+  <div class="hint">회차번호는 잔고 화면의 "미래에셋증권(ELS)33391"에서 숫자 부분입니다. 공모 ELS·ELB만 조회되며, 사모·ELT는 담당 PB에게 확인해 주세요.</div>
+  <div id="result"></div>
+
+  <div class="rule"></div>
+  <h2>조기상환 현황판 <span style="font-size:13px;color:var(--muted);font-weight:400">미상환 공모 ELS 전체 · 평가일 임박순</span></h2>
+  <div class="counts" id="counts"></div>
+  <div class="filters">
+    <button class="btn ghost on" data-f="all">전체</button>
+    <button class="btn ghost" data-f="pass">상환 가능</button>
+    <button class="btn ghost" data-f="defer">이월 예상</button>
+    <button class="btn ghost" data-f="risk">배리어 미달</button>
+    <button class="btn ghost" data-f="ki">낙인</button>
+    <button class="btn ghost" data-f="soon">30일 내 평가</button>
+    <input id="ftext" placeholder="기초자산·회차 검색 (예: 테슬라, 삼성)">
+  </div>
+  <div class="tbl-wrap desk">
+    <table id="board"><thead><tr>
+      <th class="sort" data-k="code">회차</th><th>기초자산</th><th class="r sort" data-k="worst">최저 비율</th>
+      <th class="sort on" data-k="next">다음 평가일</th><th class="r">배리어</th><th class="r">필요 상승</th><th>판정</th><th>상환 예상</th><th class="r">쿠폰(연)</th>
+    </tr></thead><tbody></tbody></table>
+  </div>
+  <div class="mob" id="boardm"></div>
+  <div id="boardempty" class="empty" style="display:none">표시할 상품이 없습니다.</div>
+
+  <footer>
+    ※ 판정은 전일(해외지수·해외주식은 한국시간 새벽 마감) 종가와 각 상품의 최초기준가격 결정일 종가를 바탕으로 자동 계산한 추정치입니다. 실제 상환 여부와 지급액은 평가일 당일 종가와 발행사의 공식 평가·투자설명서 조건에 따르며, 리자드·월지급식 등 특수 구조는 별도 확인이 필요합니다.<br>
+    ※ 최초기준가는 공개 시세 데이터(액면분할 등 조정 반영)에서 산출하므로 발행사 공시 기준가와 미세한 차이가 있을 수 있습니다. 상품별 상세 페이지·투자설명서 링크를 함께 확인해 주세요.<br>
+    ※ 본 화면은 임직원 참고용이며 고객에게 그대로 전달하는 자료가 아닙니다.
+  </footer>
+</main>
+
+<script>
+let DATA=null, LIST=[], FILTER='all', SORT='next', SORTDIR=1;
+const STATUS={pass:['상환 가능','b-pass'],defer:['이월 예상','b-defer'],risk:['배리어 미달','b-risk'],ki:['낙인 발생','b-ki'],redeemed:['상환 완료(추정)','b-redeemed'],nodata:['판정 불가','b-nodata'],matured:['만기 경과','b-matured'],unknown:['판정 불가','b-nodata']};
+const COLOR={pass:'#2E8540',defer:'#D4A017',risk:'#AD624E',ki:'#C62828',redeemed:'#043B72',nodata:'#84888B',matured:'#84888B'};
+const $=s=>document.querySelector(s);
+const f1=(v,d=1)=>v==null?'-':Number(v).toFixed(d);
+const fnum=v=>v==null?'-':(Math.abs(v)>=1000?Number(v).toLocaleString('en-US',{maximumFractionDigits:2}):Number(v).toLocaleString('en-US',{maximumFractionDigits:2}));
+
+async function load(){
+  try{
+    const r=await fetch('data/els.json?t='+Date.now()); DATA=await r.json();
+  }catch(e){ $('#asof').textContent='데이터를 불러오지 못했습니다'; return; }
+  LIST=DATA.products||[];
+  const p=DATA.prices||{}; const ks=p['^KS200']?p['^KS200'].date:null; const sp=p['^GSPC']?p['^GSPC'].date:null;
+  $('#asof').innerHTML=`기준 <b>${DATA.asof}</b> · 갱신 ${DATA.generated}<br>${ks?'KOSPI200 '+ks:''}${sp?' · S&amp;P500 '+sp:''} · 상품 ${LIST.length}건`;
+  renderCounts(); renderBoard();
+  const h=location.hash.replace('#',''); if(h){ $('#q').value=h; search(h); }
+}
+function renderCounts(){
+  const c=DATA.counts||{}; const box=$('#counts'); box.innerHTML='';
+  Object.keys(STATUS).forEach(k=>{ if(!c[k])return; const d=document.createElement('span'); d.className='chip'; d.innerHTML=`<i style="background:${COLOR[k]}"></i>${STATUS[k][0]} ${c[k]}`; box.appendChild(d); });
+}
+function find(q){
+  q=(q||'').trim().toUpperCase().replace(/[^0-9A-Z]/g,'');
+  if(!q) return null;
+  let m=LIST.find(p=>p.isin===q); if(m) return m;
+  const digits=q.replace(/[^0-9]/g,'');
+  if(digits){ m=LIST.find(p=>p.code===digits); if(m) return m; }
+  return null;
+}
+function search(q){
+  const p=find(q); const box=$('#result');
+  if(!p){ box.innerHTML=`<div class="card"><div class="name" style="font-size:18px;font-weight:700;color:var(--ink)">조회 결과 없음</div><div class="meta" style="margin-top:6px">"${q}"에 해당하는 공모 ELS를 찾지 못했습니다. 사모·ELT 상품이거나 아직 수집되지 않은 회차일 수 있습니다. 담당 PB에게 확인해 주세요.</div></div>`; return; }
+  location.hash=p.code; box.innerHTML=cardHTML(p); window.scrollTo({top:box.offsetTop-70,behavior:'smooth'});
+}
+function cardHTML(p){
+  const j=p.judgment||{}; const st=STATUS[j.status]||STATUS.unknown;
+  const worst=j.worst; const nx=j.next; const ex=j.expected;
+  const kpis=[
+    {l:'최저 기초자산',v:worst?f1(worst.ratio)+'%':'-',d:worst?worst.label:''},
+    {l:nx?(nx.is_maturity?'만기 평가일':`${nx.n}차 평가일`):'다음 평가일',v:nx?nx.date:'-',d:nx?`D-${nx.days} · 배리어 ${nx.barrier}%`:''},
+    {l:'필요 상승률',v:j.need_pct==null?'-':(j.need_pct===0?'충족':'+'+f1(j.need_pct)+'%'),d:'최저 종목 기준',o:true},
+    {l:'상환 예상',v:ex?(ex.is_maturity?'만기':`${ex.n}차`):'-',d:ex?`${ex.date} · 세전 ${f1(ex.ret,2)}%`:''},
+  ];
+  const assets=(p.assets||[]).map(a=>`<tr><td>${a.label||a.name}</td><td class="r num">${fnum(a.ref)}</td><td class="r num">${a.ref_date||'-'}</td><td class="r num">${fnum(a.last)}</td><td class="r num">${a.last_date||'-'}</td><td class="r num" style="font-weight:700;color:${a.ratio==null?'inherit':(worst&&a.label===worst.label?'var(--orange-active)':'var(--blue)')}">${a.ratio==null?'-':f1(a.ratio)+'%'}</td><td class="r num">${a.ki?a.ki+'%':(p.no_ki?'없음':'-')}</td><td class="r num">${a.min_ratio==null?'-':f1(a.min_ratio)+'%'}<div style="font-size:11px;color:var(--muted-soft)">${a.min_date||''}</div></td></tr>`).join('');
+  const sched=(p.schedule||[]).map(e=>{
+    let cls='step'; if(e.result==='passed')cls+=' passed'; else if(e.result==='missed')cls+=' missed';
+    if(nx&&e.n===nx.n)cls+=' next'; if(ex&&e.n===ex.n&&!(nx&&e.n===nx.n))cls+=' expected';
+    const m=e.months?`${e.months}개월`:''; const ret=(p.coupon&&e.months)?`세전 ${(p.coupon*e.months/12).toFixed(2)}%`:'';
+    return `<div class="${cls}"><div class="n">${e.is_maturity?'만기':e.n+'차'}${e.result==='passed'?'<span class="tag">상환</span>':''}${e.result==='missed'?'<span class="tag">미충족</span>':''}${nx&&e.n===nx.n?'<span class="tag" style="background:var(--orange);color:#fff">다음</span>':''}</div><div class="b">${e.barrier!=null?e.barrier+'%':'-'}</div><div class="d">${e.date} ${m?'· '+m:''}</div><div class="d">${ret}</div></div>`;
+  }).join('');
+  const flags=(p.flags||[]).map(f=>`<li>${f}</li>`).join('');
+  return `<div class="card">
+    <div class="top"><div><div class="name">${p.name}</div><div class="meta">${p.type} · 발행 ${p.issue_date||'-'} · 만기평가 ${p.mat_eval||'-'} · ${p.mat_years?p.mat_years+'년':''}/${p.period_months?p.period_months+'개월':''} · 쿠폰 연 ${f1(p.coupon,2)}% · 배리어 ${(p.ladder||[]).join('-')||'-'}${p.lizard?' · 리자드':''}${p.monthly?' · 월지급':''}${p.principal_guard?' · 원금지급형':''}</div></div>
+    <span class="badge ${st[1]}">${st[0]}</span></div>
+    <div class="verdict">${j.message||'-'}</div>
+    <div class="kpis">${kpis.map(k=>`<div class="kpi"><div class="l">${k.l}</div><div class="v ${k.o?'o':''}">${k.v}</div><div class="d">${k.d}</div></div>`).join('')}</div>
+    <div class="tbl-wrap"><table><thead><tr><th>기초자산</th><th class="r">최초기준가</th><th class="r">기준일</th><th class="r">전일종가</th><th class="r">종가일</th><th class="r">현재 비율</th><th class="r">낙인</th><th class="r">기간 최저</th></tr></thead><tbody>${assets}</tbody></table></div>
+    <div class="sched">${sched}</div>
+    ${flags?`<ul class="flags">${flags}</ul>`:''}
+    <div class="links"><a href="${p.url}" target="_blank" rel="noopener">상품 상세(홈페이지)</a><a href="${p.pdf}" target="_blank" rel="noopener">요약설명서 PDF</a></div>
+    ${p.payoff?`<details class="payoff"><summary>수익구조 원문 보기</summary><pre>${esc(p.payoff)}</pre></details>`:''}
+  </div>`;
+}
+function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function boardRows(){
+  let rows=LIST.filter(p=>{
+    const j=p.judgment||{}; if(j.status==='redeemed'||j.status==='matured') return false;
+    if(FILTER==='all') return true;
+    if(FILTER==='soon') return j.next&&j.next.days<=30&&j.next.days>=0;
+    return j.status===FILTER;
+  });
+  const t=($('#ftext').value||'').trim().toLowerCase();
+  if(t){ rows=rows.filter(p=>p.code.includes(t)||(p.assets||[]).some(a=>((a.label||'')+' '+(a.name||'')).toLowerCase().includes(t))||(t==='삼성'&&(p.assets||[]).some(a=>(a.name||'').includes('삼성')))); }
+  const key=p=>{const j=p.judgment||{}; if(SORT==='code')return parseInt(p.code); if(SORT==='worst')return j.worst?j.worst.ratio:999; return j.next?j.next.date:'9999';};
+  rows.sort((a,b)=>{const x=key(a),y=key(b); return (x>y?1:x<y?-1:0)*SORTDIR;});
+  return rows;
+}
+function renderBoard(){
+  const rows=boardRows(); const tb=$('#board tbody'); tb.innerHTML=''; const mb=$('#boardm'); mb.innerHTML='';
+  $('#boardempty').style.display=rows.length?'none':'block';
+  rows.forEach(p=>{
+    const j=p.judgment||{}; const st=STATUS[j.status]||STATUS.unknown; const nx=j.next; const ex=j.expected;
+    const assets=(p.assets||[]).map(a=>a.label||a.name).join(' · ');
+    const worst=j.worst?`${f1(j.worst.ratio)}% <span style="color:var(--muted-soft);font-size:12px">${j.worst.label}</span>`:'-';
+    const need=j.need_pct==null?'-':(j.need_pct===0?'충족':'+'+f1(j.need_pct)+'%');
+    const exs=ex?`${ex.is_maturity?'만기':ex.n+'차'} ${ex.date} <span style="color:var(--muted-soft);font-size:12px">세전 ${f1(ex.ret,2)}%</span>`:'-';
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td><span class="row-code" data-c="${p.code}">${p.code}</span>${p.type==='ELB'?'<span class="tag">ELB</span>':''}${p.lizard?'<span class="tag">리자드</span>':''}${p.monthly?'<span class="tag">월지급</span>':''}</td><td>${assets}</td><td class="r num">${worst}</td><td class="num">${nx?nx.date:'-'}${nx?` <span style="color:var(--muted-soft);font-size:12px">D-${nx.days}</span>`:''}</td><td class="r num">${nx&&nx.barrier!=null?nx.barrier+'%':'-'}</td><td class="r num">${need}</td><td><span class="badge ${st[1]}" style="font-size:12px;padding:2px 8px">${st[0]}</span></td><td class="num">${exs}</td><td class="r num">${f1(p.coupon,2)}%</td>`;
+    tb.appendChild(tr);
+    const mc=document.createElement('div'); mc.className='mcard';
+    mc.innerHTML=`<div class="l1"><span class="row-code" data-c="${p.code}">${p.code}</span><span class="badge ${st[1]}" style="font-size:12px;padding:2px 8px">${st[0]}</span></div><div class="l2">${assets}</div><div class="l3 num">최저 ${worst} · 다음 ${nx?nx.date+' (D-'+nx.days+', '+nx.barrier+'%)':'-'} · 필요 ${need}</div><div class="l3 num" style="color:var(--muted)">예상 ${exs} · 연 ${f1(p.coupon,2)}%</div>`;
+    mb.appendChild(mc);
+  });
+}
+document.addEventListener('click',e=>{
+  const c=e.target.closest('.row-code'); if(c){ $('#q').value=c.dataset.c; search(c.dataset.c); }
+  const f=e.target.closest('.filters .btn'); if(f){ document.querySelectorAll('.filters .btn').forEach(b=>b.classList.remove('on')); f.classList.add('on'); FILTER=f.dataset.f; renderBoard(); }
+  const s=e.target.closest('th.sort'); if(s){ if(SORT===s.dataset.k){SORTDIR*=-1;} else {SORT=s.dataset.k;SORTDIR=1;} document.querySelectorAll('th.sort').forEach(x=>x.classList.remove('on')); s.classList.add('on'); renderBoard(); }
+  if(!e.target.closest('.searchbox')) $('#sugg').style.display='none';
+});
+$('#go').addEventListener('click',()=>search($('#q').value));
+$('#q').addEventListener('keydown',e=>{ if(e.key==='Enter'){ search($('#q').value); $('#sugg').style.display='none'; } });
+$('#q').addEventListener('input',()=>{
+  const v=$('#q').value.trim().replace(/[^0-9]/g,''); const box=$('#sugg'); box.innerHTML='';
+  if(v.length<2||!LIST.length){ box.style.display='none'; return; }
+  const hits=LIST.filter(p=>p.code.startsWith(v)).slice(0,8);
+  if(!hits.length){ box.style.display='none'; return; }
+  hits.forEach(p=>{ const d=document.createElement('div'); const st=STATUS[(p.judgment||{}).status]||STATUS.unknown; d.innerHTML=`<b class="num">${p.code}</b> · ${(p.assets||[]).map(a=>a.label||a.name).join('·')} · <span style="color:${COLOR[(p.judgment||{}).status]||'#84888B'}">${st[0]}</span>`; d.onclick=()=>{ $('#q').value=p.code; box.style.display='none'; search(p.code); }; box.appendChild(d); });
+  box.style.display='block';
+});
+$('#ftext').addEventListener('input',renderBoard);
+load();
+</script>
+</body>
+</html>

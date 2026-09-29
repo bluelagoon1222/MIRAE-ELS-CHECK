@@ -1,0 +1,4 @@
+# Known Mirae Asset ELS ISINs (one per line). Used as seeds for discovery.
+KR6MD0002TP1
+KR6MD0002Y10
+KR6MD0003WH0
