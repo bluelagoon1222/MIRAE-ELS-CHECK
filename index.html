@@ -195,14 +195,14 @@ function cardHTML(p){
     {l:'최저 기초자산',v:worst?f1(worst.ratio)+'%':'-',d:worst?worst.label:''},
     {l:nx?(nx.is_maturity?'만기 평가일':`${nx.n}차 평가일`):'다음 평가일',v:nx?nx.date:'-',d:nx?`D-${nx.days} · 배리어 ${nx.barrier}%`:''},
     {l:'필요 상승률',v:j.need_pct==null?'-':(j.need_pct===0?'충족':'+'+f1(j.need_pct)+'%'),d:'최저 종목 기준',o:true},
-    {l:'상환 예상',v:ex?(ex.is_maturity?'만기':`${ex.n}차`):'-',d:ex?`${ex.date} · 세전 ${f1(ex.ret,2)}%`:''},
+    {l:'상환 예상',v:ex?(ex.is_maturity?'만기':`${ex.n}차${ex.lizard?' 리자드':''}`):'-',d:ex?`${ex.date} · 세전 ${f1(ex.ret,2)}%`:''},
   ];
   const assets=(p.assets||[]).map(a=>`<tr><td>${a.label||a.name}</td><td class="r num">${fnum(a.ref)}</td><td class="r num">${a.ref_date||'-'}</td><td class="r num">${fnum(a.last)}</td><td class="r num">${a.last_date||'-'}</td><td class="r num" style="font-weight:700;color:${a.ratio==null?'inherit':(worst&&a.label===worst.label?'var(--orange-active)':'var(--blue)')}">${a.ratio==null?'-':f1(a.ratio)+'%'}</td><td class="r num">${a.ki?a.ki+'%':(p.no_ki?'없음':'-')}</td><td class="r num">${a.min_ratio==null?'-':f1(a.min_ratio)+'%'}<div style="font-size:11px;color:var(--muted-soft)">${a.min_date||''}</div></td></tr>`).join('');
   const sched=(p.schedule||[]).map(e=>{
     let cls='step'; if(e.result==='passed')cls+=' passed'; else if(e.result==='missed')cls+=' missed';
     if(nx&&e.n===nx.n)cls+=' next'; if(ex&&e.n===ex.n&&!(nx&&e.n===nx.n))cls+=' expected';
     const m=e.months?`${e.months}개월`:''; const ret=(p.coupon&&e.months)?`세전 ${(p.coupon*e.months/12).toFixed(2)}%`:'';
-    return `<div class="${cls}"><div class="n">${e.is_maturity?'만기':e.n+'차'}${e.result==='passed'?'<span class="tag">상환</span>':''}${e.result==='missed'?'<span class="tag">미충족</span>':''}${nx&&e.n===nx.n?'<span class="tag" style="background:var(--orange);color:#fff">다음</span>':''}</div><div class="b">${e.barrier!=null?e.barrier+'%':'-'}</div><div class="d">${e.date} ${m?'· '+m:''}</div><div class="d">${ret}</div></div>`;
+    return `<div class="${cls}"><div class="n">${e.is_maturity?'만기':e.n+'차'}${e.result==='passed'?'<span class="tag">상환</span>':''}${e.result==='missed'?'<span class="tag">미충족</span>':''}${nx&&e.n===nx.n?'<span class="tag" style="background:var(--orange);color:#fff">다음</span>':''}</div><div class="b">${e.barrier!=null?e.barrier+'%':'-'}</div><div class="d">${e.date} ${m?'· '+m:''}</div><div class="d">${ret}</div>${e.lizard?`<div class="d" style="color:var(--orange-active)">리자드 ${e.lizard}%</div>`:''}</div>`;
   }).join('');
   const flags=(p.flags||[]).map(f=>`<li>${f}</li>`).join('');
   return `<div class="card">
