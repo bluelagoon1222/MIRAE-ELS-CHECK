@@ -1,0 +1,48 @@
+name: update-els-data
+
+on:
+  schedule:
+    - cron: "35 22 * * 0-4"
+  workflow_dispatch:
+    inputs:
+      full_scan:
+        description: "Wide ISIN scan (1 = yes)"
+        required: false
+        default: "0"
+      max_probes:
+        description: "Max detail-page probes this run"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: els-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Collect
+        env:
+          FULL_SCAN: ${{ github.event.inputs.full_scan || '0' }}
+          MAX_PROBES: ${{ github.event.inputs.max_probes }}
+        run: |
+          if [ -z "$MAX_PROBES" ]; then unset MAX_PROBES; fi
+          python scripts/collect.py
+      - name: Commit data
+        run: |
+          git config user.name "els-bot"
+          git config user.email "els-bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet && echo "no changes" || git commit -m "data: $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
