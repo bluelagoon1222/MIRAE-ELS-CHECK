@@ -1,21 +1,22 @@
 {
- "generated": "2026-09-29 11:31",
- "elapsed_sec": 1113.2,
- "cached_products": 1485,
- "active": 815,
+ "generated": "2026-09-29 12:06",
+ "elapsed_sec": 1287.9,
+ "cached_products": 2984,
+ "active": 1587,
  "probes": 1800,
- "new": 1312,
+ "new": 1499,
  "counts": {
-  "nodata": 806,
+  "nodata": 1577,
   "matured": 1,
   "ki": 6,
-  "risk": 2
+  "risk": 2,
+  "redeemed": 1
  },
- "scan_cursor": 7757,
+ "scan_cursor": 9557,
  "log": [
-  "[11:13:25] start: cached products=173 FULL_SCAN=True MAX_PROBES=1800",
-  "[11:13:31] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
-  "[11:31:56] discovery: probes=1800 new=1312 total_products=1485 cursor=7757",
-  "[11:31:56] active products: 1114"
+  "[11:45:20] start: cached products=1485 FULL_SCAN=True MAX_PROBES=1800",
+  "[11:45:29] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
+  "[12:06:45] discovery: probes=1800 new=1499 total_products=2984 cursor=9557",
+  "[12:06:45] active products: 2351"
  ]
 }
