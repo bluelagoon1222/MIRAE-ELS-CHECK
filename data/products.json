@@ -1,0 +1,7924 @@
+{
+ "KR6MD0002TP1": {
+  "isin": "KR6MD0002TP1",
+  "seq": 3661,
+  "type": "ELS",
+  "code": "33050",
+  "name": "미래에셋증권(ELS)33050",
+  "coupon": 14.0,
+  "ladder": [
+   85,
+   85,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2022-04-14",
+  "ref_date": "2022-04-14",
+  "evals": [
+   [
+    1,
+    "2022-10-11"
+   ],
+   [
+    2,
+    "2023-04-11"
+   ],
+   [
+    3,
+    "2023-10-10"
+   ],
+   [
+    4,
+    "2024-04-08"
+   ],
+   [
+    5,
+    "2024-10-08"
+   ],
+   [
+    6,
+    "2025-04-04"
+   ]
+  ],
+  "mat_eval": "2025-04-04",
+  "mat_pay": "2025-04-14",
+  "ki": {
+   "S&P500": 45.0,
+   "AMD": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "S&P500",
+   "AMD"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<조기상환>\n① 모든 기초자산의 1번째 자동조기상환평가일 종가가 각 최초기준가격의 85% 이상일 경우 : 연 14.00%\n② 모든 기초자산의 2번째 자동조기상환평가일 종가가 각 최초기준가격의 85% 이상일 경우 : 연 14.00%\n③ 모든 기초자산의 3번째 자동조기상환평가일 종가가 각 최초기준가격의 85% 이상일 경우 : 연 14.00%\n④ 모든 기초자산의 4번째 자동조기상환평가일 종가가 각 최초기준가격의 85% 이상일 경우 : 연 14.00%\n⑤ 모든 기초자산의 5번째 자동조기상환평가일 종가가 각 최초기준가격의 80% 이상일 경우 : 연 14.00%\n<만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% 이상일 경우 : 연 14.00%(3년 만기시 42.00%)\n⑦ 위 ⑥의 요건을 충족하지 못하였고, 최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% 미만(종가기준)으로 하락한 적이 없는 경우 : 연 14.00%(3년 만기시 42.00%)\n⑧ 위 ⑥의 요건을 충족하지 못하였고, 최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% 미만(종가기준)으로 하락한 적이 있는 경우 : 실물인도대상자산으로 주식지급[주식 실물인도 수량 = (액면금액Ⅹ만기평가가격/최초기준가격)/전환기준환율/만기평가가격], 1주 미만은 현금지급 (원금손실 발생, 100%≤손실률<0%)\n* 기초자산 하락률 : [(최초기준가격 - 만기평가가격) / 최초기준가격]\n*실물인도대상자산 : 모든 기초자산중 [만기평가가격/최초기준가격]의 비율이 가장 낮은 기초자산 (만기손실상환시 기준종목이 지수일 경우 현금결제, 종목(주식)일 경우 실물인도대상자산으로 주식지급)\n* 전환기준환율 : 만기평가일 당일 서울외국환중개㈜ 홈페이지(www.smbs.biz)에 오후 3시30분경 고시되는 종가 고시환율(한국의 공휴일 및 토,일요일 제외)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0002TP1.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0002TP1",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0002Y10": {
+  "isin": "KR6MD0002Y10",
+  "seq": 3817,
+  "type": "ELS",
+  "code": "33085",
+  "name": "미래에셋증권(ELS)33085",
+  "coupon": 9.0,
+  "ladder": [
+   88,
+   88,
+   88,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2022-05-06",
+  "ref_date": "2022-05-06",
+  "evals": [
+   [
+    1,
+    "2022-11-04"
+   ],
+   [
+    2,
+    "2023-05-04"
+   ],
+   [
+    3,
+    "2023-11-06"
+   ],
+   [
+    4,
+    "2024-05-03"
+   ],
+   [
+    5,
+    "2024-11-06"
+   ],
+   [
+    6,
+    "2025-05-02"
+   ]
+  ],
+  "mat_eval": "2025-05-02",
+  "mat_pay": "2025-05-09",
+  "ki": {
+   "EuroStoxx50": 50.0,
+   "HSCEI": 50.0,
+   "KOSPI200": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "KOSPI200"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<조기상환>\n① 모든 기초자산의 1번째 자동조기상환평가일 종가가 각 최초기준가격의 88% 이상일 경우 : 연 9.00%\n② 모든 기초자산의 2번째 자동조기상환평가일 종가가 각 최초기준가격의 88% 이상일 경우 : 연 9.00%\n③ 모든 기초자산의 3번째 자동조기상환평가일 종가가 각 최초기준가격의 88% 이상일 경우 : 연 9.00%\n④ 모든 기초자산의 4번째 자동조기상환평가일 종가가 각 최초기준가격의 85% 이상일 경우 : 연 9.00%\n⑤ 모든 기초자산의 5번째 자동조기상환평가일 종가가 각 최초기준가격의 80% 이상일 경우 : 연 9.00%\n<만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% 이상일 경우 : 연 9.00%(3년 만기시 27.00%)\n⑦ 위 ⑥의 요건을 충족하지 못하였고, 최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% 미만(종가기준)으로 하락한 적이 없는 경우 : 연 9.00%(3년 만기시 27.00%)\n⑧ 위 ⑥의 요건을 충족하지 못하였고, 최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% 미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* 기준종목 : 모든 기초자산 중 [만기평가가격/최초기준가격]의 비율이 가장 낮은 기초자산\n* 만기평가가격 : 최종평가일의 종가(해당거래소 기준)\n* 최초기준가격 : 최초기준가격평가일 각 기초자산 종가(해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0002Y10.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0002Y10",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0003WH0": {
+  "isin": "KR6MD0003WH0",
+  "seq": 5057,
+  "type": "ELS",
+  "code": "33391",
+  "name": "미래에셋증권(ELS)33391",
+  "coupon": 10.0,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2022-12-15",
+  "ref_date": "2022-12-15",
+  "evals": [
+   [
+    1,
+    "2023-06-15"
+   ],
+   [
+    2,
+    "2023-12-15"
+   ],
+   [
+    3,
+    "2024-06-14"
+   ],
+   [
+    4,
+    "2024-12-13"
+   ],
+   [
+    5,
+    "2025-06-13"
+   ],
+   [
+    6,
+    "2025-12-15"
+   ]
+  ],
+  "mat_eval": "2025-12-15",
+  "mat_pay": "2025-12-18",
+  "ki": {
+   "Nikkei225": 40.0,
+   "EuroStoxx50": 40.0,
+   "S&P500": 40.0
+  },
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<조기상환>\n① 모든 기초자산의 1번째 자동조기상환평가일 종가가 각 최초기준가격의 90% 이상일 경우 : 연 10.00%\n② 모든 기초자산의 2번째 자동조기상환평가일 종가가 각 최초기준가격의 90% 이상일 경우 : 연 10.00%\n③ 모든 기초자산의 3번째 자동조기상환평가일 종가가 각 최초기준가격의 85% 이상일 경우 : 연 10.00%\n④ 모든 기초자산의 4번째 자동조기상환평가일 종가가 각 최초기준가격의 85% 이상일 경우 : 연 10.00%\n⑤ 모든 기초자산의 5번째 자동조기상환평가일 종가가 각 최초기준가격의 80% 이상일 경우 : 연 10.00%\n<만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% 이상일 경우 : 연 10.00%(3년 만기시 30.00%)\n⑦ 위 ⑥의 요건을 충족하지 못하였고, 최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 40% 미만(종가기준)으로 하락한 적이 없는 경우 : 연 10.00%(3년 만기시 30.00%)\n⑧ 위 ⑥의 요건을 충족하지 못하였고, 최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 40% 미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* 기준종목 : 모든 기초자산 중 [만기평가가격/최초기준가격]의 비율이 가장 낮은 기초자산\n* 만기평가가격 : 최종평가일의 종가(해당거래소 기준)\n* 최초기준가격 : 최초기준가격평가일 각 기초자산 종가(해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0003WH0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0003WH0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EC7": {
+  "isin": "KR6MD0004EC7",
+  "seq": 5700,
+  "type": "DLB",
+  "code": "1459",
+  "name": "미래에셋증권(DLB)1459",
+  "coupon": 3.95,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-04-14",
+  "ref_date": "2023-04-14",
+  "evals": [
+   [
+    1,
+    "2024-04-12"
+   ]
+  ],
+  "mat_eval": "2024-04-12",
+  "mat_pay": "2024-04-12",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KRW KTB 3m",
+   "KRW CD91"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EC7.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EC7",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004ED5": {
+  "isin": "KR6MD0004ED5",
+  "seq": 5701,
+  "type": "ELB",
+  "code": "3150",
+  "name": "미래에셋증권(ELB)3150",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-04-14",
+  "ref_date": "2023-04-14",
+  "evals": [
+   [
+    1,
+    "2024-04-09"
+   ]
+  ],
+  "mat_eval": "2024-04-09",
+  "mat_pay": "2024-04-12",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004ED5.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004ED5",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EE3": {
+  "isin": "KR6MD0004EE3",
+  "seq": 5702,
+  "type": "ELS",
+  "code": "32704",
+  "name": "미래에셋증권(ELS)32704",
+  "coupon": 6.2,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EE3.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EE3",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EF0": {
+  "isin": "KR6MD0004EF0",
+  "seq": 5703,
+  "type": "ELS",
+  "code": "32705",
+  "name": "미래에셋증권(ELS)32705",
+  "coupon": 7.0,
+  "ladder": [
+   90,
+   85,
+   85,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EF0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EF0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EG8": {
+  "isin": "KR6MD0004EG8",
+  "seq": 5704,
+  "type": "ELS",
+  "code": "32703",
+  "name": "미래에셋증권(ELS)32703",
+  "coupon": 7.8,
+  "ladder": [
+   90,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EG8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EG8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EH6": {
+  "isin": "KR6MD0004EH6",
+  "seq": 5705,
+  "type": "ELS",
+  "code": "32702",
+  "name": "미래에셋증권(ELS)32702",
+  "coupon": 6.5,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EH6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EH6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EJ2": {
+  "isin": "KR6MD0004EJ2",
+  "seq": 5707,
+  "type": "ELS",
+  "code": "32701",
+  "name": "미래에셋증권(ELS)32701",
+  "coupon": 8.4,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EJ2.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EJ2",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EK0": {
+  "isin": "KR6MD0004EK0",
+  "seq": 5708,
+  "type": "ELS",
+  "code": "32700",
+  "name": "미래에셋증권(ELS)32700",
+  "coupon": 6.7,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EK0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EK0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EL8": {
+  "isin": "KR6MD0004EL8",
+  "seq": 5709,
+  "type": "ELS",
+  "code": "32687",
+  "name": "미래에셋증권(ELS)32687",
+  "coupon": 6.7,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EL8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EL8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EM6": {
+  "isin": "KR6MD0004EM6",
+  "seq": 5710,
+  "type": "ELS",
+  "code": "32686",
+  "name": "미래에셋증권(ELS)32686",
+  "coupon": 6.3,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EM6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EM6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EN4": {
+  "isin": "KR6MD0004EN4",
+  "seq": 5711,
+  "type": "ELS",
+  "code": "32743",
+  "name": "미래에셋증권(ELS)32743",
+  "coupon": 7.02,
+  "ladder": [
+   90,
+   85,
+   85,
+   80,
+   75,
+   60
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "S&P500",
+   "CSI300"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EN4.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EN4",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EP9": {
+  "isin": "KR6MD0004EP9",
+  "seq": 5713,
+  "type": "ELS",
+  "code": "32744",
+  "name": "미래에셋증권(ELS)32744",
+  "coupon": 6.0,
+  "ladder": [
+   80,
+   80,
+   80,
+   75,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-02",
+  "ref_date": "2023-04-28",
+  "evals": [
+   [
+    1,
+    "2023-10-27"
+   ],
+   [
+    2,
+    "2024-04-26"
+   ],
+   [
+    3,
+    "2024-10-28"
+   ],
+   [
+    4,
+    "2025-04-28"
+   ],
+   [
+    5,
+    "2025-10-28"
+   ],
+   [
+    6,
+    "2026-04-28"
+   ]
+  ],
+  "mat_eval": "2026-04-28",
+  "mat_pay": "2026-04-30",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EP9.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EP9",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EQ7": {
+  "isin": "KR6MD0004EQ7",
+  "seq": 5714,
+  "type": "ELS",
+  "code": "32745",
+  "name": "미래에셋증권(ELS)32745",
+  "coupon": 5.0,
+  "ladder": [
+   78,
+   78,
+   78,
+   78,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EQ7.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EQ7",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004ER5": {
+  "isin": "KR6MD0004ER5",
+  "seq": 5715,
+  "type": "ELS",
+  "code": "32747",
+  "name": "미래에셋증권(ELS)32747",
+  "coupon": 6.21,
+  "ladder": [
+   90,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004ER5.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004ER5",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004ES3": {
+  "isin": "KR6MD0004ES3",
+  "seq": 5716,
+  "type": "ELS",
+  "code": "32748",
+  "name": "미래에셋증권(ELS)32748",
+  "coupon": 5.31,
+  "ladder": [
+   75,
+   75,
+   75,
+   75,
+   70,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004ES3.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004ES3",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004ET1": {
+  "isin": "KR6MD0004ET1",
+  "seq": 5717,
+  "type": "ELS",
+  "code": "32749",
+  "name": "미래에셋증권(ELS)32749",
+  "coupon": 6.43,
+  "ladder": [
+   90,
+   85,
+   85,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004ET1.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004ET1",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EV7": {
+  "isin": "KR6MD0004EV7",
+  "seq": 5719,
+  "type": "ELS",
+  "code": "32754",
+  "name": "미래에셋증권(ELS)32754",
+  "coupon": 7.3,
+  "ladder": [
+   85,
+   85,
+   80,
+   75,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-02",
+  "ref_date": "2023-04-28",
+  "evals": [
+   [
+    1,
+    "2023-10-27"
+   ],
+   [
+    2,
+    "2024-04-26"
+   ],
+   [
+    3,
+    "2024-10-28"
+   ],
+   [
+    4,
+    "2025-04-28"
+   ],
+   [
+    5,
+    "2025-10-28"
+   ],
+   [
+    6,
+    "2026-04-28"
+   ]
+  ],
+  "mat_eval": "2026-04-28",
+  "mat_pay": "2026-04-30",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EV7.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EV7",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EW5": {
+  "isin": "KR6MD0004EW5",
+  "seq": 5720,
+  "type": "ELS",
+  "code": "33619",
+  "name": "미래에셋증권(ELS)33619",
+  "coupon": 6.1,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-04-27",
+  "ref_date": "2023-04-27",
+  "evals": [
+   [
+    1,
+    "2023-10-24"
+   ],
+   [
+    2,
+    "2024-04-23"
+   ],
+   [
+    3,
+    "2024-10-22"
+   ],
+   [
+    4,
+    "2025-04-22"
+   ],
+   [
+    5,
+    "2025-10-22"
+   ],
+   [
+    6,
+    "2026-04-22"
+   ]
+  ],
+  "mat_eval": "2026-04-22",
+  "mat_pay": "2026-04-27",
+  "ki": {
+   "KOSPI200": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.10%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.10%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.10%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.10%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 6.10%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 6.10%(3\n년 만기시 18.30%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 6.10%(3년 만기시 18.30%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EW5.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EW5",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EX3": {
+  "isin": "KR6MD0004EX3",
+  "seq": 5721,
+  "type": "ELS",
+  "code": "33620",
+  "name": "미래에셋증권(ELS)33620",
+  "coupon": 6.5,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   80,
+   80
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-04-27",
+  "ref_date": "2023-04-27",
+  "evals": [
+   [
+    1,
+    "2023-10-27"
+   ],
+   [
+    2,
+    "2024-04-29"
+   ],
+   [
+    3,
+    "2024-10-28"
+   ],
+   [
+    4,
+    "2025-04-28"
+   ],
+   [
+    5,
+    "2025-10-27"
+   ],
+   [
+    6,
+    "2026-04-27"
+   ]
+  ],
+  "mat_eval": "2026-04-27",
+  "mat_pay": "2026-04-30",
+  "ki": {
+   "EuroStoxx50": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.50%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.50%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.50%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 6.50%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 6.50%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 6.50%(3\n년 만기시 19.50%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 6.50%(3년 만기시 19.50%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EX3.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EX3",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EY1": {
+  "isin": "KR6MD0004EY1",
+  "seq": 5722,
+  "type": "ELS",
+  "code": "33621",
+  "name": "미래에셋증권(ELS)33621",
+  "coupon": 7.0,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-04-27",
+  "ref_date": "2023-04-27",
+  "evals": [
+   [
+    1,
+    "2023-10-24"
+   ],
+   [
+    2,
+    "2024-04-23"
+   ],
+   [
+    3,
+    "2024-10-22"
+   ],
+   [
+    4,
+    "2025-04-22"
+   ],
+   [
+    5,
+    "2025-10-22"
+   ],
+   [
+    6,
+    "2026-04-22"
+   ]
+  ],
+  "mat_eval": "2026-04-22",
+  "mat_pay": "2026-04-27",
+  "ki": {
+   "EuroStoxx50": 45.0,
+   "KOSPI200": 45.0,
+   "S&P500": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 7.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 7.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.00%(3\n년 만기시 21.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.00%(3년 만기시 21.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EY1.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EY1",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004EZ8": {
+  "isin": "KR6MD0004EZ8",
+  "seq": 5723,
+  "type": "ELS",
+  "code": "33622",
+  "name": "미래에셋증권(ELS)33622",
+  "coupon": 7.5,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-04-27",
+  "ref_date": "2023-04-27",
+  "evals": [
+   [
+    1,
+    "2023-10-24"
+   ],
+   [
+    2,
+    "2024-04-23"
+   ],
+   [
+    3,
+    "2024-10-22"
+   ],
+   [
+    4,
+    "2025-04-22"
+   ],
+   [
+    5,
+    "2025-10-22"
+   ],
+   [
+    6,
+    "2026-04-22"
+   ]
+  ],
+  "mat_eval": "2026-04-22",
+  "mat_pay": "2026-04-27",
+  "ki": {
+   "Nikkei225": 50.0,
+   "EuroStoxx50": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 7.50%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 7.50%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.50%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.50%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.50%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.50%(3\n년 만기시 22.50%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.50%(3년 만기시 22.50%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004EZ8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004EZ8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004F03": {
+  "isin": "KR6MD0004F03",
+  "seq": 5724,
+  "type": "ELS",
+  "code": "33623",
+  "name": "미래에셋증권(ELS)33623",
+  "coupon": 7.0,
+  "ladder": [
+   88,
+   88,
+   88,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-04-27",
+  "ref_date": "2023-04-27",
+  "evals": [
+   [
+    1,
+    "2023-10-24"
+   ],
+   [
+    2,
+    "2024-04-23"
+   ],
+   [
+    3,
+    "2024-10-22"
+   ],
+   [
+    4,
+    "2025-04-22"
+   ],
+   [
+    5,
+    "2025-10-22"
+   ],
+   [
+    6,
+    "2026-04-22"
+   ]
+  ],
+  "mat_eval": "2026-04-22",
+  "mat_pay": "2026-04-27",
+  "ki": {
+   "Nikkei225": 45.0,
+   "EuroStoxx50": 45.0,
+   "S&P500": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 88% \n이상일 경우 : 연 7.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 88% \n이상일 경우 : 연 7.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 88% \n이상일 경우 : 연 7.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.00%(3\n년 만기시 21.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.00%(3년 만기시 21.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004F03.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004F03",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004F11": {
+  "isin": "KR6MD0004F11",
+  "seq": 5725,
+  "type": "ELS",
+  "code": "33624",
+  "name": "미래에셋증권(ELS)33624",
+  "coupon": 7.3,
+  "ladder": [
+   80,
+   80,
+   80,
+   80,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-04-27",
+  "ref_date": "2023-04-27",
+  "evals": [
+   [
+    1,
+    "2023-10-27"
+   ],
+   [
+    2,
+    "2024-04-26"
+   ],
+   [
+    3,
+    "2024-10-25"
+   ],
+   [
+    4,
+    "2025-04-25"
+   ],
+   [
+    5,
+    "2025-10-27"
+   ],
+   [
+    6,
+    "2026-04-27"
+   ]
+  ],
+  "mat_eval": "2026-04-27",
+  "mat_pay": "2026-04-30",
+  "ki": {
+   "EuroStoxx50": 45.0,
+   "HSCEI": 45.0,
+   "S&P500": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.30%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.30%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.30%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.30%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.30%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.30%(3\n년 만기시 21.90%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.30%(3년 만기시 21.90%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004F11.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004F11",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004F29": {
+  "isin": "KR6MD0004F29",
+  "seq": 5726,
+  "type": "ELS",
+  "code": "33625",
+  "name": "미래에셋증권(ELS)33625",
+  "coupon": 8.5,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   80,
+   80
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-04-27",
+  "ref_date": "2023-04-27",
+  "evals": [
+   [
+    1,
+    "2023-10-24"
+   ],
+   [
+    2,
+    "2024-04-23"
+   ],
+   [
+    3,
+    "2024-10-22"
+   ],
+   [
+    4,
+    "2025-04-22"
+   ],
+   [
+    5,
+    "2025-10-22"
+   ],
+   [
+    6,
+    "2026-04-22"
+   ]
+  ],
+  "mat_eval": "2026-04-22",
+  "mat_pay": "2026-04-27",
+  "ki": {
+   "EuroStoxx50": 50.0,
+   "HSCEI": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 8.50%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 8.50%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 8.50%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 8.50%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 8.50%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 8.50%(3\n년 만기시 25.50%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 8.50%(3년 만기시 25.50%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004F29.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004F29",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004F37": {
+  "isin": "KR6MD0004F37",
+  "seq": 5727,
+  "type": "ELS",
+  "code": "33626",
+  "name": "미래에셋증권(ELS)33626",
+  "coupon": 9.0,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-04-27",
+  "ref_date": "2023-04-27",
+  "evals": [
+   [
+    1,
+    "2023-10-24"
+   ],
+   [
+    2,
+    "2024-04-23"
+   ],
+   [
+    3,
+    "2024-10-22"
+   ],
+   [
+    4,
+    "2025-04-22"
+   ],
+   [
+    5,
+    "2025-10-22"
+   ],
+   [
+    6,
+    "2026-04-22"
+   ]
+  ],
+  "mat_eval": "2026-04-22",
+  "mat_pay": "2026-04-27",
+  "ki": {
+   "EuroStoxx50": 50.0,
+   "HSCEI": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 9.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 9.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 9.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 9.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 9.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 9.00%(3\n년 만기시 27.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 9.00%(3년 만기시 27.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004F37.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004F37",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004F45": {
+  "isin": "KR6MD0004F45",
+  "seq": 5728,
+  "type": "ELS",
+  "code": "33627",
+  "name": "미래에셋증권(ELS)33627",
+  "coupon": 12.0,
+  "ladder": [
+   85,
+   85,
+   85,
+   85,
+   80,
+   80,
+   80,
+   80,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 3.0,
+  "issue_date": "2023-04-27",
+  "ref_date": "2023-04-27",
+  "evals": [
+   [
+    1,
+    "2023-07-28"
+   ],
+   [
+    2,
+    "2023-10-24"
+   ],
+   [
+    3,
+    "2024-01-23"
+   ],
+   [
+    4,
+    "2024-04-23"
+   ],
+   [
+    5,
+    "2024-07-23"
+   ],
+   [
+    6,
+    "2024-10-22"
+   ],
+   [
+    7,
+    "2025-01-22"
+   ],
+   [
+    8,
+    "2025-04-22"
+   ],
+   [
+    9,
+    "2025-07-22"
+   ],
+   [
+    10,
+    "2025-10-22"
+   ],
+   [
+    11,
+    "2026-01-22"
+   ],
+   [
+    12,
+    "2026-04-22"
+   ]
+  ],
+  "mat_eval": "2026-04-22",
+  "mat_pay": "2026-04-30",
+  "ki": {
+   "S&P500": 40.0,
+   "AMD": 40.0
+  },
+  "no_ki": false,
+  "assets": [
+   "S&P500",
+   "AMD"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 12.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 12.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 12.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 12.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n⑥ 모든 기초자산의 6\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n⑦ 모든 기초자산의 7\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n⑧ 모든 기초자산의 8\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n⑨ 모든 기초자산의 9\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n⑩ 모든 기초자산의 10\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n⑪ 모든 기초자산의 11\n번째 자동조기상환평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 12.00%\n<\n만기상환>\n⑫ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 70% \n이상일 경우 : 연 12.00%(3\n년 만기시 36.00%)\n⑬ 위 ⑫\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 40% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 12.00%(3년 만기시 36.00%)\n⑭ 위 ⑫\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 40% \n미만(종가기준)으로 하락한 적이 있는 경우 : 실물인도대상자산으로 주식지급[주식 실물인도 수량 = (액면금액Ⅹ만기평가가격/최초기준가격)/전환기준환율/만기평가가격], 1주 미만은 현금지급 (원금손실 발생, 100%≤손실률<0%)\n* \n기초자산 하락률 : [(\n최초기준가격 - \n만기평가가격) / \n최초기준가격]\n* \n실물인도대상자산 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산(만기손실상환시 기준종목이 지수일 경우 현금결제, 종목(주식)일 경우 실물인도대상자산으로 주식지급)\n* \n전환기준환율 : 만기평가일 당일 서울외국환중개㈜ 홈페이지(www.smbs.biz)\n에 오후 3\n시30\n분경 고시되는 종가 고시환율(한국의 공휴일 및 토,일요일 제외)\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004F45.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004F45",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004F52": {
+  "isin": "KR6MD0004F52",
+  "seq": 5729,
+  "type": "ELS",
+  "code": "33628",
+  "name": "미래에셋증권(ELS)33628",
+  "coupon": 15.1,
+  "ladder": [
+   85,
+   85,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-04-27",
+  "ref_date": "2023-04-27",
+  "evals": [
+   [
+    1,
+    "2023-10-24"
+   ],
+   [
+    2,
+    "2024-04-23"
+   ],
+   [
+    3,
+    "2024-10-22"
+   ],
+   [
+    4,
+    "2025-04-22"
+   ],
+   [
+    5,
+    "2025-10-22"
+   ],
+   [
+    6,
+    "2026-04-22"
+   ]
+  ],
+  "mat_eval": "2026-04-22",
+  "mat_pay": "2026-04-30",
+  "ki": {
+   "아마존": 35.0,
+   "AMD": 35.0
+  },
+  "no_ki": false,
+  "assets": [
+   "아마존",
+   "AMD"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 15.10%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 15.10%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 15.10%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 15.10%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 15.10%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 15.10%(3\n년 만기시 45.30%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 35% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 15.10%(3년 만기시 45.30%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 35% \n미만(종가기준)으로 하락한 적이 있는 경우 : 실물인도대상자산으로 주식지급[주식 실물인도 수량 = (액면금액Ⅹ만기평가가격/최초기준가격)/전환기준환율/만기평가가격], 1주 미만은 현금지급 (원금손실 발생, 100%≤손실률<0%)\n* \n기초자산 하락률 : [(\n최초기준가격 - \n만기평가가격) / \n최초기준가격]\n* \n실물인도대상자산 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n전환기준환율 : 만기평가일 당일 서울외국환중개㈜ 홈페이지(www.smbs.biz)\n에 오후 3\n시30\n분경 고시되는 종가 고시환율(한국의 공휴일 및 토,일요일 제외)\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004F52.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004F52",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FC4": {
+  "isin": "KR6MD0004FC4",
+  "seq": 5736,
+  "type": "DLS",
+  "code": "5762",
+  "name": "미래에셋증권(DLS)5762",
+  "coupon": 8.01,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-05-08",
+  "ref_date": "2023-05-08",
+  "evals": [
+   [
+    1,
+    "2023-08-09"
+   ],
+   [
+    2,
+    "2023-09-01"
+   ],
+   [
+    3,
+    "2023-10-02"
+   ],
+   [
+    4,
+    "2023-11-02"
+   ],
+   [
+    5,
+    "2023-12-04"
+   ],
+   [
+    6,
+    "2024-01-02"
+   ],
+   [
+    7,
+    "2024-02-02"
+   ],
+   [
+    8,
+    "2024-03-04"
+   ],
+   [
+    9,
+    "2024-04-02"
+   ],
+   [
+    10,
+    "2024-04-30"
+   ],
+   [
+    11,
+    "2024-06-03"
+   ],
+   [
+    12,
+    "2024-07-01"
+   ],
+   [
+    13,
+    "2024-08-02"
+   ],
+   [
+    14,
+    "2024-09-03"
+   ],
+   [
+    15,
+    "2024-10-01"
+   ],
+   [
+    16,
+    "2024-11-04"
+   ]
+  ],
+  "mat_eval": "2024-11-04",
+  "mat_pay": "2024-11-07",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "USD(MAR)"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑥ 모든 기초자산의 6\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑦ 모든 기초자산의 7\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑧ 모든 기초자산의 8\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑨ 모든 기초자산의 9\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑩ 모든 기초자산의 10\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑪ 모든 기초자산의 11\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑫ 모든 기초자산의 12\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑬ 모든 기초자산의 13\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑭ 모든 기초자산의 14\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑮ 모든 기초자산의 15\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n<\n만기상환>\n½ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⅓ 위 ½\n의 요건을 충족하지 못하였고, \n최종평가일에 모든 기초자산 중 어느 하나라도 각 최초기준가격의 100% \n미만(종가기준)인 경우 : 원금 99% 부분 지급, -1% 만큼 원금손실 발생(최대 원금손실 -1%)\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FC4.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FC4",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FD2": {
+  "isin": "KR6MD0004FD2",
+  "seq": 5737,
+  "type": "ELS",
+  "code": "32688",
+  "name": "미래에셋증권(ELS)32688",
+  "coupon": 3.6,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FD2.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FD2",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FE0": {
+  "isin": "KR6MD0004FE0",
+  "seq": 5738,
+  "type": "ELS",
+  "code": "33599",
+  "name": "미래에셋증권(ELS)33599",
+  "coupon": 18.3,
+  "ladder": null,
+  "mat_years": 0.75,
+  "period_months": 9.0,
+  "issue_date": "2023-04-18",
+  "ref_date": "2023-04-18",
+  "evals": [
+   [
+    1,
+    "2024-01-18"
+   ]
+  ],
+  "mat_eval": "2024-01-18",
+  "mat_pay": "2024-01-26",
+  "ki": {
+   "알파벳 A": 60.0,
+   "아마존": 60.0,
+   "엔비디아": 60.0
+  },
+  "no_ki": false,
+  "assets": [
+   "알파벳 A",
+   "아마존",
+   "엔비디아"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FE0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FE0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FF7": {
+  "isin": "KR6MD0004FF7",
+  "seq": 5739,
+  "type": "ELS",
+  "code": "33635",
+  "name": "미래에셋증권(ELS)33635",
+  "coupon": 18.3,
+  "ladder": null,
+  "mat_years": 0.75,
+  "period_months": 9.0,
+  "issue_date": "2023-04-18",
+  "ref_date": "2023-04-18",
+  "evals": [
+   [
+    1,
+    "2024-01-18"
+   ]
+  ],
+  "mat_eval": "2024-01-18",
+  "mat_pay": "2024-01-23",
+  "ki": {
+   "알파벳 A": 60.0,
+   "아마존": 60.0,
+   "엔비디아": 60.0
+  },
+  "no_ki": false,
+  "assets": [
+   "알파벳 A",
+   "아마존",
+   "엔비디아"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FF7.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FF7",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FG5": {
+  "isin": "KR6MD0004FG5",
+  "seq": 5740,
+  "type": "DLB",
+  "code": "1460",
+  "name": "미래에셋증권(DLB)1460",
+  "coupon": 3.95,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-04-21",
+  "ref_date": "2023-04-21",
+  "evals": [
+   [
+    1,
+    "2024-04-19"
+   ]
+  ],
+  "mat_eval": "2024-04-19",
+  "mat_pay": "2024-04-19",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KRW KTB 3m",
+   "KRW CD91"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FG5.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FG5",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FH3": {
+  "isin": "KR6MD0004FH3",
+  "seq": 5741,
+  "type": "ELB",
+  "code": "3151",
+  "name": "미래에셋증권(ELB)3151",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-04-21",
+  "ref_date": "2023-04-21",
+  "evals": [
+   [
+    1,
+    "2024-04-17"
+   ]
+  ],
+  "mat_eval": "2024-04-17",
+  "mat_pay": "2024-04-19",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FH3.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FH3",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FJ9": {
+  "isin": "KR6MD0004FJ9",
+  "seq": 5743,
+  "type": "ELS",
+  "code": "32712",
+  "name": "미래에셋증권(ELS)32712",
+  "coupon": 6.3,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FJ9.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FJ9",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FK7": {
+  "isin": "KR6MD0004FK7",
+  "seq": 5744,
+  "type": "ELS",
+  "code": "32755",
+  "name": "미래에셋증권(ELS)32755",
+  "coupon": 6.3,
+  "ladder": [
+   95,
+   85,
+   85,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FK7.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FK7",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FL5": {
+  "isin": "KR6MD0004FL5",
+  "seq": 5745,
+  "type": "ELS",
+  "code": "32759",
+  "name": "미래에셋증권(ELS)32759",
+  "coupon": 6.01,
+  "ladder": [
+   85,
+   75,
+   75,
+   75,
+   70,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "HSCEI",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FL5.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FL5",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FM3": {
+  "isin": "KR6MD0004FM3",
+  "seq": 5746,
+  "type": "ELS",
+  "code": "32760",
+  "name": "미래에셋증권(ELS)32760",
+  "coupon": 6.01,
+  "ladder": [
+   90,
+   85,
+   85,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FM3.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FM3",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FN1": {
+  "isin": "KR6MD0004FN1",
+  "seq": 5747,
+  "type": "ELS",
+  "code": "32709",
+  "name": "미래에셋증권(ELS)32709",
+  "coupon": 5.5,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FN1.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FN1",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FP6": {
+  "isin": "KR6MD0004FP6",
+  "seq": 5749,
+  "type": "ELS",
+  "code": "32708",
+  "name": "미래에셋증권(ELS)32708",
+  "coupon": 5.3,
+  "ladder": [
+   85,
+   80,
+   80,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FP6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FP6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FQ4": {
+  "isin": "KR6MD0004FQ4",
+  "seq": 5750,
+  "type": "ELS",
+  "code": "32713",
+  "name": "미래에셋증권(ELS)32713",
+  "coupon": 6.7,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FQ4.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FQ4",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FR2": {
+  "isin": "KR6MD0004FR2",
+  "seq": 5751,
+  "type": "ELS",
+  "code": "32717",
+  "name": "미래에셋증권(ELS)32717",
+  "coupon": 8.8,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FR2.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FR2",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FS0": {
+  "isin": "KR6MD0004FS0",
+  "seq": 5752,
+  "type": "ELS",
+  "code": "32720",
+  "name": "미래에셋증권(ELS)32720",
+  "coupon": 7.6,
+  "ladder": [
+   90,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FS0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FS0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FT8": {
+  "isin": "KR6MD0004FT8",
+  "seq": 5753,
+  "type": "ELS",
+  "code": "32710",
+  "name": "미래에셋증권(ELS)32710",
+  "coupon": 6.2,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FT8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FT8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FV4": {
+  "isin": "KR6MD0004FV4",
+  "seq": 5755,
+  "type": "ELS",
+  "code": "32711",
+  "name": "미래에셋증권(ELS)32711",
+  "coupon": 5.5,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FV4.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FV4",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FW2": {
+  "isin": "KR6MD0004FW2",
+  "seq": 5756,
+  "type": "ELS",
+  "code": "33598",
+  "name": "미래에셋증권(ELS)33598",
+  "coupon": 18.1,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   80
+  ],
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-04-27",
+  "ref_date": "2023-04-27",
+  "evals": [
+   [
+    1,
+    "2023-07-31"
+   ],
+   [
+    2,
+    "2023-10-31"
+   ],
+   [
+    3,
+    "2024-01-30"
+   ],
+   [
+    4,
+    "2024-04-30"
+   ],
+   [
+    5,
+    "2024-07-30"
+   ],
+   [
+    6,
+    "2024-10-29"
+   ]
+  ],
+  "mat_eval": "2024-10-29",
+  "mat_pay": "2024-11-06",
+  "ki": {
+   "알파벳 A": 50.0,
+   "아마존": 50.0,
+   "PayPal Holdings Inc": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "알파벳 A",
+   "아마존",
+   "PayPal Holdings Inc"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FW2.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FW2",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FX0": {
+  "isin": "KR6MD0004FX0",
+  "seq": 5757,
+  "type": "ELS",
+  "code": "32768",
+  "name": "미래에셋증권(ELS)32768",
+  "coupon": 7.5,
+  "ladder": [
+   90,
+   85,
+   85,
+   80,
+   75,
+   60
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "S&P500",
+   "CSI300"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FX0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FX0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FY8": {
+  "isin": "KR6MD0004FY8",
+  "seq": 5758,
+  "type": "ELB",
+  "code": "3152",
+  "name": "미래에셋증권(ELB)3152",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-04-24",
+  "ref_date": "2023-04-24",
+  "evals": [
+   [
+    1,
+    "2023-11-28"
+   ]
+  ],
+  "mat_eval": "2023-11-28",
+  "mat_pay": "2023-11-30",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FY8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FY8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004FZ5": {
+  "isin": "KR6MD0004FZ5",
+  "seq": 5759,
+  "type": "ELS",
+  "code": "33618",
+  "name": "미래에셋증권(ELS)33618",
+  "coupon": 10.0,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   80,
+   80
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-04",
+  "ref_date": "2023-05-04",
+  "evals": [
+   [
+    1,
+    "2023-10-31"
+   ],
+   [
+    2,
+    "2024-04-29"
+   ],
+   [
+    3,
+    "2024-10-30"
+   ],
+   [
+    4,
+    "2025-04-28"
+   ],
+   [
+    5,
+    "2025-10-30"
+   ],
+   [
+    6,
+    "2026-04-28"
+   ]
+  ],
+  "mat_eval": "2026-04-28",
+  "mat_pay": "2026-05-04",
+  "ki": {
+   "EuroStoxx50": 50.0,
+   "HSCEI": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<조기상환>\n① 모든 기초자산의 1번째 자동조기상환평가일 종가가 각 최초기준가격의 85% 이상일 경우 : 연 10.00%\n② 모든 기초자산의 2번째 자동조기상환평가일 종가가 각 최초기준가격의 85% 이상일 경우 : 연 10.00%\n③ 모든 기초자산의 3번째 자동조기상환평가일 종가가 각 최초기준가격의 85% 이상일 경우 : 연 10.00%\n④ 모든 기초자산의 4번째 자동조기상환평가일 종가가 각 최초기준가격의 80% 이상일 경우 : 연 10.00%\n⑤ 모든 기초자산의 5번째 자동조기상환평가일 종가가 각 최초기준가격의 80% 이상일 경우 : 연 10.00%\n<만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 80% 이상일 경우 : 연 10.00%(3년 만기시 30.00%)\n⑦ 위 ⑥의 요건을 충족하지 못하였고, 최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% 미만(종가기준)으로 하락한 적이 없는 경우 : 연 10.00%(3년 만기시 30.00%)\n⑧ 위 ⑥의 요건을 충족하지 못하였고, 최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% 미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* 기준종목 : 모든 기초자산 중 [만기평가가격/최초기준가격]의 비율이 가장 낮은 기초자산\n* 만기평가가격 : 최종평가일의 종가(해당거래소 기준)\n* 최초기준가격 : 최초기준가격평가일 각 기초자산 종가(해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004FZ5.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004FZ5",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004G02": {
+  "isin": "KR6MD0004G02",
+  "seq": 5760,
+  "type": "ELS",
+  "code": "33636",
+  "name": "미래에셋증권(ELS)33636",
+  "coupon": 6.0,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-08",
+  "ref_date": "2023-05-08",
+  "evals": [
+   [
+    1,
+    "2023-11-08"
+   ],
+   [
+    2,
+    "2024-05-08"
+   ],
+   [
+    3,
+    "2024-11-08"
+   ],
+   [
+    4,
+    "2025-05-08"
+   ],
+   [
+    5,
+    "2025-11-10"
+   ],
+   [
+    6,
+    "2026-05-08"
+   ]
+  ],
+  "mat_eval": "2026-05-08",
+  "mat_pay": "2026-05-13",
+  "ki": {
+   "KOSPI200": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 6.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 6.00%(3\n년 만기시 18.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 6.00%(3년 만기시 18.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004G02.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004G02",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004G10": {
+  "isin": "KR6MD0004G10",
+  "seq": 5761,
+  "type": "ELS",
+  "code": "33637",
+  "name": "미래에셋증권(ELS)33637",
+  "coupon": 6.6,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-08",
+  "ref_date": "2023-05-08",
+  "evals": [
+   [
+    1,
+    "2023-11-08"
+   ],
+   [
+    2,
+    "2024-05-08"
+   ],
+   [
+    3,
+    "2024-11-08"
+   ],
+   [
+    4,
+    "2025-05-08"
+   ],
+   [
+    5,
+    "2025-11-07"
+   ],
+   [
+    6,
+    "2026-05-08"
+   ]
+  ],
+  "mat_eval": "2026-05-08",
+  "mat_pay": "2026-05-13",
+  "ki": {
+   "EuroStoxx50": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.60%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.60%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.60%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.60%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 6.60%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 6.60%(3\n년 만기시 19.80%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 6.60%(3년 만기시 19.80%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004G10.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004G10",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004G28": {
+  "isin": "KR6MD0004G28",
+  "seq": 5762,
+  "type": "ELS",
+  "code": "33638",
+  "name": "미래에셋증권(ELS)33638",
+  "coupon": 7.8,
+  "ladder": [
+   92,
+   92,
+   85,
+   85,
+   82,
+   80
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-08",
+  "ref_date": "2023-05-08",
+  "evals": [
+   [
+    1,
+    "2023-11-02"
+   ],
+   [
+    2,
+    "2024-05-02"
+   ],
+   [
+    3,
+    "2024-11-05"
+   ],
+   [
+    4,
+    "2025-04-30"
+   ],
+   [
+    5,
+    "2025-11-04"
+   ],
+   [
+    6,
+    "2026-04-30"
+   ]
+  ],
+  "mat_eval": "2026-04-30",
+  "mat_pay": "2026-05-07",
+  "ki": {
+   "Nikkei225": 50.0,
+   "EuroStoxx50": 50.0,
+   "KOSPI200": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "KOSPI200"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 92% \n이상일 경우 : 연 7.80%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 92% \n이상일 경우 : 연 7.80%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.80%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.80%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 82% \n이상일 경우 : 연 7.80%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.80%(3\n년 만기시 23.40%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.80%(3년 만기시 23.40%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004G28.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004G28",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004G36": {
+  "isin": "KR6MD0004G36",
+  "seq": 5763,
+  "type": "ELS",
+  "code": "33639",
+  "name": "미래에셋증권(ELS)33639",
+  "coupon": 6.6,
+  "ladder": [
+   90,
+   90,
+   90,
+   85,
+   80,
+   80
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-08",
+  "ref_date": "2023-05-08",
+  "evals": [
+   [
+    1,
+    "2023-11-02"
+   ],
+   [
+    2,
+    "2024-05-02"
+   ],
+   [
+    3,
+    "2024-11-05"
+   ],
+   [
+    4,
+    "2025-04-30"
+   ],
+   [
+    5,
+    "2025-11-04"
+   ],
+   [
+    6,
+    "2026-04-30"
+   ]
+  ],
+  "mat_eval": "2026-04-30",
+  "mat_pay": "2026-05-07",
+  "ki": {
+   "EuroStoxx50": 55.0,
+   "KOSPI200": 55.0,
+   "S&P500": 55.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": true,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n월수익지급>\n① 모든 기초자산의 매월 수익평가일 종가가 각 최초기준가격의 55% \n이상일 경우 : 월 0.5500%(\n총 36\n회, 최대 연 6.60%)\n② 모든 기초자산의 매월 수익평가일 종가 중 어느 하나라도 각 최초기준가격의 55% \n미만일 경우 : 월수익 지급 없음\n<\n조기상환>\n③ 모든 기초자산의 6\n개월후 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 원금지급\n④ 모든 기초자산의 12\n개월후 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 원금지급\n⑤ 모든 기초자산의 18\n개월후 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 원금지급\n⑥ 모든 기초자산의 24\n개월후 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 원금지급\n⑦ 모든 기초자산의 30\n개월후 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 원금지급\n<\n만기상환>\n⑧ 모든 기초자산의 36\n개월후 최종평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 원금지급\n⑨ 위 ⑧\n의 요건을 충족하지 못하였고, 36\n개월후 최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 55% \n미만(종가기준)으로 하락한 적이 없는 경우 : 원금지급\n⑩ 위 ⑧\n의 요건을 충족하지 못하였고, 36\n개월후 최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 55% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004G36.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004G36",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004G44": {
+  "isin": "KR6MD0004G44",
+  "seq": 5764,
+  "type": "ELS",
+  "code": "33640",
+  "name": "미래에셋증권(ELS)33640",
+  "coupon": 7.0,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-08",
+  "ref_date": "2023-05-08",
+  "evals": [
+   [
+    1,
+    "2023-11-02"
+   ],
+   [
+    2,
+    "2024-05-02"
+   ],
+   [
+    3,
+    "2024-11-05"
+   ],
+   [
+    4,
+    "2025-04-30"
+   ],
+   [
+    5,
+    "2025-11-04"
+   ],
+   [
+    6,
+    "2026-04-30"
+   ]
+  ],
+  "mat_eval": "2026-04-30",
+  "mat_pay": "2026-05-07",
+  "ki": {
+   "Nikkei225": 45.0,
+   "EuroStoxx50": 45.0,
+   "S&P500": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 7.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 7.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.00%(3\n년 만기시 21.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.00%(3년 만기시 21.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004G44.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004G44",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004G51": {
+  "isin": "KR6MD0004G51",
+  "seq": 5765,
+  "type": "ELS",
+  "code": "33641",
+  "name": "미래에셋증권(ELS)33641",
+  "coupon": 7.0,
+  "ladder": [
+   88,
+   88,
+   88,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-08",
+  "ref_date": "2023-05-08",
+  "evals": [
+   [
+    1,
+    "2023-11-02"
+   ],
+   [
+    2,
+    "2024-05-02"
+   ],
+   [
+    3,
+    "2024-11-05"
+   ],
+   [
+    4,
+    "2025-04-30"
+   ],
+   [
+    5,
+    "2025-11-04"
+   ],
+   [
+    6,
+    "2026-04-30"
+   ]
+  ],
+  "mat_eval": "2026-04-30",
+  "mat_pay": "2026-05-07",
+  "ki": {
+   "Nikkei225": 50.0,
+   "EuroStoxx50": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 88% \n이상일 경우 : 연 7.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 88% \n이상일 경우 : 연 7.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 88% \n이상일 경우 : 연 7.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.00%(3\n년 만기시 21.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.00%(3년 만기시 21.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004G51.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004G51",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004G69": {
+  "isin": "KR6MD0004G69",
+  "seq": 5766,
+  "type": "ELS",
+  "code": "33642",
+  "name": "미래에셋증권(ELS)33642",
+  "coupon": 8.0,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-08",
+  "ref_date": "2023-05-08",
+  "evals": [
+   [
+    1,
+    "2023-11-02"
+   ],
+   [
+    2,
+    "2024-05-02"
+   ],
+   [
+    3,
+    "2024-11-05"
+   ],
+   [
+    4,
+    "2025-04-30"
+   ],
+   [
+    5,
+    "2025-11-04"
+   ],
+   [
+    6,
+    "2026-04-30"
+   ]
+  ],
+  "mat_eval": "2026-04-30",
+  "mat_pay": "2026-05-07",
+  "ki": {
+   "EuroStoxx50": 45.0,
+   "HSCEI": 45.0,
+   "S&P500": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 8.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 8.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 8.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 8.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 8.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 8.00%(3\n년 만기시 24.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 8.00%(3년 만기시 24.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004G69.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004G69",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004G77": {
+  "isin": "KR6MD0004G77",
+  "seq": 5767,
+  "type": "ELS",
+  "code": "33643",
+  "name": "미래에셋증권(ELS)33643",
+  "coupon": 7.5,
+  "ladder": [
+   88,
+   88,
+   88,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-08",
+  "ref_date": "2023-05-08",
+  "evals": [
+   [
+    1,
+    "2023-11-02"
+   ],
+   [
+    2,
+    "2024-05-02"
+   ],
+   [
+    3,
+    "2024-11-05"
+   ],
+   [
+    4,
+    "2025-04-30"
+   ],
+   [
+    5,
+    "2025-11-04"
+   ],
+   [
+    6,
+    "2026-04-30"
+   ]
+  ],
+  "mat_eval": "2026-04-30",
+  "mat_pay": "2026-05-07",
+  "ki": {
+   "EuroStoxx50": 40.0,
+   "HSCEI": 40.0,
+   "S&P500": 40.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 88% \n이상일 경우 : 연 7.50%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 88% \n이상일 경우 : 연 7.50%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 88% \n이상일 경우 : 연 7.50%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.50%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.50%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.50%(3\n년 만기시 22.50%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 40% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.50%(3년 만기시 22.50%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 40% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004G77.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004G77",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004G85": {
+  "isin": "KR6MD0004G85",
+  "seq": 5768,
+  "type": "ELS",
+  "code": "33644",
+  "name": "미래에셋증권(ELS)33644",
+  "coupon": 7.0,
+  "ladder": [
+   80,
+   80,
+   80,
+   80,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-08",
+  "ref_date": "2023-05-08",
+  "evals": [
+   [
+    1,
+    "2023-11-03"
+   ],
+   [
+    2,
+    "2024-05-02"
+   ],
+   [
+    3,
+    "2024-11-05"
+   ],
+   [
+    4,
+    "2025-04-30"
+   ],
+   [
+    5,
+    "2025-11-04"
+   ],
+   [
+    6,
+    "2026-05-04"
+   ]
+  ],
+  "mat_eval": "2026-05-04",
+  "mat_pay": "2026-05-08",
+  "ki": {
+   "EuroStoxx50": 50.0,
+   "HSCEI": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.00%(3\n년 만기시 21.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.00%(3년 만기시 21.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004G85.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004G85",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004G93": {
+  "isin": "KR6MD0004G93",
+  "seq": 5769,
+  "type": "ELS",
+  "code": "33645",
+  "name": "미래에셋증권(ELS)33645",
+  "coupon": 10.0,
+  "ladder": [
+   85,
+   85,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-08",
+  "ref_date": "2023-05-08",
+  "evals": [
+   [
+    1,
+    "2023-11-03"
+   ],
+   [
+    2,
+    "2024-05-02"
+   ],
+   [
+    3,
+    "2024-11-05"
+   ],
+   [
+    4,
+    "2025-04-30"
+   ],
+   [
+    5,
+    "2025-11-04"
+   ],
+   [
+    6,
+    "2026-05-04"
+   ]
+  ],
+  "mat_eval": "2026-05-04",
+  "mat_pay": "2026-05-13",
+  "ki": {
+   "아마존": 45.0,
+   "S&P500": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "아마존",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 10.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 10.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 10.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 10.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 10.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 10.00%(3\n년 만기시 30.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 10.00%(3년 만기시 30.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 있는 경우 : 실물인도대상자산으로 주식지급[주식 실물인도 수량 = (액면금액Ⅹ만기평가가격/최초기준가격)/전환기준환율/만기평가가격], 1주 미만은 현금지급 (원금손실 발생, 100%≤손실률<0%)\n* \n기초자산 하락률 : [(\n최초기준가격 - \n만기평가가격) / \n최초기준가격]\n* \n실물인도대상자산 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산(만기손실상환시 기준종목이 지수일 경우 현금결제, 종목(주식)일 경우 실물인도대상자산으로 주식지급)\n* \n전환기준환율 : 만기평가일 당일 서울외국환중개㈜ 홈페이지(www.smbs.biz)\n에 오후 3\n시30\n분경 고시되는 종가 고시환율(한국의 공휴일 및 토,일요일 제외)\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004G93.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004G93",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004GA6": {
+  "isin": "KR6MD0004GA6",
+  "seq": 5770,
+  "type": "ELS",
+  "code": "33646",
+  "name": "미래에셋증권(ELS)33646",
+  "coupon": 14.4,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-08",
+  "ref_date": "2023-05-08",
+  "evals": [
+   [
+    1,
+    "2023-11-03"
+   ],
+   [
+    2,
+    "2024-05-02"
+   ],
+   [
+    3,
+    "2024-11-05"
+   ],
+   [
+    4,
+    "2025-04-30"
+   ],
+   [
+    5,
+    "2025-11-04"
+   ],
+   [
+    6,
+    "2026-05-04"
+   ]
+  ],
+  "mat_eval": "2026-05-04",
+  "mat_pay": "2026-05-13",
+  "ki": {
+   "아마존": 40.0,
+   "엔비디아": 40.0
+  },
+  "no_ki": false,
+  "assets": [
+   "아마존",
+   "엔비디아"
+  ],
+  "lizard": true,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 14.40%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 14.40%\n②-A \n위②\n의 요건을 충족하지 못하였고, 2\n번째 자동조기상환평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 55% 미만(종가기준)으로 하락한 적이 없는 경우 : 리자드쿠폰(1.0배) : 14.4000%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 14.40%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 14.40%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 14.40%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 14.40%(3\n년 만기시 43.20%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 40% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 14.40%(3년 만기시 43.20%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 40% \n미만(종가기준)으로 하락한 적이 있는 경우 : 실물인도대상자산으로 주식지급[주식 실물인도 수량 = (액면금액Ⅹ만기평가가격/최초기준가격)/전환기준환율/만기평가가격], 1주 미만은 현금지급 (원금손실 발생, 100%≤손실률<0%)\n* \n기초자산 하락률 : [(\n최초기준가격 - \n만기평가가격) / \n최초기준가격]\n* \n실물인도대상자산 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n전환기준환율 : 만기평가일 당일 서울외국환중개㈜ 홈페이지(www.smbs.biz)\n에 오후 3\n시30\n분경 고시되는 종가 고시환율(한국의 공휴일 및 토,일요일 제외)\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004GA6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004GA6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004GH1": {
+  "isin": "KR6MD0004GH1",
+  "seq": 5777,
+  "type": "ELS",
+  "code": "32769",
+  "name": "미래에셋증권(ELS)32769",
+  "coupon": 8.22,
+  "ladder": [
+   85,
+   85,
+   80,
+   75,
+   75,
+   55
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-10",
+  "ref_date": "2023-05-09",
+  "evals": [
+   [
+    1,
+    "2023-11-09"
+   ],
+   [
+    2,
+    "2024-05-09"
+   ],
+   [
+    3,
+    "2024-11-08"
+   ],
+   [
+    4,
+    "2025-05-09"
+   ],
+   [
+    5,
+    "2025-11-07"
+   ],
+   [
+    6,
+    "2026-05-08"
+   ]
+  ],
+  "mat_eval": "2026-05-08",
+  "mat_pay": "2026-05-12",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "아마존",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004GH1.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004GH1",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004GQ2": {
+  "isin": "KR6MD0004GQ2",
+  "seq": 5786,
+  "type": "ELS",
+  "code": "32733",
+  "name": "미래에셋증권(ELS)32733",
+  "coupon": 5.7,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004GQ2.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004GQ2",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004GR0": {
+  "isin": "KR6MD0004GR0",
+  "seq": 5787,
+  "type": "ELB",
+  "code": "3153",
+  "name": "미래에셋증권(ELB)3153",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-04-28",
+  "ref_date": "2023-04-28",
+  "evals": [
+   [
+    1,
+    "2024-04-24"
+   ]
+  ],
+  "mat_eval": "2024-04-24",
+  "mat_pay": "2024-04-26",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004GR0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004GR0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004GS8": {
+  "isin": "KR6MD0004GS8",
+  "seq": 5788,
+  "type": "ELB",
+  "code": "3154",
+  "name": "미래에셋증권(ELB)3154",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-04-28",
+  "ref_date": "2023-04-28",
+  "evals": [
+   [
+    1,
+    "2024-12-24"
+   ]
+  ],
+  "mat_eval": "2024-12-24",
+  "mat_pay": "2024-12-27",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004GS8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004GS8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004GT6": {
+  "isin": "KR6MD0004GT6",
+  "seq": 5789,
+  "type": "ELB",
+  "code": "3155",
+  "name": "미래에셋증권(ELB)3155",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-04-28",
+  "ref_date": "2023-04-28",
+  "evals": [
+   [
+    1,
+    "2023-12-27"
+   ]
+  ],
+  "mat_eval": "2023-12-27",
+  "mat_pay": "2023-12-29",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004GT6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004GT6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004GV2": {
+  "isin": "KR6MD0004GV2",
+  "seq": 5791,
+  "type": "DLB",
+  "code": "1461",
+  "name": "미래에셋증권(DLB)1461",
+  "coupon": 3.95,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-04-28",
+  "ref_date": "2023-04-28",
+  "evals": [
+   [
+    1,
+    "2024-04-26"
+   ]
+  ],
+  "mat_eval": "2024-04-26",
+  "mat_pay": "2024-04-26",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KRW KTB 3m",
+   "KRW CD91"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004GV2.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004GV2",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004GW0": {
+  "isin": "KR6MD0004GW0",
+  "seq": 5792,
+  "type": "ELS",
+  "code": "32772",
+  "name": "미래에셋증권(ELS)32772",
+  "coupon": 4.8,
+  "ladder": [
+   80,
+   80,
+   80,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004GW0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004GW0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004GX8": {
+  "isin": "KR6MD0004GX8",
+  "seq": 5793,
+  "type": "ELS",
+  "code": "32778",
+  "name": "미래에셋증권(ELS)32778",
+  "coupon": 6.11,
+  "ladder": [
+   85,
+   75,
+   75,
+   75,
+   70,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "HSCEI",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004GX8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004GX8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004GY6": {
+  "isin": "KR6MD0004GY6",
+  "seq": 5794,
+  "type": "ELS",
+  "code": "32722",
+  "name": "미래에셋증권(ELS)32722",
+  "coupon": 5.7,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004GY6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004GY6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004GZ3": {
+  "isin": "KR6MD0004GZ3",
+  "seq": 5795,
+  "type": "ELS",
+  "code": "32732",
+  "name": "미래에셋증권(ELS)32732",
+  "coupon": 6.8,
+  "ladder": [
+   80,
+   80,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004GZ3.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004GZ3",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004H01": {
+  "isin": "KR6MD0004H01",
+  "seq": 5796,
+  "type": "ELS",
+  "code": "32731",
+  "name": "미래에셋증권(ELS)32731",
+  "coupon": 5.2,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004H01.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004H01",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004H19": {
+  "isin": "KR6MD0004H19",
+  "seq": 5797,
+  "type": "ELS",
+  "code": "32734",
+  "name": "미래에셋증권(ELS)32734",
+  "coupon": 6.3,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004H19.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004H19",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004H27": {
+  "isin": "KR6MD0004H27",
+  "seq": 5798,
+  "type": "ELS",
+  "code": "32735",
+  "name": "미래에셋증권(ELS)32735",
+  "coupon": 5.6,
+  "ladder": [
+   80,
+   80,
+   80,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004H27.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004H27",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004H35": {
+  "isin": "KR6MD0004H35",
+  "seq": 5799,
+  "type": "ELS",
+  "code": "32723",
+  "name": "미래에셋증권(ELS)32723",
+  "coupon": 5.0,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004H35.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004H35",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004H43": {
+  "isin": "KR6MD0004H43",
+  "seq": 5800,
+  "type": "ELS",
+  "code": "32724",
+  "name": "미래에셋증권(ELS)32724",
+  "coupon": 6.1,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004H43.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004H43",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004H50": {
+  "isin": "KR6MD0004H50",
+  "seq": 5801,
+  "type": "ELS",
+  "code": "32725",
+  "name": "미래에셋증권(ELS)32725",
+  "coupon": 5.6,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004H50.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004H50",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004H68": {
+  "isin": "KR6MD0004H68",
+  "seq": 5802,
+  "type": "ELS",
+  "code": "32730",
+  "name": "미래에셋증권(ELS)32730",
+  "coupon": 5.3,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004H68.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004H68",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004H76": {
+  "isin": "KR6MD0004H76",
+  "seq": 5803,
+  "type": "ELS",
+  "code": "32770",
+  "name": "미래에셋증권(ELS)32770",
+  "coupon": 5.0,
+  "ladder": [
+   78,
+   78,
+   78,
+   78,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004H76.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004H76",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004H84": {
+  "isin": "KR6MD0004H84",
+  "seq": 5804,
+  "type": "ELS",
+  "code": "32771",
+  "name": "미래에셋증권(ELS)32771",
+  "coupon": 5.2,
+  "ladder": [
+   80,
+   80,
+   75,
+   75,
+   70,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004H84.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004H84",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004H92": {
+  "isin": "KR6MD0004H92",
+  "seq": 5805,
+  "type": "ELS",
+  "code": "32782",
+  "name": "미래에셋증권(ELS)32782",
+  "coupon": 7.0,
+  "ladder": [
+   85,
+   85,
+   80,
+   75,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-15",
+  "ref_date": "2023-05-15",
+  "evals": [
+   [
+    1,
+    "2023-11-15"
+   ],
+   [
+    2,
+    "2024-05-14"
+   ],
+   [
+    3,
+    "2024-11-15"
+   ],
+   [
+    4,
+    "2025-05-15"
+   ],
+   [
+    5,
+    "2025-11-14"
+   ],
+   [
+    6,
+    "2026-05-15"
+   ]
+  ],
+  "mat_eval": "2026-05-15",
+  "mat_pay": "2026-05-19",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004H92.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004H92",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HA4": {
+  "isin": "KR6MD0004HA4",
+  "seq": 5806,
+  "type": "ELS",
+  "code": "32784",
+  "name": "미래에셋증권(ELS)32784",
+  "coupon": 7.32,
+  "ladder": [
+   90,
+   90,
+   90,
+   85,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-15",
+  "ref_date": "2023-05-15",
+  "evals": [
+   [
+    1,
+    "2023-11-15"
+   ],
+   [
+    2,
+    "2024-05-14"
+   ],
+   [
+    3,
+    "2024-11-15"
+   ],
+   [
+    4,
+    "2025-05-15"
+   ],
+   [
+    5,
+    "2025-11-14"
+   ],
+   [
+    6,
+    "2026-05-15"
+   ]
+  ],
+  "mat_eval": "2026-05-15",
+  "mat_pay": "2026-05-19",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HA4.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HA4",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HB2": {
+  "isin": "KR6MD0004HB2",
+  "seq": 5807,
+  "type": "ELS",
+  "code": "33653",
+  "name": "미래에셋증권(ELS)33653",
+  "coupon": 6.3,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-15",
+  "ref_date": "2023-05-15",
+  "evals": [
+   [
+    1,
+    "2023-11-10"
+   ],
+   [
+    2,
+    "2024-05-09"
+   ],
+   [
+    3,
+    "2024-11-12"
+   ],
+   [
+    4,
+    "2025-05-12"
+   ],
+   [
+    5,
+    "2025-11-11"
+   ],
+   [
+    6,
+    "2026-05-12"
+   ]
+  ],
+  "mat_eval": "2026-05-12",
+  "mat_pay": "2026-05-15",
+  "ki": {
+   "KOSPI200": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.30%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.30%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.30%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.30%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 6.30%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 6.30%(3\n년 만기시 18.90%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 6.30%(3년 만기시 18.90%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HB2.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HB2",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HC0": {
+  "isin": "KR6MD0004HC0",
+  "seq": 5808,
+  "type": "ELS",
+  "code": "33654",
+  "name": "미래에셋증권(ELS)33654",
+  "coupon": 7.0,
+  "ladder": [
+   90,
+   85,
+   85,
+   80,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-15",
+  "ref_date": "2023-05-15",
+  "evals": [
+   [
+    1,
+    "2023-11-10"
+   ],
+   [
+    2,
+    "2024-05-09"
+   ],
+   [
+    3,
+    "2024-11-12"
+   ],
+   [
+    4,
+    "2025-05-12"
+   ],
+   [
+    5,
+    "2025-11-11"
+   ],
+   [
+    6,
+    "2026-05-12"
+   ]
+  ],
+  "mat_eval": "2026-05-12",
+  "mat_pay": "2026-05-15",
+  "ki": {
+   "EuroStoxx50": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 7.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.00%(3\n년 만기시 21.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.00%(3년 만기시 21.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HC0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HC0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HD8": {
+  "isin": "KR6MD0004HD8",
+  "seq": 5809,
+  "type": "ELS",
+  "code": "33655",
+  "name": "미래에셋증권(ELS)33655",
+  "coupon": 6.0,
+  "ladder": [
+   90,
+   90,
+   85,
+   80,
+   75,
+   55
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-15",
+  "ref_date": "2023-05-15",
+  "evals": [
+   [
+    1,
+    "2023-11-10"
+   ],
+   [
+    2,
+    "2024-05-09"
+   ],
+   [
+    3,
+    "2024-11-12"
+   ],
+   [
+    4,
+    "2025-05-12"
+   ],
+   [
+    5,
+    "2025-11-11"
+   ],
+   [
+    6,
+    "2026-05-12"
+   ]
+  ],
+  "mat_eval": "2026-05-12",
+  "mat_pay": "2026-05-15",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 6.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 6.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 55% \n이상일 경우 : 연 6.00%(3\n년 만기시 18.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일에 모든 기초자산 중 어느 하나라도 각 최초기준가격의 55% \n미만(종가기준)인 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HD8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HD8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HE6": {
+  "isin": "KR6MD0004HE6",
+  "seq": 5810,
+  "type": "ELS",
+  "code": "33656",
+  "name": "미래에셋증권(ELS)33656",
+  "coupon": 7.0,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-15",
+  "ref_date": "2023-05-15",
+  "evals": [
+   [
+    1,
+    "2023-11-10"
+   ],
+   [
+    2,
+    "2024-05-09"
+   ],
+   [
+    3,
+    "2024-11-12"
+   ],
+   [
+    4,
+    "2025-05-12"
+   ],
+   [
+    5,
+    "2025-11-11"
+   ],
+   [
+    6,
+    "2026-05-12"
+   ]
+  ],
+  "mat_eval": "2026-05-12",
+  "mat_pay": "2026-05-15",
+  "ki": {
+   "EuroStoxx50": 45.0,
+   "KOSPI200": 45.0,
+   "S&P500": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 7.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 7.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.00%(3\n년 만기시 21.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.00%(3년 만기시 21.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HE6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HE6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HF3": {
+  "isin": "KR6MD0004HF3",
+  "seq": 5811,
+  "type": "ELS",
+  "code": "33657",
+  "name": "미래에셋증권(ELS)33657",
+  "coupon": 7.0,
+  "ladder": [
+   88,
+   88,
+   88,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-15",
+  "ref_date": "2023-05-15",
+  "evals": [
+   [
+    1,
+    "2023-11-10"
+   ],
+   [
+    2,
+    "2024-05-09"
+   ],
+   [
+    3,
+    "2024-11-12"
+   ],
+   [
+    4,
+    "2025-05-12"
+   ],
+   [
+    5,
+    "2025-11-11"
+   ],
+   [
+    6,
+    "2026-05-12"
+   ]
+  ],
+  "mat_eval": "2026-05-12",
+  "mat_pay": "2026-05-15",
+  "ki": {
+   "Nikkei225": 45.0,
+   "EuroStoxx50": 45.0,
+   "S&P500": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 88% \n이상일 경우 : 연 7.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 88% \n이상일 경우 : 연 7.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 88% \n이상일 경우 : 연 7.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.00%(3\n년 만기시 21.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.00%(3년 만기시 21.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HF3.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HF3",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HG1": {
+  "isin": "KR6MD0004HG1",
+  "seq": 5812,
+  "type": "ELS",
+  "code": "33658",
+  "name": "미래에셋증권(ELS)33658",
+  "coupon": 7.0,
+  "ladder": [
+   80,
+   80,
+   80,
+   80,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-15",
+  "ref_date": "2023-05-15",
+  "evals": [
+   [
+    1,
+    "2023-11-10"
+   ],
+   [
+    2,
+    "2024-05-09"
+   ],
+   [
+    3,
+    "2024-11-12"
+   ],
+   [
+    4,
+    "2025-05-12"
+   ],
+   [
+    5,
+    "2025-11-11"
+   ],
+   [
+    6,
+    "2026-05-12"
+   ]
+  ],
+  "mat_eval": "2026-05-12",
+  "mat_pay": "2026-05-15",
+  "ki": {
+   "EuroStoxx50": 50.0,
+   "HSCEI": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.00%(3\n년 만기시 21.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.00%(3년 만기시 21.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HG1.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HG1",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HH9": {
+  "isin": "KR6MD0004HH9",
+  "seq": 5813,
+  "type": "ELS",
+  "code": "33659",
+  "name": "미래에셋증권(ELS)33659",
+  "coupon": 8.0,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   80,
+   80
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-15",
+  "ref_date": "2023-05-15",
+  "evals": [
+   [
+    1,
+    "2023-11-10"
+   ],
+   [
+    2,
+    "2024-05-09"
+   ],
+   [
+    3,
+    "2024-11-12"
+   ],
+   [
+    4,
+    "2025-05-12"
+   ],
+   [
+    5,
+    "2025-11-11"
+   ],
+   [
+    6,
+    "2026-05-12"
+   ]
+  ],
+  "mat_eval": "2026-05-12",
+  "mat_pay": "2026-05-15",
+  "ki": {
+   "EuroStoxx50": 45.0,
+   "HSCEI": 45.0,
+   "S&P500": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 8.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 8.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 8.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 8.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 8.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 8.00%(3\n년 만기시 24.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 8.00%(3년 만기시 24.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HH9.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HH9",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HJ5": {
+  "isin": "KR6MD0004HJ5",
+  "seq": 5815,
+  "type": "ELS",
+  "code": "33660",
+  "name": "미래에셋증권(ELS)33660",
+  "coupon": 9.0,
+  "ladder": [
+   95,
+   90,
+   85,
+   85,
+   80,
+   80
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-15",
+  "ref_date": "2023-05-15",
+  "evals": [
+   [
+    1,
+    "2023-11-15"
+   ],
+   [
+    2,
+    "2024-05-16"
+   ],
+   [
+    3,
+    "2024-11-15"
+   ],
+   [
+    4,
+    "2025-05-15"
+   ],
+   [
+    5,
+    "2025-11-17"
+   ],
+   [
+    6,
+    "2026-05-15"
+   ]
+  ],
+  "mat_eval": "2026-05-15",
+  "mat_pay": "2026-05-20",
+  "ki": {
+   "EuroStoxx50": 50.0,
+   "HSCEI": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 95% \n이상일 경우 : 연 9.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 9.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 9.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 9.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 9.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 9.00%(3\n년 만기시 27.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 9.00%(3년 만기시 27.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HJ5.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HJ5",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HK3": {
+  "isin": "KR6MD0004HK3",
+  "seq": 5816,
+  "type": "ELS",
+  "code": "33661",
+  "name": "미래에셋증권(ELS)33661",
+  "coupon": 12.0,
+  "ladder": [
+   80,
+   80,
+   80,
+   80,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-15",
+  "ref_date": "2023-05-15",
+  "evals": [
+   [
+    1,
+    "2023-11-10"
+   ],
+   [
+    2,
+    "2024-05-09"
+   ],
+   [
+    3,
+    "2024-11-12"
+   ],
+   [
+    4,
+    "2025-05-12"
+   ],
+   [
+    5,
+    "2025-11-11"
+   ],
+   [
+    6,
+    "2026-05-07"
+   ]
+  ],
+  "mat_eval": "2026-05-07",
+  "mat_pay": "2026-05-15",
+  "ki": {
+   "S&P500": 40.0,
+   "AMD": 40.0
+  },
+  "no_ki": false,
+  "assets": [
+   "S&P500",
+   "AMD"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 12.00%(3\n년 만기시 36.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 40% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 12.00%(3년 만기시 36.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 40% \n미만(종가기준)으로 하락한 적이 있는 경우 : 실물인도대상자산으로 주식지급[주식 실물인도 수량 = (액면금액Ⅹ만기평가가격/최초기준가격)/전환기준환율/만기평가가격], 1주 미만은 현금지급 (원금손실 발생, 100%≤손실률<0%)\n* \n기초자산 하락률 : [(\n최초기준가격 - \n만기평가가격) / \n최초기준가격]\n* \n실물인도대상자산 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산(만기손실상환시 기준종목이 지수일 경우 현금결제, 종목(주식)일 경우 실물인도대상자산으로 주식지급)\n* \n전환기준환율 : 만기평가일 당일 서울외국환중개㈜ 홈페이지(www.smbs.biz)\n에 오후 3\n시30\n분경 고시되는 종가 고시환율(한국의 공휴일 및 토,일요일 제외)\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HK3.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HK3",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HL1": {
+  "isin": "KR6MD0004HL1",
+  "seq": 5817,
+  "type": "ELS",
+  "code": "33662",
+  "name": "미래에셋증권(ELS)33662",
+  "coupon": 13.0,
+  "ladder": [
+   80,
+   80,
+   80,
+   80,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-15",
+  "ref_date": "2023-05-15",
+  "evals": [
+   [
+    1,
+    "2023-11-10"
+   ],
+   [
+    2,
+    "2024-05-09"
+   ],
+   [
+    3,
+    "2024-11-12"
+   ],
+   [
+    4,
+    "2025-05-12"
+   ],
+   [
+    5,
+    "2025-11-11"
+   ],
+   [
+    6,
+    "2026-05-07"
+   ]
+  ],
+  "mat_eval": "2026-05-07",
+  "mat_pay": "2026-05-15",
+  "ki": {
+   "아마존": 35.0,
+   "엔비디아": 35.0
+  },
+  "no_ki": false,
+  "assets": [
+   "아마존",
+   "엔비디아"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 13.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 13.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 13.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 13.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 13.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 13.00%(3\n년 만기시 39.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 35% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 13.00%(3년 만기시 39.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 35% \n미만(종가기준)으로 하락한 적이 있는 경우 : 실물인도대상자산으로 주식지급[주식 실물인도 수량 = (액면금액Ⅹ만기평가가격/최초기준가격)/전환기준환율/만기평가가격], 1주 미만은 현금지급 (원금손실 발생, 100%≤손실률<0%)\n* \n기초자산 하락률 : [(\n최초기준가격 - \n만기평가가격) / \n최초기준가격]\n* \n실물인도대상자산 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n전환기준환율 : 만기평가일 당일 서울외국환중개㈜ 홈페이지(www.smbs.biz)\n에 오후 3\n시30\n분경 고시되는 종가 고시환율(한국의 공휴일 및 토,일요일 제외)\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HL1.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HL1",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HR8": {
+  "isin": "KR6MD0004HR8",
+  "seq": 5823,
+  "type": "DLB",
+  "code": "1462",
+  "name": "미래에셋증권(DLB)1462",
+  "coupon": 3.75,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-05-04",
+  "ref_date": "2023-05-04",
+  "evals": [
+   [
+    1,
+    "2024-05-03"
+   ]
+  ],
+  "mat_eval": "2024-05-03",
+  "mat_pay": "2024-05-03",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KRW KTB 3m",
+   "KRW CD91"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HR8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HR8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HS6": {
+  "isin": "KR6MD0004HS6",
+  "seq": 5824,
+  "type": "ELB",
+  "code": "3156",
+  "name": "미래에셋증권(ELB)3156",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-05-04",
+  "ref_date": "2023-05-04",
+  "evals": [
+   [
+    1,
+    "2024-04-30"
+   ]
+  ],
+  "mat_eval": "2024-04-30",
+  "mat_pay": "2024-05-03",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HS6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HS6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HT4": {
+  "isin": "KR6MD0004HT4",
+  "seq": 5825,
+  "type": "ELB",
+  "code": "3157",
+  "name": "미래에셋증권(ELB)3157",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-05-04",
+  "ref_date": "2023-05-04",
+  "evals": [
+   [
+    1,
+    "2023-12-27"
+   ]
+  ],
+  "mat_eval": "2023-12-27",
+  "mat_pay": "2023-12-29",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HT4.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HT4",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HX6": {
+  "isin": "KR6MD0004HX6",
+  "seq": 5829,
+  "type": "DLS",
+  "code": "5763",
+  "name": "미래에셋증권(DLS)5763",
+  "coupon": 8.01,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-05-15",
+  "ref_date": "2023-05-15",
+  "evals": [
+   [
+    1,
+    "2023-08-11"
+   ],
+   [
+    2,
+    "2023-09-12"
+   ],
+   [
+    3,
+    "2023-10-10"
+   ],
+   [
+    4,
+    "2023-11-10"
+   ],
+   [
+    5,
+    "2023-12-12"
+   ],
+   [
+    6,
+    "2024-01-10"
+   ],
+   [
+    7,
+    "2024-02-08"
+   ],
+   [
+    8,
+    "2024-03-12"
+   ],
+   [
+    9,
+    "2024-04-09"
+   ],
+   [
+    10,
+    "2024-05-09"
+   ],
+   [
+    11,
+    "2024-06-11"
+   ],
+   [
+    12,
+    "2024-07-10"
+   ],
+   [
+    13,
+    "2024-08-09"
+   ],
+   [
+    14,
+    "2024-09-10"
+   ],
+   [
+    15,
+    "2024-10-10"
+   ],
+   [
+    16,
+    "2024-11-12"
+   ]
+  ],
+  "mat_eval": "2024-11-12",
+  "mat_pay": "2024-11-15",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "USD(MAR)"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑥ 모든 기초자산의 6\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑦ 모든 기초자산의 7\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑧ 모든 기초자산의 8\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑨ 모든 기초자산의 9\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑩ 모든 기초자산의 10\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑪ 모든 기초자산의 11\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑫ 모든 기초자산의 12\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑬ 모든 기초자산의 13\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑭ 모든 기초자산의 14\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⑮ 모든 기초자산의 15\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n<\n만기상환>\n½ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.01%\n⅓ 위 ½\n의 요건을 충족하지 못하였고, \n최종평가일에 모든 기초자산 중 어느 하나라도 각 최초기준가격의 100% \n미만(종가기준)인 경우 : 원금 99% 부분 지급, -1% 만큼 원금손실 발생(최대 원금손실 -1%)\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HX6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HX6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HY4": {
+  "isin": "KR6MD0004HY4",
+  "seq": 5830,
+  "type": "ELS",
+  "code": "32741",
+  "name": "미래에셋증권(ELS)32741",
+  "coupon": 6.3,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HY4.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HY4",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004HZ1": {
+  "isin": "KR6MD0004HZ1",
+  "seq": 5831,
+  "type": "ELB",
+  "code": "3158",
+  "name": "미래에셋증권(ELB)3158",
+  "coupon": 4.7,
+  "ladder": [
+   100,
+   100,
+   100,
+   100,
+   100,
+   100
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-03",
+  "ref_date": "2023-05-03",
+  "evals": [
+   [
+    1,
+    "2023-11-03"
+   ],
+   [
+    2,
+    "2024-05-03"
+   ],
+   [
+    3,
+    "2024-11-04"
+   ],
+   [
+    4,
+    "2025-05-07"
+   ],
+   [
+    5,
+    "2025-11-03"
+   ],
+   [
+    6,
+    "2026-05-04"
+   ]
+  ],
+  "mat_eval": "2026-05-04",
+  "mat_pay": "2026-05-08",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004HZ1.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004HZ1",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004J09": {
+  "isin": "KR6MD0004J09",
+  "seq": 5868,
+  "type": "ELB",
+  "code": "3149",
+  "name": "미래에셋증권(ELB)3149",
+  "coupon": 6.0,
+  "ladder": [
+   103,
+   103,
+   103,
+   103,
+   103,
+   103
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004J09.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004J09",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004J17": {
+  "isin": "KR6MD0004J17",
+  "seq": 5869,
+  "type": "ELS",
+  "code": "32752",
+  "name": "미래에셋증권(ELS)32752",
+  "coupon": 5.6,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004J17.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004J17",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004J25": {
+  "isin": "KR6MD0004J25",
+  "seq": 5870,
+  "type": "ELS",
+  "code": "32739",
+  "name": "미래에셋증권(ELS)32739",
+  "coupon": 5.5,
+  "ladder": [
+   90,
+   85,
+   85,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004J25.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004J25",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004J33": {
+  "isin": "KR6MD0004J33",
+  "seq": 5871,
+  "type": "ELS",
+  "code": "32740",
+  "name": "미래에셋증권(ELS)32740",
+  "coupon": 5.6,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004J33.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004J33",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004J41": {
+  "isin": "KR6MD0004J41",
+  "seq": 5872,
+  "type": "ELS",
+  "code": "32753",
+  "name": "미래에셋증권(ELS)32753",
+  "coupon": 5.3,
+  "ladder": [
+   75,
+   75,
+   75,
+   75,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004J41.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004J41",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004J58": {
+  "isin": "KR6MD0004J58",
+  "seq": 5873,
+  "type": "ELS",
+  "code": "32746",
+  "name": "미래에셋증권(ELS)32746",
+  "coupon": 6.7,
+  "ladder": [
+   90,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004J58.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004J58",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004J66": {
+  "isin": "KR6MD0004J66",
+  "seq": 5874,
+  "type": "ELS",
+  "code": "32750",
+  "name": "미래에셋증권(ELS)32750",
+  "coupon": 6.3,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004J66.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004J66",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004J74": {
+  "isin": "KR6MD0004J74",
+  "seq": 5875,
+  "type": "ELS",
+  "code": "32751",
+  "name": "미래에셋증권(ELS)32751",
+  "coupon": 6.4,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004J74.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004J74",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004J82": {
+  "isin": "KR6MD0004J82",
+  "seq": 5876,
+  "type": "ELS",
+  "code": "32742",
+  "name": "미래에셋증권(ELS)32742",
+  "coupon": 5.1,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004J82.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004J82",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004J90": {
+  "isin": "KR6MD0004J90",
+  "seq": 5877,
+  "type": "ELB",
+  "code": "3159",
+  "name": "미래에셋증권(ELB)3159",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-05-10",
+  "ref_date": "2023-05-10",
+  "evals": [
+   [
+    1,
+    "2024-05-08"
+   ]
+  ],
+  "mat_eval": "2024-05-08",
+  "mat_pay": "2024-05-10",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004J90.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004J90",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JA0": {
+  "isin": "KR6MD0004JA0",
+  "seq": 5878,
+  "type": "ELS",
+  "code": "33669",
+  "name": "미래에셋증권(ELS)33669",
+  "coupon": 8.01,
+  "ladder": [
+   98,
+   95,
+   90,
+   85,
+   85,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-05-08",
+  "ref_date": "2023-05-08",
+  "evals": [
+   [
+    1,
+    "2023-11-03"
+   ],
+   [
+    2,
+    "2024-05-02"
+   ],
+   [
+    3,
+    "2024-11-05"
+   ],
+   [
+    4,
+    "2025-04-30"
+   ],
+   [
+    5,
+    "2025-11-04"
+   ],
+   [
+    6,
+    "2026-05-04"
+   ]
+  ],
+  "mat_eval": "2026-05-04",
+  "mat_pay": "2026-05-08",
+  "ki": {
+   "EuroStoxx50": 45.0,
+   "HSCEI": 45.0,
+   "S&P500": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JA0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JA0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JB8": {
+  "isin": "KR6MD0004JB8",
+  "seq": 5879,
+  "type": "DLB",
+  "code": "1463",
+  "name": "미래에셋증권(DLB)1463",
+  "coupon": 3.75,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-05-12",
+  "ref_date": "2023-05-12",
+  "evals": [
+   [
+    1,
+    "2024-05-10"
+   ]
+  ],
+  "mat_eval": "2024-05-10",
+  "mat_pay": "2024-05-10",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KRW KTB 3m",
+   "KRW CD91"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JB8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JB8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JC6": {
+  "isin": "KR6MD0004JC6",
+  "seq": 5880,
+  "type": "ELS",
+  "code": "33670",
+  "name": "미래에셋증권(ELS)33670",
+  "coupon": 17.4,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   80,
+   80
+  ],
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-05-19",
+  "ref_date": "2023-05-19",
+  "evals": [
+   [
+    1,
+    "2023-08-18"
+   ],
+   [
+    2,
+    "2023-11-17"
+   ],
+   [
+    3,
+    "2024-02-16"
+   ],
+   [
+    4,
+    "2024-05-17"
+   ],
+   [
+    5,
+    "2024-08-19"
+   ],
+   [
+    6,
+    "2024-11-19"
+   ]
+  ],
+  "mat_eval": "2024-11-19",
+  "mat_pay": "2024-11-27",
+  "ki": {
+   "알파벳 A": 45.0,
+   "아마존": 45.0,
+   "AMD": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "알파벳 A",
+   "아마존",
+   "AMD"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JC6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JC6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JD4": {
+  "isin": "KR6MD0004JD4",
+  "seq": 5881,
+  "type": "ELS",
+  "code": "32798",
+  "name": "미래에셋증권(ELS)32798",
+  "coupon": 6.9,
+  "ladder": [
+   100,
+   100,
+   95,
+   95,
+   90,
+   55
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "KOSPI200"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JD4.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JD4",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JE2": {
+  "isin": "KR6MD0004JE2",
+  "seq": 5882,
+  "type": "ELS",
+  "code": "32799",
+  "name": "미래에셋증권(ELS)32799",
+  "coupon": 6.9,
+  "ladder": [
+   100,
+   100,
+   95,
+   95,
+   90,
+   55
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "KOSPI200"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JE2.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JE2",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JG7": {
+  "isin": "KR6MD0004JG7",
+  "seq": 5884,
+  "type": "ELB",
+  "code": "3161",
+  "name": "미래에셋증권(ELB)3161",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-05-12",
+  "ref_date": "2023-05-12",
+  "evals": [
+   [
+    1,
+    "2024-05-08"
+   ]
+  ],
+  "mat_eval": "2024-05-08",
+  "mat_pay": "2024-05-10",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JG7.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JG7",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JH5": {
+  "isin": "KR6MD0004JH5",
+  "seq": 5885,
+  "type": "ELB",
+  "code": "3162",
+  "name": "미래에셋증권(ELB)3162",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-05-12",
+  "ref_date": "2023-05-12",
+  "evals": [
+   [
+    1,
+    "2023-12-27"
+   ]
+  ],
+  "mat_eval": "2023-12-27",
+  "mat_pay": "2023-12-29",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JH5.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JH5",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JJ1": {
+  "isin": "KR6MD0004JJ1",
+  "seq": 5887,
+  "type": "ELB",
+  "code": "3163",
+  "name": "미래에셋증권(ELB)3163",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-05-12",
+  "ref_date": "2023-05-12",
+  "evals": [
+   [
+    1,
+    "2023-12-20"
+   ]
+  ],
+  "mat_eval": "2023-12-20",
+  "mat_pay": "2023-12-22",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JJ1.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JJ1",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JK9": {
+  "isin": "KR6MD0004JK9",
+  "seq": 5888,
+  "type": "ELS",
+  "code": "32761",
+  "name": "미래에셋증권(ELS)32761",
+  "coupon": 6.4,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JK9.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JK9",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JL7": {
+  "isin": "KR6MD0004JL7",
+  "seq": 5889,
+  "type": "ELS",
+  "code": "32762",
+  "name": "미래에셋증권(ELS)32762",
+  "coupon": 5.8,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JL7.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JL7",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JM5": {
+  "isin": "KR6MD0004JM5",
+  "seq": 5890,
+  "type": "ELS",
+  "code": "32764",
+  "name": "미래에셋증권(ELS)32764",
+  "coupon": 5.7,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JM5.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JM5",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JN3": {
+  "isin": "KR6MD0004JN3",
+  "seq": 5891,
+  "type": "ELS",
+  "code": "32763",
+  "name": "미래에셋증권(ELS)32763",
+  "coupon": 6.7,
+  "ladder": [
+   90,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JN3.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JN3",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JP8": {
+  "isin": "KR6MD0004JP8",
+  "seq": 5893,
+  "type": "ELS",
+  "code": "32765",
+  "name": "미래에셋증권(ELS)32765",
+  "coupon": 5.2,
+  "ladder": [
+   75,
+   75,
+   75,
+   75,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JP8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JP8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JQ6": {
+  "isin": "KR6MD0004JQ6",
+  "seq": 5894,
+  "type": "ELS",
+  "code": "32773",
+  "name": "미래에셋증권(ELS)32773",
+  "coupon": 6.6,
+  "ladder": [
+   90,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JQ6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JQ6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JR4": {
+  "isin": "KR6MD0004JR4",
+  "seq": 5895,
+  "type": "ELS",
+  "code": "32774",
+  "name": "미래에셋증권(ELS)32774",
+  "coupon": 7.0,
+  "ladder": [
+   90,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JR4.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JR4",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JS2": {
+  "isin": "KR6MD0004JS2",
+  "seq": 5896,
+  "type": "ELS",
+  "code": "32775",
+  "name": "미래에셋증권(ELS)32775",
+  "coupon": 6.0,
+  "ladder": [
+   85,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JS2.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JS2",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JT0": {
+  "isin": "KR6MD0004JT0",
+  "seq": 5897,
+  "type": "ELS",
+  "code": "32776",
+  "name": "미래에셋증권(ELS)32776",
+  "coupon": 6.3,
+  "ladder": [
+   85,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JT0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JT0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JV6": {
+  "isin": "KR6MD0004JV6",
+  "seq": 5899,
+  "type": "ELS",
+  "code": "32777",
+  "name": "미래에셋증권(ELS)32777",
+  "coupon": 5.91,
+  "ladder": [
+   90,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JV6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JV6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JW4": {
+  "isin": "KR6MD0004JW4",
+  "seq": 5900,
+  "type": "ELS",
+  "code": "32756",
+  "name": "미래에셋증권(ELS)32756",
+  "coupon": 5.8,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JW4.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JW4",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JX2": {
+  "isin": "KR6MD0004JX2",
+  "seq": 5901,
+  "type": "ELS",
+  "code": "32758",
+  "name": "미래에셋증권(ELS)32758",
+  "coupon": 6.1,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JX2.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JX2",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JY0": {
+  "isin": "KR6MD0004JY0",
+  "seq": 5902,
+  "type": "ELS",
+  "code": "32757",
+  "name": "미래에셋증권(ELS)32757",
+  "coupon": 5.5,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JY0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JY0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004JZ7": {
+  "isin": "KR6MD0004JZ7",
+  "seq": 5903,
+  "type": "ELS",
+  "code": "32766",
+  "name": "미래에셋증권(ELS)32766",
+  "coupon": 6.3,
+  "ladder": [
+   90,
+   85,
+   85,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004JZ7.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004JZ7",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004K06": {
+  "isin": "KR6MD0004K06",
+  "seq": 5904,
+  "type": "ELS",
+  "code": "32818",
+  "name": "미래에셋증권(ELS)32818",
+  "coupon": 5.5,
+  "ladder": [
+   85,
+   75,
+   75,
+   75,
+   70,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004K06.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004K06",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004K14": {
+  "isin": "KR6MD0004K14",
+  "seq": 5905,
+  "type": "ELS",
+  "code": "32815",
+  "name": "미래에셋증권(ELS)32815",
+  "coupon": 6.4,
+  "ladder": [
+   85,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004K14.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004K14",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004K22": {
+  "isin": "KR6MD0004K22",
+  "seq": 5906,
+  "type": "ELS",
+  "code": "32816",
+  "name": "미래에셋증권(ELS)32816",
+  "coupon": 5.3,
+  "ladder": [
+   80,
+   80,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004K22.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004K22",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004K30": {
+  "isin": "KR6MD0004K30",
+  "seq": 5907,
+  "type": "ELS",
+  "code": "32817",
+  "name": "미래에셋증권(ELS)32817",
+  "coupon": 5.6,
+  "ladder": [
+   80,
+   80,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004K30.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004K30",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004K48": {
+  "isin": "KR6MD0004K48",
+  "seq": 5908,
+  "type": "ELS",
+  "code": "33671",
+  "name": "미래에셋증권(ELS)33671",
+  "coupon": 26.0,
+  "ladder": [
+   90,
+   90,
+   90,
+   90,
+   85,
+   85,
+   85,
+   85,
+   80,
+   80,
+   80,
+   80
+  ],
+  "mat_years": 3.0,
+  "period_months": 3.0,
+  "issue_date": "2023-06-02",
+  "ref_date": "2023-06-02",
+  "evals": [
+   [
+    1,
+    "2023-09-01"
+   ],
+   [
+    2,
+    "2023-12-01"
+   ],
+   [
+    3,
+    "2024-02-29"
+   ],
+   [
+    4,
+    "2024-05-31"
+   ],
+   [
+    5,
+    "2024-08-30"
+   ],
+   [
+    6,
+    "2024-12-02"
+   ],
+   [
+    7,
+    "2025-02-28"
+   ],
+   [
+    8,
+    "2025-06-02"
+   ],
+   [
+    9,
+    "2025-09-02"
+   ],
+   [
+    10,
+    "2025-12-02"
+   ],
+   [
+    11,
+    "2026-02-27"
+   ],
+   [
+    12,
+    "2026-06-02"
+   ]
+  ],
+  "mat_eval": "2026-06-02",
+  "mat_pay": "2026-06-11",
+  "ki": {
+   "아마존": 50.0,
+   "AMD": 50.0,
+   "메타": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "아마존",
+   "AMD",
+   "메타"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004K48.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004K48",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004K55": {
+  "isin": "KR6MD0004K55",
+  "seq": 5909,
+  "type": "ELS",
+  "code": "32826",
+  "name": "미래에셋증권(ELS)32826",
+  "coupon": 7.3,
+  "ladder": [
+   90,
+   85,
+   85,
+   80,
+   75,
+   60
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "S&P500",
+   "CSI300"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004K55.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004K55",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004K71": {
+  "isin": "KR6MD0004K71",
+  "seq": 5911,
+  "type": "ELS",
+  "code": "32829",
+  "name": "미래에셋증권(ELS)32829",
+  "coupon": 4.9,
+  "ladder": [
+   78,
+   78,
+   78,
+   75,
+   70,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004K71.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004K71",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004K89": {
+  "isin": "KR6MD0004K89",
+  "seq": 5912,
+  "type": "ELS",
+  "code": "32827",
+  "name": "미래에셋증권(ELS)32827",
+  "coupon": 7.0,
+  "ladder": [
+   85,
+   85,
+   80,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-06-08",
+  "ref_date": "2023-06-07",
+  "evals": [
+   [
+    1,
+    "2023-12-07"
+   ],
+   [
+    2,
+    "2024-06-07"
+   ],
+   [
+    3,
+    "2024-12-06"
+   ],
+   [
+    4,
+    "2025-06-05"
+   ],
+   [
+    5,
+    "2025-12-05"
+   ],
+   [
+    6,
+    "2026-06-05"
+   ]
+  ],
+  "mat_eval": "2026-06-05",
+  "mat_pay": "2026-06-09",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004K89.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004K89",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004K97": {
+  "isin": "KR6MD0004K97",
+  "seq": 5913,
+  "type": "ELS",
+  "code": "32828",
+  "name": "미래에셋증권(ELS)32828",
+  "coupon": 4.5,
+  "ladder": [
+   75,
+   75,
+   75,
+   75,
+   70,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004K97.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004K97",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KA8": {
+  "isin": "KR6MD0004KA8",
+  "seq": 5914,
+  "type": "ELS",
+  "code": "32822",
+  "name": "미래에셋증권(ELS)32822",
+  "coupon": 5.51,
+  "ladder": [
+   85,
+   75,
+   75,
+   75,
+   70,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KA8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KA8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KB6": {
+  "isin": "KR6MD0004KB6",
+  "seq": 5915,
+  "type": "ELS",
+  "code": "32823",
+  "name": "미래에셋증권(ELS)32823",
+  "coupon": 5.61,
+  "ladder": [
+   85,
+   85,
+   80,
+   80,
+   75,
+   55
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KB6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KB6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KC4": {
+  "isin": "KR6MD0004KC4",
+  "seq": 5916,
+  "type": "ELS",
+  "code": "32780",
+  "name": "미래에셋증권(ELS)32780",
+  "coupon": 6.3,
+  "ladder": [
+   90,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KC4.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KC4",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KD2": {
+  "isin": "KR6MD0004KD2",
+  "seq": 5917,
+  "type": "ELS",
+  "code": "32781",
+  "name": "미래에셋증권(ELS)32781",
+  "coupon": 5.6,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KD2.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KD2",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KE0": {
+  "isin": "KR6MD0004KE0",
+  "seq": 5918,
+  "type": "ELS",
+  "code": "32779",
+  "name": "미래에셋증권(ELS)32779",
+  "coupon": 6.3,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KE0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KE0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KF7": {
+  "isin": "KR6MD0004KF7",
+  "seq": 5919,
+  "type": "ELS",
+  "code": "33672",
+  "name": "미래에셋증권(ELS)33672",
+  "coupon": 6.0,
+  "ladder": [
+   90,
+   85,
+   85,
+   80,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-06-02",
+  "ref_date": "2023-06-02",
+  "evals": [
+   [
+    1,
+    "2023-12-04"
+   ],
+   [
+    2,
+    "2024-06-03"
+   ],
+   [
+    3,
+    "2024-12-02"
+   ],
+   [
+    4,
+    "2025-06-02"
+   ],
+   [
+    5,
+    "2025-12-02"
+   ],
+   [
+    6,
+    "2026-06-02"
+   ]
+  ],
+  "mat_eval": "2026-06-02",
+  "mat_pay": "2026-06-08",
+  "ki": {
+   "S&P500": 55.0
+  },
+  "no_ki": false,
+  "assets": [
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 기초자산의 1\n번째 자동조기상환평가일 종가가 최초기준가격의 90% \n이상일 경우 : 연 6.00%\n② 기초자산의 2\n번째 자동조기상환평가일 종가가 최초기준가격의 85% \n이상일 경우 : 연 6.00%\n③ 기초자산의 3\n번째 자동조기상환평가일 종가가 최초기준가격의 85% \n이상일 경우 : 연 6.00%\n④ 기초자산의 4\n번째 자동조기상환평가일 종가가 최초기준가격의 80% \n이상일 경우 : 연 6.00%\n⑤ 기초자산의 5\n번째 자동조기상환평가일 종가가 최초기준가격의 80% \n이상일 경우 : 연 6.00%\n<\n만기상환>\n⑥ 기초자산의 최종평가일 종가가 최초기준가격의 75% \n이상일 경우 : 연 6.00%(3\n년 만기시 18.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 기초자산의 가격이 최초기준가격의 55% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 6.00%(3년 만기시 18.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 기초자산의 가격이 최초기준가격의 55% \n미만(종가기준)으로 하락한 적이 있는 경우 : {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KF7.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KF7",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KG5": {
+  "isin": "KR6MD0004KG5",
+  "seq": 5920,
+  "type": "ELS",
+  "code": "33673",
+  "name": "미래에셋증권(ELS)33673",
+  "coupon": 6.0,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-06-02",
+  "ref_date": "2023-06-02",
+  "evals": [
+   [
+    1,
+    "2023-12-04"
+   ],
+   [
+    2,
+    "2024-06-03"
+   ],
+   [
+    3,
+    "2024-12-02"
+   ],
+   [
+    4,
+    "2025-06-02"
+   ],
+   [
+    5,
+    "2025-12-02"
+   ],
+   [
+    6,
+    "2026-06-02"
+   ]
+  ],
+  "mat_eval": "2026-06-02",
+  "mat_pay": "2026-06-08",
+  "ki": {
+   "KOSPI200": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 6.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 6.00%(3\n년 만기시 18.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 6.00%(3년 만기시 18.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KG5.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KG5",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KH3": {
+  "isin": "KR6MD0004KH3",
+  "seq": 5921,
+  "type": "ELS",
+  "code": "33674",
+  "name": "미래에셋증권(ELS)33674",
+  "coupon": 6.0,
+  "ladder": [
+   90,
+   90,
+   85,
+   80,
+   75,
+   55
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-06-02",
+  "ref_date": "2023-06-02",
+  "evals": [
+   [
+    1,
+    "2023-11-28"
+   ],
+   [
+    2,
+    "2024-05-28"
+   ],
+   [
+    3,
+    "2024-11-27"
+   ],
+   [
+    4,
+    "2025-05-28"
+   ],
+   [
+    5,
+    "2025-11-26"
+   ],
+   [
+    6,
+    "2026-05-28"
+   ]
+  ],
+  "mat_eval": "2026-05-28",
+  "mat_pay": "2026-06-02",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 6.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 6.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 6.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 6.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 55% \n이상일 경우 : 연 6.00%(3\n년 만기시 18.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일에 모든 기초자산 중 어느 하나라도 각 최초기준가격의 55% \n미만(종가기준)인 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KH3.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KH3",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KJ9": {
+  "isin": "KR6MD0004KJ9",
+  "seq": 5923,
+  "type": "ELS",
+  "code": "33675",
+  "name": "미래에셋증권(ELS)33675",
+  "coupon": 7.3,
+  "ladder": [
+   90,
+   90,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-06-02",
+  "ref_date": "2023-06-02",
+  "evals": [
+   [
+    1,
+    "2023-11-28"
+   ],
+   [
+    2,
+    "2024-05-28"
+   ],
+   [
+    3,
+    "2024-11-27"
+   ],
+   [
+    4,
+    "2025-05-28"
+   ],
+   [
+    5,
+    "2025-11-26"
+   ],
+   [
+    6,
+    "2026-05-28"
+   ]
+  ],
+  "mat_eval": "2026-05-28",
+  "mat_pay": "2026-06-02",
+  "ki": {
+   "Nikkei225": 50.0,
+   "EuroStoxx50": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 7.30%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 7.30%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.30%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 7.30%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.30%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.30%(3\n년 만기시 21.90%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.30%(3년 만기시 21.90%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KJ9.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KJ9",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KK7": {
+  "isin": "KR6MD0004KK7",
+  "seq": 5924,
+  "type": "ELS",
+  "code": "33676",
+  "name": "미래에셋증권(ELS)33676",
+  "coupon": 7.02,
+  "ladder": [
+   92,
+   90,
+   90,
+   85,
+   80,
+   80
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-06-02",
+  "ref_date": "2023-06-02",
+  "evals": [
+   [
+    1,
+    "2023-11-28"
+   ],
+   [
+    2,
+    "2024-05-28"
+   ],
+   [
+    3,
+    "2024-11-27"
+   ],
+   [
+    4,
+    "2025-05-28"
+   ],
+   [
+    5,
+    "2025-11-26"
+   ],
+   [
+    6,
+    "2026-05-28"
+   ]
+  ],
+  "mat_eval": "2026-05-28",
+  "mat_pay": "2026-06-02",
+  "ki": {
+   "Nikkei225": 55.0,
+   "EuroStoxx50": 55.0,
+   "S&P500": 55.0
+  },
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": true,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n월수익지급>\n① 모든 기초자산의 매월 수익평가일 종가가 각 최초기준가격의 55% \n이상일 경우 : 월 0.5850%(\n총 36\n회, 최대 연 7.02%)\n② 모든 기초자산의 매월 수익평가일 종가 중 어느 하나라도 각 최초기준가격의 55% \n미만일 경우 : 월수익 지급 없음\n<\n조기상환>\n③ 모든 기초자산의 6\n개월후 자동조기상환평가일 종가가 각 최초기준가격의 92% \n이상일 경우 : 원금지급\n④ 모든 기초자산의 12\n개월후 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 원금지급\n⑤ 모든 기초자산의 18\n개월후 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 원금지급\n⑥ 모든 기초자산의 24\n개월후 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 원금지급\n⑦ 모든 기초자산의 30\n개월후 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 원금지급\n<\n만기상환>\n⑧ 모든 기초자산의 36\n개월후 최종평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 원금지급\n⑨ 위 ⑧\n의 요건을 충족하지 못하였고, 36\n개월후 최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 55% \n미만(종가기준)으로 하락한 적이 없는 경우 : 원금지급\n⑩ 위 ⑧\n의 요건을 충족하지 못하였고, 36\n개월후 최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 55% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KK7.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KK7",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KL5": {
+  "isin": "KR6MD0004KL5",
+  "seq": 5925,
+  "type": "ELS",
+  "code": "33677",
+  "name": "미래에셋증권(ELS)33677",
+  "coupon": 7.0,
+  "ladder": [
+   80,
+   80,
+   80,
+   80,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-06-02",
+  "ref_date": "2023-06-02",
+  "evals": [
+   [
+    1,
+    "2023-11-28"
+   ],
+   [
+    2,
+    "2024-05-28"
+   ],
+   [
+    3,
+    "2024-11-27"
+   ],
+   [
+    4,
+    "2025-05-28"
+   ],
+   [
+    5,
+    "2025-11-26"
+   ],
+   [
+    6,
+    "2026-05-28"
+   ]
+  ],
+  "mat_eval": "2026-05-28",
+  "mat_pay": "2026-06-02",
+  "ki": {
+   "EuroStoxx50": 45.0,
+   "HSCEI": 45.0,
+   "S&P500": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 7.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 7.00%(3\n년 만기시 21.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 7.00%(3년 만기시 21.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KL5.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KL5",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KM3": {
+  "isin": "KR6MD0004KM3",
+  "seq": 5926,
+  "type": "ELS",
+  "code": "33678",
+  "name": "미래에셋증권(ELS)33678",
+  "coupon": 8.0,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   80,
+   80
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-06-02",
+  "ref_date": "2023-06-02",
+  "evals": [
+   [
+    1,
+    "2023-11-28"
+   ],
+   [
+    2,
+    "2024-05-28"
+   ],
+   [
+    3,
+    "2024-11-27"
+   ],
+   [
+    4,
+    "2025-05-28"
+   ],
+   [
+    5,
+    "2025-11-26"
+   ],
+   [
+    6,
+    "2026-05-28"
+   ]
+  ],
+  "mat_eval": "2026-05-28",
+  "mat_pay": "2026-06-02",
+  "ki": {
+   "EuroStoxx50": 45.0,
+   "HSCEI": 45.0,
+   "S&P500": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 8.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 8.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 8.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 8.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 8.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 8.00%(3\n년 만기시 24.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 8.00%(3년 만기시 24.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KM3.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KM3",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KN1": {
+  "isin": "KR6MD0004KN1",
+  "seq": 5927,
+  "type": "ELS",
+  "code": "33679",
+  "name": "미래에셋증권(ELS)33679",
+  "coupon": 9.0,
+  "ladder": [
+   95,
+   90,
+   85,
+   85,
+   80,
+   80
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-06-02",
+  "ref_date": "2023-06-02",
+  "evals": [
+   [
+    1,
+    "2023-11-28"
+   ],
+   [
+    2,
+    "2024-05-28"
+   ],
+   [
+    3,
+    "2024-11-27"
+   ],
+   [
+    4,
+    "2025-05-28"
+   ],
+   [
+    5,
+    "2025-11-26"
+   ],
+   [
+    6,
+    "2026-05-28"
+   ]
+  ],
+  "mat_eval": "2026-05-28",
+  "mat_pay": "2026-06-02",
+  "ki": {
+   "EuroStoxx50": 50.0,
+   "HSCEI": 50.0,
+   "S&P500": 50.0
+  },
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "HSCEI",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 95% \n이상일 경우 : 연 9.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 90% \n이상일 경우 : 연 9.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 9.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 9.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 9.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 9.00%(3\n년 만기시 27.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 9.00%(3년 만기시 27.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 50% \n미만(종가기준)으로 하락한 적이 있는 경우 : 기준종목* 기준으로 {(만기평가가격 / 최초기준가격)-1} x 100%\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KN1.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KN1",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KP6": {
+  "isin": "KR6MD0004KP6",
+  "seq": 5929,
+  "type": "ELS",
+  "code": "33680",
+  "name": "미래에셋증권(ELS)33680",
+  "coupon": 10.0,
+  "ladder": [
+   85,
+   85,
+   85,
+   85,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-06-02",
+  "ref_date": "2023-06-02",
+  "evals": [
+   [
+    1,
+    "2023-11-28"
+   ],
+   [
+    2,
+    "2024-05-28"
+   ],
+   [
+    3,
+    "2024-11-27"
+   ],
+   [
+    4,
+    "2025-05-28"
+   ],
+   [
+    5,
+    "2025-11-26"
+   ],
+   [
+    6,
+    "2026-05-22"
+   ]
+  ],
+  "mat_eval": "2026-05-22",
+  "mat_pay": "2026-06-02",
+  "ki": {
+   "아마존": 45.0,
+   "S&P500": 45.0
+  },
+  "no_ki": false,
+  "assets": [
+   "아마존",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 10.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 10.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 10.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 85% \n이상일 경우 : 연 10.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 10.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 10.00%(3\n년 만기시 30.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 10.00%(3년 만기시 30.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 45% \n미만(종가기준)으로 하락한 적이 있는 경우 : 실물인도대상자산으로 주식지급[주식 실물인도 수량 = (액면금액Ⅹ만기평가가격/최초기준가격)/전환기준환율/만기평가가격], 1주 미만은 현금지급 (원금손실 발생, 100%≤손실률<0%)\n* \n기초자산 하락률 : [(\n최초기준가격 - \n만기평가가격) / \n최초기준가격]\n* \n실물인도대상자산 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산(만기손실상환시 기준종목이 지수일 경우 현금결제, 종목(주식)일 경우 실물인도대상자산으로 주식지급)\n* \n전환기준환율 : 만기평가일 당일 서울외국환중개㈜ 홈페이지(www.smbs.biz)\n에 오후 3\n시30\n분경 고시되는 종가 고시환율(한국의 공휴일 및 토,일요일 제외)\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KP6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KP6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KQ4": {
+  "isin": "KR6MD0004KQ4",
+  "seq": 5930,
+  "type": "ELS",
+  "code": "33681",
+  "name": "미래에셋증권(ELS)33681",
+  "coupon": 12.0,
+  "ladder": [
+   80,
+   80,
+   80,
+   80,
+   80,
+   75
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": "2023-06-02",
+  "ref_date": "2023-06-02",
+  "evals": [
+   [
+    1,
+    "2023-11-28"
+   ],
+   [
+    2,
+    "2024-05-28"
+   ],
+   [
+    3,
+    "2024-11-27"
+   ],
+   [
+    4,
+    "2025-05-28"
+   ],
+   [
+    5,
+    "2025-11-26"
+   ],
+   [
+    6,
+    "2026-05-22"
+   ]
+  ],
+  "mat_eval": "2026-05-22",
+  "mat_pay": "2026-06-02",
+  "ki": {
+   "S&P500": 40.0,
+   "AMD": 40.0
+  },
+  "no_ki": false,
+  "assets": [
+   "S&P500",
+   "AMD"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 80% \n이상일 경우 : 연 12.00%\n<\n만기상환>\n⑥ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 75% \n이상일 경우 : 연 12.00%(3\n년 만기시 36.00%)\n⑦ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 40% \n미만(종가기준)으로 하락한 적이 없는 경우 : 연 12.00%(3년 만기시 36.00%)\n⑧ 위 ⑥\n의 요건을 충족하지 못하였고, \n최종평가일까지 모든 기초자산 중 어느 하나라도 각 최초기준가격의 40% \n미만(종가기준)으로 하락한 적이 있는 경우 : 실물인도대상자산으로 주식지급[주식 실물인도 수량 = (액면금액Ⅹ만기평가가격/최초기준가격)/전환기준환율/만기평가가격], 1주 미만은 현금지급 (원금손실 발생, 100%≤손실률<0%)\n* \n기초자산 하락률 : [(\n최초기준가격 - \n만기평가가격) / \n최초기준가격]\n* \n실물인도대상자산 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산(만기손실상환시 기준종목이 지수일 경우 현금결제, 종목(주식)일 경우 실물인도대상자산으로 주식지급)\n* \n전환기준환율 : 만기평가일 당일 서울외국환중개㈜ 홈페이지(www.smbs.biz)\n에 오후 3\n시30\n분경 고시되는 종가 고시환율(한국의 공휴일 및 토,일요일 제외)\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KQ4.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KQ4",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KY8": {
+  "isin": "KR6MD0004KY8",
+  "seq": 5938,
+  "type": "DLS",
+  "code": "5764",
+  "name": "미래에셋증권(DLS)5764",
+  "coupon": 8.16,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-06-09",
+  "ref_date": "2023-06-09",
+  "evals": [
+   [
+    1,
+    "2023-09-06"
+   ],
+   [
+    2,
+    "2023-10-04"
+   ],
+   [
+    3,
+    "2023-11-06"
+   ],
+   [
+    4,
+    "2023-12-05"
+   ],
+   [
+    5,
+    "2024-01-04"
+   ],
+   [
+    6,
+    "2024-02-05"
+   ],
+   [
+    7,
+    "2024-03-05"
+   ],
+   [
+    8,
+    "2024-04-04"
+   ],
+   [
+    9,
+    "2024-05-03"
+   ],
+   [
+    10,
+    "2024-06-03"
+   ],
+   [
+    11,
+    "2024-07-03"
+   ],
+   [
+    12,
+    "2024-08-06"
+   ],
+   [
+    13,
+    "2024-09-04"
+   ],
+   [
+    14,
+    "2024-10-02"
+   ],
+   [
+    15,
+    "2024-11-05"
+   ],
+   [
+    16,
+    "2024-12-04"
+   ]
+  ],
+  "mat_eval": "2024-12-04",
+  "mat_pay": "2024-12-09",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "USD(MAR)"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "수익구조\n<\n조기상환>\n① 모든 기초자산의 1\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n② 모든 기초자산의 2\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n③ 모든 기초자산의 3\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n④ 모든 기초자산의 4\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n⑤ 모든 기초자산의 5\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n⑥ 모든 기초자산의 6\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n⑦ 모든 기초자산의 7\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n⑧ 모든 기초자산의 8\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n⑨ 모든 기초자산의 9\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n⑩ 모든 기초자산의 10\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n⑪ 모든 기초자산의 11\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n⑫ 모든 기초자산의 12\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n⑬ 모든 기초자산의 13\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n⑭ 모든 기초자산의 14\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n⑮ 모든 기초자산의 15\n번째 자동조기상환평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n<\n만기상환>\n½ 모든 기초자산의 최종평가일 종가가 각 최초기준가격의 100% \n이상일 경우 : 연 8.16%\n⅓ 위 ½\n의 요건을 충족하지 못하였고, \n최종평가일에 모든 기초자산 중 어느 하나라도 각 최초기준가격의 100% \n미만(종가기준)인 경우 : 원금 99% 부분 지급, -1% 만큼 원금손실 발생(최대 원금손실 -1%)\n* \n기준종목 : 모든 기초자산 중 [\n만기평가가격/\n최초기준가격]\n의 비율이 가장 낮은 기초자산\n* \n만기평가가격 : 최종평가일의 종가(\n해당거래소 기준)\n* \n최초기준가격 : 최초기준가격평가일 각 기초자산 종가(\n해당거래소 기준)",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KY8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KY8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004KZ5": {
+  "isin": "KR6MD0004KZ5",
+  "seq": 5939,
+  "type": "ELS",
+  "code": "32789",
+  "name": "미래에셋증권(ELS)32789",
+  "coupon": 6.5,
+  "ladder": [
+   90,
+   85,
+   85,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004KZ5.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004KZ5",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004L05": {
+  "isin": "KR6MD0004L05",
+  "seq": 5940,
+  "type": "ELS",
+  "code": "32830",
+  "name": "미래에셋증권(ELS)32830",
+  "coupon": 7.6,
+  "ladder": [
+   100,
+   100,
+   95,
+   95,
+   90,
+   55
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "KOSPI200"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004L05.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004L05",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004L13": {
+  "isin": "KR6MD0004L13",
+  "seq": 5941,
+  "type": "ELS",
+  "code": "32831",
+  "name": "미래에셋증권(ELS)32831",
+  "coupon": 7.6,
+  "ladder": [
+   100,
+   100,
+   95,
+   95,
+   90,
+   55
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "KOSPI200"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004L13.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004L13",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004L21": {
+  "isin": "KR6MD0004L21",
+  "seq": 5942,
+  "type": "ELS",
+  "code": "32792",
+  "name": "미래에셋증권(ELS)32792",
+  "coupon": 6.2,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004L21.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004L21",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004L39": {
+  "isin": "KR6MD0004L39",
+  "seq": 5943,
+  "type": "ELS",
+  "code": "32836",
+  "name": "미래에셋증권(ELS)32836",
+  "coupon": 6.6,
+  "ladder": [
+   90,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004L39.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004L39",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004L47": {
+  "isin": "KR6MD0004L47",
+  "seq": 5944,
+  "type": "ELS",
+  "code": "32837",
+  "name": "미래에셋증권(ELS)32837",
+  "coupon": 5.3,
+  "ladder": [
+   85,
+   85,
+   80,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004L47.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004L47",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004L54": {
+  "isin": "KR6MD0004L54",
+  "seq": 5945,
+  "type": "ELS",
+  "code": "32838",
+  "name": "미래에셋증권(ELS)32838",
+  "coupon": 5.61,
+  "ladder": [
+   85,
+   85,
+   80,
+   80,
+   75,
+   55
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004L54.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004L54",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004L62": {
+  "isin": "KR6MD0004L62",
+  "seq": 5946,
+  "type": "ELS",
+  "code": "32796",
+  "name": "미래에셋증권(ELS)32796",
+  "coupon": 5.2,
+  "ladder": [
+   80,
+   80,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004L62.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004L62",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004L88": {
+  "isin": "KR6MD0004L88",
+  "seq": 5948,
+  "type": "ELB",
+  "code": "3165",
+  "name": "미래에셋증권(ELB)3165",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-05-26",
+  "ref_date": "2023-05-26",
+  "evals": [
+   [
+    1,
+    "2024-05-22"
+   ]
+  ],
+  "mat_eval": "2024-05-22",
+  "mat_pay": "2024-05-24",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004L88.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004L88",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004L96": {
+  "isin": "KR6MD0004L96",
+  "seq": 5949,
+  "type": "ELB",
+  "code": "3166",
+  "name": "미래에셋증권(ELB)3166",
+  "coupon": null,
+  "ladder": null,
+  "mat_years": null,
+  "period_months": null,
+  "issue_date": "2023-05-30",
+  "ref_date": "2023-05-30",
+  "evals": [
+   [
+    1,
+    "2024-05-28"
+   ]
+  ],
+  "mat_eval": "2024-05-28",
+  "mat_pay": "2024-05-30",
+  "ki": {},
+  "no_ki": true,
+  "assets": [
+   "KOSPI200",
+   "삼성전자"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": true,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004L96.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004L96",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004LA6": {
+  "isin": "KR6MD0004LA6",
+  "seq": 5950,
+  "type": "ELS",
+  "code": "32797",
+  "name": "미래에셋증권(ELS)32797",
+  "coupon": 6.5,
+  "ladder": [
+   90,
+   85,
+   80,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004LA6.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004LA6",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004LB4": {
+  "isin": "KR6MD0004LB4",
+  "seq": 5951,
+  "type": "ELS",
+  "code": "32795",
+  "name": "미래에셋증권(ELS)32795",
+  "coupon": 5.5,
+  "ladder": [
+   85,
+   85,
+   85,
+   80,
+   75,
+   70
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004LB4.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004LB4",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004LC2": {
+  "isin": "KR6MD0004LC2",
+  "seq": 5952,
+  "type": "ELS",
+  "code": "32790",
+  "name": "미래에셋증권(ELS)32790",
+  "coupon": 6.1,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004LC2.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004LC2",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004LD0": {
+  "isin": "KR6MD0004LD0",
+  "seq": 5953,
+  "type": "ELS",
+  "code": "32791",
+  "name": "미래에셋증권(ELS)32791",
+  "coupon": 6.3,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004LD0.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004LD0",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004LE8": {
+  "isin": "KR6MD0004LE8",
+  "seq": 5954,
+  "type": "ELS",
+  "code": "32793",
+  "name": "미래에셋증권(ELS)32793",
+  "coupon": 6.4,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "Nikkei225",
+   "EuroStoxx50",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004LE8.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004LE8",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004LF5": {
+  "isin": "KR6MD0004LF5",
+  "seq": 5955,
+  "type": "ELS",
+  "code": "32787",
+  "name": "미래에셋증권(ELS)32787",
+  "coupon": 5.8,
+  "ladder": null,
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004LF5.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004LF5",
+  "fetched": "2026-09-29"
+ },
+ "KR6MD0004LG3": {
+  "isin": "KR6MD0004LG3",
+  "seq": 5956,
+  "type": "ELS",
+  "code": "32788",
+  "name": "미래에셋증권(ELS)32788",
+  "coupon": 5.5,
+  "ladder": [
+   85,
+   80,
+   80,
+   80,
+   75,
+   65
+  ],
+  "mat_years": 3.0,
+  "period_months": 6.0,
+  "issue_date": null,
+  "ref_date": null,
+  "evals": [],
+  "mat_eval": null,
+  "mat_pay": null,
+  "ki": {},
+  "no_ki": false,
+  "assets": [
+   "EuroStoxx50",
+   "KOSPI200",
+   "S&P500"
+  ],
+  "lizard": false,
+  "monthly": false,
+  "principal_guard": false,
+  "payoff": "",
+  "pdf": "https://securities.miraeasset.com/public/hks4412/002/KR6MD0004LG3.pdf",
+  "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0004LG3",
+  "fetched": "2026-09-29"
+ }
+}
