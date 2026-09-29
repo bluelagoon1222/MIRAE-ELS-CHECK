@@ -155,8 +155,8 @@ footer{margin:40px 0 30px;font-size:12px;color:var(--muted-soft);line-height:1.6
 
 <script>
 let DATA=null, LIST=[], FILTER='all', SORT='next', SORTDIR=1;
-const STATUS={pass:['상환 가능','b-pass'],defer:['이월 예상','b-defer'],risk:['배리어 미달','b-risk'],ki:['낙인 발생','b-ki'],redeemed:['상환 완료(추정)','b-redeemed'],nodata:['판정 불가','b-nodata'],matured:['만기 경과','b-matured'],unknown:['판정 불가','b-nodata']};
-const COLOR={pass:'#2E8540',defer:'#D4A017',risk:'#AD624E',ki:'#C62828',redeemed:'#043B72',nodata:'#84888B',matured:'#84888B'};
+const STATUS={pass:['상환 가능','b-pass'],defer:['이월 예상','b-defer'],risk:['배리어 미달','b-risk'],ki:['낙인 발생','b-ki'],redeemed:['상환 완료(추정)','b-redeemed'],redeemed_confirmed:['상환 완료(공시)','b-redeemed'],nodata:['판정 불가','b-nodata'],matured:['만기 경과','b-matured'],unknown:['판정 불가','b-nodata']};
+const COLOR={pass:'#2E8540',defer:'#D4A017',risk:'#AD624E',ki:'#C62828',redeemed:'#043B72',redeemed_confirmed:'#043B72',nodata:'#84888B',matured:'#84888B'};
 const $=s=>document.querySelector(s);
 const f1=(v,d=1)=>v==null?'-':Number(v).toFixed(d);
 const fnum=v=>v==null?'-':(Math.abs(v)>=1000?Number(v).toLocaleString('en-US',{maximumFractionDigits:2}):Number(v).toLocaleString('en-US',{maximumFractionDigits:2}));
@@ -220,7 +220,7 @@ function cardHTML(p){
 function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 function boardRows(){
   let rows=LIST.filter(p=>{
-    const j=p.judgment||{}; if(j.status==='redeemed'||j.status==='matured') return false;
+    const j=p.judgment||{}; if(j.status==='redeemed'||j.status==='redeemed_confirmed'||j.status==='matured') return false;
     if(FILTER==='all') return true;
     if(FILTER==='soon') return j.next&&j.next.days<=30&&j.next.days>=0;
     return j.status===FILTER;
