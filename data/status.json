@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-30 14:36",
- "elapsed_sec": 796.0,
+ "generated": "2026-10-01 07:51",
+ "elapsed_sec": 660.5,
  "cached_products": 3465,
  "excluded": 1231,
  "redeemed_list": 0,
@@ -14,8 +14,8 @@
   "ki": 11,
   "risk": 14,
   "redeemed": 113,
-  "defer": 60,
-  "pass": 425,
+  "defer": 61,
+  "pass": 424,
   "matured": 2,
   "pending": 37
  },
@@ -42,33 +42,33 @@
  "prices": {
   "NVDA": {
    "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
+   "first": "2019-10-01",
+   "last": "2026-09-30"
   },
   "AMD": {
    "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
+   "first": "2019-10-01",
+   "last": "2026-09-30"
   },
   "AMZN": {
    "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
+   "first": "2019-10-01",
+   "last": "2026-09-30"
   },
   "META": {
    "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
+   "first": "2019-10-01",
+   "last": "2026-09-30"
   },
   "^KS200": {
-   "rows": 1999,
+   "rows": 2000,
    "first": "2018-08-03",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "^GSPC": {
    "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
+   "first": "2019-10-01",
+   "last": "2026-09-30"
   },
   "^N225": {
    "rows": 1707,
@@ -81,84 +81,84 @@
    "last": "2026-09-29"
   },
   "005930.KS": {
-   "rows": 1999,
+   "rows": 2000,
    "first": "2018-08-03",
-   "last": "2026-09-29"
-  },
-  "^HSCE": {
-   "rows": 1723,
-   "first": "2019-09-30",
    "last": "2026-09-30"
   },
-  "035420.KS": {
-   "rows": 1999,
-   "first": "2018-08-03",
+  "^HSCE": {
+   "rows": 1722,
+   "first": "2019-09-30",
    "last": "2026-09-29"
+  },
+  "035420.KS": {
+   "rows": 2000,
+   "first": "2018-08-03",
+   "last": "2026-09-30"
   },
   "TSLA": {
    "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
+   "first": "2019-10-01",
+   "last": "2026-09-30"
   },
   "NFLX": {
    "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
+   "first": "2019-10-01",
+   "last": "2026-09-30"
   },
   "INTC": {
    "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
+   "first": "2019-10-01",
+   "last": "2026-09-30"
   },
   "MSFT": {
    "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
+   "first": "2019-10-01",
+   "last": "2026-09-30"
   },
   "051910.KS": {
-   "rows": 1999,
+   "rows": 2000,
    "first": "2018-08-03",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "005490.KS": {
-   "rows": 1999,
+   "rows": 2000,
    "first": "2018-08-03",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "AAPL": {
    "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
+   "first": "2019-10-01",
+   "last": "2026-09-30"
   },
   "PYPL": {
    "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
+   "first": "2019-10-01",
+   "last": "2026-09-30"
   },
   "000660.KS": {
-   "rows": 1999,
+   "rows": 2000,
    "first": "2018-08-03",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "005380.KS": {
-   "rows": 1999,
+   "rows": 2000,
    "first": "2018-08-03",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "AVGO": {
    "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
+   "first": "2019-10-01",
+   "last": "2026-09-30"
   },
   "PLTR": {
-   "rows": 1506,
+   "rows": 1507,
    "first": "2020-09-30",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "MU": {
    "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
+   "first": "2019-10-01",
+   "last": "2026-09-30"
   }
  },
  "parse_missing": {
@@ -167,52 +167,64 @@
   "evals": 1108
  },
  "redeemed_debug": [
-  "[14:23:31] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[14:23:34] [redeemed] page1 rows=0 html_len=545",
-  "[14:23:36] [redeemed] GET variant rows=0",
-  "[14:23:36] [redeemed] total redeemed entries found=0 ok=False"
+  "[07:40:41] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
+  "[07:40:44] [redeemed] page1 rows=0 html_len=545",
+  "[07:40:46] [redeemed] GET variant rows=0",
+  "[07:40:46] [redeemed] total redeemed entries found=0 ok=False"
  ],
  "price_debug": [
-  "[14:36:30] yahoo ^KS200: 1 rows 2026-09-30..2026-09-30",
-  "[14:36:31] fchart ok KPI200: 2000 rows, last 2026-09-30",
-  "[14:36:32] yahoo 005930.KS: 1715 rows 2019-09-30..2026-09-30",
-  "[14:36:34] fchart ok 005930: 2000 rows, last 2026-09-30",
-  "[14:36:34] yahoo 035420.KS: 1715 rows 2019-09-30..2026-09-30",
-  "[14:36:35] fchart ok 035420: 2000 rows, last 2026-09-30",
-  "[14:36:37] yahoo 051910.KS: 1715 rows 2019-09-30..2026-09-30",
-  "[14:36:38] fchart ok 051910: 2000 rows, last 2026-09-30",
-  "[14:36:38] yahoo 005490.KS: 1715 rows 2019-09-30..2026-09-30",
-  "[14:36:39] fchart ok 005490: 2000 rows, last 2026-09-30",
-  "[14:36:40] yahoo 000660.KS: 1715 rows 2019-09-30..2026-09-30",
-  "[14:36:41] fchart ok 000660: 2000 rows, last 2026-09-30",
-  "[14:36:42] yahoo 005380.KS: 1715 rows 2019-09-30..2026-09-30",
-  "[14:36:43] fchart ok 005380: 2000 rows, last 2026-09-30"
+  "[07:51:25] yahoo ^KS200: 1 rows 2026-09-30..2026-09-30",
+  "[07:51:27] fchart ok KPI200: 2000 rows, last 2026-09-30",
+  "[07:51:27] yahoo 005930.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[07:51:29] fchart ok 005930: 2000 rows, last 2026-09-30",
+  "[07:51:29] yahoo 035420.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[07:51:30] fchart ok 035420: 2000 rows, last 2026-09-30",
+  "[07:51:31] yahoo 051910.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[07:51:32] fchart ok 051910: 2000 rows, last 2026-09-30",
+  "[07:51:32] yahoo 005490.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[07:51:33] fchart ok 005490: 2000 rows, last 2026-09-30",
+  "[07:51:34] yahoo 000660.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[07:51:35] fchart ok 000660: 2000 rows, last 2026-09-30",
+  "[07:51:35] yahoo 005380.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[07:51:36] fchart ok 005380: 2000 rows, last 2026-09-30"
  ],
- "scan_cursor": 14225,
+ "scan_cursor": 14625,
  "log": [
-  "[14:23:28] start: cached products=3465 excluded=1231 FULL_SCAN=True MAX_PROBES=1800",
-  "[14:23:31] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[14:23:34] [redeemed] page1 rows=0 html_len=545",
-  "[14:23:36] [redeemed] GET variant rows=0",
-  "[14:23:36] [redeemed] total redeemed entries found=0 ok=False",
-  "[14:23:43] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
-  "[14:25:08] recent scan: rate=4.61/day est_now=11699 max_known=11672",
-  "[14:28:06] discovery: probes=400 new=0 total_products=3465 cursor=14225",
-  "[14:36:29] re-parse: candidates=1109 tried=1109 fixed=0",
-  "[14:36:29] active products: 3465 (redeemed list entries=0, source ok=False)",
-  "[14:36:30] yahoo ^KS200: 1 rows 2026-09-30..2026-09-30",
-  "[14:36:31] fchart ok KPI200: 2000 rows, last 2026-09-30",
-  "[14:36:32] yahoo 005930.KS: 1715 rows 2019-09-30..2026-09-30",
-  "[14:36:34] fchart ok 005930: 2000 rows, last 2026-09-30",
-  "[14:36:34] yahoo 035420.KS: 1715 rows 2019-09-30..2026-09-30",
-  "[14:36:35] fchart ok 035420: 2000 rows, last 2026-09-30",
-  "[14:36:37] yahoo 051910.KS: 1715 rows 2019-09-30..2026-09-30",
-  "[14:36:38] fchart ok 051910: 2000 rows, last 2026-09-30",
-  "[14:36:38] yahoo 005490.KS: 1715 rows 2019-09-30..2026-09-30",
-  "[14:36:39] fchart ok 005490: 2000 rows, last 2026-09-30",
-  "[14:36:40] yahoo 000660.KS: 1715 rows 2019-09-30..2026-09-30",
-  "[14:36:41] fchart ok 000660: 2000 rows, last 2026-09-30",
-  "[14:36:42] yahoo 005380.KS: 1715 rows 2019-09-30..2026-09-30",
-  "[14:36:43] fchart ok 005380: 2000 rows, last 2026-09-30"
+  "[07:40:37] start: cached products=3465 excluded=1231 FULL_SCAN=True MAX_PROBES=1800",
+  "[07:40:41] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
+  "[07:40:44] [redeemed] page1 rows=0 html_len=545",
+  "[07:40:46] [redeemed] GET variant rows=0",
+  "[07:40:46] [redeemed] total redeemed entries found=0 ok=False",
+  "[07:40:54] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
+  "[07:42:21] recent scan: rate=4.61/day est_now=11704 max_known=11672",
+  "[07:45:23] discovery: probes=400 new=0 total_products=3465 cursor=14625",
+  "[07:47:31] pdf fetch fail KR6MD0008T45: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[07:47:32] pdf fetch fail KR6MD0008T45: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /public/editor/elsdls/KR6MD0008T45.pdf (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[07:47:36] pdf fetch fail KR6MD0008SZ9: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[07:48:27] pdf fetch fail KR6MD0008QQ2: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+  "[07:48:30] pdf fetch fail KR6MD0008QN9: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[07:48:54] pdf fetch fail KR6MD0008PQ4: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[07:49:56] pdf fetch fail KR6MD0008LD1: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[07:50:13] pdf fetch fail KR6MD0008KK8: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+  "[07:51:20] pdf fetch fail KR6MD0008GK6: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+  "[07:51:22] pdf fetch fail KR6MD0008GJ8: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[07:51:23] pdf fetch fail KR6MD0008GJ8: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /public/editor/elsdls/KR6MD0008GJ8.pdf (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[07:51:24] network error during re-parse, stopping",
+  "[07:51:24] re-parse: candidates=3465 tried=429 fixed=358",
+  "[07:51:24] active products: 3465 (redeemed list entries=0, source ok=False)",
+  "[07:51:25] yahoo ^KS200: 1 rows 2026-09-30..2026-09-30",
+  "[07:51:27] fchart ok KPI200: 2000 rows, last 2026-09-30",
+  "[07:51:27] yahoo 005930.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[07:51:29] fchart ok 005930: 2000 rows, last 2026-09-30",
+  "[07:51:29] yahoo 035420.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[07:51:30] fchart ok 035420: 2000 rows, last 2026-09-30",
+  "[07:51:31] yahoo 051910.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[07:51:32] fchart ok 051910: 2000 rows, last 2026-09-30",
+  "[07:51:32] yahoo 005490.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[07:51:33] fchart ok 005490: 2000 rows, last 2026-09-30",
+  "[07:51:34] yahoo 000660.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[07:51:35] fchart ok 000660: 2000 rows, last 2026-09-30",
+  "[07:51:35] yahoo 005380.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[07:51:36] fchart ok 005380: 2000 rows, last 2026-09-30"
  ]
 }
