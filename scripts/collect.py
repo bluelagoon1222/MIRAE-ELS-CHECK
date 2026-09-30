@@ -110,13 +110,15 @@ def fetch_html(url, **kw):
             pass
     return r.text
 
-KDATE = re.compile(r"(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일")
+PARSE_VERSION = 3
+KDATE = re.compile(r"(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일|(\d{4})[.\-/](\d{1,2})[.\-/](\d{1,2})")
 
 def kdate(s):
     m = KDATE.search(s or "")
     if not m:
         return None
-    return "%04d-%02d-%02d" % tuple(int(x) for x in m.groups())
+    g = [x for x in m.groups() if x is not None]
+    return "%04d-%02d-%02d" % tuple(int(x) for x in g[:3])
 
 def parse_detail(html, isin):
     soup = BeautifulSoup(html, "html.parser")
@@ -173,7 +175,7 @@ def parse_detail(html, isin):
     ref_date = kdate(ref_block)
     eval_block = after("자동조기상환", 900)
     evals = []
-    for n, y, mo, d in re.findall(r"(\d{1,2})\s*차\s*:\s*(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일", eval_block):
+    for n, y, mo, d in re.findall(r"(\d{1,2})\s*차\s*[:：]?\s*(\d{4})\s*[년.\-/]\s*(\d{1,2})\s*[월.\-/]\s*(\d{1,2})", eval_block):
         evals.append((int(n), "%04d-%02d-%02d" % (int(y), int(mo), int(d))))
     evals = sorted(set(evals))
     mat_eval = kdate(after("만기상환평가일", 120))
@@ -251,6 +253,8 @@ def parse_detail(html, isin):
         "pdf": f"{BASE}/public/hks4412/002/{isin}.pdf",
         "url": DETAIL_URL.format(isin=isin),
         "fetched": TODAY.isoformat(),
+        "parse_version": PARSE_VERSION,
+        "_text_head": text[:2600] if (ladder is None or not (issue_date or ref_date) or not evals) else None,
     }
 
 HTTP_ERR_STREAK = [0]
@@ -920,6 +924,31 @@ def main():
         log("discovery crashed: " + traceback.format_exc().splitlines()[-1])
     save_json(SCAN_FILE, scan)
 
+    # re-parse products cached by an older parser or with missing key fields (newest first, bounded)
+    REPARSE_MAX = int(os.environ.get("REPARSE_MAX", "600"))
+    need = [p for p in products.values() if p["isin"] not in excluded and (
+            p.get("parse_version", 0) < PARSE_VERSION or p.get("ladder") is None
+            or not (p.get("ref_date") or p.get("issue_date")) or not p.get("evals"))]
+    need.sort(key=lambda p: -(p.get("seq") or 0))
+    rp = fixed = 0
+    debug = []
+    for p in need[:REPARSE_MAX]:
+        res = probe_isin(p["isin"]); rp += 1; time.sleep(REQ_SLEEP)
+        if isinstance(res, dict):
+            products[p["isin"]] = res
+            if res.get("ladder") is not None and (res.get("ref_date") or res.get("issue_date")) and res.get("evals"):
+                fixed += 1
+            elif len(debug) < 3 and res.get("_text_head"):
+                debug.append({"isin": p["isin"], "code": res.get("code"), "text": res["_text_head"]})
+        elif res == "ERR":
+            log("network error during re-parse, stopping"); break
+    if need:
+        log(f"re-parse: candidates={len(need)} tried={rp} fixed={fixed}")
+    if debug:
+        save_json(os.path.join(DATA, "parse_debug.json"), debug)
+    for p in products.values():
+        p.pop("_text_head", None)
+
     def red_for(p):
         r = redeemed.get(p["isin"]) or redeemed.get("CODE:" + p["code"])
         return r
@@ -974,9 +1003,13 @@ def main():
     save_json(EXCLUDED_FILE, excluded)
 
     price_asof = {}
+    price_diag = {}
     for sym, h in PRICE_CACHE.items():
         if h:
             d = max(h.keys()); price_asof[sym] = {"date": d, "close": h[d]}
+            price_diag[sym] = {"rows": len(h), "first": min(h.keys()), "last": d}
+        else:
+            price_diag[sym] = {"rows": 0}
 
     counts = {}
     unsupported = {}
@@ -997,7 +1030,12 @@ def main():
     status = {"generated": out["generated"], "elapsed_sec": round(time.time() - t0, 1),
               "cached_products": len(products), "excluded": len(excluded), "redeemed_list": len(redeemed),
               "redeemed_source_ok": red_ok, "hidden_estimated": hidden_est, "active": len(kept), "probes": probes, "new": new,
-              "counts": counts, "nodata_reasons": unsupported, "scan_cursor": scan.get("cursor"), "log": LOG[-120:]}
+              "counts": counts, "nodata_reasons": unsupported, "prices": price_diag,
+              "parse_missing": {"ladder": sum(1 for p in products.values() if p.get("ladder") is None),
+                                "ref_or_issue_date": sum(1 for p in products.values() if not (p.get("ref_date") or p.get("issue_date"))),
+                                "evals": sum(1 for p in products.values() if not p.get("evals"))},
+              "redeemed_debug": [l for l in LOG if "[redeemed]" in l][-10:],
+              "scan_cursor": scan.get("cursor"), "log": LOG[-120:]}
     save_json(STATUS_FILE, status)
     log(f"done in {status['elapsed_sec']}s — active={len(kept)} counts={counts}")
 
