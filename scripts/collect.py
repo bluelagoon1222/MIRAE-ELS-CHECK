@@ -110,7 +110,7 @@ def fetch_html(url, **kw):
             pass
     return r.text
 
-PARSE_VERSION = 3
+PARSE_VERSION = 4
 KDATE = re.compile(r"(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일|(\d{4})[.\-/](\d{1,2})[.\-/](\d{1,2})")
 
 def kdate(s):
@@ -259,6 +259,87 @@ def parse_detail(html, isin):
 
 HTTP_ERR_STREAK = [0]
 
+# ---------------------------------------------------------------------------
+# PDF fallback (요약설명서 / 간이투자설명서) for products whose web page lacks the schedule table
+# ---------------------------------------------------------------------------
+PDF_URLS = [BASE + "/public/hks4412/002/{isin}.pdf", BASE + "/public/editor/elsdls/{isin}.pdf"]
+ANYDATE = re.compile(r"(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})\s*일?")
+
+def _dates_in(txt):
+    return ["%04d-%02d-%02d" % tuple(int(x) for x in m) for m in ANYDATE.findall(txt or "")]
+
+def pdf_text(isin):
+    for u in PDF_URLS:
+        try:
+            r = session.get(u.format(isin=isin), timeout=40)
+            if r.status_code != 200 or not r.content.startswith(b"%PDF"):
+                continue
+            txt = ""
+            try:
+                from pypdf import PdfReader
+                import io
+                rd = PdfReader(io.BytesIO(r.content))
+                for pg in rd.pages[:4]:
+                    txt += (pg.extract_text() or "") + "\n"
+            except Exception as e:
+                log(f"pypdf fail {isin}: {e}")
+            if len(txt.strip()) < 200:
+                try:
+                    from pdfminer.high_level import extract_text
+                    import io
+                    txt = extract_text(io.BytesIO(r.content), maxpages=4) or ""
+                except Exception as e:
+                    log(f"pdfminer fail {isin}: {e}")
+            if txt.strip():
+                return txt, u.format(isin=isin)
+        except Exception as e:
+            log(f"pdf fetch fail {isin}: {e}")
+    return None, None
+
+def pdf_conditions(isin):
+    """Best-effort extraction of issue/ref dates, evaluation dates, KI from the product PDF."""
+    txt, url = pdf_text(isin)
+    if not txt:
+        return None
+    t = re.sub(r"[ \t\u3000]+", " ", txt)
+    out = {"pdf_used": url, "pdf_text": t[:4000]}
+    def after(label, n=300):
+        i = t.find(label)
+        return t[i + len(label): i + len(label) + n] if i >= 0 else ""
+    d = _dates_in(after("발행일", 60)); out["issue_date"] = d[0] if d else None
+    d = _dates_in(after("최초기준가격", 120)) or _dates_in(after("최초 기준가격", 120)); out["ref_date"] = d[0] if d else None
+    ev = []
+    for lab in ("자동조기상환평가일", "자동조기상환 평가일", "조기상환평가일", "조기상환 평가일", "중간평가일"):
+        blk = after(lab, 700)
+        if blk:
+            blk = re.split(r"만기\s*(?:상환)?\s*평가일|만기일|낙인|Knock", blk)[0]
+            ev = _dates_in(blk)
+            if ev:
+                break
+    d = _dates_in(after("만기평가일", 60)) or _dates_in(after("만기상환평가일", 60)) or _dates_in(after("최종평가일", 60))
+    out["mat_eval"] = d[0] if d else None
+    # keep evaluation dates that are after the issue date and unique, in order
+    seen = set(); evs = []
+    for x in ev:
+        if x in seen:
+            continue
+        if out["issue_date"] and x <= out["issue_date"]:
+            continue
+        seen.add(x); evs.append(x)
+    if out["mat_eval"] and evs and evs[-1] > out["mat_eval"]:
+        evs = [x for x in evs if x <= out["mat_eval"]]
+    out["evals"] = [(i + 1, x) for i, x in enumerate(evs)]
+    d = _dates_in(after("만기일", 60)); out["mat_pay"] = d[0] if d else None
+    ki = {}
+    for name, pct in re.findall(r"([A-Za-z가-힣&0-9 ]{2,25}?)\s*[:：]?\s*(\d{2,3}(?:\.\d+)?)\s*%\s*(?:미만|이하)?", after("낙인", 400) + after("Knock", 400)):
+        nm = name.strip()
+        if 2 <= len(nm) <= 25 and 20 <= float(pct) <= 80:
+            ki[nm] = float(pct)
+    out["ki_pdf"] = ki
+    m = re.search(r"(?:낙인|Knock[- ]?In)[^%\n]{0,40}?(\d{2,3}(?:\.\d+)?)\s*%", t)
+    out["ki_single"] = float(m.group(1)) if m else None
+    return out
+
 def probe_isin(isin):
     """returns dict / None (not a product) / 'ERR' (network outage)"""
     try:
@@ -274,10 +355,42 @@ def probe_isin(isin):
     except Exception:
         return "ERR"
     try:
-        return parse_detail(html, isin)
+        p = parse_detail(html, isin)
     except Exception:
         log(f"parse error {isin}: {traceback.format_exc().splitlines()[-1]}")
         return None
+    if p and p.get("type") == "ELS" and (not p.get("evals") or not (p.get("issue_date") or p.get("ref_date"))):
+        try:
+            pc = pdf_conditions(isin)
+        except Exception:
+            pc = None
+            log(f"pdf parse error {isin}: {traceback.format_exc().splitlines()[-1]}")
+        if pc:
+            for k in ("issue_date", "ref_date", "mat_eval", "mat_pay"):
+                if not p.get(k) and pc.get(k):
+                    p[k] = pc[k]
+            if not p.get("evals") and pc.get("evals"):
+                p["evals"] = pc["evals"]
+                if p.get("mat_eval") and p["evals"] and p["evals"][-1][1] != p["mat_eval"]:
+                    pass
+            if not p.get("ki"):
+                assets = p.get("assets") or []
+                if pc.get("ki_pdf"):
+                    for a in assets:
+                        for nm, v in pc["ki_pdf"].items():
+                            if norm_name(nm) in norm_name(a) or norm_name(a) in norm_name(nm):
+                                p["ki"][a] = v
+                if not p.get("ki") and pc.get("ki_single"):
+                    p["ki"] = {a: pc["ki_single"] for a in assets}
+            p["source"] = "web+pdf"
+            p["pdf_used"] = pc.get("pdf_used")
+            if not p.get("evals") or not (p.get("issue_date") or p.get("ref_date")):
+                p["_text_head"] = "[PDF]\n" + (pc.get("pdf_text") or "")[:4000]
+            else:
+                p["_text_head"] = None
+    if p is not None:
+        p["parse_attempts"] = 1
+    return p
 
 # ---------------------------------------------------------------------------
 # Universe discovery
@@ -1013,8 +1126,9 @@ def main():
     REPARSE_MAX = int(os.environ.get("REPARSE_MAX", "2500"))
     TIME_BUDGET = int(os.environ.get("TIME_BUDGET_SEC", "2400"))  # stop re-parsing after 40 min
     need = [p for p in products.values() if p["isin"] not in excluded and (
-            p.get("parse_version", 0) < PARSE_VERSION or p.get("ladder") is None
-            or not (p.get("ref_date") or p.get("issue_date")) or not p.get("evals"))]
+            p.get("parse_version", 0) < PARSE_VERSION or (
+                (p.get("ladder") is None or not (p.get("ref_date") or p.get("issue_date")) or not p.get("evals"))
+                and p.get("parse_attempts", 0) < 3))]
     need.sort(key=lambda p: -(p.get("seq") or 0))
     rp = fixed = 0
     debug = []
@@ -1024,6 +1138,7 @@ def main():
             log("re-parse: time budget reached"); break
         res = probe_isin(p["isin"]); rp += 1; time.sleep(REQ_SLEEP)
         if isinstance(res, dict):
+            res["parse_attempts"] = p.get("parse_attempts", 0) + 1
             products[p["isin"]] = res
             if res.get("ladder") is not None and (res.get("ref_date") or res.get("issue_date")) and res.get("evals"):
                 fixed += 1
