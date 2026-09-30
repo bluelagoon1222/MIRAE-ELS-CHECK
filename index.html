@@ -122,7 +122,7 @@ footer{margin:40px 0 30px;font-size:12px;color:var(--muted-soft);line-height:1.6
     <button class="btn" id="go">조회</button>
     <div class="sugg" id="sugg"></div>
   </div>
-  <div class="hint">회차번호는 잔고 화면의 "미래에셋증권(ELS)33391"에서 숫자 부분입니다. 공모 ELS·ELB만 조회되며, 사모·ELT는 담당 PB에게 확인해 주세요.</div>
+  <div class="hint">회차번호는 잔고 화면의 "미래에셋증권(ELS)33391"에서 숫자 부분입니다. 공모 ELS만 조회되며, 사모·ELT는 담당 PB에게 확인해 주세요.</div>
   <div id="result"></div>
 
   <div class="rule"></div>
@@ -155,8 +155,8 @@ footer{margin:40px 0 30px;font-size:12px;color:var(--muted-soft);line-height:1.6
 
 <script>
 let DATA=null, LIST=[], FILTER='all', SORT='next', SORTDIR=1;
-const STATUS={pass:['상환 가능','b-pass'],defer:['이월 예상','b-defer'],risk:['배리어 미달','b-risk'],ki:['낙인 발생','b-ki'],redeemed:['상환 완료(추정)','b-redeemed'],redeemed_confirmed:['상환 완료(공시)','b-redeemed'],nodata:['판정 불가','b-nodata'],matured:['만기 경과','b-matured'],unknown:['판정 불가','b-nodata']};
-const COLOR={pass:'#2E8540',defer:'#D4A017',risk:'#AD624E',ki:'#C62828',redeemed:'#043B72',redeemed_confirmed:'#043B72',nodata:'#84888B',matured:'#84888B'};
+const STATUS={pass:['상환 가능','b-pass'],defer:['이월 예상','b-defer'],risk:['배리어 미달','b-risk'],ki:['낙인 발생','b-ki'],redeemed:['상환 완료(추정)','b-redeemed'],redeemed_confirmed:['상환 완료(공시)','b-redeemed'],elb:['ELB(판정 대상 아님)','b-nodata'],nodata:['판정 불가','b-nodata'],matured:['만기 경과','b-matured'],unknown:['판정 불가','b-nodata']};
+const COLOR={pass:'#2E8540',defer:'#D4A017',risk:'#AD624E',ki:'#C62828',redeemed:'#043B72',redeemed_confirmed:'#043B72',elb:'#84888B',nodata:'#84888B',matured:'#84888B'};
 const $=s=>document.querySelector(s);
 const f1=(v,d=1)=>v==null?'-':Number(v).toFixed(d);
 const fnum=v=>v==null?'-':(Math.abs(v)>=1000?Number(v).toLocaleString('en-US',{maximumFractionDigits:2}):Number(v).toLocaleString('en-US',{maximumFractionDigits:2}));
@@ -241,7 +241,7 @@ function renderBoard(){
     const need=j.need_pct==null?'-':(j.need_pct===0?'충족':'+'+f1(j.need_pct)+'%');
     const exs=ex?`${ex.is_maturity?'만기':ex.n+'차'} ${ex.date} <span style="color:var(--muted-soft);font-size:12px">세전 ${f1(ex.ret,2)}%</span>`:'-';
     const tr=document.createElement('tr');
-    tr.innerHTML=`<td><span class="row-code" data-c="${p.code}">${p.code}</span>${p.type==='ELB'?'<span class="tag">ELB</span>':''}${p.lizard?'<span class="tag">리자드</span>':''}${p.monthly?'<span class="tag">월지급</span>':''}</td><td>${assets}</td><td class="r num">${worst}</td><td class="num">${nx?nx.date:'-'}${nx?` <span style="color:var(--muted-soft);font-size:12px">D-${nx.days}</span>`:''}</td><td class="r num">${nx&&nx.barrier!=null?nx.barrier+'%':'-'}</td><td class="r num">${need}</td><td><span class="badge ${st[1]}" style="font-size:12px;padding:2px 8px">${st[0]}</span></td><td class="num">${exs}</td><td class="r num">${f1(p.coupon,2)}%</td>`;
+    tr.innerHTML=`<td><span class="row-code" data-c="${p.code}">${p.code}</span>${p.lizard?'<span class="tag">리자드</span>':''}${p.monthly?'<span class="tag">월지급</span>':''}</td><td>${assets}</td><td class="r num">${worst}</td><td class="num">${nx?nx.date:'-'}${nx?` <span style="color:var(--muted-soft);font-size:12px">D-${nx.days}</span>`:''}</td><td class="r num">${nx&&nx.barrier!=null?nx.barrier+'%':'-'}</td><td class="r num">${need}</td><td><span class="badge ${st[1]}" style="font-size:12px;padding:2px 8px">${st[0]}</span></td><td class="num">${exs}</td><td class="r num">${f1(p.coupon,2)}%</td>`;
     tb.appendChild(tr);
     const mc=document.createElement('div'); mc.className='mcard';
     mc.innerHTML=`<div class="l1"><span class="row-code" data-c="${p.code}">${p.code}</span><span class="badge ${st[1]}" style="font-size:12px;padding:2px 8px">${st[0]}</span></div><div class="l2">${assets}</div><div class="l3 num">최저 ${worst} · 다음 ${nx?nx.date+' (D-'+nx.days+', '+nx.barrier+'%)':'-'} · 필요 ${need}</div><div class="l3 num" style="color:var(--muted)">예상 ${exs} · 연 ${f1(p.coupon,2)}%</div>`;
