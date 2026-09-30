@@ -549,6 +549,7 @@ def yahoo_history(sym):
     params = {"range": "7y", "interval": "1d", "events": "div,split"}
     hdr = {"User-Agent": HEADERS["User-Agent"], "Accept": "application/json"}
     for host in ("query1", "query2"):
+        r = None
         try:
             r = requests.get(url.replace("query1", host), params=params, headers=hdr, timeout=25)
             j = r.json()
@@ -569,8 +570,9 @@ def yahoo_history(sym):
                 out[d] = float(c)
             if out:
                 return out
+            log(f"yahoo empty {sym}@{host}: status={r.status_code} body={r.text[:100]!r}")
         except Exception as e:
-            log(f"yahoo fail {sym}@{host}: {e}")
+            log(f"yahoo fail {sym}@{host}: {e}" + (f" body={r.text[:100]!r}" if r is not None else ""))
     return None
 
 def naver_history(code, is_index=False, pages=40):
@@ -619,6 +621,63 @@ def naver_fchart(code, count=2000):
         log(f"fchart fail {code}: {e}")
         return None
 
+def krx_index_history(ind_idx="1", ind_idx2="028", name="코스피 200"):
+    """KRX data portal (index daily closes). KOSPI200 = 1/028."""
+    url = "https://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd"
+    hdr = {"User-Agent": HEADERS["User-Agent"],
+           "Referer": "https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC0201020101",
+           "Origin": "https://data.krx.co.kr", "X-Requested-With": "XMLHttpRequest"}
+    out = {}
+    try:
+        end = TODAY
+        start = TODAY - timedelta(days=365 * 4)
+        # KRX limits to ~2 years per call: split
+        cur = start
+        while cur < end:
+            nxt = min(end, cur + timedelta(days=700))
+            data = {"bld": "dbms/MDC/STAT/standard/MDCSTAT00301", "locale": "ko_KR",
+                    "tboxindIdx_finder_equidx0_0": name, "indIdx": ind_idx, "indIdx2": ind_idx2,
+                    "codeNmindIdx_finder_equidx0_0": name, "strtDd": cur.strftime("%Y%m%d"),
+                    "endDd": nxt.strftime("%Y%m%d"), "share": "1", "money": "1", "csvxls_isNo": "false"}
+            r = requests.post(url, data=data, headers=hdr, timeout=30)
+            j = r.json()
+            for row in j.get("output", []) or j.get("OutBlock_1", []):
+                d = row.get("TRD_DD", "").replace("/", "-")
+                c = row.get("CLSPRC_IDX", "").replace(",", "")
+                if len(d) == 10 and c:
+                    out[d] = float(c)
+            cur = nxt + timedelta(days=1)
+            time.sleep(0.5)
+        log(f"krx ok {name}: {len(out)} rows" if out else f"krx empty {name}: status={r.status_code} body={r.text[:120]!r}")
+    except Exception as e:
+        log(f"krx fail {name}: {e}")
+    return out or None
+
+def naver_api_chart(symbol="KPI200", is_index=True):
+    """api.stock.naver.com day candles."""
+    kind = "index" if is_index else "stock"
+    url = f"https://api.stock.naver.com/chart/domestic/{kind}/{symbol}"
+    hdr = {"User-Agent": HEADERS["User-Agent"], "Referer": "https://m.stock.naver.com/", "Accept": "application/json"}
+    try:
+        r = requests.get(url, params={"periodType": "dayCandle",
+                                      "startDateTime": (TODAY - timedelta(days=365 * 4)).strftime("%Y%m%d") + "0000",
+                                      "endDateTime": TODAY.strftime("%Y%m%d") + "2359"}, headers=hdr, timeout=25)
+        j = r.json()
+        rows = j.get("priceInfos") if isinstance(j, dict) else j
+        out = {}
+        for it in rows or []:
+            d = str(it.get("localDate") or it.get("localTradedAt") or "")[:10].replace(".", "-")
+            if len(d) == 8:
+                d = f"{d[:4]}-{d[4:6]}-{d[6:]}"
+            c = str(it.get("closePrice", "")).replace(",", "")
+            if d and c:
+                out[d] = float(c)
+        log(f"naver-api ok {symbol}: {len(out)} rows" if out else f"naver-api empty {symbol}: status={r.status_code} body={r.text[:120]!r}")
+        return out or None
+    except Exception as e:
+        log(f"naver-api fail {symbol}: {e}")
+        return None
+
 NOW_KST = datetime.now(KST)
 
 def drop_open_bar(h, market):
@@ -644,7 +703,13 @@ def get_history(sym, market):
             h = None
     if (not h) and market in ("kr", "kr_index"):
         code = "KPI200" if sym == "^KS200" else sym.split(".")[0]
-        h = naver_fchart(code) or naver_history(code, is_index=(sym == "^KS200"))
+        h = naver_fchart(code)
+        if not h and sym == "^KS200":
+            h = krx_index_history()
+        if not h:
+            h = naver_api_chart(code, is_index=(sym == "^KS200"))
+        if not h:
+            h = naver_history(code, is_index=(sym == "^KS200"))
     h = drop_open_bar(h or {}, market)
     PRICE_CACHE[sym] = h
     return PRICE_CACHE[sym]
@@ -925,7 +990,8 @@ def main():
     save_json(SCAN_FILE, scan)
 
     # re-parse products cached by an older parser or with missing key fields (newest first, bounded)
-    REPARSE_MAX = int(os.environ.get("REPARSE_MAX", "600"))
+    REPARSE_MAX = int(os.environ.get("REPARSE_MAX", "2500"))
+    TIME_BUDGET = int(os.environ.get("TIME_BUDGET_SEC", "2400"))  # stop re-parsing after 40 min
     need = [p for p in products.values() if p["isin"] not in excluded and (
             p.get("parse_version", 0) < PARSE_VERSION or p.get("ladder") is None
             or not (p.get("ref_date") or p.get("issue_date")) or not p.get("evals"))]
@@ -933,13 +999,17 @@ def main():
     rp = fixed = 0
     debug = []
     for p in need[:REPARSE_MAX]:
+        if time.time() - t0 > TIME_BUDGET:
+            log("re-parse: time budget reached"); break
         res = probe_isin(p["isin"]); rp += 1; time.sleep(REQ_SLEEP)
         if isinstance(res, dict):
             products[p["isin"]] = res
             if res.get("ladder") is not None and (res.get("ref_date") or res.get("issue_date")) and res.get("evals"):
                 fixed += 1
             elif len(debug) < 3 and res.get("_text_head"):
-                debug.append({"isin": p["isin"], "code": res.get("code"), "text": res["_text_head"]})
+                debug.append({"isin": p["isin"], "code": res.get("code"), "url": DETAIL_URL.format(isin=p["isin"]),
+                              "missing": {"ladder": res.get("ladder") is None, "date": not (res.get("ref_date") or res.get("issue_date")),
+                                          "evals": not res.get("evals")}, "text": res["_text_head"]})
         elif res == "ERR":
             log("network error during re-parse, stopping"); break
     if need:
@@ -1035,6 +1105,7 @@ def main():
                                 "ref_or_issue_date": sum(1 for p in products.values() if not (p.get("ref_date") or p.get("issue_date"))),
                                 "evals": sum(1 for p in products.values() if not p.get("evals"))},
               "redeemed_debug": [l for l in LOG if "[redeemed]" in l][-10:],
+              "price_debug": [l for l in LOG if any(k in l for k in ("yahoo", "fchart", "krx", "naver"))][-30:],
               "scan_cursor": scan.get("cursor"), "log": LOG[-120:]}
     save_json(STATUS_FILE, status)
     log(f"done in {status['elapsed_sec']}s — active={len(kept)} counts={counts}")
