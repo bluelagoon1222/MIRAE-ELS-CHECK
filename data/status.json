@@ -1,39 +1,37 @@
 {
- "generated": "2026-09-30 11:52",
- "elapsed_sec": 1687.3,
- "cached_products": 4042,
- "excluded": 654,
+ "generated": "2026-09-30 12:30",
+ "elapsed_sec": 1744.2,
+ "cached_products": 3465,
+ "excluded": 1231,
  "redeemed_list": 0,
  "redeemed_source_ok": false,
- "hidden_estimated": 988,
- "active": 3054,
+ "hidden_estimated": 1658,
+ "active": 1807,
  "probes": 400,
  "new": 0,
  "counts": {
-  "nodata": 2744,
-  "pass": 223,
-  "matured": 3,
-  "ki": 6,
-  "risk": 10,
-  "redeemed": 52,
-  "defer": 16
+  "nodata": 1182,
+  "ki": 11,
+  "risk": 14,
+  "redeemed": 113,
+  "defer": 60,
+  "pass": 425,
+  "matured": 2
  },
  "nodata_reasons": {
-  "KOSPI200": 2178,
-  "(배리어 미해석)": 1682,
+  "(배리어 미해석)": 1109,
   "EuroStoxx50": 1046,
-  "S&P500": 1000,
+  "S&P500": 983,
+  "KOSPI200": 757,
   "Nikkei225": 350,
-  "삼성전자": 120,
   "CSI300": 90,
   "HSCEI": 40,
-  "SK하이닉스": 22,
   "어플라이드 머티어리얼즈": 15,
-  "현대차": 7,
+  "삼성전자": 12,
+  "SK하이닉스": 12,
   "테슬라": 6,
   "마이크론 테크놀로지": 6,
   "SK이노베이션": 5,
-  "NAVER": 4,
   "알파벳 A": 4,
   "LG전자": 4,
   "팔란티어 테크": 4,
@@ -43,27 +41,11 @@
   "스타벅스": 2,
   "일라이 릴리": 2,
   "NIKKEI225": 2,
-  "AMD": 2
+  "AMD": 2,
+  "HangSeng지수": 1,
+  "Inc.": 1
  },
  "prices": {
-  "^KS200": {
-   "rows": 0
-  },
-  "005930.KS": {
-   "rows": 1714,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
-  },
-  "^GSPC": {
-   "rows": 1759,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
-  },
-  "000660.KS": {
-   "rows": 1714,
-   "first": "2019-09-30",
-   "last": "2026-09-29"
-  },
   "NVDA": {
    "rows": 1759,
    "first": "2019-09-30",
@@ -84,6 +66,16 @@
    "first": "2019-09-30",
    "last": "2026-09-29"
   },
+  "^KS200": {
+   "rows": 1999,
+   "first": "2018-08-03",
+   "last": "2026-09-29"
+  },
+  "^GSPC": {
+   "rows": 1759,
+   "first": "2019-09-30",
+   "last": "2026-09-29"
+  },
   "^N225": {
    "rows": 1707,
    "first": "2019-09-30",
@@ -94,14 +86,19 @@
    "first": "2019-09-30",
    "last": "2026-09-29"
   },
+  "005930.KS": {
+   "rows": 1999,
+   "first": "2018-08-03",
+   "last": "2026-09-29"
+  },
   "^HSCE": {
    "rows": 1723,
    "first": "2019-09-30",
    "last": "2026-09-30"
   },
   "035420.KS": {
-   "rows": 1714,
-   "first": "2019-09-30",
+   "rows": 1999,
+   "first": "2018-08-03",
    "last": "2026-09-29"
   },
   "TSLA": {
@@ -125,13 +122,13 @@
    "last": "2026-09-29"
   },
   "051910.KS": {
-   "rows": 1714,
-   "first": "2019-09-30",
+   "rows": 1999,
+   "first": "2018-08-03",
    "last": "2026-09-29"
   },
   "005490.KS": {
-   "rows": 1714,
-   "first": "2019-09-30",
+   "rows": 1999,
+   "first": "2018-08-03",
    "last": "2026-09-29"
   },
   "AAPL": {
@@ -144,9 +141,14 @@
    "first": "2019-09-30",
    "last": "2026-09-29"
   },
+  "000660.KS": {
+   "rows": 1999,
+   "first": "2018-08-03",
+   "last": "2026-09-29"
+  },
   "005380.KS": {
-   "rows": 1714,
-   "first": "2019-09-30",
+   "rows": 1999,
+   "first": "2018-08-03",
    "last": "2026-09-29"
   },
   "AVGO": {
@@ -166,28 +168,57 @@
   }
  },
  "parse_missing": {
-  "ladder": 496,
-  "ref_or_issue_date": 1423,
-  "evals": 1423
+  "ladder": 1,
+  "ref_or_issue_date": 1108,
+  "evals": 1108
  },
  "redeemed_debug": [
-  "[11:24:03] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[11:24:06] [redeemed] page1 rows=0 html_len=545",
-  "[11:24:08] [redeemed] GET variant rows=0",
-  "[11:24:08] [redeemed] total redeemed entries found=0 ok=False"
+  "[12:01:44] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
+  "[12:01:46] [redeemed] page1 rows=0 html_len=545",
+  "[12:01:49] [redeemed] GET variant rows=0",
+  "[12:01:49] [redeemed] total redeemed entries found=0 ok=False"
  ],
- "price_debug": [],
- "scan_cursor": 13425,
+ "price_debug": [
+  "[12:30:31] yahoo ^KS200: 1 rows 2026-09-30..2026-09-30",
+  "[12:30:33] fchart ok KPI200: 2000 rows, last 2026-09-30",
+  "[12:30:33] yahoo 005930.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[12:30:34] fchart ok 005930: 2000 rows, last 2026-09-30",
+  "[12:30:35] yahoo 035420.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[12:30:36] fchart ok 035420: 2000 rows, last 2026-09-30",
+  "[12:30:37] yahoo 051910.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[12:30:39] fchart ok 051910: 2000 rows, last 2026-09-30",
+  "[12:30:39] yahoo 005490.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[12:30:40] fchart ok 005490: 2000 rows, last 2026-09-30",
+  "[12:30:41] yahoo 000660.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[12:30:42] fchart ok 000660: 2000 rows, last 2026-09-30",
+  "[12:30:42] yahoo 005380.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[12:30:43] fchart ok 005380: 2000 rows, last 2026-09-30"
+ ],
+ "scan_cursor": 13825,
  "log": [
-  "[11:24:00] start: cached products=4042 excluded=654 FULL_SCAN=True MAX_PROBES=1800",
-  "[11:24:03] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[11:24:06] [redeemed] page1 rows=0 html_len=545",
-  "[11:24:08] [redeemed] GET variant rows=0",
-  "[11:24:08] [redeemed] total redeemed entries found=0 ok=False",
-  "[11:24:16] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
-  "[11:25:42] recent scan: rate=4.61/day est_now=11701 max_known=11674",
-  "[11:28:42] discovery: probes=400 new=0 total_products=4042 cursor=13425",
-  "[11:52:02] re-parse: candidates=3342 tried=2500 fixed=1406",
-  "[11:52:02] active products: 4042 (redeemed list entries=0, source ok=False)"
+  "[12:01:40] start: cached products=4042 excluded=654 FULL_SCAN=True MAX_PROBES=1800",
+  "[12:01:44] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
+  "[12:01:46] [redeemed] page1 rows=0 html_len=545",
+  "[12:01:49] [redeemed] GET variant rows=0",
+  "[12:01:49] [redeemed] total redeemed entries found=0 ok=False",
+  "[12:02:02] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
+  "[12:03:34] recent scan: rate=4.61/day est_now=11701 max_known=11674",
+  "[12:08:07] discovery: probes=400 new=0 total_products=4042 cursor=13825",
+  "[12:30:30] re-parse: candidates=1936 tried=1936 fixed=261",
+  "[12:30:30] active products: 3465 (redeemed list entries=0, source ok=False)",
+  "[12:30:31] yahoo ^KS200: 1 rows 2026-09-30..2026-09-30",
+  "[12:30:33] fchart ok KPI200: 2000 rows, last 2026-09-30",
+  "[12:30:33] yahoo 005930.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[12:30:34] fchart ok 005930: 2000 rows, last 2026-09-30",
+  "[12:30:35] yahoo 035420.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[12:30:36] fchart ok 035420: 2000 rows, last 2026-09-30",
+  "[12:30:37] yahoo 051910.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[12:30:39] fchart ok 051910: 2000 rows, last 2026-09-30",
+  "[12:30:39] yahoo 005490.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[12:30:40] fchart ok 005490: 2000 rows, last 2026-09-30",
+  "[12:30:41] yahoo 000660.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[12:30:42] fchart ok 000660: 2000 rows, last 2026-09-30",
+  "[12:30:42] yahoo 005380.KS: 1715 rows 2019-09-30..2026-09-30",
+  "[12:30:43] fchart ok 005380: 2000 rows, last 2026-09-30"
  ]
 }
