@@ -833,6 +833,12 @@ def judge(p, red=None):
         j["message"] = "원금지급형(ELB) 구조 — 스텝다운 조기상환 조건이 없어 자동 판정 대상이 아닙니다. 수익구조 원문을 확인해 주세요."
         out["judgment"] = j
         return out
+    ref_check = p.get("ref_date") or p.get("issue_date")
+    if ref_check and ref_check > TODAY.isoformat():
+        j["status"] = "pending"
+        j["message"] = f"발행 전(청약 중) — 최초기준가격 결정일 {ref_check} 이후부터 판정됩니다."
+        out["judgment"] = j
+        return out
     if not valid or len(valid) != len(assets_out) or not sched:
         j["status"] = "nodata"
         j["message"] = "기초자산 가격 또는 상환일정 데이터가 부족하여 자동 판정하지 못했습니다. 상품설명서를 확인해 주세요."
