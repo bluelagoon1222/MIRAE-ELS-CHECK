@@ -254,7 +254,7 @@ def parse_detail(html, isin):
         "url": DETAIL_URL.format(isin=isin),
         "fetched": TODAY.isoformat(),
         "parse_version": PARSE_VERSION,
-        "_text_head": text[:2600] if (ladder is None or not (issue_date or ref_date) or not evals) else None,
+        "_text_head": text[:4000] if (ladder is None or not (issue_date or ref_date) or not evals) else None,
     }
 
 HTTP_ERR_STREAK = [0]
@@ -696,20 +696,29 @@ def get_history(sym, market):
     if sym in PRICE_CACHE:
         return PRICE_CACHE[sym]
     h = yahoo_history(sym)
-    if h and market in ("kr", "kr_index"):
-        # Yahoo KR data is sometimes stale/gappy: distrust if last bar older than 7 days
-        if (TODAY - date.fromisoformat(max(h))).days > 7:
-            log(f"yahoo {sym} stale (last {max(h)}), trying Naver")
-            h = None
-    if (not h) and market in ("kr", "kr_index"):
+    if market in ("kr", "kr_index"):
+        # Yahoo KR history is often gappy or short: always merge a domestic source on top of it
         code = "KPI200" if sym == "^KS200" else sym.split(".")[0]
-        h = naver_fchart(code)
-        if not h and sym == "^KS200":
-            h = krx_index_history()
-        if not h:
-            h = naver_api_chart(code, is_index=(sym == "^KS200"))
-        if not h:
-            h = naver_history(code, is_index=(sym == "^KS200"))
+        if h:
+            log(f"yahoo {sym}: {len(h)} rows {min(h)}..{max(h)}")
+        dom = naver_fchart(code)
+        if not dom and sym == "^KS200":
+            dom = krx_index_history()
+        if not dom:
+            dom = naver_api_chart(code, is_index=(sym == "^KS200"))
+        if not dom:
+            dom = naver_history(code, is_index=(sym == "^KS200"))
+        if dom:
+            merged = dict(h or {})
+            merged.update(dom)  # domestic source wins on overlap
+            h = merged
+        if h:
+            # report gaps > 10 calendar days inside the last 3 years (helps diagnose missing reference dates)
+            ds = sorted(d for d in h if d >= (TODAY - timedelta(days=365 * 3)).isoformat())
+            gaps = [(ds[i], ds[i + 1]) for i in range(len(ds) - 1)
+                    if (date.fromisoformat(ds[i + 1]) - date.fromisoformat(ds[i])).days > 10]
+            if gaps:
+                log(f"{sym} gaps>10d: {gaps[:5]} (total {len(gaps)})")
     h = drop_open_bar(h or {}, market)
     PRICE_CACHE[sym] = h
     return PRICE_CACHE[sym]
@@ -786,7 +795,7 @@ def judge(p, red=None):
         hist = get_history(sym, market)
         if not hist:
             unsupported.append(name); assets_out.append(a); continue
-        ref, rd = close_on(hist, ref_date, forward=True)
+        ref, rd = close_on(hist, ref_date, forward=True, max_days=10)
         if ref is None:
             unsupported.append(name); assets_out.append(a); continue
         last_date = max(hist.keys())
@@ -819,6 +828,11 @@ def judge(p, red=None):
     sched = out["schedule"]
     j = {"status": "unknown", "message": "", "worst": None, "next": None, "expected": None,
          "knocked_in": None, "redeemed": None, "need_pct": None, "ki_room": None}
+    if p.get("type") == "ELB" and not p.get("ladder"):
+        j["status"] = "elb"
+        j["message"] = "원금지급형(ELB) 구조 — 스텝다운 조기상환 조건이 없어 자동 판정 대상이 아닙니다. 수익구조 원문을 확인해 주세요."
+        out["judgment"] = j
+        return out
     if not valid or len(valid) != len(assets_out) or not sched:
         j["status"] = "nodata"
         j["message"] = "기초자산 가격 또는 상환일정 데이터가 부족하여 자동 판정하지 못했습니다. 상품설명서를 확인해 주세요."
@@ -998,6 +1012,7 @@ def main():
     need.sort(key=lambda p: -(p.get("seq") or 0))
     rp = fixed = 0
     debug = []
+    debug_keys = set()
     for p in need[:REPARSE_MAX]:
         if time.time() - t0 > TIME_BUDGET:
             log("re-parse: time budget reached"); break
@@ -1006,10 +1021,14 @@ def main():
             products[p["isin"]] = res
             if res.get("ladder") is not None and (res.get("ref_date") or res.get("issue_date")) and res.get("evals"):
                 fixed += 1
-            elif len(debug) < 3 and res.get("_text_head"):
-                debug.append({"isin": p["isin"], "code": res.get("code"), "url": DETAIL_URL.format(isin=p["isin"]),
-                              "missing": {"ladder": res.get("ladder") is None, "date": not (res.get("ref_date") or res.get("issue_date")),
-                                          "evals": not res.get("evals")}, "text": res["_text_head"]})
+            elif res.get("_text_head"):
+                miss = {"ladder": res.get("ladder") is None, "date": not (res.get("ref_date") or res.get("issue_date")),
+                        "evals": not res.get("evals")}
+                key = ("date" if miss["date"] else "evals" if miss["evals"] else "ladder") + ":" + res.get("type", "")
+                if key not in debug_keys and len(debug) < 6:
+                    debug_keys.add(key)
+                    debug.append({"why": key, "isin": p["isin"], "code": res.get("code"), "url": DETAIL_URL.format(isin=p["isin"]),
+                                  "missing": miss, "text": res["_text_head"]})
         elif res == "ERR":
             log("network error during re-parse, stopping"); break
     if need:
@@ -1028,7 +1047,7 @@ def main():
     for isin, p in list(products.items()):
         if isin in excluded:
             continue
-        if p.get("type") not in ("ELS", "ELB"):
+        if p.get("type") != "ELS":   # ELB/DLS/DLB are out of scope: exclude for good, never read again
             excluded[isin] = {"reason": "type:" + str(p.get("type")), "date": TODAY.isoformat()}
             continue
         me = p.get("mat_eval")
