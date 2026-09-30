@@ -1,17 +1,17 @@
 {
- "generated": "2026-09-30 10:36",
- "elapsed_sec": 634.9,
+ "generated": "2026-09-30 11:52",
+ "elapsed_sec": 1687.3,
  "cached_products": 4042,
  "excluded": 654,
  "redeemed_list": 0,
  "redeemed_source_ok": false,
- "hidden_estimated": 944,
- "active": 3098,
- "probes": 150,
+ "hidden_estimated": 988,
+ "active": 3054,
+ "probes": 400,
  "new": 0,
  "counts": {
-  "nodata": 2790,
-  "pass": 221,
+  "nodata": 2744,
+  "pass": 223,
   "matured": 3,
   "ki": 6,
   "risk": 10,
@@ -20,7 +20,7 @@
  },
  "nodata_reasons": {
   "KOSPI200": 2178,
-  "(배리어 미해석)": 1784,
+  "(배리어 미해석)": 1682,
   "EuroStoxx50": 1046,
   "S&P500": 1000,
   "Nikkei225": 350,
@@ -95,9 +95,9 @@
    "last": "2026-09-29"
   },
   "^HSCE": {
-   "rows": 1722,
+   "rows": 1723,
    "first": "2019-09-30",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "035420.KS": {
    "rows": 1714,
@@ -166,27 +166,28 @@
   }
  },
  "parse_missing": {
-  "ladder": 607,
+  "ladder": 496,
   "ref_or_issue_date": 1423,
   "evals": 1423
  },
  "redeemed_debug": [
-  "[10:25:52] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[10:25:54] [redeemed] page1 rows=0 html_len=545",
-  "[10:25:57] [redeemed] GET variant rows=0",
-  "[10:25:57] [redeemed] total redeemed entries found=0 ok=False"
+  "[11:24:03] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
+  "[11:24:06] [redeemed] page1 rows=0 html_len=545",
+  "[11:24:08] [redeemed] GET variant rows=0",
+  "[11:24:08] [redeemed] total redeemed entries found=0 ok=False"
  ],
- "scan_cursor": 13025,
+ "price_debug": [],
+ "scan_cursor": 13425,
  "log": [
-  "[10:25:49] start: cached products=4042 excluded=654 FULL_SCAN=False MAX_PROBES=260",
-  "[10:25:52] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[10:25:54] [redeemed] page1 rows=0 html_len=545",
-  "[10:25:57] [redeemed] GET variant rows=0",
-  "[10:25:57] [redeemed] total redeemed entries found=0 ok=False",
-  "[10:26:08] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
-  "[10:27:41] recent scan: rate=4.61/day est_now=11701 max_known=11674",
-  "[10:29:21] discovery: probes=150 new=0 total_products=4042 cursor=13025",
-  "[10:36:20] re-parse: candidates=3623 tried=600 fixed=281",
-  "[10:36:20] active products: 4042 (redeemed list entries=0, source ok=False)"
+  "[11:24:00] start: cached products=4042 excluded=654 FULL_SCAN=True MAX_PROBES=1800",
+  "[11:24:03] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
+  "[11:24:06] [redeemed] page1 rows=0 html_len=545",
+  "[11:24:08] [redeemed] GET variant rows=0",
+  "[11:24:08] [redeemed] total redeemed entries found=0 ok=False",
+  "[11:24:16] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
+  "[11:25:42] recent scan: rate=4.61/day est_now=11701 max_known=11674",
+  "[11:28:42] discovery: probes=400 new=0 total_products=4042 cursor=13425",
+  "[11:52:02] re-parse: candidates=3342 tried=2500 fixed=1406",
+  "[11:52:02] active products: 4042 (redeemed list entries=0, source ok=False)"
  ]
 }
