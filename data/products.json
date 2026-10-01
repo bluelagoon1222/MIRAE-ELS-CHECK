@@ -199213,7 +199213,7 @@
   "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0008WM9",
   "fetched": "2026-10-01",
   "parse_version": 4,
-  "parse_attempts": 1
+  "parse_attempts": 2
  },
  "KR6MD0008WN7": {
   "isin": "KR6MD0008WN7",
@@ -199389,7 +199389,7 @@
   "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0008WY4",
   "fetched": "2026-10-01",
   "parse_version": 4,
-  "parse_attempts": 1
+  "parse_attempts": 2
  },
  "KR6MD0008WZ1": {
   "isin": "KR6MD0008WZ1",
@@ -199429,7 +199429,7 @@
   "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0008WZ1",
   "fetched": "2026-10-01",
   "parse_version": 4,
-  "parse_attempts": 1
+  "parse_attempts": 2
  },
  "KR6MD0008X07": {
   "isin": "KR6MD0008X07",
@@ -200552,7 +200552,7 @@
   "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0008XL9",
   "fetched": "2026-10-01",
   "parse_version": 4,
-  "parse_attempts": 1
+  "parse_attempts": 2
  },
  "KR6MD0008XM7": {
   "isin": "KR6MD0008XM7",
@@ -200592,7 +200592,7 @@
   "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0008XM7",
   "fetched": "2026-10-01",
   "parse_version": 4,
-  "parse_attempts": 1
+  "parse_attempts": 2
  },
  "KR6MD0008XN5": {
   "isin": "KR6MD0008XN5",
@@ -200632,7 +200632,7 @@
   "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0008XN5",
   "fetched": "2026-10-01",
   "parse_version": 4,
-  "parse_attempts": 1
+  "parse_attempts": 2
  },
  "KR6MD0008XP0": {
   "isin": "KR6MD0008XP0",
@@ -200671,7 +200671,7 @@
   "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0008XP0",
   "fetched": "2026-10-01",
   "parse_version": 4,
-  "parse_attempts": 1
+  "parse_attempts": 2
  },
  "KR6MD0008XX4": {
   "isin": "KR6MD0008XX4",
@@ -201850,7 +201850,7 @@
   "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0008YH5",
   "fetched": "2026-10-01",
   "parse_version": 4,
-  "parse_attempts": 1
+  "parse_attempts": 2
  },
  "KR6MD0008YJ1": {
   "isin": "KR6MD0008YJ1",
@@ -203445,7 +203445,7 @@
   "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0008ZG4",
   "fetched": "2026-10-01",
   "parse_version": 4,
-  "parse_attempts": 1
+  "parse_attempts": 2
  },
  "KR6MD0008ZH2": {
   "isin": "KR6MD0008ZH2",
@@ -203485,7 +203485,7 @@
   "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0008ZH2",
   "fetched": "2026-10-01",
   "parse_version": 4,
-  "parse_attempts": 1
+  "parse_attempts": 2
  },
  "KR6MD0008ZJ8": {
   "isin": "KR6MD0008ZJ8",
@@ -203525,7 +203525,7 @@
   "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0008ZJ8",
   "fetched": "2026-10-01",
   "parse_version": 4,
-  "parse_attempts": 1
+  "parse_attempts": 2
  },
  "KR6MD0008ZK6": {
   "isin": "KR6MD0008ZK6",
@@ -203661,7 +203661,7 @@
   "url": "https://securities.miraeasset.com/hks/hks4023/p02.do?item_cd=KR6MD0008ZL4",
   "fetched": "2026-10-01",
   "parse_version": 4,
-  "parse_attempts": 1
+  "parse_attempts": 2
  },
  "KR6MD0008ZP5": {
   "isin": "KR6MD0008ZP5",
