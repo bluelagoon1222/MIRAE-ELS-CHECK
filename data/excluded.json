@@ -4922,5 +4922,25 @@
  "KR6MD00090A4": {
   "reason": "type:ELB",
   "date": "2026-09-30"
+ },
+ "KR6MD00054S2": {
+  "reason": "redeemed:confirmed",
+  "date": "2024-01-05"
+ },
+ "KR6MD00055Z4": {
+  "reason": "redeemed:confirmed",
+  "date": "2024-04-12"
+ },
+ "KR6MD0005602": {
+  "reason": "redeemed:confirmed",
+  "date": "2024-04-12"
+ },
+ "KR6MD0005SN1": {
+  "reason": "redeemed:confirmed",
+  "date": "2025-10-02"
+ },
+ "KR6MD0005ST8": {
+  "reason": "redeemed:confirmed",
+  "date": "2024-10-07"
  }
 }
