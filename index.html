@@ -288,7 +288,7 @@ async function search(q){
   refreshMoney();
   window.scrollTo({top:box.offsetTop-80,behavior:'smooth'});
 }
-function retOf(p,ev){ return (p.coupon&&ev&&ev.months)?p.coupon*ev.months/12:null; }
+function retOf(p,ev){ if(ev&&ev.payout!=null) return ev.payout; return (p.coupon&&ev&&ev.months)?p.coupon*ev.months/12:null; }
 function moneyHTML(ret){
   const P=getPrincipal(); if(!P||ret==null) return '';
   const pre=P*ret/100, post=pre*(1-TAX);
