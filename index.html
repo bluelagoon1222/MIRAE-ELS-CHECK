@@ -6,108 +6,157 @@
 <title>MIRAE ELS CHECK — ELS 조기상환 조회</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --orange:#F58220;--orange-active:#CB6015;--orange-soft:#FAB072;--blue:#043B72;
-  --ink:#1A1A1A;--body:#3D3D3D;--muted:#6C6C6C;--muted-soft:#84888B;
+  --orange:#F58220;--orange-active:#CB6015;--orange-soft:#FAB072;--orange-bg:#FFF3E8;--blue:#043B72;--blue-bg:#E9EFF6;
+  --ink:#1A1A1A;--body:#2F2F2F;--muted:#5E6267;--muted-soft:#84888B;
   --hair:#CDCECB;--hair-soft:#E5E4E1;--soft:#ECEFF4;--subtle:#F7F8FA;--hl:#D7D7D7;
-  --ok:#2E8540;--warn:#D4A017;--err:#C62828;
+  --ok:#1F7A3A;--ok-bg:#E6F4EA;--warn:#B8860B;--warn-bg:#FFF6DD;--err:#C62828;--err-bg:#FDE9E9;
   --font:'Noto Sans KR','Spoqa Han Sans Neo','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
   --num:'Inter','Noto Sans KR',sans-serif;
   padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box;
 }
 *{box-sizing:border-box}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:#fff;color:var(--body);font-family:var(--font);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--body);font-family:var(--font);font-size:18px;line-height:1.6;-webkit-text-size-adjust:100%}
 .num{font-family:var(--num);font-variant-numeric:tabular-nums}
-.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
-header{border-bottom:1px solid var(--hair-soft)}
-.hdr{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:18px 0 14px;flex-wrap:wrap}
-.brand{display:flex;flex-direction:column;gap:2px}
-.brand .t{font-size:24px;font-weight:700;color:var(--ink);letter-spacing:-0.3px;line-height:1.2}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{border-bottom:2px solid var(--orange)}
+.hdr{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:22px 0 16px;flex-wrap:wrap}
+.brand .t{font-size:34px;font-weight:900;color:var(--ink);letter-spacing:-0.5px;line-height:1.15}
 .brand .t span{color:var(--orange)}
-.brand .s{font-size:13px;color:var(--muted)}
-.asof{font-size:13px;color:var(--muted);text-align:right}
-.asof b{color:var(--blue);font-family:var(--num)}
-.rule{height:1px;background:var(--orange);margin:26px 0 14px}
-h2{font-size:20px;font-weight:700;color:var(--ink);margin:0 0 10px}
-.searchbox{display:flex;gap:8px;margin-top:18px;position:relative}
-.searchbox input{flex:1;font:inherit;font-size:18px;padding:12px 14px;border:1px solid var(--hair);border-radius:2px;outline:none;min-width:0}
+.brand .s{font-size:16px;color:var(--muted);margin-top:4px}
+.asof{font-size:15px;color:var(--muted);text-align:right;line-height:1.5}
+.asof b{color:var(--blue);font-family:var(--num);font-size:17px}
+
+.searchbox{display:flex;gap:10px;margin-top:26px;position:relative}
+.searchbox input{flex:1;font:inherit;font-size:26px;font-weight:500;padding:14px 18px;border:2px solid var(--hair);border-radius:4px;outline:none;min-width:0;font-family:var(--num)}
+.searchbox input::placeholder{font-family:var(--font);font-weight:400;font-size:19px;color:var(--muted-soft)}
 .searchbox input:focus{border-color:var(--orange)}
-.btn{background:var(--orange);color:#fff;border:0;border-radius:2px;padding:0 20px;font:inherit;font-weight:500;font-size:16px;cursor:pointer;height:50px;white-space:nowrap}
+.btn{background:var(--orange);color:#fff;border:0;border-radius:4px;padding:0 28px;font:inherit;font-weight:700;font-size:20px;cursor:pointer;height:62px;white-space:nowrap}
 .btn:active{background:var(--orange-active)}
-.btn.ghost{background:#fff;color:var(--muted);border:1px solid var(--hair);height:34px;padding:0 12px;font-size:13px}
+.btn.ghost{background:#fff;color:var(--body);border:1px solid var(--hair);height:42px;padding:0 16px;font-size:16px;font-weight:500}
 .btn.ghost.on{background:var(--orange);color:#fff;border-color:var(--orange)}
-.sugg{position:absolute;left:0;right:0;top:52px;background:#fff;border:1px solid var(--hair);z-index:20;max-height:260px;overflow:auto;display:none}
-.sugg div{padding:9px 14px;cursor:pointer;font-size:14px;border-bottom:1px solid var(--hair-soft)}
+.sugg{position:absolute;left:0;right:0;top:64px;background:#fff;border:1px solid var(--hair);z-index:20;max-height:320px;overflow:auto;display:none;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.sugg div{padding:12px 18px;cursor:pointer;font-size:17px;border-bottom:1px solid var(--hair-soft)}
 .sugg div:hover{background:var(--subtle)}
-.hint{font-size:13px;color:var(--muted);margin-top:8px}
-.card{border:1px solid var(--hair);border-radius:4px;padding:18px;margin-top:16px;background:#fff}
-.card .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start}
-.card .name{font-size:22px;font-weight:700;color:var(--ink)}
-.card .meta{font-size:13px;color:var(--muted);margin-top:2px}
-.badge{display:inline-block;padding:4px 10px;border-radius:2px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap}
-.b-pass{background:var(--ok)}.b-defer{background:var(--warn);color:#1A1A1A}.b-ki{background:var(--err)}.b-risk{background:#AD624E}
+
+.guide{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;margin-top:22px}
+.gbox{border:1px solid var(--hair-soft);border-radius:6px;padding:20px 22px;background:var(--subtle)}
+.gbox h3{margin:0 0 10px;font-size:19px;color:var(--ink)}
+.gbox ol{margin:0;padding-left:22px;font-size:17px;color:var(--body)}
+.gbox li{margin:6px 0}
+.legend{display:flex;flex-direction:column;gap:8px;font-size:16px}
+.legend div{display:flex;align-items:center;gap:10px}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:3px;flex:none}
+.legend small{color:var(--muted)}
+
+.card{border:1px solid var(--hair);border-radius:8px;padding:26px;margin-top:24px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.card .top{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:flex-start}
+.card .name{font-size:30px;font-weight:900;color:var(--ink);letter-spacing:-0.3px}
+.card .meta{font-size:16px;color:var(--muted);margin-top:4px}
+.badge{display:inline-block;padding:8px 16px;border-radius:4px;font-size:18px;font-weight:700;color:#fff;white-space:nowrap}
+.b-pass{background:var(--ok)}.b-defer{background:var(--warn)}.b-ki{background:var(--err)}.b-risk{background:#AD624E}
 .b-redeemed{background:var(--blue)}.b-nodata{background:var(--muted-soft)}.b-matured{background:var(--muted-soft)}
-.verdict{margin-top:14px;padding:14px 16px;background:var(--soft);border-left:4px solid var(--orange);font-size:16px;color:var(--ink);line-height:1.6}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
-.kpi{border:1px solid var(--hair-soft);padding:10px 12px}
-.kpi .l{font-size:12px;color:var(--muted);letter-spacing:.3px}
-.kpi .v{font-size:22px;font-weight:700;color:var(--blue);font-family:var(--num);line-height:1.2;margin-top:2px}
-.kpi .v.o{color:var(--orange)}
-.kpi .d{font-size:12px;color:var(--muted-soft)}
-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}
-th{background:var(--orange-soft);color:var(--ink);font-weight:700;text-align:left;padding:9px 10px;border:1px solid var(--hair);white-space:nowrap}
-td{padding:8px 10px;border:1px solid var(--hair-soft);vertical-align:middle}
+.verdict{margin-top:18px;padding:18px 20px;border-left:6px solid var(--orange);font-size:19px;color:var(--ink);line-height:1.65;background:var(--orange-bg)}
+.verdict.pass{border-color:var(--ok);background:var(--ok-bg)}.verdict.defer{border-color:var(--warn);background:var(--warn-bg)}
+.verdict.ki,.verdict.risk{border-color:var(--err);background:var(--err-bg)}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:18px}
+.kpi{border:1px solid var(--hair-soft);border-radius:6px;padding:14px 16px;background:#fff}
+.kpi .l{font-size:14px;color:var(--muted);letter-spacing:.3px;min-height:2.6em}
+.kpi .v{font-size:30px;font-weight:800;color:var(--blue);font-family:var(--num);line-height:1.15;margin-top:4px;white-space:nowrap}
+#kpi-money .v{font-size:25px}
+.kpi .v.o{color:var(--orange)}.kpi .v.g{color:var(--ok)}.kpi .v.r{color:var(--err)}
+.kpi .d{font-size:14px;color:var(--muted-soft);margin-top:2px}
+
+.principal{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px;padding:16px 18px;background:var(--blue-bg);border-radius:6px}
+.principal label{font-size:18px;font-weight:700;color:var(--blue)}
+.principal input{font:inherit;font-family:var(--num);font-size:22px;font-weight:600;padding:8px 12px;border:1px solid var(--hair);border-radius:4px;width:220px;text-align:right}
+.principal .unit{font-size:18px;color:var(--blue);font-weight:700}
+.principal .note{font-size:14px;color:var(--muted);flex-basis:100%}
+.quick{display:flex;gap:6px;flex-wrap:wrap}
+.quick button{font:inherit;font-size:14px;padding:4px 10px;border:1px solid var(--hair);background:#fff;border-radius:3px;cursor:pointer;color:var(--body)}
+
+table{width:100%;border-collapse:collapse;font-size:17px;margin-top:18px}
+th{background:var(--orange-soft);color:var(--ink);font-weight:700;text-align:left;padding:12px 12px;border:1px solid var(--hair);white-space:nowrap}
+td{padding:12px 12px;border:1px solid var(--hair-soft);vertical-align:middle}
 td.r,th.r{text-align:right}
 td.num{white-space:nowrap}
 tbody tr:hover{background:var(--subtle)}
 .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.sched{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
-.step{flex:1 1 120px;border:1px solid var(--hair-soft);padding:8px 10px;font-size:13px;position:relative}
-.step .n{font-weight:700;color:var(--ink)}
-.step .b{font-family:var(--num);font-size:18px;font-weight:700;color:var(--blue)}
-.step .d{color:var(--muted);font-size:12px;font-family:var(--num)}
-.step.passed{background:#E8F3EA;border-color:var(--ok)}
-.step.missed{background:var(--subtle);color:var(--muted-soft)}
-.step.missed .b{color:var(--muted-soft)}
-.step.next{border:2px solid var(--orange)}
-.step.expected{background:#FDEEDF}
-.tag{display:inline-block;font-size:11px;padding:1px 6px;border-radius:2px;background:var(--hl);color:var(--ink);margin-left:4px}
-.flags{margin-top:12px;font-size:13px;color:var(--muted)}
-.flags li{margin:2px 0}
-.links{margin-top:12px;font-size:13px}
-.links a{color:var(--blue);margin-right:14px}
-details.payoff{margin-top:12px;font-size:13px;color:var(--muted)}
-details.payoff pre{white-space:pre-wrap;font-family:var(--font);background:var(--subtle);padding:10px;margin:6px 0 0}
-.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0 6px}
-.filters input{font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--hair);border-radius:2px;width:180px}
-.counts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.chip{font-size:12px;padding:3px 8px;border:1px solid var(--hair);border-radius:2px;color:var(--body)}
-.chip i{display:inline-block;width:8px;height:8px;margin-right:5px;border-radius:1px}
-.row-code{font-weight:700;color:var(--blue);cursor:pointer;text-decoration:underline;font-family:var(--num)}
+.ratio-big{font-size:22px;font-weight:800;font-family:var(--num)}
+
+h3.sec{font-size:20px;color:var(--ink);margin:26px 0 10px}
+.sched{display:flex;flex-direction:column;gap:10px}
+.step{display:grid;grid-template-columns:210px 100px 140px 1fr;gap:10px 18px;align-items:center;border:1px solid var(--hair-soft);border-radius:6px;padding:14px 18px;background:#fff}
+.step .date{font-family:var(--num);font-size:28px;font-weight:800;color:var(--ink);line-height:1.1}
+.step .date small{display:block;font-size:14px;color:var(--muted);font-family:var(--font);font-weight:400;margin-top:2px}
+.step .n{font-size:18px;font-weight:700;color:var(--ink)}
+.step .n .tag{margin-left:0;margin-top:4px;display:inline-block}
+.step .bar{font-family:var(--num);font-size:26px;font-weight:800;color:var(--blue)}
+.step .bar small{display:block;font-size:13px;color:var(--muted);font-family:var(--font);font-weight:400}
+.step .ret{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline}
+.step .ret .y{font-family:var(--num);font-size:28px;font-weight:800;color:var(--orange)}
+.step .ret .y small{font-size:14px;color:var(--muted);font-family:var(--font);font-weight:400;margin-left:4px}
+.step .ret .m{font-family:var(--num);font-size:17px;color:var(--body)}
+.step .ret .m b{font-size:19px;color:var(--ink)}
+.step .ret .m span{color:var(--muted);font-size:14px;font-family:var(--font)}
+.step.passed{background:var(--ok-bg);border-color:var(--ok)}
+.step.passed .date,.step.passed .n{color:var(--ok)}
+.step.missed{background:var(--subtle);border-color:var(--hair-soft)}
+.step.missed .date,.step.missed .bar,.step.missed .ret .y{color:var(--muted-soft)}
+.step.next{border:3px solid var(--orange);background:var(--orange-bg)}
+.step.expected{border:3px solid var(--ok);background:var(--ok-bg)}
+.tag{display:inline-block;font-size:13px;padding:2px 8px;border-radius:3px;background:var(--hl);color:var(--ink);margin-left:6px;font-weight:700}
+.tag.o{background:var(--orange);color:#fff}.tag.g{background:var(--ok);color:#fff}.tag.r{background:var(--err);color:#fff}
+.flags{margin-top:16px;font-size:16px;color:var(--muted);padding-left:20px}
+.flags li{margin:3px 0}
+.links{margin-top:16px;font-size:16px}
+.links a{color:var(--blue);margin-right:18px;font-weight:500}
+details.payoff{margin-top:14px;font-size:15px;color:var(--muted)}
+details.payoff pre{white-space:pre-wrap;font-family:var(--font);background:var(--subtle);padding:12px;margin:6px 0 0;font-size:15px}
+
+.rule{height:2px;background:var(--orange);margin:34px 0 18px}
+h2{font-size:24px;font-weight:800;color:var(--ink);margin:0 0 10px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0 8px}
+.filters input{font:inherit;font-size:16px;padding:8px 12px;border:1px solid var(--hair);border-radius:4px;width:220px}
+.counts{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.chip{font-size:15px;padding:5px 10px;border:1px solid var(--hair);border-radius:3px;color:var(--body)}
+.chip i{display:inline-block;width:10px;height:10px;margin-right:6px;border-radius:2px}
+.row-code{font-weight:800;color:var(--blue);cursor:pointer;text-decoration:underline;font-family:var(--num);font-size:18px}
 .mob{display:none}
-footer{margin:40px 0 30px;font-size:12px;color:var(--muted-soft);line-height:1.6;border-top:1px solid var(--hair-soft);padding-top:14px}
-.empty{padding:26px;text-align:center;color:var(--muted);border:1px dashed var(--hair)}
+footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7;border-top:1px solid var(--hair-soft);padding-top:16px}
+.empty{padding:30px;text-align:center;color:var(--muted);border:1px dashed var(--hair);font-size:17px}
 .sort{cursor:pointer;user-select:none}
 .sort.on{color:var(--orange-active)}
+.yield{font-family:var(--num);font-weight:800;color:var(--orange)}
+
+@media (max-width:980px){ .kpis{grid-template-columns:repeat(3,1fr)} }
 @media (max-width:760px){
-  body{font-size:15px}
-  .wrap{padding:0 14px}
-  .brand .t{font-size:20px}
+  body{font-size:17px}
+  .wrap{padding:0 16px}
+  .brand .t{font-size:28px}
+  .searchbox input{font-size:22px;padding:12px 14px}
+  .btn{padding:0 18px;height:56px;font-size:18px}
+  .guide{grid-template-columns:1fr}
   .kpis{grid-template-columns:repeat(2,1fr)}
-  .card{padding:14px}
-  .card .name{font-size:19px}
-  .verdict{font-size:15px}
+  .kpi .v{font-size:22px}
+  #kpi-money .v{font-size:20px}
+  .card{padding:18px}
+  .card .name{font-size:25px}
+  .verdict{font-size:17px}
+  .step{grid-template-columns:1fr 1fr;gap:6px 12px}
+  .step .date{font-size:24px}
+  .step .ret{grid-column:1 / -1}
+  .step .ret .y{font-size:25px}
+  .principal input{width:160px;font-size:20px}
   .desk{display:none}.mob{display:block}
-  .mcard{border:1px solid var(--hair-soft);padding:10px 12px;margin-top:8px;font-size:14px}
+  .mcard{border:1px solid var(--hair-soft);border-radius:6px;padding:14px;margin-top:10px;font-size:16px}
   .mcard .l1{display:flex;justify-content:space-between;align-items:center;gap:8px}
-  .mcard .l2{color:var(--muted);font-size:13px;margin-top:3px}
-  .mcard .l3{margin-top:4px;font-size:13px}
-  .btn{padding:0 14px}
+  .mcard .l2{color:var(--muted);font-size:15px;margin-top:4px}
+  .mcard .l3{margin-top:6px;font-size:16px}
 }
-@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){} }
 </style>
 </head>
 <body>
@@ -118,20 +167,44 @@ footer{margin:40px 0 30px;font-size:12px;color:var(--muted-soft);line-height:1.6
 
 <main class="wrap">
   <div class="searchbox">
-    <input id="q" type="text" inputmode="numeric" placeholder="ELS 회차번호 입력 (예: 33391) 또는 종목코드 KR6MD…" autocomplete="off">
+    <input id="q" type="text" inputmode="numeric" placeholder="ELS 회차번호 입력 (예: 38071)" autocomplete="off">
     <button class="btn" id="go">조회</button>
     <div class="sugg" id="sugg"></div>
   </div>
-  <div class="hint">회차번호는 잔고 화면의 "미래에셋증권(ELS)33391"에서 숫자 부분입니다. 공모 ELS만 조회되며, 사모·ELT는 담당 PB에게 확인해 주세요.</div>
+
+  <div class="guide" id="guide">
+    <div class="gbox">
+      <h3>사용 방법</h3>
+      <ol>
+        <li>고객 잔고 화면의 <b>미래에셋증권(ELS)38071</b>에서 숫자 <b>38071</b>만 위 칸에 입력하고 조회를 누릅니다. 두 자리만 쳐도 후보가 뜹니다.</li>
+        <li>맨 위 색깔 상자가 결론입니다. 전일 종가 기준으로 <b>다음 평가일에 상환되는지, 안 되면 언제 상환이 예상되는지</b>를 한 문장으로 보여줍니다.</li>
+        <li><b>투자원금</b>을 입력하면 평가일마다 세전 수익과 세후(15.4% 공제) 수익금, 세후 수령액이 함께 표시됩니다.</li>
+        <li>평가일 목록에서 초록은 상환된 회차, 주황 테두리는 다음 평가일, 회색은 조건 미충족으로 지나간 회차입니다.</li>
+      </ol>
+    </div>
+    <div class="gbox">
+      <h3>판정 색깔 보는 법</h3>
+      <div class="legend">
+        <div><i style="background:#1F7A3A"></i><b>상환 가능</b><small>현재 수준이면 다음 평가일에 상환</small></div>
+        <div><i style="background:#B8860B"></i><b>이월 예상</b><small>다음 평가일은 미달, 이후 차수에서 상환 예상</small></div>
+        <div><i style="background:#AD624E"></i><b>배리어 미달</b><small>현 수준으로는 만기 배리어까지 미달</small></div>
+        <div><i style="background:#C62828"></i><b>낙인 발생</b><small>낙인 터치 이력 있음 — 회복 여부 확인</small></div>
+        <div><i style="background:#043B72"></i><b>상환 완료</b><small>이미 상환된 것으로 계산됨</small></div>
+        <div><i style="background:#84888B"></i><b>판정 불가 · 일정 미공개</b><small>조건 확인 필요 — 담당 PB 문의</small></div>
+      </div>
+      <div style="margin-top:12px;font-size:15px;color:var(--muted)">공모 ELS만 조회됩니다. 사모·ELT는 담당 PB에게 확인해 주세요.</div>
+    </div>
+  </div>
+
   <div id="result"></div>
 
   <div class="rule"></div>
-  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-    <button class="btn" id="toggleBoard" style="height:40px">전체 현황판 보기</button>
-    <span style="font-size:13px;color:var(--muted)">미상환 공모 ELS 전체를 평가일 임박순으로 봅니다</span>
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+    <button class="btn" id="toggleBoard" style="height:48px;font-size:18px">전체 현황판 보기</button>
+    <span style="font-size:16px;color:var(--muted)">미상환 공모 ELS 전체를 평가일 임박순으로 봅니다</span>
   </div>
   <div id="boardWrap" style="display:none">
-  <h2 style="margin-top:18px">조기상환 현황판 <span style="font-size:13px;color:var(--muted);font-weight:400">미상환 공모 ELS 전체 · 평가일 임박순</span></h2>
+  <h2 style="margin-top:20px">조기상환 현황판 <span style="font-size:15px;color:var(--muted);font-weight:400">미상환 공모 ELS 전체 · 평가일 임박순</span></h2>
   <div class="counts" id="counts"></div>
   <div class="filters">
     <button class="btn ghost on" data-f="all">전체</button>
@@ -140,7 +213,7 @@ footer{margin:40px 0 30px;font-size:12px;color:var(--muted-soft);line-height:1.6
     <button class="btn ghost" data-f="risk">배리어 미달</button>
     <button class="btn ghost" data-f="ki">낙인</button>
     <button class="btn ghost" data-f="soon">30일 내 평가</button>
-    <input id="ftext" placeholder="기초자산·회차 검색 (예: 테슬라, 삼성)">
+    <input id="ftext" placeholder="기초자산·회차 검색 (예: 테슬라)">
   </div>
   <div class="tbl-wrap desk">
     <table id="board"><thead><tr>
@@ -150,44 +223,48 @@ footer{margin:40px 0 30px;font-size:12px;color:var(--muted-soft);line-height:1.6
   </div>
   <div class="mob" id="boardm"></div>
   <div id="boardempty" class="empty" style="display:none">표시할 상품이 없습니다.</div>
-  <div style="text-align:center;margin-top:12px"><button class="btn ghost" id="more" style="display:none">더 보기</button> <span id="shown" style="font-size:12px;color:var(--muted-soft)"></span></div>
+  <div style="text-align:center;margin-top:14px"><button class="btn ghost" id="more" style="display:none">더 보기</button> <span id="shown" style="font-size:14px;color:var(--muted-soft)"></span></div>
   </div>
 
   <footer>
     ※ 판정은 전일(해외지수·해외주식은 한국시간 새벽 마감) 종가와 각 상품의 최초기준가격 결정일 종가를 바탕으로 자동 계산한 추정치입니다. 실제 상환 여부와 지급액은 평가일 당일 종가와 발행사의 공식 평가·투자설명서 조건에 따르며, 리자드·월지급식 등 특수 구조는 별도 확인이 필요합니다.<br>
-    ※ 최초기준가는 공개 시세 데이터(액면분할 등 조정 반영)에서 산출하므로 발행사 공시 기준가와 미세한 차이가 있을 수 있습니다. 상품별 상세 페이지·투자설명서 링크를 함께 확인해 주세요.<br>
-    ※ 본 화면은 임직원 참고용이며 고객에게 그대로 전달하는 자료가 아닙니다.
+    ※ 세후 수익은 배당소득세 15.4%(지방소득세 포함)를 일괄 공제한 금액이며, 금융소득 종합과세 대상 여부에 따라 실제 세부담은 달라질 수 있습니다.<br>
+    ※ 최초기준가는 공개 시세 데이터(액면분할 등 조정 반영)에서 산출하므로 발행사 공시 기준가와 미세한 차이가 있을 수 있습니다. 본 화면은 임직원 참고용이며 고객에게 그대로 전달하는 자료가 아닙니다.
   </footer>
 </main>
 
 <script>
-let DATA=null, LIST=[], FILTER='all', SORT='next', SORTDIR=1, PAGE=150, SHOWN=0, BOARD_ON=false;
+let DATA=null, LIST=[], FILTER='all', SORT='next', SORTDIR=1, PAGE=150, SHOWN=0, BOARD_ON=false, CUR=null;
 const DETAIL={};
+const TAX=0.154;
 const isMobile=()=>window.matchMedia('(max-width:760px)').matches;
-const STATUS={pass:['상환 가능','b-pass'],defer:['이월 예상','b-defer'],risk:['배리어 미달','b-risk'],ki:['낙인 발생','b-ki'],redeemed:['상환 완료(추정)','b-redeemed'],redeemed_confirmed:['상환 완료(공시)','b-redeemed'],elb:['ELB(판정 대상 아님)','b-nodata'],pending:['발행 전(청약중)','b-nodata'],nodata:['판정 불가','b-nodata'],matured:['만기 경과','b-matured'],unknown:['판정 불가','b-nodata']};
-const COLOR={pass:'#2E8540',defer:'#D4A017',risk:'#AD624E',ki:'#C62828',redeemed:'#043B72',redeemed_confirmed:'#043B72',elb:'#84888B',pending:'#84888B',nodata:'#84888B',matured:'#84888B'};
+const STATUS={pass:['상환 가능','b-pass'],defer:['이월 예상','b-defer'],risk:['배리어 미달','b-risk'],ki:['낙인 발생','b-ki'],redeemed:['상환 완료(추정)','b-redeemed'],redeemed_confirmed:['상환 완료(공시)','b-redeemed'],elb:['ELB(판정 대상 아님)','b-nodata'],pending:['발행 전(청약중)','b-nodata'],noschedule:['일정 미공개','b-nodata'],nodata:['판정 불가','b-nodata'],matured:['만기 경과','b-matured'],unknown:['판정 불가','b-nodata']};
+const COLOR={pass:'#1F7A3A',defer:'#B8860B',risk:'#AD624E',ki:'#C62828',redeemed:'#043B72',redeemed_confirmed:'#043B72',elb:'#84888B',pending:'#84888B',noschedule:'#84888B',nodata:'#84888B',matured:'#84888B'};
 const $=s=>document.querySelector(s);
 const f1=(v,d=1)=>v==null?'-':Number(v).toFixed(d);
-const fnum=v=>v==null?'-':(Math.abs(v)>=1000?Number(v).toLocaleString('en-US',{maximumFractionDigits:2}):Number(v).toLocaleString('en-US',{maximumFractionDigits:2}));
+const fnum=v=>v==null?'-':Number(v).toLocaleString('en-US',{maximumFractionDigits:2});
+const won=v=>v==null?'-':Math.round(v).toLocaleString('ko-KR')+'원';
+function getPrincipal(){ const el=$('#principal'); const v=(el?el.value:'').replace(/[^0-9]/g,''); return v?parseInt(v,10):0; }
+function savePrincipal(v){ try{ localStorage.setItem('els_principal', String(v)); }catch(e){} }
+function loadPrincipal(){ try{ return parseInt(localStorage.getItem('els_principal')||'0',10)||0; }catch(e){ return 0; } }
 
 async function load(){
-  try{
-    const r=await fetch('data/els.json?t='+Date.now()); DATA=await r.json();
-  }catch(e){ $('#asof').textContent='데이터를 불러오지 못했습니다'; return; }
+  try{ const r=await fetch('data/els.json?t='+Date.now()); DATA=await r.json(); }
+  catch(e){ $('#asof').textContent='데이터를 불러오지 못했습니다'; return; }
   LIST=DATA.products||[];
   const p=DATA.prices||{}; const ks=p['^KS200']?p['^KS200'].date:null; const sp=p['^GSPC']?p['^GSPC'].date:null;
-  $('#asof').innerHTML=`기준 <b>${DATA.asof}</b> · 갱신 ${DATA.generated}<br>${ks?'KOSPI200 '+ks:''}${sp?' · S&amp;P500 '+sp:''} · 상품 ${LIST.length}건`;
+  $('#asof').innerHTML=`기준일 <b>${DATA.asof}</b> · 갱신 ${DATA.generated}<br>${ks?'KOSPI200 '+ks:''}${sp?' · S&amp;P500 '+sp:''} · 조회 가능 ${LIST.length}건`;
   renderCounts();
   const h=location.hash.replace('#',''); if(h){ $('#q').value=h; search(h); }
 }
 async function detail(code){
   if(DETAIL[code]) return DETAIL[code];
-  try{ const r=await fetch(`data/p/${code}.json?t=${DATA.generated.replace(/\D/g,'')}`); if(!r.ok) return null; const d=await r.json(); DETAIL[code]=d; return d; }
+  try{ const r=await fetch(`data/p/${code}.json?t=${(DATA.generated||'').replace(/\D/g,'')}`); if(!r.ok) return null; const d=await r.json(); DETAIL[code]=d; return d; }
   catch(e){ return null; }
 }
 function renderCounts(){
   const c=DATA.counts||{}; const box=$('#counts'); box.innerHTML='';
-  Object.keys(STATUS).forEach(k=>{ if(!c[k])return; const d=document.createElement('span'); d.className='chip'; d.innerHTML=`<i style="background:${COLOR[k]}"></i>${STATUS[k][0]} ${c[k]}`; box.appendChild(d); });
+  Object.keys(STATUS).forEach(k=>{ if(!c[k])return; const d=document.createElement('span'); d.className='chip'; d.innerHTML=`<i style="background:${COLOR[k]||'#84888B'}"></i>${STATUS[k][0]} ${c[k]}`; box.appendChild(d); });
 }
 function find(q){
   q=(q||'').trim().toUpperCase().replace(/[^0-9A-Z]/g,'');
@@ -199,36 +276,73 @@ function find(q){
 }
 async function search(q){
   const p=find(q); const box=$('#result');
-  if(!p){ box.innerHTML=`<div class="card"><div class="name" style="font-size:18px;font-weight:700;color:var(--ink)">조회 결과 없음</div><div class="meta" style="margin-top:6px">"${q}"에 해당하는 공모 ELS를 찾지 못했습니다. 사모·ELT 상품이거나 아직 수집되지 않은 회차일 수 있습니다. 담당 PB에게 확인해 주세요.</div></div>`; return; }
+  if(!p){ box.innerHTML=`<div class="card"><div class="name" style="font-size:22px;font-weight:800;color:var(--ink)">조회 결과 없음</div><div class="meta" style="margin-top:8px;font-size:17px">"${q}"에 해당하는 공모 ELS를 찾지 못했습니다. 사모·ELT 상품이거나 아직 수집되지 않은 회차일 수 있습니다. 담당 PB에게 확인해 주세요.</div></div>`; return; }
   location.hash=p.code;
   box.innerHTML=`<div class="card"><div class="meta">${p.code}회 상세를 불러오는 중…</div></div>`;
   const d=await detail(p.code);
-  if(!d){ box.innerHTML=`<div class="card"><div class="meta">상세 데이터를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</div></div>`; return; }
-  box.innerHTML=cardHTML(d); window.scrollTo({top:box.offsetTop-70,behavior:'smooth'});
+  if(!d){ box.innerHTML=`<div class="card"><div class="meta">상세 데이터를 아직 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</div></div>`; return; }
+  CUR=d; box.innerHTML=cardHTML(d);
+  const pi=$('#principal'); const saved=loadPrincipal(); if(saved){ pi.value=saved.toLocaleString('ko-KR'); }
+  pi.addEventListener('input',()=>{ const v=getPrincipal(); pi.value=v?v.toLocaleString('ko-KR'):''; savePrincipal(v); refreshMoney(); });
+  document.querySelectorAll('.quick button').forEach(b=>b.addEventListener('click',()=>{ const v=parseInt(b.dataset.v,10); pi.value=v.toLocaleString('ko-KR'); savePrincipal(v); refreshMoney(); }));
+  refreshMoney();
+  window.scrollTo({top:box.offsetTop-80,behavior:'smooth'});
+}
+function retOf(p,ev){ return (p.coupon&&ev&&ev.months)?p.coupon*ev.months/12:null; }
+function moneyHTML(ret){
+  const P=getPrincipal(); if(!P||ret==null) return '';
+  const pre=P*ret/100, post=pre*(1-TAX);
+  return `<span class="m"><span>세전 수익</span> <b>${won(pre)}</b> <span>· 세후 수익</span> <b>${won(post)}</b> <span>· 세후 수령액</span> <b>${won(P+post)}</b></span>`;
+}
+function refreshMoney(){
+  if(!CUR) return;
+  document.querySelectorAll('[data-ret]').forEach(el=>{ const r=parseFloat(el.dataset.ret); el.innerHTML=moneyHTML(isNaN(r)?null:r); });
+  const k=$('#kpi-money'); if(k){ const ex=(CUR.judgment||{}).expected; const r=ex?ex.ret:null; const P=getPrincipal();
+    if(P&&r!=null){ const pre=P*r/100; k.querySelector('.v').textContent=won(pre*(1-TAX)); k.querySelector('.d').textContent=`세전 ${won(pre)} · 세후 수령 ${won(P+pre*(1-TAX))}`; }
+    else { k.querySelector('.v').textContent='-'; k.querySelector('.d').textContent='원금을 입력하면 계산됩니다'; } }
 }
 function cardHTML(p){
   const j=p.judgment||{}; const st=STATUS[j.status]||STATUS.unknown;
   const worst=j.worst; const nx=j.next; const ex=j.expected;
+  const vcls=['pass','defer','ki','risk'].includes(j.status)?j.status:'';
   const kpis=[
-    {l:'최저 기초자산',v:worst?f1(worst.ratio)+'%':'-',d:worst?worst.label:''},
-    {l:nx?(nx.is_maturity?'만기 평가일':`${nx.n}차 평가일`):'다음 평가일',v:nx?nx.date:'-',d:nx?`D-${nx.days} · 배리어 ${nx.barrier}%`:''},
-    {l:'필요 상승률',v:j.need_pct==null?'-':(j.need_pct===0?'충족':'+'+f1(j.need_pct)+'%'),d:'최저 종목 기준',o:true},
-    {l:'상환 예상',v:ex?(ex.is_maturity?'만기':`${ex.n}차${ex.lizard?' 리자드':''}`):'-',d:ex?`${ex.date} · 세전 ${f1(ex.ret,2)}%`:''},
+    {l:'최저 기초자산 (현재 ÷ 최초기준가)',v:worst?f1(worst.ratio)+'%':'-',d:worst?worst.label:'',c:worst?((nx&&nx.barrier!=null&&worst.ratio>=nx.barrier)?'g':'r'):''},
+    {l:nx?(nx.is_maturity?'만기 평가일':`다음 평가일 (${nx.n}차)`):'다음 평가일',v:nx?nx.date:'-',d:nx?`D-${nx.days} · 배리어 ${nx.barrier}%`:'',c:''},
+    {l:'필요 상승률 (최저 종목 기준)',v:j.need_pct==null?'-':(j.need_pct===0?'충족':'+'+f1(j.need_pct)+'%'),d:j.need_pct===0?'현 수준 유지 시 상환':'',c:j.need_pct===0?'g':'o'},
+    {l:'상환 예상 시점 · 세전 수익률',v:ex?`${ex.is_maturity?'만기':ex.n+'차'}${ex.lizard?'(리자드)':''} ${f1(ex.ret,2)}%`:'-',d:ex?`${ex.date} · ${ex.months}개월`:'',c:'o'},
   ];
-  const assets=(p.assets||[]).map(a=>`<tr><td>${a.label||a.name}</td><td class="r num">${fnum(a.ref)}</td><td class="r num">${a.ref_date||'-'}</td><td class="r num">${fnum(a.last)}</td><td class="r num">${a.last_date||'-'}</td><td class="r num" style="font-weight:700;color:${a.ratio==null?'inherit':(worst&&a.label===worst.label?'var(--orange-active)':'var(--blue)')}">${a.ratio==null?'-':f1(a.ratio)+'%'}</td><td class="r num">${a.ki?a.ki+'%':(p.no_ki?'없음':'-')}</td><td class="r num">${a.min_ratio==null?'-':f1(a.min_ratio)+'%'}<div style="font-size:11px;color:var(--muted-soft)">${a.min_date||''}</div></td></tr>`).join('');
+  const assets=(p.assets||[]).map(a=>{
+    const isW=worst&&a.label===worst.label; const ok=a.ratio!=null&&nx&&nx.barrier!=null&&a.ratio>=nx.barrier;
+    return `<tr><td style="font-weight:700;font-size:18px">${a.label||a.name}${isW?'<span class="tag r">최저</span>':''}</td><td class="r num">${fnum(a.ref)}<div style="font-size:13px;color:var(--muted-soft)">${a.ref_date||''}</div></td><td class="r num">${fnum(a.last)}<div style="font-size:13px;color:var(--muted-soft)">${a.last_date||''}</div></td><td class="r"><span class="ratio-big" style="color:${a.ratio==null?'inherit':(ok?'var(--ok)':'var(--err)')}">${a.ratio==null?'-':f1(a.ratio)+'%'}</span></td><td class="r num">${a.ki?a.ki+'%':(p.no_ki?'없음':'-')}</td><td class="r num">${a.min_ratio==null?'-':f1(a.min_ratio)+'%'}<div style="font-size:13px;color:var(--muted-soft)">${a.min_date||''}</div></td></tr>`;
+  }).join('');
   const sched=(p.schedule||[]).map(e=>{
-    let cls='step'; if(e.result==='passed')cls+=' passed'; else if(e.result==='missed')cls+=' missed';
-    if(nx&&e.n===nx.n)cls+=' next'; if(ex&&e.n===ex.n&&!(nx&&e.n===nx.n))cls+=' expected';
-    const m=e.months?`${e.months}개월`:''; const ret=(p.coupon&&e.months)?`세전 ${(p.coupon*e.months/12).toFixed(2)}%`:'';
-    return `<div class="${cls}"><div class="n">${e.is_maturity?'만기':e.n+'차'}${e.result==='passed'?'<span class="tag">상환</span>':''}${e.result==='missed'?'<span class="tag">미충족</span>':''}${nx&&e.n===nx.n?'<span class="tag" style="background:var(--orange);color:#fff">다음</span>':''}</div><div class="b">${e.barrier!=null?e.barrier+'%':'-'}</div><div class="d">${e.date} ${m?'· '+m:''}</div><div class="d">${ret}</div>${e.lizard?`<div class="d" style="color:var(--orange-active)">리자드 ${e.lizard}%</div>`:''}</div>`;
+    let cls='step'; let tag='';
+    if(e.result==='passed'){cls+=' passed'; tag='<span class="tag g">상환</span>';}
+    else if(e.result==='missed'){cls+=' missed'; tag='<span class="tag">미충족</span>';}
+    if(nx&&e.n===nx.n){cls+=' next'; tag='<span class="tag o">다음 평가</span>';}
+    else if(ex&&e.n===ex.n){cls+=' expected'; tag='<span class="tag g">상환 예상</span>';}
+    const ret=retOf(p,e);
+    return `<div class="${cls}">
+      <div class="date">${e.date}<small>${e.months?e.months+'개월 경과 시점':''}</small></div>
+      <div class="n">${e.is_maturity?'만기':e.n+'차'}<br>${tag}</div>
+      <div class="bar">${e.barrier!=null?e.barrier+'%':'-'}<small>배리어${e.lizard?' · 리자드 '+e.lizard+'%':''}</small></div>
+      <div class="ret"><span class="y">${ret!=null?f1(ret,2)+'%':'-'}<small>세전 수익률</small></span><span data-ret="${ret!=null?ret:''}"></span></div>
+    </div>`;
   }).join('');
   const flags=(p.flags||[]).map(f=>`<li>${f}</li>`).join('');
   return `<div class="card">
-    <div class="top"><div><div class="name">${p.name}</div><div class="meta">${p.type} · 발행 ${p.issue_date||'-'} · 만기평가 ${p.mat_eval||'-'} · ${p.mat_years?p.mat_years+'년':''}/${p.period_months?p.period_months+'개월':''} · 쿠폰 연 ${f1(p.coupon,2)}% · 배리어 ${(p.ladder||[]).join('-')||'-'}${p.lizard?' · 리자드':''}${p.monthly?' · 월지급':''}${p.principal_guard?' · 원금지급형':''}</div></div>
+    <div class="top"><div><div class="name">${p.name}</div><div class="meta">발행 ${p.issue_date||'-'} · 만기평가 ${p.mat_eval||'-'} · ${p.mat_years?p.mat_years+'년':''}/${p.period_months?p.period_months+'개월':''} · 배리어 ${(p.ladder||[]).join('-')||'-'}${p.lizard?' · 리자드':''}${p.monthly?' · 월지급':''} · 쿠폰 <span class="yield" style="font-size:20px">연 ${f1(p.coupon,2)}%</span></div></div>
     <span class="badge ${st[1]}">${st[0]}</span></div>
-    <div class="verdict">${j.message||'-'}</div>
-    <div class="kpis">${kpis.map(k=>`<div class="kpi"><div class="l">${k.l}</div><div class="v ${k.o?'o':''}">${k.v}</div><div class="d">${k.d}</div></div>`).join('')}</div>
-    <div class="tbl-wrap"><table><thead><tr><th>기초자산</th><th class="r">최초기준가</th><th class="r">기준일</th><th class="r">전일종가</th><th class="r">종가일</th><th class="r">현재 비율</th><th class="r">낙인</th><th class="r">기간 최저</th></tr></thead><tbody>${assets}</tbody></table></div>
+    <div class="verdict ${vcls}">${j.message||'-'}</div>
+    <div class="kpis">${kpis.map(k=>`<div class="kpi"><div class="l">${k.l}</div><div class="v ${k.c}">${k.v}</div><div class="d">${k.d}</div></div>`).join('')}
+      <div class="kpi" id="kpi-money"><div class="l">상환 예상 시점 세후 수익 (원금 입력 시)</div><div class="v g">-</div><div class="d">원금을 입력하면 계산됩니다</div></div>
+    </div>
+    <div class="principal"><label for="principal">투자원금</label><input id="principal" inputmode="numeric" placeholder="예: 50,000,000"><span class="unit">원</span>
+      <span class="quick"><button data-v="10000000">1천만</button><button data-v="30000000">3천만</button><button data-v="50000000">5천만</button><button data-v="100000000">1억</button></span>
+      <span class="note">세후 = 세전 수익 × (1 − 15.4%). 입력한 원금은 이 브라우저에만 저장됩니다.</span></div>
+    <h3 class="sec">기초자산 현황</h3>
+    <div class="tbl-wrap"><table><thead><tr><th>기초자산</th><th class="r">최초기준가</th><th class="r">전일 종가</th><th class="r">현재 비율</th><th class="r">낙인</th><th class="r">기간 최저</th></tr></thead><tbody>${assets}</tbody></table></div>
+    <h3 class="sec">평가일별 상환 조건과 수익</h3>
     <div class="sched">${sched}</div>
     ${flags?`<ul class="flags">${flags}</ul>`:''}
     <div class="links"><a href="${p.url}" target="_blank" rel="noopener">상품 상세(홈페이지)</a><a href="${p.pdf}" target="_blank" rel="noopener">요약설명서 PDF</a></div>
@@ -238,7 +352,7 @@ function cardHTML(p){
 function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 function boardRows(){
   let rows=LIST.filter(p=>{
-    if(p.s==='redeemed'||p.s==='redeemed_confirmed'||p.s==='matured'||p.s==='pending'||p.s==='elb') return false;
+    if(['redeemed','redeemed_confirmed','matured','pending','elb','noschedule'].includes(p.s)) return false;
     if(FILTER==='all') return true;
     if(FILTER==='soon') return p.n&&p.n.days<=30&&p.n.days>=0;
     return p.s===FILTER;
@@ -260,16 +374,16 @@ function renderBoard(reset=true){
   slice.forEach(p=>{
     const st=STATUS[p.s]||STATUS.unknown; const nx=p.n; const ex=p.e;
     const assets=(p.a||[]).join(' · ');
-    const worst=p.w?`${f1(p.w.ratio)}% <span style="color:var(--muted-soft);font-size:12px">${p.w.label}</span>`:'-';
-    const need=p.need==null?'-':(p.need===0?'충족':'+'+f1(p.need)+'%');
-    const exs=ex?`${ex.is_maturity?'만기':ex.n+'차'}${ex.lizard?' 리자드':''} ${ex.date} <span style="color:var(--muted-soft);font-size:12px">세전 ${f1(ex.ret,2)}%</span>`:'-';
+    const worst=p.w?`<b class="num">${f1(p.w.ratio)}%</b> <span style="color:var(--muted-soft);font-size:14px">${p.w.label}</span>`:'-';
+    const need=p.need==null?'-':(p.need===0?'<span style="color:var(--ok);font-weight:700">충족</span>':'+'+f1(p.need)+'%');
+    const exs=ex?`${ex.is_maturity?'만기':ex.n+'차'}${ex.lizard?' 리자드':''} ${ex.date} <span class="yield">${f1(ex.ret,2)}%</span>`:'-';
     if(!mob){
       const tr=document.createElement('tr');
-      tr.innerHTML=`<td><span class="row-code" data-c="${p.code}">${p.code}</span>${p.lz?'<span class="tag">리자드</span>':''}${p.mo?'<span class="tag">월지급</span>':''}</td><td>${assets}</td><td class="r num">${worst}</td><td class="num">${nx?nx.date:'-'}${nx?` <span style="color:var(--muted-soft);font-size:12px">D-${nx.days}</span>`:''}</td><td class="r num">${nx&&nx.barrier!=null?nx.barrier+'%':'-'}</td><td class="r num">${need}</td><td><span class="badge ${st[1]}" style="font-size:12px;padding:2px 8px">${st[0]}</span></td><td class="num">${exs}</td><td class="r num">${f1(p.coupon,2)}%</td>`;
+      tr.innerHTML=`<td><span class="row-code" data-c="${p.code}">${p.code}</span>${p.lz?'<span class="tag">리자드</span>':''}${p.mo?'<span class="tag">월지급</span>':''}</td><td>${assets}</td><td class="r num">${worst}</td><td class="num"><b>${nx?nx.date:'-'}</b>${nx?` <span style="color:var(--muted-soft);font-size:14px">D-${nx.days}</span>`:''}</td><td class="r num">${nx&&nx.barrier!=null?nx.barrier+'%':'-'}</td><td class="r num">${need}</td><td><span class="badge ${st[1]}" style="font-size:14px;padding:4px 10px">${st[0]}</span></td><td class="num">${exs}</td><td class="r"><span class="yield">${f1(p.coupon,2)}%</span></td>`;
       frag.appendChild(tr);
     }else{
       const mc=document.createElement('div'); mc.className='mcard';
-      mc.innerHTML=`<div class="l1"><span class="row-code" data-c="${p.code}">${p.code}</span><span class="badge ${st[1]}" style="font-size:12px;padding:2px 8px">${st[0]}</span></div><div class="l2">${assets}</div><div class="l3 num">최저 ${worst} · 다음 ${nx?nx.date+' (D-'+nx.days+', '+nx.barrier+'%)':'-'} · 필요 ${need}</div><div class="l3 num" style="color:var(--muted)">예상 ${exs} · 연 ${f1(p.coupon,2)}%</div>`;
+      mc.innerHTML=`<div class="l1"><span class="row-code" data-c="${p.code}">${p.code}</span><span class="badge ${st[1]}" style="font-size:14px;padding:4px 10px">${st[0]}</span></div><div class="l2">${assets}</div><div class="l3 num">최저 ${worst} · 다음 <b>${nx?nx.date:'-'}</b>${nx?' (D-'+nx.days+', '+nx.barrier+'%)':''} · 필요 ${need}</div><div class="l3 num" style="color:var(--muted)">예상 ${exs} · 연 <span class="yield">${f1(p.coupon,2)}%</span></div>`;
       frag.appendChild(mc);
     }
   });
@@ -297,7 +411,7 @@ $('#q').addEventListener('input',()=>{
   if(v.length<2||!LIST.length){ box.style.display='none'; return; }
   const hits=LIST.filter(p=>p.code.startsWith(v)).slice(0,8);
   if(!hits.length){ box.style.display='none'; return; }
-  hits.forEach(p=>{ const d=document.createElement('div'); const st=STATUS[p.s]||STATUS.unknown; d.innerHTML=`<b class="num">${p.code}</b> · ${(p.a||[]).join('·')} · <span style="color:${COLOR[p.s]||'#84888B'}">${st[0]}</span>`; d.onclick=()=>{ $('#q').value=p.code; box.style.display='none'; search(p.code); }; box.appendChild(d); });
+  hits.forEach(p=>{ const d=document.createElement('div'); const st=STATUS[p.s]||STATUS.unknown; d.innerHTML=`<b class="num">${p.code}</b> · ${(p.a||[]).join('·')} · <span style="color:${COLOR[p.s]||'#84888B'};font-weight:700">${st[0]}</span>`; d.onclick=()=>{ $('#q').value=p.code; box.style.display='none'; search(p.code); }; box.appendChild(d); });
   box.style.display='block';
 });
 $('#ftext').addEventListener('input',renderBoard);
