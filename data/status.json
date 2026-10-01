@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-01 10:30",
- "elapsed_sec": 282.7,
+ "generated": "2026-10-01 10:54",
+ "elapsed_sec": 1433.2,
  "cached_products": 3465,
  "excluded": 1231,
  "redeemed_list": 0,
@@ -14,8 +14,8 @@
   "ki": 11,
   "risk": 14,
   "redeemed": 113,
-  "defer": 63,
-  "pass": 422,
+  "defer": 60,
+  "pass": 425,
   "matured": 2,
   "pending": 37
  },
@@ -41,24 +41,24 @@
  },
  "prices": {
   "NVDA": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-10-01",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "AMD": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-10-01",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "AMZN": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-10-01",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "META": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-10-01",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "^KS200": {
    "rows": 1999,
@@ -71,14 +71,14 @@
    "last": "2026-09-30"
   },
   "^N225": {
-   "rows": 1706,
+   "rows": 1707,
    "first": "2019-10-01",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "^STOXX50E": {
-   "rows": 1760,
+   "rows": 1761,
    "first": "2019-09-30",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "005930.KS": {
    "rows": 1999,
@@ -86,9 +86,9 @@
    "last": "2026-09-30"
   },
   "^HSCE": {
-   "rows": 1722,
+   "rows": 1723,
    "first": "2019-09-30",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "035420.KS": {
    "rows": 1999,
@@ -96,24 +96,24 @@
    "last": "2026-09-30"
   },
   "TSLA": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-10-01",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "NFLX": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-10-01",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "INTC": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-10-01",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "MSFT": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-10-01",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "051910.KS": {
    "rows": 1999,
@@ -126,14 +126,14 @@
    "last": "2026-09-30"
   },
   "AAPL": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-10-01",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "PYPL": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-10-01",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "000660.KS": {
    "rows": 1999,
@@ -146,19 +146,19 @@
    "last": "2026-09-30"
   },
   "AVGO": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-10-01",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "PLTR": {
-   "rows": 1506,
+   "rows": 1507,
    "first": "2020-09-30",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   },
   "MU": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-10-01",
-   "last": "2026-09-29"
+   "last": "2026-09-30"
   }
  },
  "parse_missing": {
@@ -167,67 +167,82 @@
   "evals": 1108
  },
  "redeemed_debug": [
-  "[10:26:08] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[10:26:10] [redeemed] page1 rows=0 html_len=545",
-  "[10:26:13] [redeemed] GET variant rows=0",
-  "[10:26:13] [redeemed] total redeemed entries found=0 ok=False"
+  "[10:31:03] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
+  "[10:31:06] [redeemed] page1 rows=0 html_len=545",
+  "[10:31:08] [redeemed] GET variant rows=0",
+  "[10:31:08] [redeemed] total redeemed entries found=0 ok=False"
  ],
  "price_debug": [
-  "[10:30:32] yahoo ^KS200: 1 rows 2026-10-01..2026-10-01",
-  "[10:30:34] fchart ok KPI200: 2000 rows, last 2026-10-01",
-  "[10:30:34] yahoo 005930.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[10:30:36] fchart ok 005930: 2000 rows, last 2026-10-01",
-  "[10:30:36] yahoo 035420.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[10:30:37] fchart ok 035420: 2000 rows, last 2026-10-01",
-  "[10:30:38] yahoo 051910.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[10:30:39] fchart ok 051910: 2000 rows, last 2026-10-01",
-  "[10:30:39] yahoo 005490.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[10:30:40] fchart ok 005490: 2000 rows, last 2026-10-01",
-  "[10:30:41] yahoo 000660.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[10:30:42] fchart ok 000660: 2000 rows, last 2026-10-01",
-  "[10:30:42] yahoo 005380.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[10:30:43] fchart ok 005380: 2000 rows, last 2026-10-01"
+  "[10:54:41] yahoo ^KS200: 1 rows 2026-10-01..2026-10-01",
+  "[10:54:42] fchart ok KPI200: 2000 rows, last 2026-10-01",
+  "[10:54:43] yahoo 005930.KS: 1715 rows 2019-10-01..2026-10-01",
+  "[10:54:44] fchart ok 005930: 2000 rows, last 2026-10-01",
+  "[10:54:44] yahoo 035420.KS: 1715 rows 2019-10-01..2026-10-01",
+  "[10:54:45] fchart ok 035420: 2000 rows, last 2026-10-01",
+  "[10:54:46] yahoo 051910.KS: 1715 rows 2019-10-01..2026-10-01",
+  "[10:54:47] fchart ok 051910: 2000 rows, last 2026-10-01",
+  "[10:54:48] yahoo 005490.KS: 1715 rows 2019-10-01..2026-10-01",
+  "[10:54:49] fchart ok 005490: 2000 rows, last 2026-10-01",
+  "[10:54:49] yahoo 000660.KS: 1715 rows 2019-10-01..2026-10-01",
+  "[10:54:51] fchart ok 000660: 2000 rows, last 2026-10-01",
+  "[10:54:51] yahoo 005380.KS: 1715 rows 2019-10-01..2026-10-01",
+  "[10:54:52] fchart ok 005380: 2000 rows, last 2026-10-01"
  ],
- "scan_cursor": 15175,
+ "scan_cursor": 15425,
  "log": [
-  "[10:26:02] start: cached products=3465 excluded=1231 FULL_SCAN=False MAX_PROBES=260",
-  "[10:26:08] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[10:26:10] [redeemed] page1 rows=0 html_len=545",
-  "[10:26:13] [redeemed] GET variant rows=0",
-  "[10:26:13] [redeemed] total redeemed entries found=0 ok=False",
-  "[10:26:20] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
-  "[10:27:36] recent scan: rate=4.61/day est_now=11704 max_known=11672",
-  "[10:28:39] discovery: probes=150 new=0 total_products=3465 cursor=15175",
-  "[10:29:17] pdf fetch fail KR6MD0008TY0: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
-  "[10:29:20] pdf fetch fail KR6MD0008T78: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
-  "[10:29:21] pdf fetch fail KR6MD0008T78: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /public/editor/elsdls/KR6MD0008T78.pdf (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
-  "[10:29:22] pdf fetch fail KR6MD0008T60: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
-  "[10:29:32] pdf fetch fail KR6MD0008SL9: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
-  "[10:29:51] pdf fetch fail KR6MD0008PZ5: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
-  "[10:30:04] pdf fetch fail KR6MD0008NY3: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
-  "[10:30:11] pdf fetch fail KR6MD0008MF4: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
-  "[10:30:14] pdf fetch fail KR6MD0008LG4: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
-  "[10:30:21] pdf fetch fail KR6MD0008KJ0: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-  "[10:30:22] pdf fetch fail KR6MD0008KJ0: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-  "[10:30:25] pdf fetch fail KR6MD0008KG6: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-  "[10:30:25] pdf fetch fail KR6MD0008KG6: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /public/editor/elsdls/KR6MD0008KG6.pdf (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
-  "[10:30:30] pdf fetch fail KR6MD0008JC7: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
-  "[10:30:31] network error during re-parse, stopping",
-  "[10:30:31] re-parse: candidates=3107 tried=63 fixed=0",
-  "[10:30:31] active products: 3465 (redeemed list entries=0, source ok=False)",
-  "[10:30:32] yahoo ^KS200: 1 rows 2026-10-01..2026-10-01",
-  "[10:30:34] fchart ok KPI200: 2000 rows, last 2026-10-01",
-  "[10:30:34] yahoo 005930.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[10:30:36] fchart ok 005930: 2000 rows, last 2026-10-01",
-  "[10:30:36] yahoo 035420.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[10:30:37] fchart ok 035420: 2000 rows, last 2026-10-01",
-  "[10:30:38] yahoo 051910.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[10:30:39] fchart ok 051910: 2000 rows, last 2026-10-01",
-  "[10:30:39] yahoo 005490.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[10:30:40] fchart ok 005490: 2000 rows, last 2026-10-01",
-  "[10:30:41] yahoo 000660.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[10:30:42] fchart ok 000660: 2000 rows, last 2026-10-01",
-  "[10:30:42] yahoo 005380.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[10:30:43] fchart ok 005380: 2000 rows, last 2026-10-01"
+  "[10:31:00] start: cached products=3465 excluded=1231 FULL_SCAN=True MAX_PROBES=1800",
+  "[10:31:03] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
+  "[10:31:06] [redeemed] page1 rows=0 html_len=545",
+  "[10:31:08] [redeemed] GET variant rows=0",
+  "[10:31:08] [redeemed] total redeemed entries found=0 ok=False",
+  "[10:31:15] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
+  "[10:32:37] recent scan: rate=4.61/day est_now=11704 max_known=11672",
+  "[10:35:31] discovery: probes=400 new=0 total_products=3465 cursor=15425",
+  "[10:36:38] pdf fetch fail KR6MD0008QT6: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:36:40] pdf fetch fail KR6MD0008QQ2: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:36:50] pdf fetch fail KR6MD0008PY8: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:36:52] pdf fetch fail KR6MD0008PQ4: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:36:53] pdf fetch fail KR6MD0008PQ4: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:36:56] pdf fetch fail KR6MD0008P15: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:36:59] pdf fetch fail KR6MD0008P07: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:37:11] pdf fetch fail KR6MD0008LH2: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:37:13] pdf fetch fail KR6MD0008LG4: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:37:25] pdf fetch fail KR6MD0008KD3: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:38:35] pdf fetch fail KR6MD0008DP2: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:39:01] pdf fetch fail KR6MD0008CG3: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:40:15] pdf fetch fail KR6MD00088M3: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:40:17] pdf fetch fail KR6MD00088L5: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:40:19] pdf fetch fail KR6MD00088A8: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:42:44] pdf fetch fail KR6MD0008119: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:42:46] pdf fetch fail KR6MD0008101: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:45:02] pdf fetch fail KR6MD0007RG3: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:45:52] pdf fetch fail KR6MD0007PA0: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:45:54] pdf fetch fail KR6MD0007P99: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:45:55] pdf fetch fail KR6MD0007P99: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:47:50] pdf fetch fail KR6MD0007HP5: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:48:44] pdf fetch fail KR6MD0007EN7: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:48:47] pdf fetch fail KR6MD0007EM9: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:48:49] pdf fetch fail KR6MD0007EL1: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:53:58] pdf fetch fail KR6MD0006YK3: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:54:36] pdf fetch fail KR6MD0006WQ4: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:54:38] pdf fetch fail KR6MD0006WP6: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:54:39] pdf fetch fail KR6MD0006WP6: HTTPSConnectionPool(host='securities.miraeasset.com', port=443): Max retries exceeded with url: /error_404.html (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))",
+  "[10:54:39] network error during re-parse, stopping",
+  "[10:54:39] re-parse: candidates=3107 tried=1374 fixed=1050",
+  "[10:54:39] active products: 3465 (redeemed list entries=0, source ok=False)",
+  "[10:54:41] yahoo ^KS200: 1 rows 2026-10-01..2026-10-01",
+  "[10:54:42] fchart ok KPI200: 2000 rows, last 2026-10-01",
+  "[10:54:43] yahoo 005930.KS: 1715 rows 2019-10-01..2026-10-01",
+  "[10:54:44] fchart ok 005930: 2000 rows, last 2026-10-01",
+  "[10:54:44] yahoo 035420.KS: 1715 rows 2019-10-01..2026-10-01",
+  "[10:54:45] fchart ok 035420: 2000 rows, last 2026-10-01",
+  "[10:54:46] yahoo 051910.KS: 1715 rows 2019-10-01..2026-10-01",
+  "[10:54:47] fchart ok 051910: 2000 rows, last 2026-10-01",
+  "[10:54:48] yahoo 005490.KS: 1715 rows 2019-10-01..2026-10-01",
+  "[10:54:49] fchart ok 005490: 2000 rows, last 2026-10-01",
+  "[10:54:49] yahoo 000660.KS: 1715 rows 2019-10-01..2026-10-01",
+  "[10:54:51] fchart ok 000660: 2000 rows, last 2026-10-01",
+  "[10:54:51] yahoo 005380.KS: 1715 rows 2019-10-01..2026-10-01",
+  "[10:54:52] fchart ok 005380: 2000 rows, last 2026-10-01"
  ]
 }
