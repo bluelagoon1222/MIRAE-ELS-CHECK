@@ -1,61 +1,14 @@
 {
  "getErlyRedELSInfo": {
-  "sample_isin": "KR6MD0005602",
-  "first_item": {
-   "repSecnNm": "미래에셋증권",
-   "korSecnNm": "미래에셋증권33962(ELS)",
-   "secnTpcd": "ELS",
-   "redDt": "20240412"
-  },
-  "count": 1
- },
- "getRedCondiInfoN1": {
-  "sample_isin": "KR6MD0008ZL4",
-  "first_item": {
-   "isin": "KR6MD0008ZL4",
-   "redCondiTpcd": "1",
-   "valatNtimesSeq": "1",
-   "midValatPayDt": "20270319",
-   "midValatBeginDt": "20270317",
-   "midValatExpryDt": "20270317",
-   "redCondiContent": "모든 기초자산의 1차 자동조기상환 평가가격이 각 최초기준가격의 100%이상인 경우",
-   "redFormulaContent": "액면금액 x 106.7%"
-  },
-  "count": 7
- },
- "getAssetXrcInfoN1": {
-  "sample_isin": "KR6MD0008ZL4",
-  "first_item": {
-   "isin": "KR6MD0008ZL4",
-   "assetSeq": "1",
-   "xrcStdSeq": "1",
-   "xrcStdRatio": "100",
-   "xrcStdprc": "7764.7"
-  },
-  "count": 8
- },
- "getDerivCombiIsinInfoN1": {
-  "sample_isin": "KR6MD0008WZ1",
-  "first_item": {
-   "isin": "KR6MD0008WZ1",
-   "korSecnNm": "미래에셋증권36717(ELS)",
-   "issucoCustno": "680",
-   "issuCurCd": "KRW",
-   "secnKacd": "4101",
-   "recuWhcd": "11",
-   "firstIssuQty": "836000000",
-   "issuDt": "20260922",
-   "contDt": "20260921",
-   "xpirDt": "20290920",
-   "midredPossYn": "Y",
-   "redDt": "",
-   "derisecExerTpcd": "",
-   "prcpPrsvTpcd": "3",
-   "prcpPrsvRate": "0",
-   "colatSetupTpcd": "2",
-   "bassetCnt": "3",
-   "mmPayYn": "Y"
-  },
+  "sample_isin": "KR6MD0007G25",
+  "items": [
+   {
+    "repSecnNm": "미래에셋증권",
+    "korSecnNm": "미래에셋증권37148(ELS)",
+    "secnTpcd": "ELS",
+    "redDt": "20260402"
+   }
+  ],
   "count": 1
  }
 }
