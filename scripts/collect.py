@@ -1234,9 +1234,30 @@ def main():
                 unsupported["(배리어 미해석)"] = unsupported.get("(배리어 미해석)", 0) + 1
     unsupported = dict(sorted(unsupported.items(), key=lambda x: -x[1])[:25])
 
+    # full per-product detail files (loaded on demand by the site) + a lean index for fast first paint
+    PDIR = os.path.join(DATA, "p")
+    os.makedirs(PDIR, exist_ok=True)
+    lean = []
+    for r in kept:
+        with open(os.path.join(PDIR, f"{r['code']}.json"), "w", encoding="utf-8") as f:
+            json.dump(r, f, ensure_ascii=False, separators=(",", ":"))
+        j = r.get("judgment", {})
+        lean.append({"code": r["code"], "isin": r["isin"], "type": r["type"], "coupon": r.get("coupon"),
+                     "a": [a.get("label") or a.get("name") for a in r.get("assets", [])],
+                     "s": j.get("status"), "w": j.get("worst"), "n": j.get("next"), "e": j.get("expected"),
+                     "need": j.get("need_pct"), "lz": bool(r.get("lizard")), "mo": bool(r.get("monthly"))})
+    # remove detail files of products no longer kept
+    keep_names = {f"{r['code']}.json" for r in kept}
+    for fn in os.listdir(PDIR):
+        if fn.endswith(".json") and fn not in keep_names:
+            try:
+                os.remove(os.path.join(PDIR, fn))
+            except OSError:
+                pass
     out = {"generated": datetime.now(KST).strftime("%Y-%m-%d %H:%M"), "asof": TODAY.isoformat(),
-           "prices": price_asof, "counts": counts, "products": kept}
-    save_json(OUT_FILE, out)
+           "prices": price_asof, "counts": counts, "products": lean}
+    with open(OUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
     status = {"generated": out["generated"], "elapsed_sec": round(time.time() - t0, 1),
               "cached_products": len(products), "excluded": len(excluded), "redeemed_list": len(redeemed),
               "redeemed_source_ok": red_ok, "hidden_estimated": hidden_est, "active": len(kept), "probes": probes, "new": new,
