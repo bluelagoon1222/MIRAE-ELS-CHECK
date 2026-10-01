@@ -22,10 +22,8 @@ import requests
 KEY = os.environ.get("KSD_API_KEY", "").strip()
 ENDPOINT = os.environ.get("KSD_ENDPOINT", "").strip().rstrip("/")
 CANDIDATE_BASES = [
-    "https://apis.data.go.kr/1160100/service/GetDerivCombiInfoService_V2",
-    "https://apis.data.go.kr/1160100/service/GetDerivCombiInfoServiceV2",
-    "https://apis.data.go.kr/1160100/service/GetDerivCombiInfoService",
-    "https://apis.data.go.kr/1160100/service/GetDerivCombiInfoService_GW",
+    "https://apis.data.go.kr/B552481/DerivesSvc",   # KSD 파생결합증권정보서비스_GW (confirmed End Point)
+    "http://apis.data.go.kr/B552481/DerivesSvc",
 ]
 DAILY_LIMIT = int(os.environ.get("KSD_DAILY_LIMIT", "95"))
 
@@ -136,8 +134,8 @@ def call(op, isin=None, rows=100, page=1, extra=None):
                 if code in ("22", "30", "31", "32", "99"):  # quota / key problems
                     return [], False
                 return [], True
+            _log(f"{op} @{base.rsplit('/',1)[-1]} http={r.status_code} code={code or '-'} body={txt[:140]!r}")
             if _state["base"]:
-                _log(f"{op} http={r.status_code} body={txt[:160]!r}")
                 return [], False
         except Exception as e:
             _log(f"{op} error at {base}: {e}")

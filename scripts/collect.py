@@ -1287,10 +1287,17 @@ def main():
     rp = fixed = 0
     debug = []
     debug_keys = set()
+    err_streak = 0
     for p in need[:REPARSE_MAX]:
         if time.time() - t0 > TIME_BUDGET:
             log("re-parse: time budget reached"); break
         res = probe_isin(p["isin"]); rp += 1; time.sleep(REQ_SLEEP)
+        if res == "ERR":
+            err_streak += 1
+            if err_streak >= 8:
+                log("re-parse: repeated network errors, stopping"); break
+            time.sleep(3); continue
+        err_streak = 0
         if isinstance(res, dict):
             res["parse_attempts"] = p.get("parse_attempts", 0) + 1
             products[p["isin"]] = res
@@ -1304,8 +1311,6 @@ def main():
                     debug_keys.add(key)
                     debug.append({"why": key, "isin": p["isin"], "code": res.get("code"), "url": DETAIL_URL.format(isin=p["isin"]),
                                   "missing": miss, "text": res["_text_head"]})
-        elif res == "ERR":
-            log("network error during re-parse, stopping"); break
     if need:
         log(f"re-parse: candidates={len(need)} tried={rp} fixed={fixed}")
     if debug:
