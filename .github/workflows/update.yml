@@ -2,6 +2,7 @@ name: update-els-data
 
 on:
   schedule:
+    # 07:35 KST Mon-Fri (after US/EU close, before market open)
     - cron: "35 22 * * 0-4"
   workflow_dispatch:
     inputs:
@@ -27,18 +28,24 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
       - name: Install deps
         run: pip install -r requirements.txt
+
       - name: Collect
         env:
           FULL_SCAN: ${{ github.event.inputs.full_scan || '0' }}
           MAX_PROBES: ${{ github.event.inputs.max_probes }}
+          KSD_API_KEY: ${{ secrets.KSD_API_KEY }}
+          KSD_ENDPOINT: ${{ secrets.KSD_ENDPOINT }}
         run: |
           if [ -z "$MAX_PROBES" ]; then unset MAX_PROBES; fi
           python scripts/collect.py
+
       - name: Commit data
         run: |
           git config user.name "els-bot"
