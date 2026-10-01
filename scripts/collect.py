@@ -918,9 +918,12 @@ def build_schedule(p):
         if p.get("issue_date"):
             d0 = date.fromisoformat(p["issue_date"]); d1 = date.fromisoformat(d)
             months = round((d1 - d0).days / 30.4375)
+        pay = (p.get("payouts") or {}).get(i + 1) if isinstance(p.get("payouts"), dict) else None
+        if pay is None and isinstance(p.get("payouts"), dict):
+            pay = p["payouts"].get(str(i + 1))
         sched.append({"n": i + 1, "date": d, "barrier": b,
                       "is_maturity": (i == len(dates) - 1) and bool(me),
-                      "months": months})
+                      "months": months, "payout": pay})
     return sched
 
 def judge(p, red=None):
@@ -1064,7 +1067,9 @@ def judge(p, red=None):
             if ev["n"] == redeemed_at["n"]:
                 ev["result"] = "passed"
         ret = None
-        if p.get("coupon") and redeemed_at["months"]:
+        if redeemed_at.get("payout") is not None:
+            ret = round(redeemed_at["payout"], 2)
+        elif p.get("coupon") and redeemed_at["months"]:
             ret = round(p["coupon"] * redeemed_at["months"] / 12.0, 2)
         j["status"] = "redeemed"
         if lizard_hit:
@@ -1094,6 +1099,8 @@ def judge(p, red=None):
     coupon = p.get("coupon") or 0
 
     def ret_at(ev):
+        if ev.get("payout") is not None:
+            return round(ev["payout"], 2)
         return round(coupon * ev["months"] / 12.0, 2) if ev.get("months") else None
 
     if wr >= nxt["barrier"]:
@@ -1140,6 +1147,10 @@ def judge(p, red=None):
                 else:
                     out["flags"].append(f"리자드: {ev['n']}차 리자드 배리어 {pct}% 아래로 이미 하락한 이력 있음(기간 최저 {worst_min:.1f}%) → 리자드 상환 불가")
             break
+    if p.get("issue_est"):
+        out["flags"].append("발행일·기준가 결정일은 1차 평가일에서 역산한 추정치 — 공식 최초기준가(예탁원)로 비율을 계산하므로 판정에는 영향이 작음")
+    if p.get("ksd_public") is False:
+        out["flags"].append("예탁원 공모 종목 조회에 없는 상품 — 사모·기관 판매분으로 추정")
     if p.get("lizard") and not lz_rules:
         out["flags"].append("리자드 조건 상품 — 리자드 조건을 자동으로 읽지 못했으니 상품설명서로 별도 확인 필요")
     if p.get("monthly"):
@@ -1185,59 +1196,129 @@ def ksd_pass(products, redeemed, excluded, info):
     info["red_checked"] = n_chk; info["red_found"] = n_red
     log(f"ksd redemption check: candidates={len(cands)} checked={n_chk} redeemed={n_red}")
 
-    # 2) fill conditions for products with no schedule, newest first
+    # 2) fill conditions for products with no schedule (or no official base price yet), newest first
     need = [p for isin, p in products.items() if isin not in excluded and p.get("type") == "ELS"
-            and (not p.get("evals") or not (p.get("ref_date") or p.get("issue_date")))
+            and (not p.get("evals") or not (p.get("ref_date") or p.get("issue_date")) or not p.get("ksd_ref"))
             and (p.get("ksd_cond_attempts", 0) < 2)]
-    need.sort(key=lambda p: -(p.get("seq") or 0))
+    # products with nothing at all first, then newest
+    need.sort(key=lambda p: (0 if not p.get("evals") else 1, -(p.get("seq") or 0)))
     n_fill = n_try = 0
     for p in need:
-        if min(ksd_mod.remaining("getRedCondiInfoN1"), ksd_mod.remaining("getAssetXrcInfoN1")) <= 0:
+        if min(ksd_mod.remaining("getRedCondiInfoN1"), ksd_mod.remaining("getAssetXrcInfoN1"),
+               ksd_mod.remaining("getAssetInfoN1")) <= 0:
             break
         n_try += 1
         p["ksd_cond_attempts"] = p.get("ksd_cond_attempts", 0) + 1
-        conds, ok1 = ksd_mod.red_conditions(p["isin"])
-        xrc, ok2 = ksd_mod.asset_exercise(p["isin"])
-        if not ok1 and not ok2:
+        basic, okb = (None, True)
+        if ksd_mod.remaining("getDerivCombiIsinInfoN1") > 0 and p.get("ksd_public") is None:
+            basic, okb = ksd_mod.basic_info(p["isin"])
+            p["ksd_public"] = bool(basic)   # NODATA on the public-only operation → private placement
+        conds, ok1 = ksd_mod.red_conditions(p["isin"]) if not p.get("evals") or not p.get("ksd_conds") else (None, True)
+        xrc, ok2 = ksd_mod.asset_exercise(p["isin"]) if not p.get("ksd_ref") else (None, True)
+        ainfo, ok3 = ksd_mod.asset_info(p["isin"]) if xrc else (None, True)
+        if not (ok1 or ok2 or ok3 or okb):
             break
-        basic = None
-        if not p.get("issue_date") and ksd_mod.remaining("getDerivCombiIsinInfoN1") > 0:
-            basic, _ = ksd_mod.basic_info(p["isin"])
-        p["ksd"] = {"conds": conds, "xrc": xrc, "basic": (basic or {}).get("raw") if basic else None, "fetched": today}
+        p["ksd"] = {"fetched": today, "basic": (basic or {}).get("raw") if basic else None,
+                    "conds": (conds or {}).get("rows") if conds else None, "xrc": (xrc or {}).get("rows") if xrc else None,
+                    "assets": {k: {"name": v.get("name"), "code": v.get("code")} for k, v in (ainfo or {}).items()} if ainfo else None}
         changed = False
         if basic:
             if basic.get("issue_date") and not p.get("issue_date"):
                 p["issue_date"] = basic["issue_date"]; changed = True
             if basic.get("maturity") and not p.get("mat_pay"):
                 p["mat_pay"] = basic["maturity"]
-        if conds:
-            evs = [(c["n"], c["eval_end"] or c["eval_start"]) for c in conds if (c["eval_end"] or c["eval_start"])]
-            if evs and not p.get("evals"):
+            if basic.get("monthly"):
+                p["monthly"] = True
+            if basic.get("name") and not p.get("code"):
+                m = re.search(r"(\d{4,6})", basic["name"]); p["code"] = m.group(1) if m else p.get("code")
+            if basic.get("redeemed_date"):
+                redeemed[p["isin"]] = {"date": basic["redeemed_date"], "kind": "상환", "name": basic.get("name"), "source": "ksd"}
+        if conds and conds.get("rows"):
+            rows = conds["rows"]
+            p["ksd_conds"] = True
+            evs = [(r["n"], r["eval_end"]) for r in rows if r.get("eval_end")]
+            if evs:
                 p["evals"] = evs; p["mat_eval"] = evs[-1][1]; changed = True
-            bars = [c.get("barrier") for c in conds]
-            if all(b is not None for b in bars) and bars and not p.get("ladder"):
-                p["ladder"] = [round(b * 100, 2) if b <= 2 else b for b in bars]
-                p["ladder"] = [int(x) if float(x) == int(x) else x for x in p["ladder"]]
-        if xrc:
+            bars = [r.get("barrier") for r in rows]
+            if bars and all(b is not None for b in bars):
+                p["ladder"] = [int(b) if float(b) == int(b) else b for b in bars]
+            lz = [[r["n"], r["lizard"]] for r in rows if r.get("lizard")]
+            if lz:
+                p["lizard"] = True; p["lizard_rules"] = lz
+            pays = {r["n"]: round(r["payout"], 2) for r in rows if r.get("payout") is not None}
+            if pays:
+                p["payouts"] = pays
+                # coupon (annualised) from the first payout if the page didn't give one
+                if not p.get("coupon") and p.get("period_months"):
+                    first = rows[0]
+                    if first.get("payout") is not None:
+                        p["coupon"] = round(first["payout"] * 12.0 / p["period_months"], 2)
+            if conds.get("ki") and not p.get("ki"):
+                p["ki"] = {a: conds["ki"] for a in (p.get("assets") or [])}
+                p["ki_level"] = conds["ki"]
+            if len(rows) >= 2 and not p.get("period_months"):
+                d0 = date.fromisoformat(rows[0]["eval_end"]); d1 = date.fromisoformat(rows[1]["eval_end"])
+                p["period_months"] = round((d1 - d0).days / 30.4375)
+        # assets: names from asset info (ordered by assetSeq), base prices from exercise info
+        if ainfo:
+            names = [ainfo[k].get("name") for k in sorted(ainfo.keys(), key=lambda x: int(x) if str(x).isdigit() else 99)]
+            names = [n for n in names if n]
+            if names and (not p.get("assets") or len(names) == len(p.get("assets") or [])):
+                if not p.get("assets"):
+                    p["assets"] = names
+                p["ksd_asset_names"] = names
+        if xrc and xrc.get("base"):
             ref = {}
-            for a in xrc:
-                nm = a.get("name"); pr = a.get("base_price")
-                if nm and pr:
-                    # match to the product's asset names
+            seq_names = {}
+            if ainfo:
+                seq_names = {k: v.get("name") for k, v in ainfo.items() if v.get("name")}
+            for aseq, prc in xrc["base"].items():
+                nm = seq_names.get(aseq)
+                target = None
+                if nm:
                     for an in (p.get("assets") or []):
-                        if norm_name(an) in norm_name(str(nm)) or norm_name(str(nm)) in norm_name(an) or (map_asset(an) and map_asset(str(nm)) and map_asset(an)[0] == map_asset(str(nm))[0]):
-                            ref[an] = pr
-            if not p.get("assets") and xrc:
-                p["assets"] = [str(a.get("name")) for a in xrc if a.get("name")]
-                for a in xrc:
-                    if a.get("name") and a.get("base_price"):
-                        ref[str(a["name"])] = a["base_price"]
+                        ma, mb = map_asset(an), map_asset(str(nm))
+                        if norm_name(an) == norm_name(str(nm)) or (ma and mb and ma[0] == mb[0]):
+                            target = an; break
+                    if not target and nm in (p.get("assets") or []):
+                        target = nm
+                if not target and not seq_names and len(p.get("assets") or []) == len(xrc["base"]):
+                    # no names: match by price magnitude against current market levels
+                    best = None
+                    for an in (p.get("assets") or []):
+                        m = map_asset(an)
+                        if not m:
+                            continue
+                        hist = get_history(m[0], m[2])
+                        if not hist:
+                            continue
+                        last = hist[max(hist)]
+                        if 0.5 <= prc / last <= 2.0:
+                            best = an if best is None else "AMBIG"
+                    if best and best != "AMBIG":
+                        target = best
+                if target:
+                    ref[target] = prc
             if ref:
-                p["ksd_ref"] = ref
+                p["ksd_ref"] = ref; changed = True
+            if conds and conds.get("ki") and p.get("assets"):
+                p["ki"] = {a: conds["ki"] for a in p["assets"]}
+        # issue/reference date fallback for private placements: first evaluation minus one period
+        if not (p.get("issue_date") or p.get("ref_date")) and p.get("evals") and p.get("period_months"):
+            d1 = date.fromisoformat(p["evals"][0][1])
+            mo = int(p["period_months"])
+            yy, mm = d1.year, d1.month - mo
+            while mm <= 0:
+                mm += 12; yy -= 1
+            try:
+                est = date(yy, mm, min(d1.day, 28))
+            except ValueError:
+                est = d1 - timedelta(days=30 * mo)
+            p["issue_date"] = est.isoformat(); p["issue_est"] = True; changed = True
         if not p.get("ref_date") and p.get("issue_date"):
             p["ref_date"] = p["issue_date"]
-        if changed or p.get("ksd_ref"):
-            p["source"] = (p.get("source") or "web") + "+ksd"
+        if changed:
+            p["source"] = (p.get("source") or "web").replace("+ksd", "") + "+ksd"
             n_fill += 1
         time.sleep(0.2)
     info["cond_tried"] = n_try; info["cond_filled"] = n_fill; info["cond_remaining"] = max(0, len(need) - n_try)

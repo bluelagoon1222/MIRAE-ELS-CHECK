@@ -126,7 +126,7 @@ def call(op, isin=None, rows=100, page=1, extra=None):
                     _state["base"] = base
                     _log(f"endpoint resolved: {base}")
                 if items and op not in _state["debug"]:
-                    _state["debug"][op] = {"sample_isin": isin, "first_item": items[0], "count": len(items)}
+                    _state["debug"][op] = {"sample_isin": isin, "items": items[:30], "count": len(items)}
                 return items, True
             if r.status_code == 200 and code and code not in ("00", "0"):
                 msg = hdr.get("resultMsg", "") if isinstance(hdr, dict) else ""
@@ -171,58 +171,106 @@ def _num(v):
         return None
 
 def basic_info(isin):
+    """getDerivCombiIsinInfoN1 — public issues only (NODATA for private placements)."""
     items, ok = call("getDerivCombiIsinInfoN1", isin, rows=10)
     if not items:
         return None, ok
     it = items[0]
     return {
-        "name": _find(it, [r"nm$", r"name"]),
-        "issue_date": _dt(_find(it, [r"issu.*dt", r"issue.*d"])),
-        "maturity": _dt(_find(it, [r"xpir.*dt", r"expir", r"mtr.*dt", r"matur"])),
+        "name": it.get("korSecnNm") or _find(it, [r"nm$"]),
+        "issue_date": _dt(it.get("issuDt") or _find(it, [r"issu.*dt"])),
+        "contract_date": _dt(it.get("contDt")),
+        "maturity": _dt(it.get("xpirDt") or _find(it, [r"xpir.*dt"])),
+        "redeemed_date": _dt(it.get("redDt")),
+        "monthly": (it.get("mmPayYn") == "Y"),
+        "asset_count": _num(it.get("bassetCnt")),
+        "principal_type": it.get("prcpPrsvTpcd"),
         "raw": it,
     }, ok
 
+PCT_UP = re.compile(r"(\d{1,3}(?:\.\d+)?)\s*%\s*(?:이상|초과)")
+PCT_LZ = re.compile(r"(\d{1,3}(?:\.\d+)?)\s*%\s*미만으로\s*하락한\s*적이\s*없")
+PCT_KI = re.compile(r"(\d{1,3}(?:\.\d+)?)\s*%\s*미만으로\s*하락한\s*적이\s*있")
+PCT_PAY = re.compile(r"[x×X]\s*(\d{1,3}(?:\.\d+)?)\s*%")
+
 def red_conditions(isin):
-    """Returns list of {n, eval_start, eval_end, pay_date, barrier, kind} sorted by date."""
+    """getRedCondiInfoN1 → list of evaluations {n, eval_start, eval_end, pay_date, barrier, lizard, ki, payout, is_maturity, text}."""
     items, ok = call("getRedCondiInfoN1", isin, rows=100)
     if not items:
         return None, ok
-    rows = []
+    by_seq = {}
+    ki_level = None
     for it in items:
-        st = _dt(_find(it, [r"mdeval.*strt", r"eval.*st.*dt", r"strt.*dt", r"begin.*dt", r"st.*dt"]))
-        en = _dt(_find(it, [r"mdeval.*end", r"eval.*end.*dt", r"end.*dt"]))
-        pay = _dt(_find(it, [r"pay.*dt", r"pymt.*dt"]))
-        bar = _num(_find(it, [r"xrc.*rt", r"red.*rt", r"cond.*rt", r"barri", r"rt$"]))
-        kind = _find(it, [r"red.*tp", r"tpnm", r"kind", r"gubun", r"type"])
-        seq = _num(_find(it, [r"seq", r"ord", r"no$", r"tms"]))
-        rows.append({"eval_start": st, "eval_end": en, "pay_date": pay, "barrier": bar, "kind": kind, "seq": seq, "raw": it})
-    rows = [r for r in rows if r["eval_end"] or r["eval_start"]]
-    rows.sort(key=lambda r: (r["eval_end"] or r["eval_start"]))
+        txt = (it.get("redCondiContent") or "")
+        formula = (it.get("redFormulaContent") or "")
+        seq = _num(it.get("valatNtimesSeq"))
+        end = _dt(it.get("midValatExpryDt")); beg = _dt(it.get("midValatBeginDt")); pay = _dt(it.get("midValatPayDt"))
+        m_ki = PCT_KI.search(txt)
+        if m_ki:
+            ki_level = float(m_ki.group(1))
+        if not end and not beg:
+            continue
+        key = seq if seq is not None else end
+        row = by_seq.setdefault(key, {"n": seq, "eval_start": beg, "eval_end": end or beg, "pay_date": pay,
+                                      "barrier": None, "lizard": None, "payout": None, "is_maturity": ("만기" in txt),
+                                      "tpcd": it.get("redCondiTpcd"), "text": []})
+        row["text"].append(txt)
+        m_up = PCT_UP.search(txt)
+        m_lz = PCT_LZ.search(txt)
+        m_pay = PCT_PAY.search(formula)
+        payout = (float(m_pay.group(1)) - 100.0) if m_pay else None
+        if m_lz:
+            row["lizard"] = float(m_lz.group(1))
+            if payout is not None and row["payout"] is None:
+                row["payout"] = payout
+        elif m_up:
+            row["barrier"] = float(m_up.group(1))
+            if payout is not None:
+                row["payout"] = payout
+        if "만기" in txt:
+            row["is_maturity"] = True
+    rows = sorted(by_seq.values(), key=lambda r: (r["eval_end"] or r["eval_start"]))
     for i, r in enumerate(rows):
         r["n"] = i + 1
-    return rows, ok
+        r["text"] = " / ".join(r["text"])[:400]
+    return {"rows": rows, "ki": ki_level}, ok
 
 def asset_exercise(isin):
-    """Returns list of {name, code, base_ratio, base_price}."""
-    items, ok = call("getAssetXrcInfoN1", isin, rows=50)
+    """getAssetXrcInfoN1 → {assetSeq: base_price} using xrcStdSeq==1 (최초기준가) rows."""
+    items, ok = call("getAssetXrcInfoN1", isin, rows=100)
     if not items:
         return None, ok
-    out = []
+    base = {}
+    allrows = []
     for it in items:
-        out.append({
-            "name": _find(it, [r"asst.*nm", r"undr.*nm", r"nm$", r"name"]),
-            "code": _find(it, [r"asst.*isin", r"asst.*cd", r"undr.*cd", r"isin$", r"cd$"]),
-            "base_ratio": _num(_find(it, [r"xrc.*rt", r"base.*rt", r"rt$"])),
-            "base_price": _num(_find(it, [r"xrc.*prc", r"base.*prc", r"prc$", r"price"])),
-            "raw": it,
-        })
+        aseq = str(it.get("assetSeq") or "")
+        xseq = str(it.get("xrcStdSeq") or "")
+        prc = _num(it.get("xrcStdprc"))
+        ratio = _num(it.get("xrcStdRatio"))
+        allrows.append({"assetSeq": aseq, "xrcStdSeq": xseq, "ratio": ratio, "price": prc})
+        if prc and (xseq == "1" or aseq not in base):
+            if xseq == "1" or aseq not in base:
+                base[aseq] = prc
+    return {"base": base, "rows": allrows}, ok
+
+def asset_info(isin):
+    """getAssetInfoN1 → {assetSeq: {name, code}} (field names discovered at runtime)."""
+    items, ok = call("getAssetInfoN1", isin, rows=50)
+    if not items:
+        return None, ok
+    out = {}
+    for i, it in enumerate(items):
+        seq = str(it.get("assetSeq") or _find(it, [r"seq"]) or (i + 1))
+        name = it.get("bassetNm") or it.get("assetNm") or _find(it, [r"asst.*nm", r"asset.*nm", r"nm$", r"name"])
+        code = it.get("bassetIsin") or _find(it, [r"isin", r"cd$", r"code"])
+        out[seq] = {"name": name, "code": code, "raw": it}
     return out, ok
 
 def early_redeemed(isin):
-    """Returns (date or None, ok). None with ok=True means not redeemed (no record)."""
+    """getErlyRedELSInfo → (date or None, ok). None with ok=True means no early-redemption record."""
     items, ok = call("getErlyRedELSInfo", isin, rows=10)
     if not items:
         return None, ok
     it = items[0]
-    d = _dt(_find(it, [r"red.*dt", r"erly.*dt", r"dt$", r"date"]))
+    d = _dt(it.get("redDt") or _find(it, [r"red.*dt", r"dt$"]))
     return (d or "unknown"), ok
