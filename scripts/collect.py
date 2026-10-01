@@ -21,6 +21,10 @@ try:
     import redeemed as redeemed_mod
 except Exception:
     redeemed_mod = None
+try:
+    import ksd as ksd_mod
+except Exception:
+    ksd_mod = None
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
@@ -110,7 +114,7 @@ def fetch_html(url, **kw):
             pass
     return r.text
 
-PARSE_VERSION = 4
+PARSE_VERSION = 5
 KDATE = re.compile(r"(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일|(\d{4})[.\-/](\d{1,2})[.\-/](\d{1,2})")
 
 def kdate(s):
@@ -153,13 +157,24 @@ def parse_detail(html, isin):
 
     # ladder e.g. 90-90-85-85-80-75
     ladder = None
+    inline_lizard = []
     i0 = text.find("상환조건")
     if i0 >= 0:
         seg = text[i0: i0 + 160]
-        mm = re.search(r"(\d{2,3}(?:\.\d)?(?:\s*-\s*\d{2,3}(?:\.\d)?){1,12})", seg)
+        tok = r"\d{2,3}(?:\.\d)?(?:\s*\(\s*L\s*\d{2,3}(?:\.\d)?\s*\))?"
+        mm = re.search(r"(" + tok + r"(?:\s*-\s*" + tok + r"){1,12})", seg)
         if mm:
-            ladder = [float(x) for x in re.split(r"\s*-\s*", mm.group(1).strip())]
-            ladder = [int(x) if x == int(x) else x for x in ladder]
+            parts = re.split(r"\s*-\s*", mm.group(1).strip())
+            ladder = []
+            for i, part in enumerate(parts):
+                m2 = re.match(r"(\d{2,3}(?:\.\d)?)(?:\s*\(\s*L\s*(\d{2,3}(?:\.\d)?)\s*\))?", part)
+                v = float(m2.group(1)); ladder.append(int(v) if v == int(v) else v)
+                if m2.group(2):
+                    inline_lizard.append([i + 1, float(m2.group(2))])
+        else:
+            mm = re.search(r"(\d{2,3}(?:\.\d)?)\s*\n", seg)
+            if mm:
+                v = float(mm.group(1)); ladder = [int(v) if v == int(v) else v]
 
     # maturity / period
     mat_years = period_months = None
@@ -205,15 +220,18 @@ def parse_detail(html, isin):
         blk = blk.split("상환조건")[0]
         assets = [l.strip() for l in blk.split("\n") if l.strip() and len(l.strip()) < 40][:5]
 
+    assets = [a for a in assets if clean_asset_name(a)]
+    # merge a dangling "Inc." style fragment created by comma splits
+    assets = [a for a in assets if a.strip(" .").upper() not in ("INC", "CORP", "CO", "LTD")]
     # payoff text
     payoff = ""
     i = text.find("수익구조")
     if i >= 0:
         j = text.find("중도상환", i)
         payoff = text[i:j if j > 0 else i + 2500].strip()
-    lizard = "리자드" in payoff or "Lizard" in payoff or "리자드" in text[:3000]
-    lizard_rules = []
-    if lizard:
+    lizard = "리자드" in payoff or "Lizard" in payoff or "리자드" in text[:3000] or bool(inline_lizard)
+    lizard_rules = list(inline_lizard)
+    if lizard and not lizard_rules:
         for n, pct in re.findall(r"(\d)\s*번째\s*자동조기상환평가일까지[^%\n]{0,80}?(\d{2,3}(?:\.\d)?)\s*%\s*미만[^\n]{0,60}?하락한\s*적이\s*없", payoff):
             lizard_rules.append([int(n), float(pct)])
         lizard_rules = sorted(set(map(tuple, lizard_rules)))
@@ -271,7 +289,7 @@ def _dates_in(txt):
 def pdf_text(isin):
     for u in PDF_URLS:
         try:
-            r = session.get(u.format(isin=isin), timeout=40)
+            r = session.get(u.format(isin=isin), timeout=40, allow_redirects=False)
             if r.status_code != 200 or not r.content.startswith(b"%PDF"):
                 continue
             txt = ""
@@ -292,8 +310,8 @@ def pdf_text(isin):
                     log(f"pdfminer fail {isin}: {e}")
             if txt.strip():
                 return txt, u.format(isin=isin)
-        except Exception as e:
-            log(f"pdf fetch fail {isin}: {e}")
+        except Exception:
+            continue  # missing PDF / flaky error page: fall through silently
     return None, None
 
 def pdf_conditions(isin):
@@ -343,7 +361,13 @@ def pdf_conditions(isin):
 def probe_isin(isin):
     """returns dict / None (not a product) / 'ERR' (network outage)"""
     try:
-        html = fetch_html(DETAIL_URL.format(isin=isin))
+        try:
+            html = fetch_html(DETAIL_URL.format(isin=isin))
+        except requests.HTTPError:
+            raise
+        except Exception:
+            time.sleep(2)
+            html = fetch_html(DETAIL_URL.format(isin=isin))
         HTTP_ERR_STREAK[0] = 0
     except requests.HTTPError as e:
         # 4xx/5xx for a non-existent code is treated as "no product",
@@ -635,6 +659,18 @@ SYMBOLS = {
     "PAYPAL": ("PYPL", "PayPal", "us"),
     "MICROSTRATEGY": ("MSTR", "Strategy", "us"), "STRATEGY": ("MSTR", "Strategy", "us"),
     "ALIBABA": ("BABA", "Alibaba", "us"),
+    "CSI300": ("000300.SS", "CSI300", "cn"), "CSI 300": ("000300.SS", "CSI300", "cn"),
+    "HANGSENG": ("^HSI", "HSI", "hk"), "항셍지수": ("^HSI", "HSI", "hk"), "HANGSENG지수": ("^HSI", "HSI", "hk"),
+    "어플라이드머티어리얼즈": ("AMAT", "Applied Materials", "us"), "APPLIED MATERIALS": ("AMAT", "Applied Materials", "us"),
+    "SK이노베이션": ("096770.KS", "SK이노베이션", "kr"), "LG전자": ("066570.KS", "LG전자", "kr"),
+    "삼성전기": ("009150.KS", "삼성전기", "kr"), "현대모비스": ("012330.KS", "현대모비스", "kr"), "셀트리온": ("068270.KS", "셀트리온", "kr"),
+    "삼성바이오로직스": ("207940.KS", "삼성바이오로직스", "kr"), "HD현대중공업": ("329180.KS", "HD현대중공업", "kr"),
+    "두산에너빌리티": ("034020.KS", "두산에너빌리티", "kr"), "한화오션": ("042660.KS", "한화오션", "kr"), "SK스퀘어": ("402340.KS", "SK스퀘어", "kr"),
+    "알파벳A": ("GOOGL", "Alphabet", "us"), "알파벳 A": ("GOOGL", "Alphabet", "us"), "알파벳": ("GOOGL", "Alphabet", "us"),
+    "퀄컴": ("QCOM", "Qualcomm", "us"), "스타벅스": ("SBUX", "Starbucks", "us"), "일라이릴리": ("LLY", "Eli Lilly", "us"), "일라이 릴리": ("LLY", "Eli Lilly", "us"),
+    "노보노디스크": ("NVO", "Novo Nordisk", "us"), "코카콜라": ("KO", "Coca-Cola", "us"), "나이키": ("NKE", "Nike", "us"), "월트디즈니": ("DIS", "Disney", "us"),
+    "보잉": ("BA", "Boeing", "us"), "우버": ("UBER", "Uber", "us"), "페이팔": ("PYPL", "PayPal", "us"), "슈퍼마이크로": ("SMCI", "Super Micro", "us"),
+    "마이크로스트래티지": ("MSTR", "Strategy", "us"), "TSMC ADR": ("TSM", "TSMC", "us"), "AMD": ("AMD", "AMD", "us"),
 }
 
 def norm_name(n):
@@ -643,12 +679,22 @@ def norm_name(n):
 NORM_MAP = {norm_name(k): v for k, v in SYMBOLS.items()}
 NORM_KEYS = sorted(NORM_MAP.keys(), key=len, reverse=True)
 
+def clean_asset_name(name):
+    n = re.sub(r"\((?:보통주|주식|지수|Index|INDEX|ADR|ORD)\)", "", name)
+    n = re.sub(r"(?i)\b(inc\.?|corp\.?|co\.?,?|ltd\.?|plc|n\.v\.|보통주|주식|지수|index)\b", "", n)
+    n = n.strip(" ,.-")
+    return n
+
 def map_asset(name):
+    name = clean_asset_name(name)
+    if not name or name.upper() in ("INC", "INC.", "CORP", "CO", "LTD"):
+        return None
     n = norm_name(name)
     if n in NORM_MAP:
         return NORM_MAP[n]
     for k in NORM_KEYS:
-        if len(k) >= 4 and len(n) >= 4 and (k in n or n in k):
+        korean = any("가" <= ch <= "힣" for ch in k)
+        if (len(k) >= 4 or (korean and len(k) >= 2)) and len(n) >= 2 and (k in n or n in k):
             return NORM_MAP[k]
     return None
 
@@ -891,7 +937,7 @@ def judge(p, red=None):
         out["judgment"] = {"status": "redeemed_confirmed", "worst": None, "next": None, "expected": None,
                            "knocked_in": None, "need_pct": None, "ki_room": None,
                            "redeemed": {"date": red.get("date"), "kind": red.get("kind"), "source": red.get("source")},
-                           "message": f"예탁결제원 상환종목 공시 확인 — {red.get('kind') or '상환'} {red.get('date') or ''}".strip()}
+                           "message": f"예탁결제원 {'API' if red.get('source') == 'ksd' else '상환종목 공시'} 확인 — {red.get('kind') or '상환'} {red.get('date') or ''}".strip()}
         return out
     ref_date = p.get("ref_date") or p.get("issue_date")
     assets_out = []
@@ -908,13 +954,18 @@ def judge(p, red=None):
         hist = get_history(sym, market)
         if not hist:
             unsupported.append(name); assets_out.append(a); continue
-        ref, rd = close_on(hist, ref_date, forward=True, max_days=10)
+        official = (p.get("ksd_ref") or {}).get(name)
+        if official:
+            ref, rd = official, ref_date
+            a["ref_source"] = "ksd"
+        else:
+            ref, rd = close_on(hist, ref_date, forward=True, max_days=10)
         if ref is None:
             unsupported.append(name); assets_out.append(a); continue
         last_date = max(hist.keys())
         last = hist[last_date]
         a.update({"ref": ref, "ref_date": rd, "last": last, "last_date": last_date, "ratio": last / ref * 100})
-        if rd != ref_date:
+        if rd != ref_date and not official:
             out["flags"].append(f"{label}: 최초기준가격결정일({ref_date}) 종가 없음 → {rd} 종가 사용")
         # min close since reference date
         mn, md = None, None
@@ -944,6 +995,12 @@ def judge(p, red=None):
     if p.get("type") == "ELB" and not p.get("ladder"):
         j["status"] = "elb"
         j["message"] = "원금지급형(ELB) 구조 — 스텝다운 조기상환 조건이 없어 자동 판정 대상이 아닙니다. 수익구조 원문을 확인해 주세요."
+        out["judgment"] = j
+        return out
+    if not (p.get("ref_date") or p.get("issue_date")) or not p.get("evals"):
+        j["status"] = "noschedule"
+        j["message"] = ("홈페이지 상품 페이지에 발행일·평가일 정보가 없는 상품입니다(은행 ELT 편입용 등 비대면 판매분으로 추정). "
+                        "예탁결제원 데이터 연동 후 판정될 예정이며, 그 전까지는 상품설명서로 확인해 주세요.")
         out["judgment"] = j
         return out
     ref_check = p.get("ref_date") or p.get("issue_date")
@@ -1091,6 +1148,102 @@ def judge(p, red=None):
     return out
 
 # ---------------------------------------------------------------------------
+# KSD pass
+# ---------------------------------------------------------------------------
+def ksd_pass(products, redeemed, excluded, info):
+    today = TODAY.isoformat()
+    since = (TODAY - timedelta(days=25)).isoformat()
+    # 1) redemption confirmation: products with an evaluation date in the last 25 days, newest first
+    cands = []
+    for isin, p in products.items():
+        if isin in excluded or p.get("type") != "ELS":
+            continue
+        if redeemed.get(isin):
+            continue
+        last_chk = (p.get("ksd_red") or {}).get("checked")
+        evs = [d for _, d in (p.get("evals") or [])] + ([p["mat_eval"]] if p.get("mat_eval") else [])
+        recent = [d for d in evs if since <= d <= today]
+        if not recent:
+            continue
+        if last_chk and last_chk >= max(recent):
+            continue  # already checked after the latest evaluation
+        cands.append((max(recent), isin))
+    cands.sort(reverse=True)
+    n_red = 0; n_chk = 0
+    for _, isin in cands:
+        if ksd_mod.remaining("getErlyRedELSInfo") <= 0:
+            break
+        d, ok = ksd_mod.early_redeemed(isin)
+        if not ok:
+            break
+        n_chk += 1
+        products[isin]["ksd_red"] = {"checked": today, "date": d}
+        if d:
+            redeemed[isin] = {"date": None if d == "unknown" else d, "kind": "조기상환", "name": products[isin].get("name"), "source": "ksd"}
+            n_red += 1
+        time.sleep(0.2)
+    info["red_checked"] = n_chk; info["red_found"] = n_red
+    log(f"ksd redemption check: candidates={len(cands)} checked={n_chk} redeemed={n_red}")
+
+    # 2) fill conditions for products with no schedule, newest first
+    need = [p for isin, p in products.items() if isin not in excluded and p.get("type") == "ELS"
+            and (not p.get("evals") or not (p.get("ref_date") or p.get("issue_date")))
+            and (p.get("ksd_cond_attempts", 0) < 2)]
+    need.sort(key=lambda p: -(p.get("seq") or 0))
+    n_fill = n_try = 0
+    for p in need:
+        if min(ksd_mod.remaining("getRedCondiInfoN1"), ksd_mod.remaining("getAssetXrcInfoN1")) <= 0:
+            break
+        n_try += 1
+        p["ksd_cond_attempts"] = p.get("ksd_cond_attempts", 0) + 1
+        conds, ok1 = ksd_mod.red_conditions(p["isin"])
+        xrc, ok2 = ksd_mod.asset_exercise(p["isin"])
+        if not ok1 and not ok2:
+            break
+        basic = None
+        if not p.get("issue_date") and ksd_mod.remaining("getDerivCombiIsinInfoN1") > 0:
+            basic, _ = ksd_mod.basic_info(p["isin"])
+        p["ksd"] = {"conds": conds, "xrc": xrc, "basic": (basic or {}).get("raw") if basic else None, "fetched": today}
+        changed = False
+        if basic:
+            if basic.get("issue_date") and not p.get("issue_date"):
+                p["issue_date"] = basic["issue_date"]; changed = True
+            if basic.get("maturity") and not p.get("mat_pay"):
+                p["mat_pay"] = basic["maturity"]
+        if conds:
+            evs = [(c["n"], c["eval_end"] or c["eval_start"]) for c in conds if (c["eval_end"] or c["eval_start"])]
+            if evs and not p.get("evals"):
+                p["evals"] = evs; p["mat_eval"] = evs[-1][1]; changed = True
+            bars = [c.get("barrier") for c in conds]
+            if all(b is not None for b in bars) and bars and not p.get("ladder"):
+                p["ladder"] = [round(b * 100, 2) if b <= 2 else b for b in bars]
+                p["ladder"] = [int(x) if float(x) == int(x) else x for x in p["ladder"]]
+        if xrc:
+            ref = {}
+            for a in xrc:
+                nm = a.get("name"); pr = a.get("base_price")
+                if nm and pr:
+                    # match to the product's asset names
+                    for an in (p.get("assets") or []):
+                        if norm_name(an) in norm_name(str(nm)) or norm_name(str(nm)) in norm_name(an) or (map_asset(an) and map_asset(str(nm)) and map_asset(an)[0] == map_asset(str(nm))[0]):
+                            ref[an] = pr
+            if not p.get("assets") and xrc:
+                p["assets"] = [str(a.get("name")) for a in xrc if a.get("name")]
+                for a in xrc:
+                    if a.get("name") and a.get("base_price"):
+                        ref[str(a["name"])] = a["base_price"]
+            if ref:
+                p["ksd_ref"] = ref
+        if not p.get("ref_date") and p.get("issue_date"):
+            p["ref_date"] = p["issue_date"]
+        if changed or p.get("ksd_ref"):
+            p["source"] = (p.get("source") or "web") + "+ksd"
+            n_fill += 1
+        time.sleep(0.2)
+    info["cond_tried"] = n_try; info["cond_filled"] = n_fill; info["cond_remaining"] = max(0, len(need) - n_try)
+    log(f"ksd condition fill: need={len(need)} tried={n_try} filled={n_fill}")
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 def main():
@@ -1115,6 +1268,7 @@ def main():
     else:
         log("redeemed cross-check skipped")
 
+    ksd_info = {"enabled": False}
     probes = new = 0
     try:
         probes, new = discover(products, scan, excluded)
@@ -1158,6 +1312,21 @@ def main():
         save_json(os.path.join(DATA, "parse_debug.json"), debug)
     for p in products.values():
         p.pop("_text_head", None)
+
+    # ---- KSD open API pass (quota-aware) ----
+    ksd_info = {"enabled": False}
+    if ksd_mod and ksd_mod.setup(DATA, log):
+        ksd_info["enabled"] = True
+        try:
+            ksd_pass(products, redeemed, excluded, ksd_info)
+        except Exception:
+            log("ksd pass crashed: " + traceback.format_exc().splitlines()[-1])
+        ksd_mod.save()
+        save_json(REDEEMED_FILE, redeemed)
+        ksd_info["usage"] = ksd_mod._state.get("usage")
+        ksd_info["endpoint"] = ksd_mod._state.get("base")
+    else:
+        log("ksd: no API key (set KSD_API_KEY secret) — skipped")
 
     def red_for(p):
         r = redeemed.get(p["isin"]) or redeemed.get("CODE:" + p["code"])
@@ -1266,6 +1435,7 @@ def main():
                                 "ref_or_issue_date": sum(1 for p in products.values() if not (p.get("ref_date") or p.get("issue_date"))),
                                 "evals": sum(1 for p in products.values() if not p.get("evals"))},
               "redeemed_debug": [l for l in LOG if "[redeemed]" in l][-10:],
+              "ksd": ksd_info, "ksd_log": [l for l in LOG if "[ksd]" in l][-20:],
               "price_debug": [l for l in LOG if any(k in l for k in ("yahoo", "fchart", "krx", "naver"))][-30:],
               "scan_cursor": scan.get("cursor"), "log": LOG[-120:]}
     save_json(STATUS_FILE, status)
