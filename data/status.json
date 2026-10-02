@@ -1,299 +1,402 @@
 {
- "generated": "2026-10-01 20:54",
- "elapsed_sec": 2106.1,
- "cached_products": 3418,
- "excluded": 1278,
- "redeemed_list": 47,
+ "generated": "2026-10-02 11:21",
+ "elapsed_sec": 2125.5,
+ "cached_products": 3339,
+ "excluded": 1357,
+ "redeemed_list": 133,
  "redeemed_source_ok": false,
- "hidden_estimated": 1632,
- "active": 1786,
- "probes": 400,
+ "hidden_estimated": 1599,
+ "active": 1740,
+ "probes": 150,
  "new": 0,
  "counts": {
-  "noschedule": 1077,
+  "noschedule": 984,
   "ki": 11,
   "risk": 11,
-  "redeemed": 114,
-  "defer": 58,
-  "pass": 476,
+  "redeemed": 122,
+  "defer": 72,
+  "nodata": 34,
+  "redeemed_confirmed": 7,
+  "pass": 479,
   "matured": 2,
-  "pending": 37
+  "pending": 18
  },
- "nodata_reasons": {},
+ "nodata_reasons": {
+  "CSI300": 15,
+  "KOSPI200": 10,
+  "삼성전자": 5,
+  "SK하이닉스": 5,
+  "S&P500": 4,
+  "Nikkei225": 4,
+  "마이크론 테크놀로지": 3,
+  "EUROSTOXX50": 2,
+  "NIKKEI225": 2,
+  "팔란티어 테크": 2,
+  "EuroStoxx50": 1,
+  "테슬라": 1,
+  "어플라이드 머티어리얼즈": 1,
+  "AMD": 1
+ },
  "prices": {
-  "NVDA": {
-   "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
-  },
-  "AMD": {
-   "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
-  },
-  "AMZN": {
-   "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
-  },
-  "META": {
-   "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
-  },
   "^KS200": {
-   "rows": 2000,
-   "first": "2018-08-06",
+   "rows": 1999,
+   "first": "2018-08-07",
    "last": "2026-10-01"
   },
   "^GSPC": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
-  },
-  "^N225": {
-   "rows": 1708,
-   "first": "2019-10-01",
+   "first": "2019-10-02",
    "last": "2026-10-01"
   },
   "^STOXX50E": {
-   "rows": 1760,
+   "rows": 1761,
    "first": "2019-10-01",
+   "last": "2026-10-01"
+  },
+  "^N225": {
+   "rows": 1707,
+   "first": "2019-10-02",
+   "last": "2026-10-01"
+  },
+  "000300.SS": {
+   "rows": 1,
+   "first": "2026-09-30",
    "last": "2026-09-30"
   },
+  "NVDA": {
+   "rows": 1759,
+   "first": "2019-10-02",
+   "last": "2026-10-01"
+  },
+  "AMD": {
+   "rows": 1759,
+   "first": "2019-10-02",
+   "last": "2026-10-01"
+  },
   "005930.KS": {
-   "rows": 2000,
-   "first": "2018-08-06",
+   "rows": 1999,
+   "first": "2018-08-07",
    "last": "2026-10-01"
   },
   "^HSCE": {
    "rows": 1723,
-   "first": "2019-09-30",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-02"
   },
   "035420.KS": {
-   "rows": 2000,
-   "first": "2018-08-06",
+   "rows": 1999,
+   "first": "2018-08-07",
    "last": "2026-10-01"
   },
   "TSLA": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-01"
+  },
+  "AMZN": {
+   "rows": 1759,
+   "first": "2019-10-02",
+   "last": "2026-10-01"
   },
   "NFLX": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-01"
   },
   "INTC": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-01"
   },
   "GOOGL": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-01"
   },
   "MSFT": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-01"
   },
   "051910.KS": {
-   "rows": 2000,
-   "first": "2018-08-06",
+   "rows": 1999,
+   "first": "2018-08-07",
    "last": "2026-10-01"
   },
   "005490.KS": {
-   "rows": 2000,
-   "first": "2018-08-06",
+   "rows": 1999,
+   "first": "2018-08-07",
    "last": "2026-10-01"
   },
   "AAPL": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-01"
   },
   "SBUX": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-01"
+  },
+  "META": {
+   "rows": 1759,
+   "first": "2019-10-02",
+   "last": "2026-10-01"
   },
   "066570.KS": {
-   "rows": 2000,
-   "first": "2018-08-06",
+   "rows": 1999,
+   "first": "2018-08-07",
    "last": "2026-10-01"
   },
   "096770.KS": {
-   "rows": 2000,
-   "first": "2018-08-06",
+   "rows": 1999,
+   "first": "2018-08-07",
    "last": "2026-10-01"
   },
   "PYPL": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-01"
   },
   "000660.KS": {
-   "rows": 2000,
-   "first": "2018-08-06",
+   "rows": 1999,
+   "first": "2018-08-07",
    "last": "2026-10-01"
   },
   "^HSI": {
    "rows": 1723,
-   "first": "2019-09-30",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-02"
   },
   "005380.KS": {
-   "rows": 2000,
-   "first": "2018-08-06",
+   "rows": 1999,
+   "first": "2018-08-07",
    "last": "2026-10-01"
   },
   "QCOM": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-01"
   },
   "AVGO": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-01"
   },
   "PLTR": {
-   "rows": 1507,
+   "rows": 1508,
    "first": "2020-09-30",
-   "last": "2026-09-30"
+   "last": "2026-10-01"
   },
   "LLY": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-01"
   },
   "MU": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-01"
   },
   "AMAT": {
    "rows": 1759,
-   "first": "2019-10-01",
-   "last": "2026-09-30"
+   "first": "2019-10-02",
+   "last": "2026-10-01"
   }
  },
  "parse_missing": {
   "ladder": 0,
-  "ref_or_issue_date": 1077,
-  "evals": 1031
+  "ref_or_issue_date": 984,
+  "evals": 938
  },
  "redeemed_debug": [
-  "[20:19:38] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[20:19:40] [redeemed] page1 rows=0 html_len=545",
-  "[20:19:43] [redeemed] GET variant rows=0",
-  "[20:19:43] [redeemed] total redeemed entries found=0 ok=False"
+  "[10:46:18] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
+  "[10:46:20] [redeemed] page1 rows=0 html_len=545",
+  "[10:46:23] [redeemed] GET variant rows=0",
+  "[10:46:23] [redeemed] total redeemed entries found=0 ok=False"
  ],
  "ksd": {
   "enabled": true,
-  "red_checked": 56,
-  "red_found": 42,
-  "cond_tried": 0,
-  "cond_filled": 0,
-  "cond_remaining": 3459,
+  "red_checked": 94,
+  "red_found": 63,
+  "cond_tried": 96,
+  "cond_filled": 96,
+  "cond_remaining": 3321,
   "usage": {
-   "date": "2026-10-01",
+   "date": "2026-10-02",
    "ops": {
     "getErlyRedELSInfo": 95,
-    "getRedCondiInfoN1": 95,
-    "getAssetXrcInfoN1": 94,
-    "getDerivCombiIsinInfoN1": 91
+    "getDerivCombiIsinInfoN1": 95,
+    "getRedCondiInfoN1": 94,
+    "getAssetXrcInfoN1": 95,
+    "getAssetInfoN1": 94
    }
   },
   "endpoint": "https://apis.data.go.kr/B552481/DerivesSvc"
  },
  "ksd_log": [
-  "[20:53:37] [ksd] endpoint resolved: https://apis.data.go.kr/B552481/DerivesSvc",
-  "[20:53:38] [ksd] getErlyRedELSInfo KR6MD0007FZ8 resultCode=3 NODATA_ERROR",
-  "[20:53:41] [ksd] getErlyRedELSInfo KR6MD0007FX3 resultCode=3 NODATA_ERROR",
-  "[20:53:44] [ksd] getErlyRedELSInfo KR6MD0007FT1 resultCode=3 NODATA_ERROR",
-  "[20:53:45] [ksd] getErlyRedELSInfo KR6MD0007FS3 resultCode=3 NODATA_ERROR",
-  "[20:53:46] [ksd] getErlyRedELSInfo KR6MD0007FR5 resultCode=3 NODATA_ERROR",
-  "[20:53:50] [ksd] getErlyRedELSInfo KR6MD0007FM6 resultCode=3 NODATA_ERROR",
-  "[20:53:52] [ksd] getErlyRedELSInfo KR6MD0007FJ2 resultCode=3 NODATA_ERROR",
-  "[20:54:16] [ksd] getErlyRedELSInfo KR6MD0008ME7 resultCode=3 NODATA_ERROR",
-  "[20:54:17] [ksd] getErlyRedELSInfo KR6MD0008LJ8 resultCode=3 NODATA_ERROR",
-  "[20:54:17] [ksd] getErlyRedELSInfo KR6MD0008K51 resultCode=3 NODATA_ERROR",
-  "[20:54:18] [ksd] getErlyRedELSInfo KR6MD0008JT1 resultCode=3 NODATA_ERROR",
-  "[20:54:19] [ksd] getErlyRedELSInfo KR6MD0008JS3 resultCode=3 NODATA_ERROR",
-  "[20:54:20] [ksd] getErlyRedELSInfo KR6MD0008AN3 resultCode=3 NODATA_ERROR",
-  "[20:54:20] [ksd] getErlyRedELSInfo KR6MD0007T79 resultCode=3 NODATA_ERROR"
+  "[11:19:31] [ksd] getDerivCombiIsinInfoN1 KR6MD0007ZW3 resultCode=3 NODATA_ERROR",
+  "[11:19:34] [ksd] getDerivCombiIsinInfoN1 KR6MD0007ZV5 resultCode=3 NODATA_ERROR",
+  "[11:19:37] [ksd] getDerivCombiIsinInfoN1 KR6MD0007ZT9 resultCode=3 NODATA_ERROR",
+  "[11:19:39] [ksd] getDerivCombiIsinInfoN1 KR6MD0007ZS1 resultCode=3 NODATA_ERROR",
+  "[11:19:49] [ksd] getDerivCombiIsinInfoN1 KR6MD0007YS4 resultCode=3 NODATA_ERROR",
+  "[11:19:52] [ksd] getDerivCombiIsinInfoN1 KR6MD0007YR6 resultCode=3 NODATA_ERROR",
+  "[11:19:55] [ksd] getDerivCombiIsinInfoN1 KR6MD0007YQ8 resultCode=3 NODATA_ERROR",
+  "[11:20:08] [ksd] getDerivCombiIsinInfoN1 KR6MD0007XQ0 resultCode=3 NODATA_ERROR",
+  "[11:20:11] [ksd] getDerivCombiIsinInfoN1 KR6MD0007XP2 resultCode=3 NODATA_ERROR",
+  "[11:20:20] [ksd] getDerivCombiIsinInfoN1 KR6MD0007X73 resultCode=3 NODATA_ERROR",
+  "[11:20:23] [ksd] getDerivCombiIsinInfoN1 KR6MD0007X65 resultCode=3 NODATA_ERROR",
+  "[11:20:24] [ksd] getAssetXrcInfoN1 @DerivesSvc http=503 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"SERVICETIMEOUT_ERROR\",\\n      \"returnAuthMsg\": \"서비스 연결실패 에러\",\\n      \"'",
+  "[11:20:25] [ksd] getDerivCombiIsinInfoN1 KR6MD0007X57 resultCode=3 NODATA_ERROR",
+  "[11:20:28] [ksd] getDerivCombiIsinInfoN1 KR6MD0007X40 resultCode=3 NODATA_ERROR",
+  "[11:20:31] [ksd] getDerivCombiIsinInfoN1 KR6MD0007VW2 resultCode=3 NODATA_ERROR",
+  "[11:20:33] [ksd] getDerivCombiIsinInfoN1 KR6MD0007VB6 resultCode=3 NODATA_ERROR",
+  "[11:20:36] [ksd] getDerivCombiIsinInfoN1 KR6MD0007V00 resultCode=3 NODATA_ERROR",
+  "[11:20:39] [ksd] getDerivCombiIsinInfoN1 KR6MD0007TZ9 resultCode=3 NODATA_ERROR",
+  "[11:20:50] [ksd] getDerivCombiIsinInfoN1 KR6MD0007SL1 resultCode=3 NODATA_ERROR",
+  "[11:21:20] [ksd] getRedCondiInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)"
  ],
  "price_debug": [
-  "[20:54:25] yahoo ^KS200: 1 rows 2026-10-01..2026-10-01",
-  "[20:54:26] fchart ok KPI200: 2000 rows, last 2026-10-01",
-  "[20:54:27] yahoo 005930.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:28] fchart ok 005930: 2000 rows, last 2026-10-01",
-  "[20:54:28] yahoo 035420.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:29] fchart ok 035420: 2000 rows, last 2026-10-01",
-  "[20:54:30] yahoo 051910.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:31] fchart ok 051910: 2000 rows, last 2026-10-01",
-  "[20:54:31] yahoo 005490.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:32] fchart ok 005490: 2000 rows, last 2026-10-01",
-  "[20:54:34] yahoo 066570.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:35] fchart ok 066570: 2000 rows, last 2026-10-01",
-  "[20:54:35] yahoo 096770.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:36] fchart ok 096770: 2000 rows, last 2026-10-01",
-  "[20:54:36] yahoo 000660.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:37] fchart ok 000660: 2000 rows, last 2026-10-01",
-  "[20:54:38] yahoo 005380.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:39] fchart ok 005380: 2000 rows, last 2026-10-01"
+  "[11:15:19] yahoo ^KS200: 1 rows 2026-10-02..2026-10-02",
+  "[11:15:20] fchart ok KPI200: 2000 rows, last 2026-10-02",
+  "[11:21:26] yahoo 005930.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:28] fchart ok 005930: 2000 rows, last 2026-10-02",
+  "[11:21:28] yahoo 035420.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:29] fchart ok 035420: 2000 rows, last 2026-10-02",
+  "[11:21:30] yahoo 051910.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:31] fchart ok 051910: 2000 rows, last 2026-10-02",
+  "[11:21:31] yahoo 005490.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:33] fchart ok 005490: 2000 rows, last 2026-10-02",
+  "[11:21:33] yahoo 066570.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:34] fchart ok 066570: 2000 rows, last 2026-10-02",
+  "[11:21:34] yahoo 096770.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:35] fchart ok 096770: 2000 rows, last 2026-10-02",
+  "[11:21:36] yahoo 000660.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:37] fchart ok 000660: 2000 rows, last 2026-10-02",
+  "[11:21:37] yahoo 005380.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:39] fchart ok 005380: 2000 rows, last 2026-10-02"
  ],
- "scan_cursor": 17425,
+ "scan_cursor": 17575,
  "log": [
-  "[20:19:35] start: cached products=3460 excluded=1236 FULL_SCAN=True MAX_PROBES=1800",
-  "[20:19:38] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[20:19:40] [redeemed] page1 rows=0 html_len=545",
-  "[20:19:43] [redeemed] GET variant rows=0",
-  "[20:19:43] [redeemed] total redeemed entries found=0 ok=False",
-  "[20:19:51] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
-  "[20:21:06] recent scan: rate=4.61/day est_now=11704 max_known=11672",
-  "[20:24:50] discovery: probes=400 new=0 total_products=3460 cursor=17425",
-  "[20:53:36] re-parse: candidates=1397 tried=1397 fixed=366",
-  "[20:53:37] [ksd] endpoint resolved: https://apis.data.go.kr/B552481/DerivesSvc",
-  "[20:53:38] [ksd] getErlyRedELSInfo KR6MD0007FZ8 resultCode=3 NODATA_ERROR",
-  "[20:53:41] [ksd] getErlyRedELSInfo KR6MD0007FX3 resultCode=3 NODATA_ERROR",
-  "[20:53:44] [ksd] getErlyRedELSInfo KR6MD0007FT1 resultCode=3 NODATA_ERROR",
-  "[20:53:45] [ksd] getErlyRedELSInfo KR6MD0007FS3 resultCode=3 NODATA_ERROR",
-  "[20:53:46] [ksd] getErlyRedELSInfo KR6MD0007FR5 resultCode=3 NODATA_ERROR",
-  "[20:53:50] [ksd] getErlyRedELSInfo KR6MD0007FM6 resultCode=3 NODATA_ERROR",
-  "[20:53:52] [ksd] getErlyRedELSInfo KR6MD0007FJ2 resultCode=3 NODATA_ERROR",
-  "[20:54:16] [ksd] getErlyRedELSInfo KR6MD0008ME7 resultCode=3 NODATA_ERROR",
-  "[20:54:17] [ksd] getErlyRedELSInfo KR6MD0008LJ8 resultCode=3 NODATA_ERROR",
-  "[20:54:17] [ksd] getErlyRedELSInfo KR6MD0008K51 resultCode=3 NODATA_ERROR",
-  "[20:54:18] [ksd] getErlyRedELSInfo KR6MD0008JT1 resultCode=3 NODATA_ERROR",
-  "[20:54:19] [ksd] getErlyRedELSInfo KR6MD0008JS3 resultCode=3 NODATA_ERROR",
-  "[20:54:20] [ksd] getErlyRedELSInfo KR6MD0008AN3 resultCode=3 NODATA_ERROR",
-  "[20:54:20] [ksd] getErlyRedELSInfo KR6MD0007T79 resultCode=3 NODATA_ERROR",
-  "[20:54:24] ksd redemption check: candidates=297 checked=56 redeemed=42",
-  "[20:54:24] ksd condition fill: need=3459 tried=0 filled=0",
-  "[20:54:24] active products: 3460 (redeemed list entries=47, source ok=False)",
-  "[20:54:25] yahoo ^KS200: 1 rows 2026-10-01..2026-10-01",
-  "[20:54:26] fchart ok KPI200: 2000 rows, last 2026-10-01",
-  "[20:54:27] yahoo 005930.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:28] fchart ok 005930: 2000 rows, last 2026-10-01",
-  "[20:54:28] yahoo 035420.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:29] fchart ok 035420: 2000 rows, last 2026-10-01",
-  "[20:54:30] yahoo 051910.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:31] fchart ok 051910: 2000 rows, last 2026-10-01",
-  "[20:54:31] yahoo 005490.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:32] fchart ok 005490: 2000 rows, last 2026-10-01",
-  "[20:54:34] yahoo 066570.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:35] fchart ok 066570: 2000 rows, last 2026-10-01",
-  "[20:54:35] yahoo 096770.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:36] fchart ok 096770: 2000 rows, last 2026-10-01",
-  "[20:54:36] yahoo 000660.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:37] fchart ok 000660: 2000 rows, last 2026-10-01",
-  "[20:54:38] yahoo 005380.KS: 1715 rows 2019-10-01..2026-10-01",
-  "[20:54:39] fchart ok 005380: 2000 rows, last 2026-10-01"
+  "[11:13:46] [ksd] getErlyRedELSInfo KR6MD00089M1 resultCode=3 NODATA_ERROR",
+  "[11:13:47] [ksd] getErlyRedELSInfo KR6MD00089C2 resultCode=3 NODATA_ERROR",
+  "[11:13:48] [ksd] getErlyRedELSInfo KR6MD00089B4 resultCode=3 NODATA_ERROR",
+  "[11:13:50] [ksd] getErlyRedELSInfo KR6MD00089A6 resultCode=3 NODATA_ERROR",
+  "[11:13:51] [ksd] getErlyRedELSInfo KR6MD0008994 resultCode=3 NODATA_ERROR",
+  "[11:13:52] [ksd] getErlyRedELSInfo KR6MD0008986 resultCode=3 NODATA_ERROR",
+  "[11:13:54] [ksd] getErlyRedELSInfo KR6MD0008978 resultCode=3 NODATA_ERROR",
+  "[11:13:55] [ksd] getErlyRedELSInfo KR6MD0008960 resultCode=3 NODATA_ERROR",
+  "[11:13:57] [ksd] getErlyRedELSInfo KR6MD0008952 resultCode=3 NODATA_ERROR",
+  "[11:13:58] [ksd] getErlyRedELSInfo KR6MD0008945 resultCode=3 NODATA_ERROR",
+  "[11:13:58] [ksd] getErlyRedELSInfo KR6MD0008937 resultCode=3 NODATA_ERROR",
+  "[11:14:00] [ksd] getErlyRedELSInfo @DerivesSvc http=503 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"SERVICETIMEOUT_ERROR\",\\n      \"returnAuthMsg\": \"서비스 연결실패 에러\",\\n      \"'",
+  "[11:14:00] [ksd] getErlyRedELSInfo KR6MD0008929 resultCode=3 NODATA_ERROR",
+  "[11:14:01] [ksd] getErlyRedELSInfo KR6MD0008911 resultCode=3 NODATA_ERROR",
+  "[11:14:02] [ksd] getErlyRedELSInfo KR6MD0008903 resultCode=3 NODATA_ERROR",
+  "[11:14:03] [ksd] getErlyRedELSInfo KR6MD00088Z5 resultCode=3 NODATA_ERROR",
+  "[11:14:04] [ksd] getErlyRedELSInfo KR6MD00088Y8 resultCode=3 NODATA_ERROR",
+  "[11:14:05] [ksd] getErlyRedELSInfo KR6MD00088X0 resultCode=3 NODATA_ERROR",
+  "[11:14:06] [ksd] getErlyRedELSInfo KR6MD00088W2 resultCode=3 NODATA_ERROR",
+  "[11:14:07] [ksd] getErlyRedELSInfo KR6MD00088V4 resultCode=3 NODATA_ERROR",
+  "[11:14:08] [ksd] getErlyRedELSInfo KR6MD00088T8 resultCode=3 NODATA_ERROR",
+  "[11:14:09] [ksd] getErlyRedELSInfo KR6MD00088S0 resultCode=3 NODATA_ERROR",
+  "[11:14:10] [ksd] getErlyRedELSInfo KR6MD00088R2 resultCode=3 NODATA_ERROR",
+  "[11:14:11] [ksd] getErlyRedELSInfo KR6MD0007G41 resultCode=3 NODATA_ERROR",
+  "[11:14:12] [ksd] endpoint resolved: https://apis.data.go.kr/B552481/DerivesSvc",
+  "[11:14:16] [ksd] getErlyRedELSInfo KR6MD0006WJ9 resultCode=3 NODATA_ERROR",
+  "[11:14:19] [ksd] getErlyRedELSInfo KR6MD0006WE0 resultCode=3 NODATA_ERROR",
+  "[11:14:31] [ksd] getErlyRedELSInfo KR6MD0006W00 resultCode=3 NODATA_ERROR",
+  "[11:14:47] [ksd] getErlyRedELSInfo KR6MD0007TQ8 resultCode=3 NODATA_ERROR",
+  "[11:14:48] [ksd] getErlyRedELSInfo KR6MD0007SH9 resultCode=3 NODATA_ERROR",
+  "[11:15:07] [ksd] getErlyRedELSInfo KR6MD0007F75 resultCode=3 NODATA_ERROR",
+  "[11:15:10] [ksd] getErlyRedELSInfo KR6MD0007F42 resultCode=3 NODATA_ERROR",
+  "[11:15:14] ksd redemption check: candidates=303 checked=94 redeemed=63",
+  "[11:15:15] [ksd] getDerivCombiIsinInfoN1 KR6MD0008GF6 resultCode=3 NODATA_ERROR",
+  "[11:15:19] yahoo ^KS200: 1 rows 2026-10-02..2026-10-02",
+  "[11:15:20] fchart ok KPI200: 2000 rows, last 2026-10-02",
+  "[11:15:21] [ksd] getDerivCombiIsinInfoN1 KR6MD0008GE9 resultCode=3 NODATA_ERROR",
+  "[11:15:24] [ksd] getDerivCombiIsinInfoN1 KR6MD0008GD1 resultCode=3 NODATA_ERROR",
+  "[11:15:27] [ksd] getDerivCombiIsinInfoN1 KR6MD0008F09 resultCode=3 NODATA_ERROR",
+  "[11:15:58] [ksd] getAssetXrcInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:15:59] [ksd] getDerivCombiIsinInfoN1 KR6MD0008EZ9 resultCode=3 NODATA_ERROR",
+  "[11:16:02] [ksd] getDerivCombiIsinInfoN1 KR6MD0008EX4 resultCode=3 NODATA_ERROR",
+  "[11:16:05] [ksd] getDerivCombiIsinInfoN1 KR6MD0008EW6 resultCode=3 NODATA_ERROR",
+  "[11:16:09] [ksd] getDerivCombiIsinInfoN1 KR6MD0008DR8 resultCode=3 NODATA_ERROR",
+  "[11:16:12] [ksd] getDerivCombiIsinInfoN1 KR6MD0008DQ0 resultCode=3 NODATA_ERROR",
+  "[11:16:15] [ksd] getDerivCombiIsinInfoN1 KR6MD0008DP2 resultCode=3 NODATA_ERROR",
+  "[11:16:18] [ksd] getDerivCombiIsinInfoN1 KR6MD0008DN7 resultCode=3 NODATA_ERROR",
+  "[11:16:21] [ksd] getDerivCombiIsinInfoN1 KR6MD0008DM9 resultCode=3 NODATA_ERROR",
+  "[11:16:24] [ksd] getDerivCombiIsinInfoN1 KR6MD0008CG3 resultCode=3 NODATA_ERROR",
+  "[11:16:26] [ksd] getDerivCombiIsinInfoN1 KR6MD0008CF5 resultCode=3 NODATA_ERROR",
+  "[11:16:35] [ksd] getDerivCombiIsinInfoN1 KR6MD00089H1 resultCode=3 NODATA_ERROR",
+  "[11:16:37] [ksd] getDerivCombiIsinInfoN1 KR6MD00089G3 resultCode=3 NODATA_ERROR",
+  "[11:16:40] [ksd] getDerivCombiIsinInfoN1 KR6MD00089F5 resultCode=3 NODATA_ERROR",
+  "[11:16:56] [ksd] getDerivCombiIsinInfoN1 KR6MD00088A8 resultCode=3 NODATA_ERROR",
+  "[11:16:58] [ksd] getDerivCombiIsinInfoN1 KR6MD0008895 resultCode=3 NODATA_ERROR",
+  "[11:17:01] [ksd] getDerivCombiIsinInfoN1 KR6MD0008887 resultCode=3 NODATA_ERROR",
+  "[11:17:04] [ksd] getDerivCombiIsinInfoN1 KR6MD0008879 resultCode=3 NODATA_ERROR",
+  "[11:17:15] [ksd] getDerivCombiIsinInfoN1 KR6MD0008747 resultCode=3 NODATA_ERROR",
+  "[11:17:15] [ksd] getRedCondiInfoN1 @DerivesSvc http=503 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"SERVICETIMEOUT_ERROR\",\\n      \"returnAuthMsg\": \"서비스 연결실패 에러\",\\n      \"'",
+  "[11:17:19] [ksd] getDerivCombiIsinInfoN1 KR6MD0008739 resultCode=3 NODATA_ERROR",
+  "[11:17:23] [ksd] getDerivCombiIsinInfoN1 KR6MD00086Z9 resultCode=3 NODATA_ERROR",
+  "[11:17:34] [ksd] getDerivCombiIsinInfoN1 KR6MD00085N7 resultCode=3 NODATA_ERROR",
+  "[11:17:36] [ksd] getDerivCombiIsinInfoN1 KR6MD00085M9 resultCode=3 NODATA_ERROR",
+  "[11:17:40] [ksd] getDerivCombiIsinInfoN1 KR6MD00085L1 resultCode=3 NODATA_ERROR",
+  "[11:17:43] [ksd] getDerivCombiIsinInfoN1 KR6MD00085D8 resultCode=3 NODATA_ERROR",
+  "[11:17:46] [ksd] getDerivCombiIsinInfoN1 KR6MD00085C0 resultCode=3 NODATA_ERROR",
+  "[11:17:49] [ksd] getDerivCombiIsinInfoN1 KR6MD00085B2 resultCode=3 NODATA_ERROR",
+  "[11:17:52] [ksd] getDerivCombiIsinInfoN1 KR6MD00085A4 resultCode=3 NODATA_ERROR",
+  "[11:17:57] [ksd] getDerivCombiIsinInfoN1 KR6MD0008499 resultCode=3 NODATA_ERROR",
+  "[11:18:00] [ksd] getDerivCombiIsinInfoN1 KR6MD0008481 resultCode=3 NODATA_ERROR",
+  "[11:18:03] [ksd] getDerivCombiIsinInfoN1 KR6MD0008465 resultCode=3 NODATA_ERROR",
+  "[11:18:06] [ksd] getDerivCombiIsinInfoN1 KR6MD0008457 resultCode=3 NODATA_ERROR",
+  "[11:18:09] [ksd] getDerivCombiIsinInfoN1 KR6MD0008440 resultCode=3 NODATA_ERROR",
+  "[11:18:28] [ksd] getDerivCombiIsinInfoN1 KR6MD0008192 resultCode=3 NODATA_ERROR",
+  "[11:18:31] [ksd] getDerivCombiIsinInfoN1 KR6MD0008184 resultCode=3 NODATA_ERROR",
+  "[11:18:34] [ksd] getDerivCombiIsinInfoN1 KR6MD0008176 resultCode=3 NODATA_ERROR",
+  "[11:18:36] [ksd] getDerivCombiIsinInfoN1 KR6MD0008168 resultCode=3 NODATA_ERROR",
+  "[11:18:39] [ksd] getDerivCombiIsinInfoN1 KR6MD0008119 resultCode=3 NODATA_ERROR",
+  "[11:19:09] [ksd] getRedCondiInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:19:12] [ksd] getDerivCombiIsinInfoN1 KR6MD0008101 resultCode=3 NODATA_ERROR",
+  "[11:19:14] [ksd] getDerivCombiIsinInfoN1 KR6MD00080Z2 resultCode=3 NODATA_ERROR",
+  "[11:19:28] [ksd] getDerivCombiIsinInfoN1 KR6MD0007ZX1 resultCode=3 NODATA_ERROR",
+  "[11:19:31] [ksd] getDerivCombiIsinInfoN1 KR6MD0007ZW3 resultCode=3 NODATA_ERROR",
+  "[11:19:34] [ksd] getDerivCombiIsinInfoN1 KR6MD0007ZV5 resultCode=3 NODATA_ERROR",
+  "[11:19:37] [ksd] getDerivCombiIsinInfoN1 KR6MD0007ZT9 resultCode=3 NODATA_ERROR",
+  "[11:19:39] [ksd] getDerivCombiIsinInfoN1 KR6MD0007ZS1 resultCode=3 NODATA_ERROR",
+  "[11:19:49] [ksd] getDerivCombiIsinInfoN1 KR6MD0007YS4 resultCode=3 NODATA_ERROR",
+  "[11:19:52] [ksd] getDerivCombiIsinInfoN1 KR6MD0007YR6 resultCode=3 NODATA_ERROR",
+  "[11:19:55] [ksd] getDerivCombiIsinInfoN1 KR6MD0007YQ8 resultCode=3 NODATA_ERROR",
+  "[11:20:08] [ksd] getDerivCombiIsinInfoN1 KR6MD0007XQ0 resultCode=3 NODATA_ERROR",
+  "[11:20:11] [ksd] getDerivCombiIsinInfoN1 KR6MD0007XP2 resultCode=3 NODATA_ERROR",
+  "[11:20:20] [ksd] getDerivCombiIsinInfoN1 KR6MD0007X73 resultCode=3 NODATA_ERROR",
+  "[11:20:23] [ksd] getDerivCombiIsinInfoN1 KR6MD0007X65 resultCode=3 NODATA_ERROR",
+  "[11:20:24] [ksd] getAssetXrcInfoN1 @DerivesSvc http=503 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"SERVICETIMEOUT_ERROR\",\\n      \"returnAuthMsg\": \"서비스 연결실패 에러\",\\n      \"'",
+  "[11:20:25] [ksd] getDerivCombiIsinInfoN1 KR6MD0007X57 resultCode=3 NODATA_ERROR",
+  "[11:20:28] [ksd] getDerivCombiIsinInfoN1 KR6MD0007X40 resultCode=3 NODATA_ERROR",
+  "[11:20:31] [ksd] getDerivCombiIsinInfoN1 KR6MD0007VW2 resultCode=3 NODATA_ERROR",
+  "[11:20:33] [ksd] getDerivCombiIsinInfoN1 KR6MD0007VB6 resultCode=3 NODATA_ERROR",
+  "[11:20:36] [ksd] getDerivCombiIsinInfoN1 KR6MD0007V00 resultCode=3 NODATA_ERROR",
+  "[11:20:39] [ksd] getDerivCombiIsinInfoN1 KR6MD0007TZ9 resultCode=3 NODATA_ERROR",
+  "[11:20:50] [ksd] getDerivCombiIsinInfoN1 KR6MD0007SL1 resultCode=3 NODATA_ERROR",
+  "[11:21:20] [ksd] getRedCondiInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:21:26] ksd condition fill: need=3417 tried=96 filled=96",
+  "[11:21:26] active products: 3418 (redeemed list entries=133, source ok=False)",
+  "[11:21:26] yahoo 005930.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:28] fchart ok 005930: 2000 rows, last 2026-10-02",
+  "[11:21:28] yahoo 035420.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:29] fchart ok 035420: 2000 rows, last 2026-10-02",
+  "[11:21:30] yahoo 051910.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:31] fchart ok 051910: 2000 rows, last 2026-10-02",
+  "[11:21:31] yahoo 005490.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:33] fchart ok 005490: 2000 rows, last 2026-10-02",
+  "[11:21:33] yahoo 066570.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:34] fchart ok 066570: 2000 rows, last 2026-10-02",
+  "[11:21:34] yahoo 096770.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:35] fchart ok 096770: 2000 rows, last 2026-10-02",
+  "[11:21:36] yahoo 000660.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:37] fchart ok 000660: 2000 rows, last 2026-10-02",
+  "[11:21:37] yahoo 005380.KS: 1715 rows 2019-10-02..2026-10-02",
+  "[11:21:39] fchart ok 005380: 2000 rows, last 2026-10-02"
  ]
 }
