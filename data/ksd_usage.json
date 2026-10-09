@@ -1,10 +1,10 @@
 {
- "date": "2026-10-08",
+ "date": "2026-10-09",
  "ops": {
-  "getErlyRedELSInfo": 67,
+  "getErlyRedELSInfo": 8,
+  "getDerivCombiIsinInfoN1": 95,
   "getRedCondiInfoN1": 95,
-  "getDerivCombiIsinInfoN1": 93,
   "getAssetXrcInfoN1": 93,
-  "getAssetInfoN1": 89
+  "getAssetInfoN1": 90
  }
 }
