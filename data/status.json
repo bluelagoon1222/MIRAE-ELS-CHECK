@@ -1,382 +1,348 @@
 {
- "generated": "2026-10-14 10:26",
- "elapsed_sec": 392.0,
- "cached_products": 2722,
- "excluded": 1974,
- "redeemed_list": 531,
+ "generated": "2026-10-15 09:52",
+ "elapsed_sec": 490.3,
+ "cached_products": 2573,
+ "excluded": 2123,
+ "redeemed_list": 594,
  "redeemed_source_ok": false,
- "hidden_estimated": 1640,
- "active": 1082,
+ "hidden_estimated": 1585,
+ "active": 988,
  "probes": 150,
  "new": 0,
  "counts": {
-  "noschedule": 319,
+  "noschedule": 225,
   "nodata": 47,
   "ki": 11,
-  "risk": 39,
-  "redeemed": 137,
-  "defer": 121,
+  "risk": 47,
+  "redeemed": 160,
+  "defer": 118,
   "redeemed_confirmed": 18,
-  "pass": 388,
+  "pass": 360,
   "matured": 2
  },
  "nodata_reasons": {
   "CSI300": 47
  },
  "prices": {
-  "NVDA": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
-  },
-  "AMD": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
-  },
-  "^N225": {
-   "rows": 1705,
-   "first": "2019-10-15",
-   "last": "2026-10-09"
-  },
-  "^HSCE": {
-   "rows": 1722,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
-  },
-  "^GSPC": {
-   "rows": 1759,
-   "first": "2019-10-14",
-   "last": "2026-10-13"
-  },
   "^STOXX50E": {
-   "rows": 1759,
+   "rows": 1761,
    "first": "2019-10-14",
-   "last": "2026-10-12"
+   "last": "2026-10-14"
   },
   "^KS200": {
    "rows": 1999,
-   "first": "2018-08-16",
-   "last": "2026-10-13"
+   "first": "2018-08-17",
+   "last": "2026-10-14"
   },
-  "005930.KS": {
-   "rows": 1999,
-   "first": "2018-08-16",
-   "last": "2026-10-13"
+  "^GSPC": {
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
   },
-  "035420.KS": {
-   "rows": 1999,
-   "first": "2018-08-16",
-   "last": "2026-10-13"
+  "^N225": {
+   "rows": 1707,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
   },
-  "TSLA": {
-   "rows": 1758,
+  "^HSCE": {
+   "rows": 1724,
    "first": "2019-10-14",
-   "last": "2026-10-12"
-  },
-  "AMZN": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
-  },
-  "NFLX": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
-  },
-  "INTC": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
-  },
-  "GOOGL": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
-  },
-  "MSFT": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
+   "last": "2026-10-14"
   },
   "000300.SS": {
    "rows": 1,
-   "first": "2026-10-13",
-   "last": "2026-10-13"
+   "first": "2026-10-14",
+   "last": "2026-10-14"
+  },
+  "NVDA": {
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
+  },
+  "AMD": {
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
+  },
+  "005930.KS": {
+   "rows": 1999,
+   "first": "2018-08-17",
+   "last": "2026-10-14"
+  },
+  "TSLA": {
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
+  },
+  "AMZN": {
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
+  },
+  "NFLX": {
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
+  },
+  "INTC": {
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
+  },
+  "GOOGL": {
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
+  },
+  "MSFT": {
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
+  },
+  "035420.KS": {
+   "rows": 1999,
+   "first": "2018-08-17",
+   "last": "2026-10-14"
   },
   "051910.KS": {
    "rows": 1999,
-   "first": "2018-08-16",
-   "last": "2026-10-13"
+   "first": "2018-08-17",
+   "last": "2026-10-14"
   },
   "005490.KS": {
    "rows": 1999,
-   "first": "2018-08-16",
-   "last": "2026-10-13"
+   "first": "2018-08-17",
+   "last": "2026-10-14"
   },
   "AAPL": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
   },
   "SBUX": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
   },
   "META": {
    "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
+   "first": "2019-10-15",
+   "last": "2026-10-13"
   },
   "066570.KS": {
    "rows": 1999,
-   "first": "2018-08-16",
-   "last": "2026-10-13"
+   "first": "2018-08-17",
+   "last": "2026-10-14"
   },
   "096770.KS": {
    "rows": 1999,
-   "first": "2018-08-16",
-   "last": "2026-10-13"
+   "first": "2018-08-17",
+   "last": "2026-10-14"
   },
   "PYPL": {
    "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
+   "first": "2019-10-15",
+   "last": "2026-10-13"
   },
   "000660.KS": {
    "rows": 1999,
-   "first": "2018-08-16",
-   "last": "2026-10-13"
+   "first": "2018-08-17",
+   "last": "2026-10-14"
   },
   "005380.KS": {
    "rows": 1999,
-   "first": "2018-08-16",
-   "last": "2026-10-13"
+   "first": "2018-08-17",
+   "last": "2026-10-14"
   },
   "QCOM": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
   },
   "AVGO": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
   },
   "PLTR": {
-   "rows": 1515,
+   "rows": 1516,
    "first": "2020-09-30",
-   "last": "2026-10-12"
+   "last": "2026-10-13"
   },
   "LLY": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
   },
   "MU": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
   },
   "AMAT": {
-   "rows": 1758,
-   "first": "2019-10-14",
-   "last": "2026-10-12"
+   "rows": 1759,
+   "first": "2019-10-15",
+   "last": "2026-10-14"
   }
  },
  "parse_missing": {
   "ladder": 0,
-  "ref_or_issue_date": 319,
-  "evals": 273
+  "ref_or_issue_date": 225,
+  "evals": 179
  },
  "redeemed_debug": [
-  "[10:20:16] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[10:20:20] [redeemed] page1 rows=0 html_len=545",
-  "[10:20:23] [redeemed] GET variant rows=0",
-  "[10:20:23] [redeemed] total redeemed entries found=0 ok=False"
+  "[09:44:27] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
+  "[09:44:30] [redeemed] page1 rows=0 html_len=545",
+  "[09:44:33] [redeemed] GET variant rows=0",
+  "[09:44:33] [redeemed] total redeemed entries found=0 ok=False"
  ],
  "ksd": {
   "enabled": true,
-  "red_checked": 0,
-  "red_found": 0,
-  "cond_tried": 48,
-  "cond_filled": 0,
-  "cond_remaining": 2562,
+  "red_checked": 68,
+  "red_found": 55,
+  "cond_tried": 95,
+  "cond_filled": 94,
+  "cond_remaining": 2515,
   "usage": {
-   "date": "2026-10-14",
+   "date": "2026-10-15",
    "ops": {
-    "getErlyRedELSInfo": 2,
-    "getDerivCombiIsinInfoN1": 96,
-    "getRedCondiInfoN1": 96,
-    "getAssetXrcInfoN1": 96
+    "getErlyRedELSInfo": 68,
+    "getRedCondiInfoN1": 94,
+    "getAssetXrcInfoN1": 95,
+    "getAssetInfoN1": 93,
+    "getDerivCombiIsinInfoN1": 47
    }
   },
-  "endpoint": null
+  "endpoint": "https://apis.data.go.kr/B552481/DerivesSvc"
  },
  "ksd_log": [
-  "[10:26:15] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:15] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:16] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:16] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:16] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:17] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:17] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:17] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:19] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:19] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:19] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:20] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:20] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:20] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:21] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:21] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:21] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:22] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:22] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:22] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr"
+  "[09:51:07] [ksd] getDerivCombiIsinInfoN1 KR6MD0004WM8 resultCode=3 NODATA_ERROR",
+  "[09:51:10] [ksd] getDerivCombiIsinInfoN1 KR6MD0004WL0 resultCode=3 NODATA_ERROR",
+  "[09:51:12] [ksd] getDerivCombiIsinInfoN1 KR6MD0004WK2 resultCode=3 NODATA_ERROR",
+  "[09:51:19] [ksd] getDerivCombiIsinInfoN1 KR6MD0004WG0 resultCode=3 NODATA_ERROR",
+  "[09:51:22] [ksd] getDerivCombiIsinInfoN1 KR6MD0004WF2 resultCode=3 NODATA_ERROR",
+  "[09:51:24] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VT5 resultCode=3 NODATA_ERROR",
+  "[09:51:28] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VS7 resultCode=3 NODATA_ERROR",
+  "[09:51:30] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VR9 resultCode=3 NODATA_ERROR",
+  "[09:51:32] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VQ1 resultCode=3 NODATA_ERROR",
+  "[09:51:35] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VP3 resultCode=3 NODATA_ERROR",
+  "[09:51:39] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VN8 resultCode=3 NODATA_ERROR",
+  "[09:51:41] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VM0 resultCode=3 NODATA_ERROR",
+  "[09:51:44] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VL2 resultCode=3 NODATA_ERROR",
+  "[09:51:48] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VJ6 resultCode=3 NODATA_ERROR",
+  "[09:51:54] [ksd] getDerivCombiIsinInfoN1 KR6MD0004TS1 resultCode=3 NODATA_ERROR",
+  "[09:51:57] [ksd] getDerivCombiIsinInfoN1 KR6MD0004TR3 resultCode=3 NODATA_ERROR",
+  "[09:51:59] [ksd] getDerivCombiIsinInfoN1 KR6MD0004TQ5 resultCode=3 NODATA_ERROR",
+  "[09:52:01] [ksd] getDerivCombiIsinInfoN1 KR6MD0004TP7 resultCode=3 NODATA_ERROR",
+  "[09:52:08] [ksd] getDerivCombiIsinInfoN1 KR6MD0004TJ0 resultCode=3 NODATA_ERROR",
+  "[09:52:16] [ksd] getAssetXrcInfoN1 KR6MD0004TF8 resultCode=3 NODATA_ERROR"
  ],
  "price_debug": [
-  "[10:26:23] yahoo ^KS200: 1 rows 2026-10-14..2026-10-14",
-  "[10:26:25] fchart ok KPI200: 2000 rows, last 2026-10-14",
-  "[10:26:25] yahoo 005930.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:26] fchart ok 005930: 2000 rows, last 2026-10-14",
-  "[10:26:27] yahoo 035420.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:28] fchart ok 035420: 2000 rows, last 2026-10-14",
-  "[10:26:29] yahoo 051910.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:31] fchart ok 051910: 2000 rows, last 2026-10-14",
-  "[10:26:31] yahoo 005490.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:32] fchart ok 005490: 2000 rows, last 2026-10-14",
-  "[10:26:32] yahoo 066570.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:34] fchart ok 066570: 2000 rows, last 2026-10-14",
-  "[10:26:34] yahoo 096770.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:35] fchart ok 096770: 2000 rows, last 2026-10-14",
-  "[10:26:35] yahoo 000660.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:36] fchart ok 000660: 2000 rows, last 2026-10-14",
-  "[10:26:37] yahoo 005380.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:38] fchart ok 005380: 2000 rows, last 2026-10-14"
+  "[09:48:18] yahoo ^KS200: 1 rows 2026-10-15..2026-10-15",
+  "[09:48:20] fchart ok KPI200: 2000 rows, last 2026-10-15",
+  "[09:52:17] yahoo 005930.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:18] fchart ok 005930: 2000 rows, last 2026-10-15",
+  "[09:52:20] yahoo 035420.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:21] fchart ok 035420: 2000 rows, last 2026-10-15",
+  "[09:52:21] yahoo 051910.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:22] fchart ok 051910: 2000 rows, last 2026-10-15",
+  "[09:52:22] yahoo 005490.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:24] fchart ok 005490: 2000 rows, last 2026-10-15",
+  "[09:52:24] yahoo 066570.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:26] fchart ok 066570: 2000 rows, last 2026-10-15",
+  "[09:52:26] yahoo 096770.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:27] fchart ok 096770: 2000 rows, last 2026-10-15",
+  "[09:52:28] yahoo 000660.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:29] fchart ok 000660: 2000 rows, last 2026-10-15",
+  "[09:52:30] yahoo 005380.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:30] fchart ok 005380: 2000 rows, last 2026-10-15"
  ],
- "scan_cursor": 18775,
+ "scan_cursor": 18925,
  "log": [
-  "[10:25:37] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:38] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:39] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:39] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:40] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:40] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:40] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:41] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:41] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:41] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:42] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:43] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:43] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:43] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:47] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:47] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:47] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:48] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:48] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:49] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:49] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:49] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:50] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:51] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:51] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:52] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:52] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:52] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:53] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:53] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:53] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:54] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:55] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:55] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:55] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:56] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:56] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:57] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:57] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:57] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:58] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:58] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:58] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:25:59] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:59] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:25:59] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:00] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:01] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:01] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:02] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:02] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:02] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:03] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:04] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:04] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:05] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:05] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=503 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"SERVICETIMEOUT_ERROR\",\\n      \"returnAuthMsg\": \"서비스 연결실패 에러\",\\n      \"'",
-  "[10:26:05] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:06] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:06] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:06] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:07] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:08] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:08] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:08] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:09] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:09] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:09] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:10] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:10] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:10] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:11] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:11] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:12] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:12] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:12] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:13] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:13] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:13] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:14] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:15] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:15] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:16] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:16] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:16] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:17] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:17] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:17] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:19] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:19] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:19] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:20] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:20] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:20] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:21] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:21] [ksd] getRedCondiInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:21] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:22] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:22] [ksd] getAssetXrcInfoN1 @DerivesSvc http=200 code=- body=''",
-  "[10:26:22] [ksd] no endpoint base worked; set KSD_ENDPOINT secret to the End Point URL shown on data.go.kr",
-  "[10:26:22] ksd condition fill: need=2610 tried=48 filled=0",
-  "[10:26:22] active products: 2722 (redeemed list entries=531, source ok=False)",
-  "[10:26:23] yahoo ^KS200: 1 rows 2026-10-14..2026-10-14",
-  "[10:26:25] fchart ok KPI200: 2000 rows, last 2026-10-14",
-  "[10:26:25] yahoo 005930.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:26] fchart ok 005930: 2000 rows, last 2026-10-14",
-  "[10:26:27] yahoo 035420.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:28] fchart ok 035420: 2000 rows, last 2026-10-14",
-  "[10:26:29] yahoo 051910.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:31] fchart ok 051910: 2000 rows, last 2026-10-14",
-  "[10:26:31] yahoo 005490.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:32] fchart ok 005490: 2000 rows, last 2026-10-14",
-  "[10:26:32] yahoo 066570.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:34] fchart ok 066570: 2000 rows, last 2026-10-14",
-  "[10:26:34] yahoo 096770.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:35] fchart ok 096770: 2000 rows, last 2026-10-14",
-  "[10:26:35] yahoo 000660.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:36] fchart ok 000660: 2000 rows, last 2026-10-14",
-  "[10:26:37] yahoo 005380.KS: 1715 rows 2019-10-14..2026-10-14",
-  "[10:26:38] fchart ok 005380: 2000 rows, last 2026-10-14"
+  "[09:44:23] start: cached products=2722 excluded=1974 FULL_SCAN=False MAX_PROBES=260",
+  "[09:44:27] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
+  "[09:44:30] [redeemed] page1 rows=0 html_len=545",
+  "[09:44:33] [redeemed] GET variant rows=0",
+  "[09:44:33] [redeemed] total redeemed entries found=0 ok=False",
+  "[09:44:42] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
+  "[09:45:57] recent scan: rate=4.60/day est_now=11768 max_known=11672",
+  "[09:47:21] discovery: probes=150 new=0 total_products=2722 cursor=18925",
+  "[09:47:22] [ksd] getErlyRedELSInfo KR6MD0008CG3 resultCode=3 NODATA_ERROR",
+  "[09:47:23] [ksd] getErlyRedELSInfo KR6MD0008CF5 resultCode=3 NODATA_ERROR",
+  "[09:47:24] [ksd] endpoint resolved: https://apis.data.go.kr/B552481/DerivesSvc",
+  "[09:47:28] [ksd] getErlyRedELSInfo KR6MD0006BN5 resultCode=3 NODATA_ERROR",
+  "[09:47:31] [ksd] getErlyRedELSInfo KR6MD0008CE8 resultCode=3 NODATA_ERROR",
+  "[09:47:31] [ksd] getErlyRedELSInfo KR6MD0008AG7 resultCode=3 NODATA_ERROR",
+  "[09:47:32] [ksd] getErlyRedELSInfo KR6MD0008AF9 resultCode=3 NODATA_ERROR",
+  "[09:47:34] [ksd] getErlyRedELSInfo KR6MD0006XL3 resultCode=3 NODATA_ERROR",
+  "[09:47:35] [ksd] getErlyRedELSInfo KR6MD0006XK5 resultCode=3 NODATA_ERROR",
+  "[09:47:37] [ksd] getErlyRedELSInfo KR6MD0006XG3 resultCode=3 NODATA_ERROR",
+  "[09:47:38] [ksd] getErlyRedELSInfo KR6MD0006XF5 resultCode=3 NODATA_ERROR",
+  "[09:47:41] [ksd] getErlyRedELSInfo KR6MD0006XB4 resultCode=3 NODATA_ERROR",
+  "[09:47:55] [ksd] getErlyRedELSInfo KR6MD0005727 resultCode=3 NODATA_ERROR",
+  "[09:48:13] [ksd] getErlyRedELSInfo KR6MD0005TX8 resultCode=3 NODATA_ERROR",
+  "[09:48:16] ksd redemption check: candidates=68 checked=68 redeemed=55",
+  "[09:48:18] yahoo ^KS200: 1 rows 2026-10-15..2026-10-15",
+  "[09:48:20] fchart ok KPI200: 2000 rows, last 2026-10-15",
+  "[09:48:50] [ksd] getAssetXrcInfoN1 KR6MD0004ZG3 resultCode=3 NODATA_ERROR",
+  "[09:49:49] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XV7 resultCode=3 NODATA_ERROR",
+  "[09:49:51] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XT1 resultCode=3 NODATA_ERROR",
+  "[09:49:53] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XS3 resultCode=3 NODATA_ERROR",
+  "[09:49:55] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XR5 resultCode=3 NODATA_ERROR",
+  "[09:49:58] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XQ7 resultCode=3 NODATA_ERROR",
+  "[09:50:00] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XP9 resultCode=3 NODATA_ERROR",
+  "[09:50:02] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XN4 resultCode=3 NODATA_ERROR",
+  "[09:50:05] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XM6 resultCode=3 NODATA_ERROR",
+  "[09:50:07] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XL8 resultCode=3 NODATA_ERROR",
+  "[09:50:10] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XK0 resultCode=3 NODATA_ERROR",
+  "[09:50:12] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XJ2 resultCode=3 NODATA_ERROR",
+  "[09:50:15] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XH6 resultCode=3 NODATA_ERROR",
+  "[09:50:17] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XG8 resultCode=3 NODATA_ERROR",
+  "[09:50:20] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XF0 resultCode=3 NODATA_ERROR",
+  "[09:50:22] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XE3 resultCode=3 NODATA_ERROR",
+  "[09:50:24] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XD5 resultCode=3 NODATA_ERROR",
+  "[09:50:26] [ksd] getDerivCombiIsinInfoN1 KR6MD0004XA1 resultCode=3 NODATA_ERROR",
+  "[09:50:29] [ksd] getDerivCombiIsinInfoN1 KR6MD0004WQ9 resultCode=3 NODATA_ERROR",
+  "[09:50:31] [ksd] getDerivCombiIsinInfoN1 KR6MD0004WP1 resultCode=3 NODATA_ERROR",
+  "[09:51:02] [ksd] getRedCondiInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[09:51:04] [ksd] getDerivCombiIsinInfoN1 KR6MD0004WN6 resultCode=3 NODATA_ERROR",
+  "[09:51:07] [ksd] getDerivCombiIsinInfoN1 KR6MD0004WM8 resultCode=3 NODATA_ERROR",
+  "[09:51:10] [ksd] getDerivCombiIsinInfoN1 KR6MD0004WL0 resultCode=3 NODATA_ERROR",
+  "[09:51:12] [ksd] getDerivCombiIsinInfoN1 KR6MD0004WK2 resultCode=3 NODATA_ERROR",
+  "[09:51:19] [ksd] getDerivCombiIsinInfoN1 KR6MD0004WG0 resultCode=3 NODATA_ERROR",
+  "[09:51:22] [ksd] getDerivCombiIsinInfoN1 KR6MD0004WF2 resultCode=3 NODATA_ERROR",
+  "[09:51:24] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VT5 resultCode=3 NODATA_ERROR",
+  "[09:51:28] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VS7 resultCode=3 NODATA_ERROR",
+  "[09:51:30] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VR9 resultCode=3 NODATA_ERROR",
+  "[09:51:32] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VQ1 resultCode=3 NODATA_ERROR",
+  "[09:51:35] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VP3 resultCode=3 NODATA_ERROR",
+  "[09:51:39] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VN8 resultCode=3 NODATA_ERROR",
+  "[09:51:41] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VM0 resultCode=3 NODATA_ERROR",
+  "[09:51:44] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VL2 resultCode=3 NODATA_ERROR",
+  "[09:51:48] [ksd] getDerivCombiIsinInfoN1 KR6MD0004VJ6 resultCode=3 NODATA_ERROR",
+  "[09:51:54] [ksd] getDerivCombiIsinInfoN1 KR6MD0004TS1 resultCode=3 NODATA_ERROR",
+  "[09:51:57] [ksd] getDerivCombiIsinInfoN1 KR6MD0004TR3 resultCode=3 NODATA_ERROR",
+  "[09:51:59] [ksd] getDerivCombiIsinInfoN1 KR6MD0004TQ5 resultCode=3 NODATA_ERROR",
+  "[09:52:01] [ksd] getDerivCombiIsinInfoN1 KR6MD0004TP7 resultCode=3 NODATA_ERROR",
+  "[09:52:08] [ksd] getDerivCombiIsinInfoN1 KR6MD0004TJ0 resultCode=3 NODATA_ERROR",
+  "[09:52:16] [ksd] getAssetXrcInfoN1 KR6MD0004TF8 resultCode=3 NODATA_ERROR",
+  "[09:52:17] ksd condition fill: need=2610 tried=95 filled=94",
+  "[09:52:17] active products: 2628 (redeemed list entries=594, source ok=False)",
+  "[09:52:17] yahoo 005930.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:18] fchart ok 005930: 2000 rows, last 2026-10-15",
+  "[09:52:20] yahoo 035420.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:21] fchart ok 035420: 2000 rows, last 2026-10-15",
+  "[09:52:21] yahoo 051910.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:22] fchart ok 051910: 2000 rows, last 2026-10-15",
+  "[09:52:22] yahoo 005490.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:24] fchart ok 005490: 2000 rows, last 2026-10-15",
+  "[09:52:24] yahoo 066570.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:26] fchart ok 066570: 2000 rows, last 2026-10-15",
+  "[09:52:26] yahoo 096770.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:27] fchart ok 096770: 2000 rows, last 2026-10-15",
+  "[09:52:28] yahoo 000660.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:29] fchart ok 000660: 2000 rows, last 2026-10-15",
+  "[09:52:30] yahoo 005380.KS: 1715 rows 2019-10-15..2026-10-15",
+  "[09:52:30] fchart ok 005380: 2000 rows, last 2026-10-15"
  ]
 }
