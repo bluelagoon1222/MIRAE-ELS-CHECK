@@ -8490,5 +8490,405 @@
  "KR6MD0007K03": {
   "reason": "redeemed:confirmed",
   "date": "2026-04-17"
+ },
+ "KR6MD0004L62": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004LA6": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004LB4": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004LC2": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004LD0": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004LE8": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004LF5": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004LG3": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004LH1": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004LM1": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004M61": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MB2": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MC0": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MF3": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MG1": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MH9": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MJ5": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MK3": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004ML1": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MM9": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MP2": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MQ0": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MR8": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MT4": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MV0": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MW8": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MX6": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MY4": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004MZ1": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004N03": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004N11": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004N29": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004N37": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004N60": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004NS4": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004NT2": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004NV8": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004NW6": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004NX4": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004NZ9": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004P01": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004P27": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004P35": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004P43": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004P50": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004P68": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004P76": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004P84": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004PQ3": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004PR1": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004PS9": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004QB3": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004QC1": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004QD9": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004QE7": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004QF4": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004QG2": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004QK4": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004QL2": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004QR9": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004QS7": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004QT5": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004QV1": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004QW9": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004RD7": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004RE5": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004RK2": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004RL0": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004RM8": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004RN6": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004RP1": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004RQ9": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004RR7": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004RS5": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004RT3": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004RV9": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004RW7": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004SC7": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004SD5": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004SE3": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004SH6": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004SK0": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004SL8": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004SM6": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004SN4": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004SP9": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004SQ7": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004SR5": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004SS3": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004T80": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004T98": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004TA9": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004TB7": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004TC5": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004WP1": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0004Z74": {
+  "reason": "matured",
+  "date": "2026-10-16"
+ },
+ "KR6MD0005917": {
+  "reason": "redeemed:confirmed",
+  "date": "2024-04-23"
+ },
+ "KR6MD00058M6": {
+  "reason": "redeemed:confirmed",
+  "date": "2024-01-29"
+ },
+ "KR6MD0006CG7": {
+  "reason": "redeemed:confirmed",
+  "date": "2025-10-22"
+ },
+ "KR6MD0006CY0": {
+  "reason": "redeemed:confirmed",
+  "date": "2025-10-21"
  }
 }
