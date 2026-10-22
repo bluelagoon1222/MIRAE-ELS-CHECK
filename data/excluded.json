@@ -9658,5 +9658,25 @@
  "KR6MD0007L28": {
   "reason": "redeemed:confirmed",
   "date": "2026-04-24"
+ },
+ "KR6MD0006D52": {
+  "reason": "redeemed:confirmed",
+  "date": "2025-04-24"
+ },
+ "KR6MD00070V2": {
+  "reason": "redeemed:confirmed",
+  "date": "2025-10-24"
+ },
+ "KR6MD0007JX5": {
+  "reason": "redeemed:confirmed",
+  "date": "2026-01-27"
+ },
+ "KR6MD0007JY3": {
+  "reason": "redeemed:confirmed",
+  "date": "2026-01-27"
+ },
+ "KR6MD0008KC5": {
+  "reason": "redeemed:confirmed",
+  "date": "2026-09-21"
  }
 }
