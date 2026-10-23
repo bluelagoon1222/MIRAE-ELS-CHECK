@@ -1,30 +1,86 @@
 {
  "getErlyRedELSInfo": {
-  "sample_isin": "KR6MD0007JY3",
+  "sample_isin": "KR6MD0007HK6",
   "items": [
    {
     "repSecnNm": "미래에셋증권",
-    "korSecnNm": "미래에셋증권37197(사모/ELS)",
+    "korSecnNm": "미래에셋증권37172(ELS)",
     "secnTpcd": "ELS",
-    "redDt": "20260127"
+    "redDt": "20260428"
    }
   ],
   "count": 1
  },
- "getDerivCombiIsinInfoN1": {
-  "sample_isin": "KR6MD0008VF5",
+ "getRedCondiInfoN1": {
+  "sample_isin": "KR6MD0008RN7",
   "items": [
    {
-    "isin": "KR6MD0008VF5",
-    "korSecnNm": "미래에셋증권38059(ELS)",
+    "isin": "KR6MD0008RN7",
+    "redCondiTpcd": "1",
+    "valatNtimesSeq": "1",
+    "midValatPayDt": "20261102",
+    "midValatBeginDt": "20261028",
+    "midValatExpryDt": "20261028",
+    "redCondiContent": "모든 기초자산의 1차 자동조기상환 평가가격이 각 최초기준가격의 75%이상인 경우",
+    "redFormulaContent": "액면금액 x 101.825%"
+   },
+   {
+    "isin": "KR6MD0008RN7",
+    "redCondiTpcd": "1",
+    "valatNtimesSeq": "2",
+    "midValatPayDt": "20261102",
+    "midValatBeginDt": "20261028",
+    "midValatExpryDt": "20261028",
+    "redCondiContent": "위 (1-1)에 해당하지 않고, 최초기준가격평가일익일로부터 1차 자동조기상환평가일까지 모든 기초자산 중 어느 하나도 각 최초기준가격의 [65%] 미만으로 하락한 적이 없는 경우",
+    "redFormulaContent": "액면금액 x 101.825%"
+   },
+   {
+    "isin": "KR6MD0008RN7",
+    "redCondiTpcd": "2",
+    "valatNtimesSeq": "1",
+    "midValatPayDt": "20270129",
+    "midValatBeginDt": "20270126",
+    "midValatExpryDt": "20270126",
+    "redCondiContent": "① 모든 기초자산의 만기평가가격이 각 최초기준가격의 0% 이상인 경우",
+    "redFormulaContent": "액면금액 x 103.65%"
+   },
+   {
+    "isin": "KR6MD0008RN7",
+    "redCondiTpcd": "2",
+    "valatNtimesSeq": "2",
+    "midValatPayDt": "20270129",
+    "midValatBeginDt": "20270126",
+    "midValatExpryDt": "20270126",
+    "redCondiContent": "② 최초기준가격평가일(불포함)부터 만기평가일(포함)까지 종가 기준으로 35% 미만으로 하락한 적이 없는 경우",
+    "redFormulaContent": "액면금액 x 103.65%"
+   },
+   {
+    "isin": "KR6MD0008RN7",
+    "redCondiTpcd": "2",
+    "valatNtimesSeq": "3",
+    "midValatPayDt": "20270129",
+    "midValatBeginDt": "20270126",
+    "midValatExpryDt": "20270126",
+    "redCondiContent": "③ 최초기준가격평가일(불포함)부터 만기평가일(포함)까지 종가 기준으로 35%미만으로 하락한 적이 있는 경우",
+    "redFormulaContent": "(만기평가가격 / 최초기준가격) x 액면금액"
+   }
+  ],
+  "count": 5
+ },
+ "getDerivCombiIsinInfoN1": {
+  "sample_isin": "KR6MD0008RL1",
+  "items": [
+   {
+    "isin": "KR6MD0008RL1",
+    "korSecnNm": "미래에셋증권38000(ELS)",
     "issucoCustno": "680",
-    "issuCurCd": "USD",
+    "issuCurCd": "KRW",
     "secnKacd": "4101",
     "recuWhcd": "11",
-    "firstIssuQty": "1769000",
-    "issuDt": "20260903",
-    "contDt": "20260903",
-    "xpirDt": "20290831",
+    "firstIssuQty": "429160000",
+    "issuDt": "20260806",
+    "contDt": "20260806",
+    "xpirDt": "20290806",
     "midredPossYn": "Y",
     "redDt": "",
     "derisecExerTpcd": "",
@@ -37,339 +93,151 @@
   ],
   "count": 1
  },
- "getRedCondiInfoN1": {
-  "sample_isin": "KR6MD0008VF5",
-  "items": [
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "1",
-    "valatNtimesSeq": "1",
-    "midValatPayDt": "20261204",
-    "midValatBeginDt": "20261130",
-    "midValatExpryDt": "20261130",
-    "redCondiContent": "모든 기초자산의 1차 자동조기상환 평가가격이 각 최초기준가격의 85%이상인 경우",
-    "redFormulaContent": "액면금액 x 110%"
-   },
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "1",
-    "valatNtimesSeq": "2",
-    "midValatPayDt": "20270304",
-    "midValatBeginDt": "20270225",
-    "midValatExpryDt": "20270225",
-    "redCondiContent": "모든 기초자산의 2차 자동조기상환 평가가격이 각 최초기준가격의 85%이상인 경우",
-    "redFormulaContent": "액면금액 x 120%"
-   },
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "1",
-    "valatNtimesSeq": "3",
-    "midValatPayDt": "20270604",
-    "midValatBeginDt": "20270528",
-    "midValatExpryDt": "20270528",
-    "redCondiContent": "모든 기초자산의 3차 자동조기상환 평가가격이 각 최초기준가격의 85%이상인 경우",
-    "redFormulaContent": "액면금액 x 130%"
-   },
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "1",
-    "valatNtimesSeq": "4",
-    "midValatPayDt": "20270907",
-    "midValatBeginDt": "20270831",
-    "midValatExpryDt": "20270831",
-    "redCondiContent": "모든 기초자산의 4차 자동조기상환 평가가격이 각 최초기준가격의 85%이상인 경우",
-    "redFormulaContent": "액면금액 x 140%"
-   },
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "1",
-    "valatNtimesSeq": "5",
-    "midValatPayDt": "20271206",
-    "midValatBeginDt": "20271130",
-    "midValatExpryDt": "20271130",
-    "redCondiContent": "모든 기초자산의 5차 자동조기상환 평가가격이 각 최초기준가격의 85%이상인 경우",
-    "redFormulaContent": "액면금액 x 150%"
-   },
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "1",
-    "valatNtimesSeq": "6",
-    "midValatPayDt": "20280306",
-    "midValatBeginDt": "20280228",
-    "midValatExpryDt": "20280228",
-    "redCondiContent": "모든 기초자산의 6차 자동조기상환 평가가격이 각 최초기준가격의 85%이상인 경우",
-    "redFormulaContent": "액면금액 x 160%"
-   },
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "1",
-    "valatNtimesSeq": "7",
-    "midValatPayDt": "20280605",
-    "midValatBeginDt": "20280530",
-    "midValatExpryDt": "20280530",
-    "redCondiContent": "모든 기초자산의 7차 자동조기상환 평가가격이 각 최초기준가격의 85%이상인 경우",
-    "redFormulaContent": "액면금액 x 170%"
-   },
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "1",
-    "valatNtimesSeq": "8",
-    "midValatPayDt": "20280905",
-    "midValatBeginDt": "20280829",
-    "midValatExpryDt": "20280829",
-    "redCondiContent": "모든 기초자산의 8차 자동조기상환 평가가격이 각 최초기준가격의 85%이상인 경우",
-    "redFormulaContent": "액면금액 x 180%"
-   },
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "1",
-    "valatNtimesSeq": "9",
-    "midValatPayDt": "20281204",
-    "midValatBeginDt": "20281128",
-    "midValatExpryDt": "20281128",
-    "redCondiContent": "모든 기초자산의 9차 자동조기상환 평가가격이 각 최초기준가격의 85%이상인 경우",
-    "redFormulaContent": "액면금액 x 190%"
-   },
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "1",
-    "valatNtimesSeq": "10",
-    "midValatPayDt": "20290305",
-    "midValatBeginDt": "20290226",
-    "midValatExpryDt": "20290226",
-    "redCondiContent": "모든 기초자산의 10차 자동조기상환 평가가격이 각 최초기준가격의 80%이상인 경우",
-    "redFormulaContent": "액면금액 x 200%"
-   },
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "1",
-    "valatNtimesSeq": "11",
-    "midValatPayDt": "20290604",
-    "midValatBeginDt": "20290529",
-    "midValatExpryDt": "20290529",
-    "redCondiContent": "모든 기초자산의 11차 자동조기상환 평가가격이 각 최초기준가격의 75%이상인 경우",
-    "redFormulaContent": "액면금액 x 210%"
-   },
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "2",
-    "valatNtimesSeq": "1",
-    "midValatPayDt": "20290831",
-    "midValatBeginDt": "20290827",
-    "midValatExpryDt": "20290827",
-    "redCondiContent": "① 모든 기초자산의 만기평가가격이 각 최초기준가격의 70% 이상인 경우",
-    "redFormulaContent": "액면금액 x 220%"
-   },
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "2",
-    "valatNtimesSeq": "2",
-    "midValatPayDt": "20290831",
-    "midValatBeginDt": "20290827",
-    "midValatExpryDt": "20290827",
-    "redCondiContent": "② 최초기준가격평가일(불포함)부터 만기평가일(포함)까지 종가 기준으로 35% 미만으로 하락한 적이 없는 경우",
-    "redFormulaContent": "액면금액 x 220%"
-   },
-   {
-    "isin": "KR6MD0008VF5",
-    "redCondiTpcd": "2",
-    "valatNtimesSeq": "3",
-    "midValatPayDt": "20290831",
-    "midValatBeginDt": "20290827",
-    "midValatExpryDt": "20290827",
-    "redCondiContent": "③ 최초기준가격평가일(불포함)부터 만기평가일(포함)까지 종가 기준으로 35%미만으로 하락한 적이 있는 경우",
-    "redFormulaContent": "(만기평가가격 / 최초기준가격) x 액면금액"
-   }
-  ],
-  "count": 14
- },
  "getAssetXrcInfoN1": {
-  "sample_isin": "KR6MD0008V17",
+  "sample_isin": "KR6MD0008R13",
   "items": [
    {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "1",
     "xrcStdSeq": "1",
     "xrcStdRatio": "100",
-    "xrcStdprc": "6462.22"
+    "xrcStdprc": "6523.86"
    },
    {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "1",
     "xrcStdSeq": "2",
-    "xrcStdRatio": "90",
-    "xrcStdprc": "5815.998"
+    "xrcStdRatio": "75",
+    "xrcStdprc": "4892.895"
    },
    {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "1",
     "xrcStdSeq": "3",
-    "xrcStdRatio": "85",
-    "xrcStdprc": "5492.887"
+    "xrcStdRatio": "70",
+    "xrcStdprc": "4566.702"
    },
    {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "1",
     "xrcStdSeq": "4",
-    "xrcStdRatio": "80",
-    "xrcStdprc": "5169.776"
+    "xrcStdRatio": "60",
+    "xrcStdprc": "3914.316"
    },
    {
-    "isin": "KR6MD0008V17",
-    "assetSeq": "1",
-    "xrcStdSeq": "5",
-    "xrcStdRatio": "75",
-    "xrcStdprc": "4846.665"
-   },
-   {
-    "isin": "KR6MD0008V17",
-    "assetSeq": "1",
-    "xrcStdSeq": "6",
-    "xrcStdRatio": "30",
-    "xrcStdprc": "1938.666"
-   },
-   {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "2",
     "xrcStdSeq": "1",
     "xrcStdRatio": "100",
-    "xrcStdprc": "7674.37"
+    "xrcStdprc": "65606.71"
    },
    {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "2",
     "xrcStdSeq": "2",
-    "xrcStdRatio": "90",
-    "xrcStdprc": "6906.933"
+    "xrcStdRatio": "75",
+    "xrcStdprc": "49205.0325"
    },
    {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "2",
     "xrcStdSeq": "3",
-    "xrcStdRatio": "85",
-    "xrcStdprc": "6523.2145"
+    "xrcStdRatio": "70",
+    "xrcStdprc": "45924.697"
    },
    {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "2",
     "xrcStdSeq": "4",
-    "xrcStdRatio": "80",
-    "xrcStdprc": "6139.496"
+    "xrcStdRatio": "60",
+    "xrcStdprc": "39364.026"
    },
    {
-    "isin": "KR6MD0008V17",
-    "assetSeq": "2",
-    "xrcStdSeq": "5",
-    "xrcStdRatio": "75",
-    "xrcStdprc": "5755.7775"
-   },
-   {
-    "isin": "KR6MD0008V17",
-    "assetSeq": "2",
-    "xrcStdSeq": "6",
-    "xrcStdRatio": "30",
-    "xrcStdprc": "2302.311"
-   },
-   {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "3",
     "xrcStdSeq": "1",
     "xrcStdRatio": "100",
-    "xrcStdprc": "1096.25"
+    "xrcStdprc": "7757.64"
    },
    {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "3",
     "xrcStdSeq": "2",
-    "xrcStdRatio": "90",
-    "xrcStdprc": "986.625"
+    "xrcStdRatio": "75",
+    "xrcStdprc": "5818.23"
    },
    {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "3",
     "xrcStdSeq": "3",
-    "xrcStdRatio": "85",
-    "xrcStdprc": "931.8125"
+    "xrcStdRatio": "70",
+    "xrcStdprc": "5430.348"
    },
    {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "3",
     "xrcStdSeq": "4",
-    "xrcStdRatio": "80",
-    "xrcStdprc": "877"
-   },
-   {
-    "isin": "KR6MD0008V17",
-    "assetSeq": "3",
-    "xrcStdSeq": "5",
-    "xrcStdRatio": "75",
-    "xrcStdprc": "822.1875"
-   },
-   {
-    "isin": "KR6MD0008V17",
-    "assetSeq": "3",
-    "xrcStdSeq": "6",
-    "xrcStdRatio": "30",
-    "xrcStdprc": "328.875"
+    "xrcStdRatio": "60",
+    "xrcStdprc": "4654.584"
    }
   ],
-  "count": 18
+  "count": 12
  },
  "getAssetInfoN1": {
-  "sample_isin": "KR6MD0008V17",
+  "sample_isin": "KR6MD0008R13",
   "items": [
    {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "1",
     "assetIsin": "KSD310000145",
     "assetContent": "DOW JONES EURO STOXX 50 INDEX",
-    "xrcStdprc": "6462.22",
+    "xrcStdprc": "6523.86",
     "xrcStopLolmtRatio": "0",
     "xrcStopLolmtPrice": "0",
     "xrcStopUplmtRatio": "0",
     "xrcStopUplmtPrice": "0",
     "bassetFirstValatTpcd": "1",
     "bassetLastValatTpcd": "1",
-    "firstStdprcDecsnBeginDt": "20260821",
-    "firstStdprcDecsnExpryDt": "20260821",
-    "lastStdprcDecsnBeginDt": "20290816",
-    "lastStdprcDecsnExpryDt": "20290816",
+    "firstStdprcDecsnBeginDt": "20260807",
+    "firstStdprcDecsnExpryDt": "20260807",
+    "lastStdprcDecsnBeginDt": "20290803",
+    "lastStdprcDecsnExpryDt": "20290803",
     "rvltSeverTpcd": "2"
    },
    {
-    "isin": "KR6MD0008V17",
+    "isin": "KR6MD0008R13",
     "assetSeq": "2",
+    "assetIsin": "KSD310000499",
+    "assetContent": "NIKKEI 225 INDEX",
+    "xrcStdprc": "65606.71",
+    "xrcStopLolmtRatio": "0",
+    "xrcStopLolmtPrice": "0",
+    "xrcStopUplmtRatio": "0",
+    "xrcStopUplmtPrice": "0",
+    "bassetFirstValatTpcd": "1",
+    "bassetLastValatTpcd": "1",
+    "firstStdprcDecsnBeginDt": "20260807",
+    "firstStdprcDecsnExpryDt": "20260807",
+    "lastStdprcDecsnBeginDt": "20290803",
+    "lastStdprcDecsnExpryDt": "20290803",
+    "rvltSeverTpcd": "2"
+   },
+   {
+    "isin": "KR6MD0008R13",
+    "assetSeq": "3",
     "assetIsin": "KSD310000568",
     "assetContent": "S&P 500 Index",
-    "xrcStdprc": "7674.37",
+    "xrcStdprc": "7757.64",
     "xrcStopLolmtRatio": "0",
     "xrcStopLolmtPrice": "0",
     "xrcStopUplmtRatio": "0",
     "xrcStopUplmtPrice": "0",
     "bassetFirstValatTpcd": "1",
     "bassetLastValatTpcd": "1",
-    "firstStdprcDecsnBeginDt": "20260821",
-    "firstStdprcDecsnExpryDt": "20260821",
-    "lastStdprcDecsnBeginDt": "20290816",
-    "lastStdprcDecsnExpryDt": "20290816",
-    "rvltSeverTpcd": "2"
-   },
-   {
-    "isin": "KR6MD0008V17",
-    "assetSeq": "3",
-    "assetIsin": "KSD101000028",
-    "assetContent": "코스피 200지수",
-    "xrcStdprc": "1096.25",
-    "xrcStopLolmtRatio": "0",
-    "xrcStopLolmtPrice": "0",
-    "xrcStopUplmtRatio": "0",
-    "xrcStopUplmtPrice": "0",
-    "bassetFirstValatTpcd": "1",
-    "bassetLastValatTpcd": "1",
-    "firstStdprcDecsnBeginDt": "20260821",
-    "firstStdprcDecsnExpryDt": "20260821",
-    "lastStdprcDecsnBeginDt": "20290816",
-    "lastStdprcDecsnExpryDt": "20290816",
+    "firstStdprcDecsnBeginDt": "20260807",
+    "firstStdprcDecsnExpryDt": "20260807",
+    "lastStdprcDecsnBeginDt": "20290803",
+    "lastStdprcDecsnExpryDt": "20290803",
     "rvltSeverTpcd": "2"
    }
   ],
