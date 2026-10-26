@@ -4432,5 +4432,131 @@
   "kind": "조기상환",
   "name": "미래에셋증권(ELS)35032",
   "source": "ksd"
+ },
+ "KR6MD0008CN9": {
+  "date": "2026-07-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37597",
+  "source": "ksd"
+ },
+ "KR6MD0008CM1": {
+  "date": "2026-07-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37596",
+  "source": "ksd"
+ },
+ "KR6MD0008CL3": {
+  "date": "2026-07-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37595",
+  "source": "ksd"
+ },
+ "KR6MD0008CK5": {
+  "date": "2026-07-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37594",
+  "source": "ksd"
+ },
+ "KR6MD0008CJ7": {
+  "date": "2026-07-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37593",
+  "source": "ksd"
+ },
+ "KR6MD0008CH1": {
+  "date": "2026-07-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37592",
+  "source": "ksd"
+ },
+ "KR6MD0007KX3": {
+  "date": "2026-04-29",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37199",
+  "source": "ksd"
+ },
+ "KR6MD0005XP6": {
+  "date": "2024-10-28",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)34457",
+  "source": "ksd"
+ },
+ "KR6MD0008PL5": {
+  "date": "2026-10-23",
+  "kind": "상환",
+  "name": "미래에셋증권37953(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008P07": {
+  "date": "2026-10-23",
+  "kind": "상환",
+  "name": "미래에셋증권36688(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008NS5": {
+  "date": "2026-10-15",
+  "kind": "상환",
+  "name": "미래에셋증권37934(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008NR7": {
+  "date": "2026-10-15",
+  "kind": "상환",
+  "name": "미래에셋증권37933(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008ND7": {
+  "date": "2026-10-16",
+  "kind": "상환",
+  "name": "미래에셋증권37928(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008NC9": {
+  "date": "2026-10-16",
+  "kind": "상환",
+  "name": "미래에셋증권37927(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008N82": {
+  "date": "2026-10-16",
+  "kind": "상환",
+  "name": "미래에셋증권37923(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008N74": {
+  "date": "2026-10-16",
+  "kind": "상환",
+  "name": "미래에셋증권37922(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008N58": {
+  "date": "2026-10-16",
+  "kind": "상환",
+  "name": "미래에셋증권37920(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008N41": {
+  "date": "2026-10-16",
+  "kind": "상환",
+  "name": "미래에셋증권37919(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008N33": {
+  "date": "2026-10-16",
+  "kind": "상환",
+  "name": "미래에셋증권37918(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008N25": {
+  "date": "2026-10-16",
+  "kind": "상환",
+  "name": "미래에셋증권37917(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008N09": {
+  "date": "2026-10-16",
+  "kind": "상환",
+  "name": "미래에셋증권37915(ELS)",
+  "source": "ksd"
  }
 }
