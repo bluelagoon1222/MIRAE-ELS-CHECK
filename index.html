@@ -135,6 +135,9 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
 .step .settle{font-size:17px;color:var(--body)}
 .step .settle b{font-family:var(--num);font-size:22px;color:var(--ink)}
 .step .settle span{display:block;font-size:14px;color:var(--muted)}
+.step.elt{grid-template-columns:210px 100px 140px 1fr 1fr}
+.step .settle b.yield{color:var(--orange)}
+.step.missed .settle b.yield{color:var(--muted-soft)}
 .paylist{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .paylist span{font-family:var(--num);font-size:16px;padding:6px 12px;border:1px solid var(--hair);border-radius:4px;background:#fff}
 .paylist span.past{color:var(--muted-soft);background:var(--subtle);border-color:var(--hair-soft)}
@@ -157,6 +160,7 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
   .step{grid-template-columns:1fr 1fr;gap:6px 12px}
   .step .date{font-size:24px}
   .step .ret,.step .settle{grid-column:1 / -1}
+  .step.elt{grid-template-columns:1fr 1fr}
   .step .ret .y{font-size:25px}
   .principal input{width:160px;font-size:20px}
   .desk{display:none}.mob{display:block}
@@ -243,7 +247,7 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
     <h2 style="margin-top:20px">ELT 현황판 <span style="font-size:15px;color:var(--muted);font-weight:400">Premier ELT · 평가일 임박순</span></h2>
     <div class="counts" id="eltCounts"></div>
     <div class="tbl-wrap desk"><table id="eltBoard"><thead><tr>
-      <th>회차</th><th>기초자산</th><th class="r">최저 비율</th><th>다음 평가일</th><th class="r">배리어</th><th class="r">필요 상승</th><th>판정</th><th>상환 예상</th><th class="r">낙인</th>
+      <th>회차</th><th>기초자산</th><th class="r">최저 비율</th><th>다음 평가일</th><th class="r">배리어</th><th class="r">필요 상승</th><th>판정</th><th>상환 예상</th><th class="r">낙인</th><th class="r">쿠폰(연)</th>
     </tr></thead><tbody></tbody></table></div>
     <div class="mob" id="eltBoardm"></div>
   </div>
@@ -251,7 +255,7 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
   <footer>
     ※ 판정은 전일(해외지수·해외주식은 한국시간 새벽 마감) 종가와 각 상품의 최초기준가격 결정일 종가를 바탕으로 자동 계산한 추정치입니다. 실제 상환 여부와 지급액은 평가일 당일 종가와 발행사의 공식 평가·투자설명서 조건에 따르며, 리자드·월지급식 등 특수 구조는 별도 확인이 필요합니다.<br>
     ※ 세후 수익은 배당소득세 15.4%(지방소득세 포함)를 일괄 공제한 금액이며, 금융소득 종합과세 대상 여부에 따라 실제 세부담은 달라질 수 있습니다.<br>
-    ※ ELT(Premier ELT)의 최초기준가격·평가일·배리어·낙인은 사내 발행정보를 기준으로 하며, 정기 지급일의 지급 조건·금액은 신탁 계약서를 확인해 주세요. ELT는 세금 계산을 표시하지 않습니다.<br>
+    ※ ELT(Premier ELT)의 최초기준가격·평가일·배리어·낙인·쿠폰은 사내 발행정보를 기준으로 하며, 누적 쿠폰은 연 쿠폰 × 경과기간 환산값입니다(정기 지급분 포함 여부는 계약서 기준). 정기 지급일의 지급 조건·금액은 신탁 계약서를 확인해 주세요. ELT는 세금 계산을 표시하지 않습니다.<br>
     ※ 최초기준가는 공개 시세 데이터(액면분할 등 조정 반영)에서 산출하므로 발행사 공시 기준가와 미세한 차이가 있을 수 있습니다. 본 화면은 임직원 참고용이며 고객에게 그대로 전달하는 자료가 아닙니다.
   </footer>
 </main>
@@ -397,7 +401,7 @@ function eltCardHTML(p){
     {l:'최저 기초자산 (현재 ÷ 최초기준가)',v:worst?f1(worst.ratio)+'%':'-',d:worst?worst.label:'',c:worst?((nx&&nx.barrier!=null&&worst.ratio>=nx.barrier)?'g':'r'):''},
     {l:nx?(nx.is_maturity?'만기 평가일':`다음 평가일 (${nx.n}차)`):'다음 평가일',v:nx?nx.date:'-',d:nx?`D-${nx.days} · 배리어 ${nx.barrier}%`:'',c:''},
     {l:'필요 상승률 (최저 종목 기준)',v:j.need_pct==null?'-':(j.need_pct===0?'충족':'+'+f1(j.need_pct)+'%'),d:j.need_pct===0?'현 수준 유지 시 상환':'',c:j.need_pct===0?'g':'o'},
-    {l:'상환 예상 시점',v:ex?`${ex.is_maturity?'만기':ex.n+'차'} ${ex.date}`:'-',d:ex?(`${ex.months}개월 · 결제일 ${exEv&&exEv.settle?exEv.settle:'-'}`+(hasC&&ex.ret!=null?` · 세전 ${f1(ex.ret,2)}%`:'')):'',c:'o'},
+    {l:'상환 예상 시점 · 누적 쿠폰',v:ex?`${ex.is_maturity?'만기':ex.n+'차'} ${ex.date}`:'-',d:ex?(`${ex.months}개월 · 결제일 ${exEv&&exEv.settle?exEv.settle:'-'}`+(hasC&&ex.ret!=null?` · 누적 쿠폰 ${f1(ex.ret,2)}%`:'')):'',c:'o'},
     {l:'낙인까지 여유 (최저 종목 기준)',v:p.no_ki?'낙인 없음':(j.ki_room==null?'-':f1(j.ki_room)+'%p'),d:p.no_ki?'':`낙인 ${kiTxt}`+(j.knocked_in?' · 터치 이력 있음':''),c:j.knocked_in?'r':'g'},
   ];
   const assets=(p.assets||[]).map(a=>{
@@ -411,11 +415,12 @@ function eltCardHTML(p){
     if(nx&&e.n===nx.n){cls+=' next'; tag='<span class="tag o">다음 평가</span>';}
     else if(ex&&e.n===ex.n){cls+=' expected'; tag='<span class="tag g">상환 예상</span>';}
     const ret=hasC?retOf(p,e):null;
-    return `<div class="${cls}">
+    return `<div class="${cls} elt">
       <div class="date">${e.date}<small>${e.months?e.months+'개월 경과 시점':''}</small></div>
       <div class="n">${e.is_maturity?'만기':e.n+'차'}<br>${tag}</div>
       <div class="bar">${e.barrier!=null?e.barrier+'%':'-'}<small>배리어</small></div>
-      <div class="settle"><span>상환금 결제일</span><b>${e.settle||'-'}</b>${ret!=null?` <span class="yield" style="font-size:20px">세전 ${f1(ret,2)}%</span>`:''}</div>
+      <div class="settle"><span>상환금 결제일</span><b>${e.settle||'-'}</b></div>
+      ${ret!=null?`<div class="settle"><span>누적 쿠폰(연 ${f1(p.coupon,2)}% × 경과기간)</span><b class="yield">${f1(ret,2)}%</b></div>`:''}
     </div>`;
   }).join('');
   const pays=(p.pay_dates||[]); const nextPay=pays.find(d=>d>=today);
@@ -447,10 +452,10 @@ function renderElt(){
     const exs=ex?`${ex.is_maturity?'만기':ex.n+'차'} ${ex.date}`:'-';
     const ki=p.no_ki?'없음':(p.ki_level!=null?p.ki_level+'%':'-');
     const tr=document.createElement('tr');
-    tr.innerHTML=`<td style="white-space:nowrap"><span class="row-code" data-e="${p.code}">${p.code}호</span></td><td>${assets}</td><td class="r num">${worst}</td><td class="num"><b>${nx?nx.date:'-'}</b>${nx?` <span style="color:var(--muted-soft);font-size:14px">D-${nx.days}</span>`:''}</td><td class="r num">${nx&&nx.barrier!=null?nx.barrier+'%':'-'}</td><td class="r num">${need}</td><td><span class="badge ${st[1]}" style="font-size:14px;padding:4px 10px">${st[0]}</span></td><td class="num">${exs}</td><td class="r num">${ki}</td>`;
+    tr.innerHTML=`<td style="white-space:nowrap"><span class="row-code" data-e="${p.code}">${p.code}호</span></td><td>${assets}</td><td class="r num">${worst}</td><td class="num"><b>${nx?nx.date:'-'}</b>${nx?` <span style="color:var(--muted-soft);font-size:14px">D-${nx.days}</span>`:''}</td><td class="r num">${nx&&nx.barrier!=null?nx.barrier+'%':'-'}</td><td class="r num">${need}</td><td><span class="badge ${st[1]}" style="font-size:14px;padding:4px 10px">${st[0]}</span></td><td class="num">${exs}</td><td class="r num">${ki}</td><td class="r"><span class="yield">${p.coupon!=null?f1(p.coupon,2)+'%':'-'}</span></td>`;
     tb.appendChild(tr);
     const mc=document.createElement('div'); mc.className='mcard';
-    mc.innerHTML=`<div class="l1"><span class="row-code" data-e="${p.code}">ELT ${p.code}호</span><span class="badge ${st[1]}" style="font-size:14px;padding:4px 10px">${st[0]}</span></div><div class="l2">${assets}</div><div class="l3 num">최저 ${worst} · 다음 <b>${nx?nx.date:'-'}</b>${nx?' (D-'+nx.days+', '+nx.barrier+'%)':''} · 필요 ${need}</div><div class="l3 num" style="color:var(--muted)">예상 ${exs} · 낙인 ${ki}</div>`;
+    mc.innerHTML=`<div class="l1"><span class="row-code" data-e="${p.code}">ELT ${p.code}호</span><span class="badge ${st[1]}" style="font-size:14px;padding:4px 10px">${st[0]}</span></div><div class="l2">${assets}</div><div class="l3 num">최저 ${worst} · 다음 <b>${nx?nx.date:'-'}</b>${nx?' (D-'+nx.days+', '+nx.barrier+'%)':''} · 필요 ${need}</div><div class="l3 num" style="color:var(--muted)">예상 ${exs} · 낙인 ${ki} · 연 <span class="yield">${p.coupon!=null?f1(p.coupon,2)+'%':'-'}</span></div>`;
     mb.appendChild(mc);
   });
 }
@@ -527,6 +532,7 @@ $('#q').addEventListener('input',()=>{
   box.style.display='block';
 });
 $('#ftext').addEventListener('input',renderBoard);
+window.addEventListener('hashchange',()=>{ const h=location.hash.replace('#',''); if(h&&h!==$('#q').value){ $('#q').value=h; search(h); } });
 load();
 </script>
 </body>

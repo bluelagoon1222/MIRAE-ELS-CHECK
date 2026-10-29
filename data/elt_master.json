@@ -70,7 +70,7 @@
     "2028-10-23",
     "2029-01-17"
    ],
-   "coupon": null,
+   "coupon": 12.5,
    "notes": []
   },
   {
@@ -141,7 +141,7 @@
     "2029-02-02",
     "2029-05-02"
    ],
-   "coupon": null,
+   "coupon": 11.8,
    "notes": []
   },
   {
@@ -212,7 +212,7 @@
     "2029-02-15",
     "2029-05-15"
    ],
-   "coupon": null,
+   "coupon": 9.0,
    "notes": []
   },
   {
@@ -283,7 +283,7 @@
     "2029-02-23",
     "2029-05-23"
    ],
-   "coupon": null,
+   "coupon": 13.0,
    "notes": []
   },
   {
@@ -354,7 +354,7 @@
     "2029-02-23",
     "2029-05-23"
    ],
-   "coupon": null,
+   "coupon": 13.8,
    "notes": []
   },
   {
@@ -421,7 +421,7 @@
     "2029-03-09",
     "2029-06-07"
    ],
-   "coupon": null,
+   "coupon": 15.0,
    "notes": []
   },
   {
@@ -492,7 +492,7 @@
     "2029-03-19",
     "2029-06-19"
    ],
-   "coupon": null,
+   "coupon": 19.0,
    "notes": [
     "eval3_date_corrected"
    ]
@@ -597,7 +597,7 @@
     "2029-03-21",
     "2029-06-20"
    ],
-   "coupon": null,
+   "coupon": 18.5,
    "notes": []
   },
   {
@@ -700,7 +700,7 @@
     "2029-04-04",
     "2029-07-04"
    ],
-   "coupon": null,
+   "coupon": 17.0,
    "notes": []
   },
   {
@@ -803,7 +803,7 @@
     "2029-04-11",
     "2029-07-11"
    ],
-   "coupon": null,
+   "coupon": 18.2,
    "notes": []
   },
   {
@@ -870,7 +870,7 @@
     "2029-04-26",
     "2029-07-26"
    ],
-   "coupon": null,
+   "coupon": 17.3,
    "notes": []
   },
   {
@@ -941,7 +941,7 @@
     "2029-05-02",
     "2029-07-31"
    ],
-   "coupon": null,
+   "coupon": 18.5,
    "notes": []
   },
   {
@@ -1012,7 +1012,7 @@
     "2029-05-02",
     "2029-07-31"
    ],
-   "coupon": null,
+   "coupon": 20.0,
    "notes": []
   },
   {
@@ -1077,7 +1077,7 @@
     "2027-11-02",
     "2028-02-02"
    ],
-   "coupon": null,
+   "coupon": 21.5,
    "notes": []
   },
   {
@@ -1148,7 +1148,7 @@
     "2029-05-09",
     "2029-08-07"
    ],
-   "coupon": null,
+   "coupon": 17.5,
    "notes": []
   },
   {
@@ -1212,7 +1212,7 @@
     "2027-11-16",
     "2028-02-16"
    ],
-   "coupon": null,
+   "coupon": 18.7,
    "notes": [
     "settle1_check"
    ]
@@ -1285,7 +1285,7 @@
     "2029-05-16",
     "2029-08-17"
    ],
-   "coupon": null,
+   "coupon": 17.8,
    "notes": []
   },
   {
@@ -1356,7 +1356,7 @@
     "2029-05-29",
     "2029-08-30"
    ],
-   "coupon": null,
+   "coupon": 11.6,
    "notes": []
   },
   {
@@ -1427,7 +1427,7 @@
     "2029-06-12",
     "2029-09-11"
    ],
-   "coupon": null,
+   "coupon": 14.0,
    "notes": []
   },
   {
@@ -1498,7 +1498,7 @@
     "2029-06-19",
     "2029-09-18"
    ],
-   "coupon": null,
+   "coupon": 7.7,
    "notes": []
   },
   {
@@ -1569,7 +1569,7 @@
     "2029-07-04",
     "2029-10-04"
    ],
-   "coupon": null,
+   "coupon": 12.3,
    "notes": []
   },
   {
@@ -1640,7 +1640,7 @@
     "2029-07-04",
     "2029-10-05"
    ],
-   "coupon": null,
+   "coupon": 7.0,
    "notes": []
   },
   {
@@ -1711,7 +1711,7 @@
     "2029-07-18",
     "2029-10-16"
    ],
-   "coupon": null,
+   "coupon": 10.2,
    "notes": []
   },
   {
@@ -1818,7 +1818,7 @@
     "2029-07-24",
     "2029-10-24"
    ],
-   "coupon": null,
+   "coupon": 11.4,
    "notes": []
   },
   {
@@ -1826,83 +1826,87 @@
    "trade_date": "2026-10-30",
    "effective_date": "2026-11-02",
    "maturity_date": null,
-   "assets": [],
+   "assets": [
+    "KOSPI200",
+    "S&P500",
+    "NIKKEI225"
+   ],
    "base": [],
    "evals": [
     {
      "n": 1,
      "date": "2027-01-29",
-     "barrier": null,
+     "barrier": 85.0,
      "settle": "2027-02-02"
     },
     {
      "n": 2,
      "date": "2027-04-30",
-     "barrier": null,
+     "barrier": 85.0,
      "settle": "2027-05-06"
     },
     {
      "n": 3,
      "date": "2027-07-30",
-     "barrier": null,
+     "barrier": 85.0,
      "settle": "2027-08-03"
     },
     {
      "n": 4,
      "date": "2027-10-29",
-     "barrier": null,
+     "barrier": 85.0,
      "settle": "2027-11-02"
     },
     {
      "n": 5,
      "date": "2028-01-25",
-     "barrier": null,
+     "barrier": 85.0,
      "settle": "2028-02-01"
     },
     {
      "n": 6,
      "date": "2028-04-28",
-     "barrier": null,
+     "barrier": 85.0,
      "settle": "2028-05-04"
     },
     {
      "n": 7,
      "date": "2028-07-28",
-     "barrier": null,
+     "barrier": 80.0,
      "settle": "2028-08-01"
     },
     {
      "n": 8,
      "date": "2028-10-30",
-     "barrier": null,
+     "barrier": 80.0,
      "settle": "2028-11-01"
     },
     {
      "n": 9,
      "date": "2029-01-30",
-     "barrier": null,
+     "barrier": 75.0,
      "settle": "2029-02-01"
     },
     {
      "n": 10,
      "date": "2029-04-27",
-     "barrier": null,
+     "barrier": 75.0,
      "settle": "2029-05-02"
     },
     {
      "n": 11,
      "date": "2029-07-30",
-     "barrier": null,
+     "barrier": 75.0,
      "settle": "2029-08-01"
     },
     {
      "n": 12,
      "date": "2029-10-30",
-     "barrier": null,
+     "barrier": 70.0,
      "settle": "2029-11-01"
     }
    ],
-   "ki": null,
+   "ki": 40.0,
    "pay_dates": [
     "2027-02-02",
     "2027-05-06",
@@ -1917,9 +1921,9 @@
     "2029-08-01",
     "2029-11-01"
    ],
-   "coupon": null,
+   "coupon": 10.8,
    "notes": [
-    "terms_missing"
+    "base_pending"
    ]
   },
   {
@@ -1927,47 +1931,51 @@
    "trade_date": "2026-10-30",
    "effective_date": "2026-11-02",
    "maturity_date": null,
-   "assets": [],
+   "assets": [
+    "KOSPI200",
+    "S&P500",
+    "NIKKEI225"
+   ],
    "base": [],
    "evals": [
     {
      "n": 1,
      "date": "2027-04-30",
-     "barrier": null,
+     "barrier": 85.0,
      "settle": "2027-05-06"
     },
     {
      "n": 2,
      "date": "2027-10-29",
-     "barrier": null,
+     "barrier": 85.0,
      "settle": "2027-11-02"
     },
     {
      "n": 3,
      "date": "2028-04-28",
-     "barrier": null,
+     "barrier": 85.0,
      "settle": "2028-05-04"
     },
     {
      "n": 4,
      "date": "2028-10-30",
-     "barrier": null,
+     "barrier": 80.0,
      "settle": "2028-11-01"
     },
     {
      "n": 5,
      "date": "2029-04-27",
-     "barrier": null,
+     "barrier": 75.0,
      "settle": "2029-05-02"
     },
     {
      "n": 6,
      "date": "2029-10-30",
-     "barrier": null,
+     "barrier": 70.0,
      "settle": "2029-11-01"
     }
    ],
-   "ki": null,
+   "ki": 40.0,
    "pay_dates": [
     "2027-02-02",
     "2027-05-06",
@@ -1982,10 +1990,38 @@
     "2029-08-01",
     "2029-11-01"
    ],
-   "coupon": null,
+   "coupon": 10.5,
    "notes": [
-    "terms_missing"
+    "base_pending"
+   ]
+  },
+  {
+   "no": 44,
+   "trade_date": null,
+   "effective_date": null,
+   "maturity_date": null,
+   "assets": [
+    "KOSPI200",
+    "S&P500",
+    "NIKKEI225"
+   ],
+   "base": [],
+   "evals": [],
+   "ki": null,
+   "pay_dates": [],
+   "coupon": 12.2,
+   "notes": [
+    "schedule_missing"
+   ],
+   "ladder_only": [
+    85.0,
+    85.0,
+    85.0,
+    80.0,
+    75.0,
+    60.0
    ]
   }
- ]
+ ],
+ "coupon_source": "email table 2026-10-29"
 }

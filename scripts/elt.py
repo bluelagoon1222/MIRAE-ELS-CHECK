@@ -16,6 +16,8 @@ NOTE_TEXT = {
     "eval3_date_corrected": "3차 평가일: 원자료 2027-12-05(일요일) → 결제일(12-17) 기준 2027-12-15로 표기, 발행 조건 확인 중",
     "settle1_check": "1차 결제일: 원자료 확인 중(평가일 이후 결제일 미확정)",
     "terms_missing": "기초자산·최초기준가격 정보가 아직 등록되지 않았습니다(일정만 등록)",
+    "base_pending": "사내 확정 최초기준가격 미등록 — 최초기준가격 결정일 종가(공개 시세)로 임시 계산",
+    "schedule_missing": "평가일·결제일 일정이 아직 등록되지 않았습니다(쿠폰·배리어·낙인만 등록)",
 }
 
 
@@ -23,6 +25,8 @@ def _clean(msg, has_coupon):
     msg = msg or ""
     if not has_coupon:
         msg = re.sub(r"\s*\(세전 약 [^)]*%\)", "", msg)
+    else:
+        msg = msg.replace("(세전 약 ", "(누적 쿠폰 약 ")
     msg = msg.replace("만기 수익 지급 가능", "만기 상환 조건 충족 가능")
     return msg
 
@@ -37,7 +41,7 @@ def build_product(m):
         "mat_eval": evals[-1]["date"] if evals else None, "mat_pay": m.get("maturity_date") or (evals[-1].get("settle") if evals else None),
         "evals": [(e["n"], e["date"]) for e in evals],
         "assets": list(m.get("assets") or []),
-        "ksd_ref": {a: b for a, b in zip(m.get("assets") or [], m.get("base") or [])},
+        "ksd_ref": {a: b for a, b in zip(m.get("assets") or [], m.get("base") or []) if b},
         "ki": {a: m["ki"] for a in (m.get("assets") or [])} if m.get("ki") is not None else {},
         "no_ki": m.get("ki") is None and bool(m.get("assets")),
         "lizard": False, "monthly": False, "principal_guard": False,
@@ -63,7 +67,14 @@ def run(judge, build_schedule, data_dir, log, today, generated=None):
     for m in master.get("products", []):
         p = build_product(m)
         try:
-            if not p["assets"]:
+            if p["assets"] and not m.get("evals"):
+                out = {"isin": p["isin"], "code": p["code"], "type": "ELT", "name": p["name"], "coupon": p["coupon"],
+                       "ladder": m.get("ladder_only"), "issue_date": None, "mat_eval": None,
+                       "assets": [{"name": a, "label": a} for a in p["assets"]], "schedule": [], "flags": []}
+                out["judgment"] = {"status": "noschedule", "worst": None, "next": None, "expected": None,
+                                   "knocked_in": None, "redeemed": None, "need_pct": None, "ki_room": None,
+                                   "message": "평가일·최초기준가격 정보 등록 전입니다. 등록 후 자동 판정됩니다."}
+            elif not p["assets"]:
                 r = build_schedule(p)
                 out = {"isin": p["isin"], "code": p["code"], "type": "ELT", "name": p["name"], "coupon": p["coupon"],
                        "issue_date": p["issue_date"], "mat_eval": p["mat_eval"], "assets": [], "schedule": r, "flags": []}
