@@ -1513,6 +1513,13 @@ def main():
            "prices": price_asof, "counts": counts, "products": lean}
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
+    # ---- ELT (in-house Premier ELT terms, data/elt_master.json) ----
+    elt_info = {"enabled": False}
+    try:
+        import elt as elt_mod
+        elt_info = elt_mod.run(judge, build_schedule, DATA, log, TODAY, out["generated"])
+    except Exception:
+        log("elt pass crashed: " + traceback.format_exc().splitlines()[-1])
     status = {"generated": out["generated"], "elapsed_sec": round(time.time() - t0, 1),
               "cached_products": len(products), "excluded": len(excluded), "redeemed_list": len(redeemed),
               "redeemed_source_ok": red_ok, "hidden_estimated": hidden_est, "active": len(kept), "probes": probes, "new": new,
@@ -1521,7 +1528,7 @@ def main():
                                 "ref_or_issue_date": sum(1 for p in products.values() if not (p.get("ref_date") or p.get("issue_date"))),
                                 "evals": sum(1 for p in products.values() if not p.get("evals"))},
               "redeemed_debug": [l for l in LOG if "[redeemed]" in l][-10:],
-              "ksd": ksd_info, "ksd_log": [l for l in LOG if "[ksd]" in l][-20:],
+              "ksd": ksd_info, "elt": elt_info, "ksd_log": [l for l in LOG if "[ksd]" in l][-20:],
               "price_debug": [l for l in LOG if any(k in l for k in ("yahoo", "fchart", "krx", "naver"))][-30:],
               "scan_cursor": scan.get("cursor"), "log": LOG[-120:]}
     save_json(STATUS_FILE, status)

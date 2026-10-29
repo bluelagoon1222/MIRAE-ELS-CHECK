@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>MIRAE ELS CHECK — ELS 조기상환 조회</title>
+<title>MIRAE ELS/ELT CHECK — ELS·ELT 조기상환 조회</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -109,7 +109,7 @@ h3.sec{font-size:20px;color:var(--ink);margin:26px 0 10px}
 .step.next{border:3px solid var(--orange);background:var(--orange-bg)}
 .step.expected{border:3px solid var(--ok);background:var(--ok-bg)}
 .tag{display:inline-block;font-size:13px;padding:2px 8px;border-radius:3px;background:var(--hl);color:var(--ink);margin-left:6px;font-weight:700}
-.tag.o{background:var(--orange);color:#fff}.tag.g{background:var(--ok);color:#fff}.tag.r{background:var(--err);color:#fff}
+.tag.o{background:var(--orange);color:#fff}.tag.b{background:var(--blue);color:#fff}.tag.g{background:var(--ok);color:#fff}.tag.r{background:var(--err);color:#fff}
 .flags{margin-top:16px;font-size:16px;color:var(--muted);padding-left:20px}
 .flags li{margin:3px 0}
 .links{margin-top:16px;font-size:16px}
@@ -131,6 +131,14 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
 .sort{cursor:pointer;user-select:none}
 .sort.on{color:var(--orange-active)}
 .yield{font-family:var(--num);font-weight:800;color:var(--orange)}
+.typetag{display:inline-block;font-size:15px;font-weight:800;padding:3px 10px;border-radius:3px;background:var(--blue);color:#fff;vertical-align:middle;margin-right:10px;font-family:var(--num);letter-spacing:.5px}
+.step .settle{font-size:17px;color:var(--body)}
+.step .settle b{font-family:var(--num);font-size:22px;color:var(--ink)}
+.step .settle span{display:block;font-size:14px;color:var(--muted)}
+.paylist{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.paylist span{font-family:var(--num);font-size:16px;padding:6px 12px;border:1px solid var(--hair);border-radius:4px;background:#fff}
+.paylist span.past{color:var(--muted-soft);background:var(--subtle);border-color:var(--hair-soft)}
+.paylist span.nx{border:2px solid var(--blue);color:var(--blue);font-weight:700}
 
 @media (max-width:980px){ .kpis{grid-template-columns:repeat(3,1fr)} }
 @media (max-width:760px){
@@ -148,7 +156,7 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
   .verdict{font-size:17px}
   .step{grid-template-columns:1fr 1fr;gap:6px 12px}
   .step .date{font-size:24px}
-  .step .ret{grid-column:1 / -1}
+  .step .ret,.step .settle{grid-column:1 / -1}
   .step .ret .y{font-size:25px}
   .principal input{width:160px;font-size:20px}
   .desk{display:none}.mob{display:block}
@@ -161,13 +169,13 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
 </head>
 <body>
 <header><div class="wrap"><div class="hdr">
-  <div class="brand"><div class="t">MIRAE <span>ELS</span> CHECK</div><div class="s">미래에셋증권 공모 ELS 조기상환 조회 · 전일 종가 기준 자동 판정</div></div>
+  <div class="brand"><div class="t">MIRAE <span>ELS/ELT</span> CHECK</div><div class="s">미래에셋증권 공모 ELS · Premier ELT 조기상환 조회 · 전일 종가 기준 자동 판정</div></div>
   <div class="asof" id="asof">데이터 불러오는 중…</div>
 </div></div></header>
 
 <main class="wrap">
   <div class="searchbox">
-    <input id="q" type="text" inputmode="numeric" placeholder="ELS 회차번호 입력 (예: 38071)" autocomplete="off">
+    <input id="q" type="text" inputmode="numeric" placeholder="ELS 회차(예: 38071) 또는 ELT 회차(예: 41)" autocomplete="off">
     <button class="btn" id="go">조회</button>
     <div class="sugg" id="sugg"></div>
   </div>
@@ -177,8 +185,9 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
       <h3>사용 방법</h3>
       <ol>
         <li>고객 잔고 화면의 <b>미래에셋증권(ELS)38071</b>에서 숫자 <b>38071</b>만 위 칸에 입력하고 조회를 누릅니다. 두 자리만 쳐도 후보가 뜹니다.</li>
+        <li>ELT는 <b>Premier ELT 41호</b>에서 숫자 <b>41</b>만 입력하면 같은 방식으로 조회됩니다(세 자리 이하 숫자는 ELT로 조회).</li>
         <li>맨 위 색깔 상자가 결론입니다. 전일 종가 기준으로 <b>다음 평가일에 상환되는지, 안 되면 언제 상환이 예상되는지</b>를 한 문장으로 보여줍니다.</li>
-        <li><b>투자원금</b>을 입력하면 평가일마다 세전 수익과 세후(15.4% 공제) 수익금, 세후 수령액이 함께 표시됩니다.</li>
+        <li>ELS는 <b>투자원금</b>을 입력하면 평가일마다 세전 수익과 세후(15.4% 공제) 수익금, 세후 수령액이 함께 표시됩니다. ELT는 세금 계산을 표시하지 않습니다.</li>
         <li>평가일 목록에서 초록은 상환된 회차, 주황 테두리는 다음 평가일, 회색은 조건 미충족으로 지나간 회차입니다.</li>
       </ol>
     </div>
@@ -192,7 +201,7 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
         <div><i style="background:#043B72"></i><b>상환 완료</b><small>이미 상환된 것으로 계산됨</small></div>
         <div><i style="background:#84888B"></i><b>판정 불가 · 일정 미공개</b><small>조건 확인 필요 — 담당 PB 문의</small></div>
       </div>
-      <div style="margin-top:12px;font-size:15px;color:var(--muted)">공모 ELS만 조회됩니다. 사모·ELT는 담당 PB에게 확인해 주세요.</div>
+      <div style="margin-top:12px;font-size:15px;color:var(--muted)">공모 ELS와 Premier ELT가 조회됩니다. 사모 ELS는 담당 PB에게 확인해 주세요.</div>
     </div>
   </div>
 
@@ -200,7 +209,7 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
 
   <div class="rule"></div>
   <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-    <button class="btn" id="toggleBoard" style="height:48px;font-size:18px">전체 현황판 보기</button>
+    <button class="btn" id="toggleBoard" style="height:48px;font-size:18px">ELS 전체 보기</button>
     <span style="font-size:16px;color:var(--muted)">미상환 공모 ELS 전체를 평가일 임박순으로 봅니다</span>
   </div>
   <div id="boardWrap" style="display:none">
@@ -226,15 +235,29 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
   <div style="text-align:center;margin-top:14px"><button class="btn ghost" id="more" style="display:none">더 보기</button> <span id="shown" style="font-size:14px;color:var(--muted-soft)"></span></div>
   </div>
 
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px">
+    <button class="btn" id="toggleElt" style="height:48px;font-size:18px;background:var(--blue)">ELT 전체 보기</button>
+    <span style="font-size:16px;color:var(--muted)">Premier ELT 전체를 평가일 임박순으로 봅니다</span>
+  </div>
+  <div id="eltWrap" style="display:none">
+    <h2 style="margin-top:20px">ELT 현황판 <span style="font-size:15px;color:var(--muted);font-weight:400">Premier ELT · 평가일 임박순</span></h2>
+    <div class="counts" id="eltCounts"></div>
+    <div class="tbl-wrap desk"><table id="eltBoard"><thead><tr>
+      <th>회차</th><th>기초자산</th><th class="r">최저 비율</th><th>다음 평가일</th><th class="r">배리어</th><th class="r">필요 상승</th><th>판정</th><th>상환 예상</th><th class="r">낙인</th>
+    </tr></thead><tbody></tbody></table></div>
+    <div class="mob" id="eltBoardm"></div>
+  </div>
+
   <footer>
     ※ 판정은 전일(해외지수·해외주식은 한국시간 새벽 마감) 종가와 각 상품의 최초기준가격 결정일 종가를 바탕으로 자동 계산한 추정치입니다. 실제 상환 여부와 지급액은 평가일 당일 종가와 발행사의 공식 평가·투자설명서 조건에 따르며, 리자드·월지급식 등 특수 구조는 별도 확인이 필요합니다.<br>
     ※ 세후 수익은 배당소득세 15.4%(지방소득세 포함)를 일괄 공제한 금액이며, 금융소득 종합과세 대상 여부에 따라 실제 세부담은 달라질 수 있습니다.<br>
+    ※ ELT(Premier ELT)의 최초기준가격·평가일·배리어·낙인은 사내 발행정보를 기준으로 하며, 정기 지급일의 지급 조건·금액은 신탁 계약서를 확인해 주세요. ELT는 세금 계산을 표시하지 않습니다.<br>
     ※ 최초기준가는 공개 시세 데이터(액면분할 등 조정 반영)에서 산출하므로 발행사 공시 기준가와 미세한 차이가 있을 수 있습니다. 본 화면은 임직원 참고용이며 고객에게 그대로 전달하는 자료가 아닙니다.
   </footer>
 </main>
 
 <script>
-let DATA=null, LIST=[], FILTER='all', SORT='next', SORTDIR=1, PAGE=150, SHOWN=0, BOARD_ON=false, CUR=null;
+let DATA=null, ELT=null, ELIST=[], ELT_ON=false, LIST=[], FILTER='all', SORT='next', SORTDIR=1, PAGE=150, SHOWN=0, BOARD_ON=false, CUR=null;
 const DETAIL={};
 const TAX=0.154;
 const isMobile=()=>window.matchMedia('(max-width:760px)').matches;
@@ -252,8 +275,9 @@ async function load(){
   try{ const r=await fetch('data/els.json?t='+Date.now()); DATA=await r.json(); }
   catch(e){ $('#asof').textContent='데이터를 불러오지 못했습니다'; return; }
   LIST=DATA.products||[];
+  try{ const r2=await fetch('data/elt.json?t='+Date.now()); if(r2.ok){ ELT=await r2.json(); ELIST=ELT.products||[]; } }catch(e){}
   const p=DATA.prices||{}; const ks=p['^KS200']?p['^KS200'].date:null; const sp=p['^GSPC']?p['^GSPC'].date:null;
-  $('#asof').innerHTML=`기준일 <b>${DATA.asof}</b> · 갱신 ${DATA.generated}<br>${ks?'KOSPI200 '+ks:''}${sp?' · S&amp;P500 '+sp:''} · 조회 가능 ${LIST.length}건`;
+  $('#asof').innerHTML=`기준일 <b>${DATA.asof}</b> · 갱신 ${DATA.generated}<br>${ks?'KOSPI200 '+ks:''}${sp?' · S&amp;P500 '+sp:''} · 조회 가능 ELS ${LIST.length}건${ELIST.length?' · ELT '+ELIST.length+'건':''}`;
   renderCounts();
   const h=location.hash.replace('#',''); if(h){ $('#q').value=h; search(h); }
 }
@@ -266,6 +290,12 @@ function renderCounts(){
   const c=DATA.counts||{}; const box=$('#counts'); box.innerHTML='';
   Object.keys(STATUS).forEach(k=>{ if(!c[k])return; const d=document.createElement('span'); d.className='chip'; d.innerHTML=`<i style="background:${COLOR[k]||'#84888B'}"></i>${STATUS[k][0]} ${c[k]}`; box.appendChild(d); });
 }
+function eltNo(q){
+  const raw=(q||'').trim().toUpperCase();
+  const m=raw.match(/^(?:PREMIER)?\s*ELT\s*_?\s*(\d{1,3})\s*호?$/)||raw.match(/^(\d{1,3})\s*호?$/);
+  return m?String(parseInt(m[1],10)):null;
+}
+function findElt(q){ const n=eltNo(q); return n?ELIST.find(p=>p.code===n)||null:null; }
 function find(q){
   q=(q||'').trim().toUpperCase().replace(/[^0-9A-Z]/g,'');
   if(!q) return null;
@@ -275,7 +305,14 @@ function find(q){
   return null;
 }
 async function search(q){
-  const p=find(q); const box=$('#result');
+  const box=$('#result');
+  if(eltNo(q)){
+    const e=findElt(q);
+    if(!e){ box.innerHTML=`<div class="card"><div class="name" style="font-size:22px;font-weight:800;color:var(--ink)">조회 결과 없음</div><div class="meta" style="margin-top:8px;font-size:17px">Premier ELT ${eltNo(q)}호가 등록되어 있지 않습니다. 이미 상환됐거나 아직 등록 전인 회차일 수 있습니다. 담당 PB에게 확인해 주세요.</div></div>`; return; }
+    location.hash='ELT'+e.code; CUR=null; box.innerHTML=eltCardHTML(e);
+    window.scrollTo({top:box.offsetTop-80,behavior:'smooth'}); return;
+  }
+  const p=find(q);
   if(!p){ box.innerHTML=`<div class="card"><div class="name" style="font-size:22px;font-weight:800;color:var(--ink)">조회 결과 없음</div><div class="meta" style="margin-top:8px;font-size:17px">"${q}"에 해당하는 공모 ELS를 찾지 못했습니다. 사모·ELT 상품이거나 아직 수집되지 않은 회차일 수 있습니다. 담당 PB에게 확인해 주세요.</div></div>`; return; }
   location.hash=p.code;
   box.innerHTML=`<div class="card"><div class="meta">${p.code}회 상세를 불러오는 중…</div></div>`;
@@ -349,6 +386,79 @@ function cardHTML(p){
     ${p.payoff?`<details class="payoff"><summary>수익구조 원문 보기</summary><pre>${esc(p.payoff)}</pre></details>`:''}
   </div>`;
 }
+function eltCardHTML(p){
+  const j=p.judgment||{}; const st=STATUS[j.status]||STATUS.unknown;
+  const worst=j.worst, nx=j.next, ex=j.expected; const today=(ELT&&ELT.asof)||'';
+  const vcls=['pass','defer','ki','risk'].includes(j.status)?j.status:'';
+  const hasC=p.coupon!=null;
+  const exEv=ex?(p.schedule||[]).find(e=>e.n===ex.n):null;
+  const kiTxt=p.no_ki?'없음':(p.ki_level!=null?p.ki_level+'%':'-');
+  const kpis=[
+    {l:'최저 기초자산 (현재 ÷ 최초기준가)',v:worst?f1(worst.ratio)+'%':'-',d:worst?worst.label:'',c:worst?((nx&&nx.barrier!=null&&worst.ratio>=nx.barrier)?'g':'r'):''},
+    {l:nx?(nx.is_maturity?'만기 평가일':`다음 평가일 (${nx.n}차)`):'다음 평가일',v:nx?nx.date:'-',d:nx?`D-${nx.days} · 배리어 ${nx.barrier}%`:'',c:''},
+    {l:'필요 상승률 (최저 종목 기준)',v:j.need_pct==null?'-':(j.need_pct===0?'충족':'+'+f1(j.need_pct)+'%'),d:j.need_pct===0?'현 수준 유지 시 상환':'',c:j.need_pct===0?'g':'o'},
+    {l:'상환 예상 시점',v:ex?`${ex.is_maturity?'만기':ex.n+'차'} ${ex.date}`:'-',d:ex?(`${ex.months}개월 · 결제일 ${exEv&&exEv.settle?exEv.settle:'-'}`+(hasC&&ex.ret!=null?` · 세전 ${f1(ex.ret,2)}%`:'')):'',c:'o'},
+    {l:'낙인까지 여유 (최저 종목 기준)',v:p.no_ki?'낙인 없음':(j.ki_room==null?'-':f1(j.ki_room)+'%p'),d:p.no_ki?'':`낙인 ${kiTxt}`+(j.knocked_in?' · 터치 이력 있음':''),c:j.knocked_in?'r':'g'},
+  ];
+  const assets=(p.assets||[]).map(a=>{
+    const isW=worst&&a.label===worst.label; const ok=a.ratio!=null&&nx&&nx.barrier!=null&&a.ratio>=nx.barrier;
+    return `<tr><td style="font-weight:700;font-size:18px">${a.label||a.name}${isW?'<span class="tag r">최저</span>':''}</td><td class="r num">${fnum(a.ref)}<div style="font-size:13px;color:var(--muted-soft)">${a.ref_date||''}</div></td><td class="r num">${fnum(a.last)}<div style="font-size:13px;color:var(--muted-soft)">${a.last_date||''}</div></td><td class="r"><span class="ratio-big" style="color:${a.ratio==null?'inherit':(ok?'var(--ok)':'var(--err)')}">${a.ratio==null?'-':f1(a.ratio)+'%'}</span></td><td class="r num">${kiTxt}</td><td class="r num">${a.min_ratio==null?'-':f1(a.min_ratio)+'%'}<div style="font-size:13px;color:var(--muted-soft)">${a.min_date||''}</div></td></tr>`;
+  }).join('');
+  const sched=(p.schedule||[]).map(e=>{
+    let cls='step'; let tag='';
+    if(e.result==='passed'){cls+=' passed'; tag='<span class="tag g">상환</span>';}
+    else if(e.result==='missed'){cls+=' missed'; tag='<span class="tag">미충족</span>';}
+    if(nx&&e.n===nx.n){cls+=' next'; tag='<span class="tag o">다음 평가</span>';}
+    else if(ex&&e.n===ex.n){cls+=' expected'; tag='<span class="tag g">상환 예상</span>';}
+    const ret=hasC?retOf(p,e):null;
+    return `<div class="${cls}">
+      <div class="date">${e.date}<small>${e.months?e.months+'개월 경과 시점':''}</small></div>
+      <div class="n">${e.is_maturity?'만기':e.n+'차'}<br>${tag}</div>
+      <div class="bar">${e.barrier!=null?e.barrier+'%':'-'}<small>배리어</small></div>
+      <div class="settle"><span>상환금 결제일</span><b>${e.settle||'-'}</b>${ret!=null?` <span class="yield" style="font-size:20px">세전 ${f1(ret,2)}%</span>`:''}</div>
+    </div>`;
+  }).join('');
+  const pays=(p.pay_dates||[]); const nextPay=pays.find(d=>d>=today);
+  const payHTML=pays.length?`<h3 class="sec">정기 지급일 <span style="font-size:15px;color:var(--muted);font-weight:400">지급 조건·금액은 신탁 계약서 기준</span></h3><div class="paylist">${pays.map(d=>`<span class="${d<today?'past':(d===nextPay?'nx':'')}">${d}</span>`).join('')}</div>`:'';
+  const flags=[...(p.notes||[]),...(p.flags||[])].map(f=>`<li>${f}</li>`).join('');
+  const meta=[`최초기준가격 결정 ${p.trade_date||'-'}`,`만기평가 ${p.mat_eval||'-'}`,p.mat_years?p.mat_years+'년':'',p.period_months?p.period_months+'개월 주기':'',`배리어 ${(p.ladder||[]).join('-')||'-'}`,`낙인 ${kiTxt}`].filter(Boolean).join(' · ');
+  return `<div class="card">
+    <div class="top"><div><div class="name"><span class="typetag">ELT</span>${p.name}</div><div class="meta">${meta}${hasC?` · 쿠폰 <span class="yield" style="font-size:20px">연 ${f1(p.coupon,2)}%</span>`:''}</div></div>
+    <span class="badge ${st[1]}">${st[0]}</span></div>
+    <div class="verdict ${vcls}">${j.message||'-'}</div>
+    <div class="kpis">${kpis.map(k=>`<div class="kpi"><div class="l">${k.l}</div><div class="v ${k.c}">${k.v}</div><div class="d">${k.d}</div></div>`).join('')}</div>
+    ${assets?`<h3 class="sec">기초자산 현황</h3><div class="tbl-wrap"><table><thead><tr><th>기초자산</th><th class="r">최초기준가</th><th class="r">전일 종가</th><th class="r">현재 비율</th><th class="r">낙인</th><th class="r">기간 최저</th></tr></thead><tbody>${assets}</tbody></table></div>`:''}
+    <h3 class="sec">평가일별 상환 조건</h3>
+    <div class="sched">${sched}</div>
+    ${payHTML}
+    ${flags?`<ul class="flags">${flags}</ul>`:''}
+  </div>`;
+}
+function renderElt(){
+  const box=$('#eltCounts'); box.innerHTML='';
+  const c=(ELT&&ELT.counts)||{}; Object.keys(STATUS).forEach(k=>{ if(!c[k])return; const d=document.createElement('span'); d.className='chip'; d.innerHTML=`<i style="background:${COLOR[k]||'#84888B'}"></i>${STATUS[k][0]} ${c[k]}`; box.appendChild(d); });
+  const rows=[...ELIST].sort((a,b)=>{ const x=(a.judgment||{}).next, y=(b.judgment||{}).next; return (x?x.date:'9999')<(y?y.date:'9999')?-1:1; });
+  const tb=$('#eltBoard tbody'), mb=$('#eltBoardm'); tb.innerHTML=''; mb.innerHTML='';
+  rows.forEach(p=>{
+    const j=p.judgment||{}; const st=STATUS[j.status]||STATUS.unknown; const nx=j.next, ex=j.expected;
+    const assets=(p.assets||[]).map(a=>a.label||a.name).join(' · ')||'-';
+    const worst=j.worst?`<b class="num">${f1(j.worst.ratio)}%</b> <span style="color:var(--muted-soft);font-size:14px">${j.worst.label}</span>`:'-';
+    const need=j.need_pct==null?'-':(j.need_pct===0?'<span style="color:var(--ok);font-weight:700">충족</span>':'+'+f1(j.need_pct)+'%');
+    const exs=ex?`${ex.is_maturity?'만기':ex.n+'차'} ${ex.date}`:'-';
+    const ki=p.no_ki?'없음':(p.ki_level!=null?p.ki_level+'%':'-');
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td style="white-space:nowrap"><span class="row-code" data-e="${p.code}">${p.code}호</span></td><td>${assets}</td><td class="r num">${worst}</td><td class="num"><b>${nx?nx.date:'-'}</b>${nx?` <span style="color:var(--muted-soft);font-size:14px">D-${nx.days}</span>`:''}</td><td class="r num">${nx&&nx.barrier!=null?nx.barrier+'%':'-'}</td><td class="r num">${need}</td><td><span class="badge ${st[1]}" style="font-size:14px;padding:4px 10px">${st[0]}</span></td><td class="num">${exs}</td><td class="r num">${ki}</td>`;
+    tb.appendChild(tr);
+    const mc=document.createElement('div'); mc.className='mcard';
+    mc.innerHTML=`<div class="l1"><span class="row-code" data-e="${p.code}">ELT ${p.code}호</span><span class="badge ${st[1]}" style="font-size:14px;padding:4px 10px">${st[0]}</span></div><div class="l2">${assets}</div><div class="l3 num">최저 ${worst} · 다음 <b>${nx?nx.date:'-'}</b>${nx?' (D-'+nx.days+', '+nx.barrier+'%)':''} · 필요 ${need}</div><div class="l3 num" style="color:var(--muted)">예상 ${exs} · 낙인 ${ki}</div>`;
+    mb.appendChild(mc);
+  });
+}
+$('#toggleElt').addEventListener('click',()=>{
+  ELT_ON=!ELT_ON; $('#eltWrap').style.display=ELT_ON?'block':'none';
+  $('#toggleElt').textContent=ELT_ON?'ELT 현황판 닫기':'ELT 전체 보기';
+  if(ELT_ON) renderElt();
+});
 function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 function boardRows(){
   let rows=LIST.filter(p=>{
@@ -393,13 +503,13 @@ function renderBoard(reset=true){
 }
 $('#toggleBoard').addEventListener('click',()=>{
   BOARD_ON=!BOARD_ON; $('#boardWrap').style.display=BOARD_ON?'block':'none';
-  $('#toggleBoard').textContent=BOARD_ON?'현황판 닫기':'전체 현황판 보기';
+  $('#toggleBoard').textContent=BOARD_ON?'ELS 현황판 닫기':'ELS 전체 보기';
   if(BOARD_ON) renderBoard(true);
 });
 $('#more').addEventListener('click',()=>renderBoard(false));
 window.addEventListener('resize',()=>{ if(BOARD_ON) renderBoard(true); });
 document.addEventListener('click',e=>{
-  const c=e.target.closest('.row-code'); if(c){ $('#q').value=c.dataset.c; search(c.dataset.c); }
+  const c=e.target.closest('.row-code'); if(c){ if(c.dataset.e){ $('#q').value=c.dataset.e; search(c.dataset.e); } else { $('#q').value=c.dataset.c; search(c.dataset.c); } }
   const f=e.target.closest('.filters .btn'); if(f){ document.querySelectorAll('.filters .btn').forEach(b=>b.classList.remove('on')); f.classList.add('on'); FILTER=f.dataset.f; renderBoard(); }
   const s=e.target.closest('th.sort'); if(s){ if(SORT===s.dataset.k){SORTDIR*=-1;} else {SORT=s.dataset.k;SORTDIR=1;} document.querySelectorAll('th.sort').forEach(x=>x.classList.remove('on')); s.classList.add('on'); renderBoard(); }
   if(!e.target.closest('.searchbox')) $('#sugg').style.display='none';
@@ -408,9 +518,11 @@ $('#go').addEventListener('click',()=>search($('#q').value));
 $('#q').addEventListener('keydown',e=>{ if(e.key==='Enter'){ search($('#q').value); $('#sugg').style.display='none'; } });
 $('#q').addEventListener('input',()=>{
   const v=$('#q').value.trim().replace(/[^0-9]/g,''); const box=$('#sugg'); box.innerHTML='';
-  if(v.length<2||!LIST.length){ box.style.display='none'; return; }
-  const hits=LIST.filter(p=>p.code.startsWith(v)).slice(0,8);
-  if(!hits.length){ box.style.display='none'; return; }
+  if(!v){ box.style.display='none'; return; }
+  const ehits=v.length<=3?ELIST.filter(p=>p.code.startsWith(v)).slice(0,6):[];
+  ehits.forEach(p=>{ const j=p.judgment||{}; const st=STATUS[j.status]||STATUS.unknown; const d=document.createElement('div'); d.innerHTML=`<span class="tag b" style="margin:0 8px 0 0">ELT</span><b class="num">${p.code}호</b> · ${(p.assets||[]).map(a=>a.label||a.name).join('·')||'정보 등록 전'} · <span style="color:${COLOR[j.status]||'#84888B'};font-weight:700">${st[0]}</span>`; d.onclick=()=>{ $('#q').value=p.code; box.style.display='none'; search(p.code); }; box.appendChild(d); });
+  const hits=(v.length>=2&&LIST.length)?LIST.filter(p=>p.code.startsWith(v)).slice(0,8):[];
+  if(!hits.length&&!ehits.length){ box.style.display='none'; return; }
   hits.forEach(p=>{ const d=document.createElement('div'); const st=STATUS[p.s]||STATUS.unknown; d.innerHTML=`<b class="num">${p.code}</b> · ${(p.a||[]).join('·')} · <span style="color:${COLOR[p.s]||'#84888B'};font-weight:700">${st[0]}</span>`; d.onclick=()=>{ $('#q').value=p.code; box.style.display='none'; search(p.code); }; box.appendChild(d); });
   box.style.display='block';
 });

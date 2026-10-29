@@ -1,4 +1,4 @@
-# MIRAE-ELS-CHECK
+# MIRAE-ELS-CHECK (ELS/ELT)
 
 미래에셋증권 공모 ELS 조기상환 조회 사이트. 회차번호를 입력하면 전일 종가 기준으로
 조기상환 가능 여부·예상 상환 차수·수익률·낙인 여부를 보여줍니다.
@@ -11,6 +11,8 @@
 - `data/scan_state.json` — ISIN scan cursor (auto-generated)
 - `data/seed_isins.txt` — seed ISINs for discovery (editable)
 - `data/status.json` — last run log
+- `scripts/elt.py` — Premier ELT judgment (reads `data/elt_master.json`, writes `data/elt.json`)
+- `data/elt_master.json` — ELT terms (base prices, evals, barriers, KI, pay dates) from in-house issue sheet
 - `.github/workflows/update.yml` — schedule: weekdays 07:35 KST
 
 ## First run
