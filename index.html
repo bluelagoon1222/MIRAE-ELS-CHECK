@@ -137,6 +137,13 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
 .step .settle span{display:block;font-size:14px;color:var(--muted)}
 .step.elt{grid-template-columns:210px 100px 140px 1fr 1fr}
 .step .settle b.yield{color:var(--orange)}
+#eltBoard{font-size:16px}
+#eltBoard th{padding:10px 8px;white-space:nowrap;font-size:15px}
+#eltBoard td{padding:9px 8px;white-space:nowrap}
+#eltBoard td.as{font-size:14px;line-height:1.35}
+#eltBoard .sub{font-size:13px;color:var(--muted-soft);font-weight:400;line-height:1.3}
+#eltBoard .badge{font-size:14px;padding:4px 8px}
+#eltBoard .row-code{font-size:17px}
 .step.missed .settle b.yield{color:var(--muted-soft)}
 .paylist{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .paylist span{font-family:var(--num);font-size:16px;padding:6px 12px;border:1px solid var(--hair);border-radius:4px;background:#fff}
@@ -247,7 +254,7 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
     <h2 style="margin-top:20px">ELT 현황판 <span style="font-size:15px;color:var(--muted);font-weight:400">Premier ELT · 평가일 임박순</span></h2>
     <div class="counts" id="eltCounts"></div>
     <div class="tbl-wrap desk"><table id="eltBoard"><thead><tr>
-      <th>회차</th><th>기초자산</th><th class="r">최저 비율</th><th>다음 평가일</th><th class="r">배리어</th><th class="r">필요 상승</th><th>판정</th><th>상환 예상</th><th class="r">낙인</th><th class="r">쿠폰(연)</th>
+      <th>회차</th><th>기초자산</th><th class="r">최저 비율</th><th>다음 평가일 · 배리어</th><th class="r">필요 상승</th><th>판정</th><th>상환 예상</th><th class="r">낙인</th><th class="r">쿠폰(연)</th>
     </tr></thead><tbody></tbody></table></div>
     <div class="mob" id="eltBoardm"></div>
   </div>
@@ -447,12 +454,15 @@ function renderElt(){
   rows.forEach(p=>{
     const j=p.judgment||{}; const st=STATUS[j.status]||STATUS.unknown; const nx=j.next, ex=j.expected;
     const assets=(p.assets||[]).map(a=>a.label||a.name).join(' · ')||'-';
+    const assetsBr=(p.assets||[]).map(a=>a.label||a.name).join('<br>')||'-';
     const worst=j.worst?`<b class="num">${f1(j.worst.ratio)}%</b> <span style="color:var(--muted-soft);font-size:14px">${j.worst.label}</span>`:'-';
+    const worstBr=j.worst?`<b class="num">${f1(j.worst.ratio)}%</b><div class="sub">${j.worst.label}</div>`:'-';
     const need=j.need_pct==null?'-':(j.need_pct===0?'<span style="color:var(--ok);font-weight:700">충족</span>':'+'+f1(j.need_pct)+'%');
     const exs=ex?`${ex.is_maturity?'만기':ex.n+'차'} ${ex.date}`:'-';
     const ki=p.no_ki?'없음':(p.ki_level!=null?p.ki_level+'%':'-');
     const tr=document.createElement('tr');
-    tr.innerHTML=`<td style="white-space:nowrap"><span class="row-code" data-e="${p.code}">${p.code}호</span></td><td>${assets}</td><td class="r num">${worst}</td><td class="num"><b>${nx?nx.date:'-'}</b>${nx?` <span style="color:var(--muted-soft);font-size:14px">D-${nx.days}</span>`:''}</td><td class="r num">${nx&&nx.barrier!=null?nx.barrier+'%':'-'}</td><td class="r num">${need}</td><td><span class="badge ${st[1]}" style="font-size:14px;padding:4px 10px">${st[0]}</span></td><td class="num">${exs}</td><td class="r num">${ki}</td><td class="r"><span class="yield">${p.coupon!=null?f1(p.coupon,2)+'%':'-'}</span></td>`;
+    const exsBr=ex?`${ex.is_maturity?'만기':ex.n+'차'}<div class="sub">${ex.date}</div>`:'-';
+    tr.innerHTML=`<td><span class="row-code" data-e="${p.code}">${p.code}호</span></td><td class="as">${assetsBr}</td><td class="r num">${worstBr}</td><td class="num"><b>${nx?nx.date:'-'}</b>${nx?`<div class="sub">D-${nx.days} · 배리어 ${nx.barrier}%</div>`:''}</td><td class="r num">${need}</td><td><span class="badge ${st[1]}">${st[0]}</span></td><td class="num">${exsBr}</td><td class="r num">${ki}</td><td class="r"><span class="yield">${p.coupon!=null?f1(p.coupon,2)+'%':'-'}</span></td>`;
     tb.appendChild(tr);
     const mc=document.createElement('div'); mc.className='mcard';
     mc.innerHTML=`<div class="l1"><span class="row-code" data-e="${p.code}">ELT ${p.code}호</span><span class="badge ${st[1]}" style="font-size:14px;padding:4px 10px">${st[0]}</span></div><div class="l2">${assets}</div><div class="l3 num">최저 ${worst} · 다음 <b>${nx?nx.date:'-'}</b>${nx?' (D-'+nx.days+', '+nx.barrier+'%)':''} · 필요 ${need}</div><div class="l3 num" style="color:var(--muted)">예상 ${exs} · 낙인 ${ki} · 연 <span class="yield">${p.coupon!=null?f1(p.coupon,2)+'%':'-'}</span></div>`;
