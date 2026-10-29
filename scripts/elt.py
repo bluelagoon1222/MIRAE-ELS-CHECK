@@ -70,7 +70,7 @@ def run(judge, build_schedule, data_dir, log, today, generated=None):
             if p["assets"] and not m.get("evals"):
                 out = {"isin": p["isin"], "code": p["code"], "type": "ELT", "name": p["name"], "coupon": p["coupon"],
                        "ladder": m.get("ladder_only"), "issue_date": None, "mat_eval": None,
-                       "assets": [{"name": a, "label": a} for a in p["assets"]], "schedule": [], "flags": []}
+                       "assets": [{"name": a, "label": {"NIKKEI225": "Nikkei225", "EUROSTOXX50": "EuroStoxx50"}.get(a, a)} for a in p["assets"]], "schedule": [], "flags": []}
                 out["judgment"] = {"status": "noschedule", "worst": None, "next": None, "expected": None,
                                    "knocked_in": None, "redeemed": None, "need_pct": None, "ki_room": None,
                                    "message": "평가일·최초기준가격 정보 등록 전입니다. 등록 후 자동 판정됩니다."}
