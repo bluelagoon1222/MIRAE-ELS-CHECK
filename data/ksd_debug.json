@@ -1,14 +1,1 @@
-{
- "getErlyRedELSInfo": {
-  "sample_isin": "KR6MD0006Z49",
-  "items": [
-   {
-    "repSecnNm": "미래에셋증권",
-    "korSecnNm": "미래에셋증권36174(ELS)",
-    "secnTpcd": "ELS",
-    "redDt": "20251030"
-   }
-  ],
-  "count": 1
- }
-}
+{}
