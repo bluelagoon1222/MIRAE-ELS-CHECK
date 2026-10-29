@@ -4690,5 +4690,209 @@
   "kind": "상환",
   "name": "미래에셋증권37876(ELS)",
   "source": "ksd"
+ },
+ "KR6MD0007MD1": {
+  "date": "2026-05-04",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36527",
+  "source": "ksd"
+ },
+ "KR6MD0007MC3": {
+  "date": "2026-05-04",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36526",
+  "source": "ksd"
+ },
+ "KR6MD0007MB5": {
+  "date": "2026-05-04",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36525",
+  "source": "ksd"
+ },
+ "KR6MD0007MA7": {
+  "date": "2026-05-04",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36524",
+  "source": "ksd"
+ },
+ "KR6MD0005Y58": {
+  "date": "2025-11-03",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)34466",
+  "source": "ksd"
+ },
+ "KR6MD0005Y41": {
+  "date": "2025-11-03",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)34465",
+  "source": "ksd"
+ },
+ "KR6MD0007K29": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37198",
+  "source": "ksd"
+ },
+ "KR6MD0007JL0": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37189",
+  "source": "ksd"
+ },
+ "KR6MD0007JK2": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37188",
+  "source": "ksd"
+ },
+ "KR6MD0007JJ4": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37187",
+  "source": "ksd"
+ },
+ "KR6MD0007JH8": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37186",
+  "source": "ksd"
+ },
+ "KR6MD0007JG0": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37185",
+  "source": "ksd"
+ },
+ "KR6MD0007JF2": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37184",
+  "source": "ksd"
+ },
+ "KR6MD0007JE5": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37183",
+  "source": "ksd"
+ },
+ "KR6MD0007JD7": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37182",
+  "source": "ksd"
+ },
+ "KR6MD0007JC9": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37181",
+  "source": "ksd"
+ },
+ "KR6MD0007JB1": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37180",
+  "source": "ksd"
+ },
+ "KR6MD0007JA3": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37179",
+  "source": "ksd"
+ },
+ "KR6MD0007J97": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37178",
+  "source": "ksd"
+ },
+ "KR6MD0007J89": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37177",
+  "source": "ksd"
+ },
+ "KR6MD0007J71": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37176",
+  "source": "ksd"
+ },
+ "KR6MD0007J63": {
+  "date": "2026-04-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37175",
+  "source": "ksd"
+ },
+ "KR6MD0006ZB9": {
+  "date": "2025-10-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36181",
+  "source": "ksd"
+ },
+ "KR6MD0006ZA1": {
+  "date": "2025-10-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36180",
+  "source": "ksd"
+ },
+ "KR6MD0006Z98": {
+  "date": "2025-10-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36179",
+  "source": "ksd"
+ },
+ "KR6MD0006Z80": {
+  "date": "2025-10-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36178",
+  "source": "ksd"
+ },
+ "KR6MD0006Z72": {
+  "date": "2025-10-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36177",
+  "source": "ksd"
+ },
+ "KR6MD0006Z64": {
+  "date": "2025-10-30",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36176",
+  "source": "ksd"
+ },
+ "KR6MD0006Z56": {
+  "date": "2025-10-31",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36175",
+  "source": "ksd"
+ },
+ "KR6MD0008L43": {
+  "date": "2026-10-02",
+  "kind": "상환",
+  "name": "미래에셋증권37875(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008L01": {
+  "date": "2026-10-02",
+  "kind": "상환",
+  "name": "미래에셋증권37871(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008KW3": {
+  "date": "2026-10-02",
+  "kind": "상환",
+  "name": "미래에셋증권37867(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008KS1": {
+  "date": "2026-10-02",
+  "kind": "상환",
+  "name": "미래에셋증권37864(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0008KR3": {
+  "date": "2026-10-02",
+  "kind": "상환",
+  "name": "미래에셋증권37863(ELS)",
+  "source": "ksd"
  }
 }
