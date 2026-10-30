@@ -1,283 +1,394 @@
 {
- "generated": "2026-10-29 14:27",
- "elapsed_sec": 164.9,
- "cached_products": 2176,
- "excluded": 2520,
- "redeemed_list": 837,
+ "generated": "2026-10-30 11:11",
+ "elapsed_sec": 369.7,
+ "cached_products": 2160,
+ "excluded": 2536,
+ "redeemed_list": 850,
  "redeemed_source_ok": false,
- "hidden_estimated": 1435,
- "active": 741,
+ "hidden_estimated": 1423,
+ "active": 737,
  "probes": 150,
  "new": 0,
  "counts": {
-  "nodata": 51,
+  "nodata": 53,
   "ki": 11,
-  "risk": 33,
-  "redeemed_confirmed": 32,
-  "redeemed": 149,
-  "defer": 78,
-  "pass": 379,
-  "noschedule": 5,
+  "risk": 41,
+  "redeemed_confirmed": 31,
+  "redeemed": 151,
+  "defer": 60,
+  "pass": 386,
+  "noschedule": 1,
   "matured": 3
  },
  "nodata_reasons": {
-  "CSI300": 51
+  "CSI300": 53
  },
  "prices": {
+  "^N225": {
+   "rows": 1708,
+   "first": "2019-10-30",
+   "last": "2026-10-29"
+  },
   "^STOXX50E": {
    "rows": 1761,
-   "first": "2019-10-28",
-   "last": "2026-10-28"
-  },
-  "^HSCE": {
-   "rows": 1723,
    "first": "2019-10-29",
    "last": "2026-10-29"
   },
   "^GSPC": {
    "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
+   "first": "2019-10-30",
+   "last": "2026-10-29"
   },
   "^KS200": {
    "rows": 1999,
-   "first": "2018-08-31",
-   "last": "2026-10-28"
-  },
-  "NVDA": {
-   "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
-  },
-  "TSLA": {
-   "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
-  },
-  "NFLX": {
-   "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
-  },
-  "INTC": {
-   "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
-  },
-  "AMZN": {
-   "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
-  },
-  "AMD": {
-   "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
-  },
-  "GOOGL": {
-   "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
-  },
-  "MSFT": {
-   "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
+   "first": "2018-09-03",
+   "last": "2026-10-29"
   },
   "000300.SS": {
    "rows": 1,
-   "first": "2026-10-29",
+   "first": "2026-10-30",
+   "last": "2026-10-30"
+  },
+  "^HSCE": {
+   "rows": 1723,
+   "first": "2019-10-30",
+   "last": "2026-10-30"
+  },
+  "NVDA": {
+   "rows": 1759,
+   "first": "2019-10-30",
    "last": "2026-10-29"
   },
-  "^N225": {
-   "rows": 1708,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
+  "TSLA": {
+   "rows": 1759,
+   "first": "2019-10-30",
+   "last": "2026-10-29"
+  },
+  "NFLX": {
+   "rows": 1759,
+   "first": "2019-10-30",
+   "last": "2026-10-29"
+  },
+  "INTC": {
+   "rows": 1759,
+   "first": "2019-10-30",
+   "last": "2026-10-29"
+  },
+  "AMZN": {
+   "rows": 1759,
+   "first": "2019-10-30",
+   "last": "2026-10-29"
+  },
+  "AMD": {
+   "rows": 1759,
+   "first": "2019-10-30",
+   "last": "2026-10-29"
+  },
+  "GOOGL": {
+   "rows": 1759,
+   "first": "2019-10-30",
+   "last": "2026-10-29"
+  },
+  "MSFT": {
+   "rows": 1759,
+   "first": "2019-10-30",
+   "last": "2026-10-29"
   },
   "051910.KS": {
    "rows": 1999,
-   "first": "2018-08-31",
-   "last": "2026-10-28"
+   "first": "2018-09-03",
+   "last": "2026-10-29"
   },
   "035420.KS": {
    "rows": 1999,
-   "first": "2018-08-31",
-   "last": "2026-10-28"
+   "first": "2018-09-03",
+   "last": "2026-10-29"
   },
   "005490.KS": {
    "rows": 1999,
-   "first": "2018-08-31",
-   "last": "2026-10-28"
+   "first": "2018-09-03",
+   "last": "2026-10-29"
   },
   "AAPL": {
    "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
+   "first": "2019-10-30",
+   "last": "2026-10-29"
   },
   "005930.KS": {
    "rows": 1999,
-   "first": "2018-08-31",
-   "last": "2026-10-28"
+   "first": "2018-09-03",
+   "last": "2026-10-29"
   },
   "SBUX": {
    "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
+   "first": "2019-10-30",
+   "last": "2026-10-29"
   },
   "META": {
    "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
+   "first": "2019-10-30",
+   "last": "2026-10-29"
   },
   "066570.KS": {
    "rows": 1999,
-   "first": "2018-08-31",
-   "last": "2026-10-28"
+   "first": "2018-09-03",
+   "last": "2026-10-29"
   },
   "096770.KS": {
    "rows": 1999,
-   "first": "2018-08-31",
-   "last": "2026-10-28"
+   "first": "2018-09-03",
+   "last": "2026-10-29"
   },
   "PYPL": {
    "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
+   "first": "2019-10-30",
+   "last": "2026-10-29"
   },
   "000660.KS": {
    "rows": 1999,
-   "first": "2018-08-31",
-   "last": "2026-10-28"
+   "first": "2018-09-03",
+   "last": "2026-10-29"
   },
   "005380.KS": {
    "rows": 1999,
-   "first": "2018-08-31",
-   "last": "2026-10-28"
+   "first": "2018-09-03",
+   "last": "2026-10-29"
   },
   "QCOM": {
    "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
+   "first": "2019-10-30",
+   "last": "2026-10-29"
   },
   "AVGO": {
    "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
+   "first": "2019-10-30",
+   "last": "2026-10-29"
   },
   "PLTR": {
-   "rows": 1527,
+   "rows": 1528,
    "first": "2020-09-30",
-   "last": "2026-10-28"
+   "last": "2026-10-29"
   },
   "LLY": {
    "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
+   "first": "2019-10-30",
+   "last": "2026-10-29"
   },
   "MU": {
    "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
+   "first": "2019-10-30",
+   "last": "2026-10-29"
   },
   "AMAT": {
    "rows": 1759,
-   "first": "2019-10-29",
-   "last": "2026-10-28"
+   "first": "2019-10-30",
+   "last": "2026-10-29"
   }
  },
  "parse_missing": {
   "ladder": 0,
-  "ref_or_issue_date": 5,
+  "ref_or_issue_date": 1,
   "evals": 0
  },
  "redeemed_debug": [
-  "[14:24:46] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[14:24:48] [redeemed] page1 rows=0 html_len=545",
-  "[14:24:50] [redeemed] GET variant rows=0",
-  "[14:24:50] [redeemed] total redeemed entries found=0 ok=False"
+  "[11:05:34] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
+  "[11:05:37] [redeemed] page1 rows=0 html_len=545",
+  "[11:05:39] [redeemed] GET variant rows=0",
+  "[11:05:39] [redeemed] total redeemed entries found=0 ok=False"
  ],
  "ksd": {
   "enabled": true,
-  "red_checked": 0,
-  "red_found": 0,
-  "cond_tried": 0,
-  "cond_filled": 0,
-  "cond_remaining": 1736,
+  "red_checked": 10,
+  "red_found": 7,
+  "cond_tried": 95,
+  "cond_filled": 39,
+  "cond_remaining": 1641,
   "usage": {
-   "date": "2026-10-29",
+   "date": "2026-10-30",
    "ops": {
-    "getErlyRedELSInfo": 56,
+    "getErlyRedELSInfo": 10,
     "getAssetXrcInfoN1": 95,
-    "getRedCondiInfoN1": 64,
-    "getDerivCombiIsinInfoN1": 63,
-    "getAssetInfoN1": 9
+    "getDerivCombiIsinInfoN1": 40,
+    "getRedCondiInfoN1": 41,
+    "getAssetInfoN1": 6
    }
   },
-  "endpoint": null
+  "endpoint": "https://apis.data.go.kr/B552481/DerivesSvc"
  },
  "elt": {
   "enabled": true,
   "products": 27,
   "counts": {
-   "defer": 4,
-   "pass": 17,
+   "defer": 5,
+   "pass": 16,
    "risk": 3,
-   "pending": 2,
+   "nodata": 2,
    "noschedule": 1
   }
  },
- "ksd_log": [],
- "price_debug": [
-  "[14:27:14] yahoo ^KS200: 1 rows 2026-10-29..2026-10-29",
-  "[14:27:15] fchart ok KPI200: 2000 rows, last 2026-10-29",
-  "[14:27:17] yahoo 051910.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:18] fchart ok 051910: 2000 rows, last 2026-10-29",
-  "[14:27:18] yahoo 035420.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:19] fchart ok 035420: 2000 rows, last 2026-10-29",
-  "[14:27:19] yahoo 005490.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:20] fchart ok 005490: 2000 rows, last 2026-10-29",
-  "[14:27:20] yahoo 005930.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:21] fchart ok 005930: 2000 rows, last 2026-10-29",
-  "[14:27:22] yahoo 066570.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:22] fchart ok 066570: 2000 rows, last 2026-10-29",
-  "[14:27:22] yahoo 096770.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:23] fchart ok 096770: 2000 rows, last 2026-10-29",
-  "[14:27:24] yahoo 000660.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:25] fchart ok 000660: 2000 rows, last 2026-10-29",
-  "[14:27:25] yahoo 005380.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:26] fchart ok 005380: 2000 rows, last 2026-10-29"
+ "ksd_log": [
+  "[11:10:50] [ksd] getAssetXrcInfoN1 KR6MD0008GN0 resultCode=3 NODATA_ERROR",
+  "[11:10:50] [ksd] getDerivCombiIsinInfoN1 KR6MD0008GM2 resultCode=3 NODATA_ERROR",
+  "[11:10:55] [ksd] getDerivCombiIsinInfoN1 KR6MD0008GL4 resultCode=3 NODATA_ERROR",
+  "[11:10:57] [ksd] getDerivCombiIsinInfoN1 KR6MD0008GK6 resultCode=3 NODATA_ERROR",
+  "[11:11:00] [ksd] getDerivCombiIsinInfoN1 KR6MD0008GJ8 resultCode=3 NODATA_ERROR",
+  "[11:11:03] [ksd] getAssetXrcInfoN1 KR6MD0008GB5 resultCode=3 NODATA_ERROR",
+  "[11:11:05] [ksd] getAssetXrcInfoN1 KR6MD0008GA7 resultCode=3 NODATA_ERROR",
+  "[11:11:07] [ksd] getAssetXrcInfoN1 KR6MD0008G99 resultCode=3 NODATA_ERROR",
+  "[11:11:09] [ksd] getAssetXrcInfoN1 KR6MD0008G81 resultCode=3 NODATA_ERROR",
+  "[11:11:11] [ksd] getAssetXrcInfoN1 KR6MD0008G73 resultCode=3 NODATA_ERROR",
+  "[11:11:13] [ksd] getAssetXrcInfoN1 KR6MD0008G65 resultCode=3 NODATA_ERROR",
+  "[11:11:15] [ksd] getAssetXrcInfoN1 KR6MD0008G57 resultCode=3 NODATA_ERROR",
+  "[11:11:17] [ksd] getAssetXrcInfoN1 KR6MD0008G40 resultCode=3 NODATA_ERROR",
+  "[11:11:19] [ksd] getAssetXrcInfoN1 KR6MD0008G32 resultCode=3 NODATA_ERROR",
+  "[11:11:19] [ksd] getDerivCombiIsinInfoN1 KR6MD0008G24 resultCode=3 NODATA_ERROR",
+  "[11:11:20] [ksd] getRedCondiInfoN1 KR6MD0008G24 resultCode=3 NODATA_ERROR",
+  "[11:11:21] [ksd] getAssetXrcInfoN1 KR6MD0008G24 resultCode=3 NODATA_ERROR",
+  "[11:11:23] [ksd] getAssetXrcInfoN1 KR6MD0008G16 resultCode=3 NODATA_ERROR",
+  "[11:11:24] [ksd] getAssetXrcInfoN1 KR6MD0008G08 resultCode=3 NODATA_ERROR",
+  "[11:11:26] [ksd] getAssetXrcInfoN1 KR6MD0008FZ6 resultCode=3 NODATA_ERROR"
  ],
- "scan_cursor": 20725,
+ "price_debug": [
+  "[11:10:52] yahoo ^KS200: 1 rows 2026-10-30..2026-10-30",
+  "[11:10:54] fchart ok KPI200: 2000 rows, last 2026-10-30",
+  "[11:11:28] yahoo 051910.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:29] fchart ok 051910: 2000 rows, last 2026-10-30",
+  "[11:11:30] yahoo 035420.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:31] fchart ok 035420: 2000 rows, last 2026-10-30",
+  "[11:11:31] yahoo 005490.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:32] fchart ok 005490: 2000 rows, last 2026-10-30",
+  "[11:11:32] yahoo 005930.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:34] fchart ok 005930: 2000 rows, last 2026-10-30",
+  "[11:11:34] yahoo 066570.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:35] fchart ok 066570: 2000 rows, last 2026-10-30",
+  "[11:11:36] yahoo 096770.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:37] fchart ok 096770: 2000 rows, last 2026-10-30",
+  "[11:11:37] yahoo 000660.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:38] fchart ok 000660: 2000 rows, last 2026-10-30",
+  "[11:11:38] yahoo 005380.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:39] fchart ok 005380: 2000 rows, last 2026-10-30"
+ ],
+ "scan_cursor": 20875,
  "log": [
-  "[14:24:44] start: cached products=2176 excluded=2520 FULL_SCAN=False MAX_PROBES=260",
-  "[14:24:46] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[14:24:48] [redeemed] page1 rows=0 html_len=545",
-  "[14:24:50] [redeemed] GET variant rows=0",
-  "[14:24:50] [redeemed] total redeemed entries found=0 ok=False",
-  "[14:24:57] list endpoint candidates: ['/hks/hks4000/n02_1.do', '/hks/hks4000/n06.do', '/hks/hks4023/n01_1.do', '/hks/hks4023/p07.do', '/hks/hks4048/r05.do', '/hks/hks4049/v03_11.do', '/hks/hks4049/v03_21.do', '/hks/hks4049/v03_22.do', '/hks/hks4049/v03_32.do', '/hks/hks4049/v05_02.do', '/hks/hks4054/v03.do']",
-  "[14:26:11] recent scan: rate=4.56/day est_now=11831 max_known=11672",
-  "[14:27:13] discovery: probes=150 new=0 total_products=2176 cursor=20725",
-  "[14:27:13] ksd redemption check: candidates=0 checked=0 redeemed=0",
-  "[14:27:13] ksd condition fill: need=1736 tried=0 filled=0",
-  "[14:27:13] active products: 2176 (redeemed list entries=837, source ok=False)",
-  "[14:27:14] yahoo ^KS200: 1 rows 2026-10-29..2026-10-29",
-  "[14:27:15] fchart ok KPI200: 2000 rows, last 2026-10-29",
-  "[14:27:17] yahoo 051910.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:18] fchart ok 051910: 2000 rows, last 2026-10-29",
-  "[14:27:18] yahoo 035420.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:19] fchart ok 035420: 2000 rows, last 2026-10-29",
-  "[14:27:19] yahoo 005490.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:20] fchart ok 005490: 2000 rows, last 2026-10-29",
-  "[14:27:20] yahoo 005930.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:21] fchart ok 005930: 2000 rows, last 2026-10-29",
-  "[14:27:22] yahoo 066570.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:22] fchart ok 066570: 2000 rows, last 2026-10-29",
-  "[14:27:22] yahoo 096770.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:23] fchart ok 096770: 2000 rows, last 2026-10-29",
-  "[14:27:24] yahoo 000660.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:25] fchart ok 000660: 2000 rows, last 2026-10-29",
-  "[14:27:25] yahoo 005380.KS: 1715 rows 2019-10-29..2026-10-29",
-  "[14:27:26] fchart ok 005380: 2000 rows, last 2026-10-29",
-  "[14:27:28] elt: 27 products, counts={'defer': 4, 'pass': 17, 'risk': 3, 'pending': 2, 'noschedule': 1}"
+  "[11:08:49] [ksd] getAssetXrcInfoN1 KR6MD0008L35 resultCode=3 NODATA_ERROR",
+  "[11:08:50] [ksd] getAssetXrcInfoN1 KR6MD0008L27 resultCode=3 NODATA_ERROR",
+  "[11:08:51] [ksd] getAssetXrcInfoN1 KR6MD0008L19 resultCode=3 NODATA_ERROR",
+  "[11:08:52] [ksd] getAssetXrcInfoN1 KR6MD0008L01 resultCode=3 NODATA_ERROR",
+  "[11:08:53] [ksd] getAssetXrcInfoN1 KR6MD0008KZ6 resultCode=3 NODATA_ERROR",
+  "[11:08:54] [ksd] getAssetXrcInfoN1 KR6MD0008KY9 resultCode=3 NODATA_ERROR",
+  "[11:08:55] [ksd] getAssetXrcInfoN1 KR6MD0008KX1 resultCode=3 NODATA_ERROR",
+  "[11:08:56] [ksd] getAssetXrcInfoN1 KR6MD0008KW3 resultCode=3 NODATA_ERROR",
+  "[11:08:56] [ksd] getAssetXrcInfoN1 KR6MD0008KV5 resultCode=3 NODATA_ERROR",
+  "[11:08:57] [ksd] getAssetXrcInfoN1 KR6MD0008KT9 resultCode=3 NODATA_ERROR",
+  "[11:08:58] [ksd] getAssetXrcInfoN1 KR6MD0008KS1 resultCode=3 NODATA_ERROR",
+  "[11:08:59] [ksd] getAssetXrcInfoN1 KR6MD0008KR3 resultCode=3 NODATA_ERROR",
+  "[11:09:00] [ksd] getAssetXrcInfoN1 KR6MD0008KQ5 resultCode=3 NODATA_ERROR",
+  "[11:09:01] [ksd] getAssetXrcInfoN1 KR6MD0008KP7 resultCode=3 NODATA_ERROR",
+  "[11:09:02] [ksd] getAssetXrcInfoN1 KR6MD0008KA9 resultCode=3 NODATA_ERROR",
+  "[11:09:02] [ksd] getAssetXrcInfoN1 KR6MD0008K93 resultCode=3 NODATA_ERROR",
+  "[11:09:03] [ksd] getAssetXrcInfoN1 KR6MD0008K85 resultCode=3 NODATA_ERROR",
+  "[11:09:04] [ksd] getAssetXrcInfoN1 KR6MD0008K77 resultCode=3 NODATA_ERROR",
+  "[11:09:05] [ksd] getAssetXrcInfoN1 KR6MD0008K69 resultCode=3 NODATA_ERROR",
+  "[11:09:06] [ksd] getAssetXrcInfoN1 KR6MD0008K51 resultCode=3 NODATA_ERROR",
+  "[11:09:07] [ksd] getAssetXrcInfoN1 KR6MD0008K44 resultCode=3 NODATA_ERROR",
+  "[11:09:08] [ksd] getAssetXrcInfoN1 KR6MD0008K36 resultCode=3 NODATA_ERROR",
+  "[11:09:09] [ksd] getAssetXrcInfoN1 KR6MD0008K28 resultCode=3 NODATA_ERROR",
+  "[11:09:09] [ksd] getAssetXrcInfoN1 KR6MD0008K10 resultCode=3 NODATA_ERROR",
+  "[11:09:10] [ksd] getAssetXrcInfoN1 KR6MD0008K02 resultCode=3 NODATA_ERROR",
+  "[11:09:11] [ksd] getAssetXrcInfoN1 KR6MD0008JZ8 resultCode=3 NODATA_ERROR",
+  "[11:09:12] [ksd] getAssetXrcInfoN1 KR6MD0008JY1 resultCode=3 NODATA_ERROR",
+  "[11:09:13] [ksd] getAssetXrcInfoN1 KR6MD0008JX3 resultCode=3 NODATA_ERROR",
+  "[11:09:13] [ksd] getAssetXrcInfoN1 KR6MD0008JW5 resultCode=3 NODATA_ERROR",
+  "[11:09:14] [ksd] getAssetXrcInfoN1 KR6MD0008JV7 resultCode=3 NODATA_ERROR",
+  "[11:09:15] [ksd] getAssetXrcInfoN1 KR6MD0008JT1 resultCode=3 NODATA_ERROR",
+  "[11:09:16] [ksd] getAssetXrcInfoN1 KR6MD0008JS3 resultCode=3 NODATA_ERROR",
+  "[11:09:16] [ksd] getAssetXrcInfoN1 KR6MD0008JR5 resultCode=3 NODATA_ERROR",
+  "[11:09:17] [ksd] getAssetXrcInfoN1 KR6MD0008J62 resultCode=3 NODATA_ERROR",
+  "[11:09:18] [ksd] getAssetXrcInfoN1 KR6MD0008J47 resultCode=3 NODATA_ERROR",
+  "[11:09:19] [ksd] getAssetXrcInfoN1 KR6MD0008J39 resultCode=3 NODATA_ERROR",
+  "[11:09:19] [ksd] getAssetXrcInfoN1 KR6MD0008J21 resultCode=3 NODATA_ERROR",
+  "[11:09:20] [ksd] getAssetXrcInfoN1 KR6MD0008J13 resultCode=3 NODATA_ERROR",
+  "[11:09:21] [ksd] getAssetXrcInfoN1 KR6MD0008J05 resultCode=3 NODATA_ERROR",
+  "[11:09:22] [ksd] getAssetXrcInfoN1 KR6MD0008HZ2 resultCode=3 NODATA_ERROR",
+  "[11:09:22] [ksd] getAssetXrcInfoN1 KR6MD0008HY5 resultCode=3 NODATA_ERROR",
+  "[11:09:23] [ksd] getAssetXrcInfoN1 KR6MD0008HX7 resultCode=3 NODATA_ERROR",
+  "[11:09:24] [ksd] getAssetXrcInfoN1 KR6MD0008HW9 resultCode=3 NODATA_ERROR",
+  "[11:09:25] [ksd] getAssetXrcInfoN1 KR6MD0008HV1 resultCode=3 NODATA_ERROR",
+  "[11:09:25] [ksd] getAssetXrcInfoN1 KR6MD0008HT5 resultCode=3 NODATA_ERROR",
+  "[11:09:26] [ksd] getAssetXrcInfoN1 KR6MD0008HS7 resultCode=3 NODATA_ERROR",
+  "[11:09:27] [ksd] getAssetXrcInfoN1 KR6MD0008HR9 resultCode=3 NODATA_ERROR",
+  "[11:09:28] [ksd] getAssetXrcInfoN1 KR6MD0008HQ1 resultCode=3 NODATA_ERROR",
+  "[11:09:28] [ksd] getAssetXrcInfoN1 KR6MD0008HP3 resultCode=3 NODATA_ERROR",
+  "[11:09:29] [ksd] getAssetXrcInfoN1 KR6MD0008HN8 resultCode=3 NODATA_ERROR",
+  "[11:09:30] [ksd] getAssetXrcInfoN1 KR6MD0008HM0 resultCode=3 NODATA_ERROR",
+  "[11:09:31] [ksd] getAssetXrcInfoN1 KR6MD0008HL2 resultCode=3 NODATA_ERROR",
+  "[11:09:32] [ksd] getAssetXrcInfoN1 KR6MD0008HK4 resultCode=3 NODATA_ERROR",
+  "[11:10:08] [ksd] getDerivCombiIsinInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:10:09] [ksd] getAssetXrcInfoN1 KR6MD0008HB3 resultCode=3 NODATA_ERROR",
+  "[11:10:10] [ksd] getDerivCombiIsinInfoN1 KR6MD0008HA5 resultCode=3 NODATA_ERROR",
+  "[11:10:11] [ksd] getAssetXrcInfoN1 KR6MD0008HA5 resultCode=3 NODATA_ERROR",
+  "[11:10:12] [ksd] getDerivCombiIsinInfoN1 KR6MD0008H98 resultCode=3 NODATA_ERROR",
+  "[11:10:13] [ksd] getAssetXrcInfoN1 KR6MD0008H98 resultCode=3 NODATA_ERROR",
+  "[11:10:15] [ksd] getAssetXrcInfoN1 KR6MD0008H72 resultCode=3 NODATA_ERROR",
+  "[11:10:17] [ksd] getAssetXrcInfoN1 KR6MD0008H64 resultCode=3 NODATA_ERROR",
+  "[11:10:19] [ksd] getAssetXrcInfoN1 KR6MD0008H56 resultCode=3 NODATA_ERROR",
+  "[11:10:20] [ksd] getDerivCombiIsinInfoN1 KR6MD0008H49 resultCode=3 NODATA_ERROR",
+  "[11:10:21] [ksd] getRedCondiInfoN1 KR6MD0008H49 resultCode=3 NODATA_ERROR",
+  "[11:10:21] [ksd] getAssetXrcInfoN1 KR6MD0008H49 resultCode=3 NODATA_ERROR",
+  "[11:10:23] [ksd] getAssetXrcInfoN1 KR6MD0008H31 resultCode=3 NODATA_ERROR",
+  "[11:10:25] [ksd] getAssetXrcInfoN1 KR6MD0008H23 resultCode=3 NODATA_ERROR",
+  "[11:10:27] [ksd] getAssetXrcInfoN1 KR6MD0008H15 resultCode=3 NODATA_ERROR",
+  "[11:10:29] [ksd] getAssetXrcInfoN1 KR6MD0008H07 resultCode=3 NODATA_ERROR",
+  "[11:10:31] [ksd] getAssetXrcInfoN1 KR6MD0008GZ4 resultCode=3 NODATA_ERROR",
+  "[11:10:33] [ksd] getAssetXrcInfoN1 KR6MD0008GY7 resultCode=3 NODATA_ERROR",
+  "[11:10:34] [ksd] getAssetXrcInfoN1 KR6MD0008GX9 resultCode=3 NODATA_ERROR",
+  "[11:10:36] [ksd] getAssetXrcInfoN1 KR6MD0008GW1 resultCode=3 NODATA_ERROR",
+  "[11:10:38] [ksd] getAssetXrcInfoN1 KR6MD0008GV3 resultCode=3 NODATA_ERROR",
+  "[11:10:40] [ksd] getAssetXrcInfoN1 KR6MD0008GT7 resultCode=3 NODATA_ERROR",
+  "[11:10:42] [ksd] getAssetXrcInfoN1 KR6MD0008GS9 resultCode=3 NODATA_ERROR",
+  "[11:10:44] [ksd] getAssetXrcInfoN1 KR6MD0008GR1 resultCode=3 NODATA_ERROR",
+  "[11:10:46] [ksd] getAssetXrcInfoN1 KR6MD0008GQ3 resultCode=3 NODATA_ERROR",
+  "[11:10:48] [ksd] getAssetXrcInfoN1 KR6MD0008GP5 resultCode=3 NODATA_ERROR",
+  "[11:10:50] [ksd] getAssetXrcInfoN1 KR6MD0008GN0 resultCode=3 NODATA_ERROR",
+  "[11:10:50] [ksd] getDerivCombiIsinInfoN1 KR6MD0008GM2 resultCode=3 NODATA_ERROR",
+  "[11:10:52] yahoo ^KS200: 1 rows 2026-10-30..2026-10-30",
+  "[11:10:54] fchart ok KPI200: 2000 rows, last 2026-10-30",
+  "[11:10:55] [ksd] getDerivCombiIsinInfoN1 KR6MD0008GL4 resultCode=3 NODATA_ERROR",
+  "[11:10:57] [ksd] getDerivCombiIsinInfoN1 KR6MD0008GK6 resultCode=3 NODATA_ERROR",
+  "[11:11:00] [ksd] getDerivCombiIsinInfoN1 KR6MD0008GJ8 resultCode=3 NODATA_ERROR",
+  "[11:11:03] [ksd] getAssetXrcInfoN1 KR6MD0008GB5 resultCode=3 NODATA_ERROR",
+  "[11:11:05] [ksd] getAssetXrcInfoN1 KR6MD0008GA7 resultCode=3 NODATA_ERROR",
+  "[11:11:07] [ksd] getAssetXrcInfoN1 KR6MD0008G99 resultCode=3 NODATA_ERROR",
+  "[11:11:09] [ksd] getAssetXrcInfoN1 KR6MD0008G81 resultCode=3 NODATA_ERROR",
+  "[11:11:11] [ksd] getAssetXrcInfoN1 KR6MD0008G73 resultCode=3 NODATA_ERROR",
+  "[11:11:13] [ksd] getAssetXrcInfoN1 KR6MD0008G65 resultCode=3 NODATA_ERROR",
+  "[11:11:15] [ksd] getAssetXrcInfoN1 KR6MD0008G57 resultCode=3 NODATA_ERROR",
+  "[11:11:17] [ksd] getAssetXrcInfoN1 KR6MD0008G40 resultCode=3 NODATA_ERROR",
+  "[11:11:19] [ksd] getAssetXrcInfoN1 KR6MD0008G32 resultCode=3 NODATA_ERROR",
+  "[11:11:19] [ksd] getDerivCombiIsinInfoN1 KR6MD0008G24 resultCode=3 NODATA_ERROR",
+  "[11:11:20] [ksd] getRedCondiInfoN1 KR6MD0008G24 resultCode=3 NODATA_ERROR",
+  "[11:11:21] [ksd] getAssetXrcInfoN1 KR6MD0008G24 resultCode=3 NODATA_ERROR",
+  "[11:11:23] [ksd] getAssetXrcInfoN1 KR6MD0008G16 resultCode=3 NODATA_ERROR",
+  "[11:11:24] [ksd] getAssetXrcInfoN1 KR6MD0008G08 resultCode=3 NODATA_ERROR",
+  "[11:11:26] [ksd] getAssetXrcInfoN1 KR6MD0008FZ6 resultCode=3 NODATA_ERROR",
+  "[11:11:26] ksd condition fill: need=1736 tried=95 filled=39",
+  "[11:11:26] active products: 2174 (redeemed list entries=850, source ok=False)",
+  "[11:11:28] yahoo 051910.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:29] fchart ok 051910: 2000 rows, last 2026-10-30",
+  "[11:11:30] yahoo 035420.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:31] fchart ok 035420: 2000 rows, last 2026-10-30",
+  "[11:11:31] yahoo 005490.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:32] fchart ok 005490: 2000 rows, last 2026-10-30",
+  "[11:11:32] yahoo 005930.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:34] fchart ok 005930: 2000 rows, last 2026-10-30",
+  "[11:11:34] yahoo 066570.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:35] fchart ok 066570: 2000 rows, last 2026-10-30",
+  "[11:11:36] yahoo 096770.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:37] fchart ok 096770: 2000 rows, last 2026-10-30",
+  "[11:11:37] yahoo 000660.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:38] fchart ok 000660: 2000 rows, last 2026-10-30",
+  "[11:11:38] yahoo 005380.KS: 1715 rows 2019-10-30..2026-10-30",
+  "[11:11:39] fchart ok 005380: 2000 rows, last 2026-10-30",
+  "[11:11:41] elt: 27 products, counts={'defer': 5, 'pass': 16, 'risk': 3, 'nodata': 2, 'noschedule': 1}"
  ]
 }
