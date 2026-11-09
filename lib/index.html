@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MIRAE ELS/ELT CHECK — ELS·ELT 조기상환 조회</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#F58220;--orange-active:#CB6015;--orange-soft:#FAB072;--orange-bg:#FFF3E8;--blue:#043B72;--blue-bg:#E9EFF6;
+  --ink:#1A1A1A;--body:#2F2F2F;--muted:#5E6267;--muted-soft:#84888B;
+  --hair:#CDCECB;--hair-soft:#E5E4E1;--soft:#ECEFF4;--subtle:#F7F8FA;--hl:#D7D7D7;
+  --ok:#1F7A3A;--ok-bg:#E6F4EA;--warn:#B8860B;--warn-bg:#FFF6DD;--err:#C62828;--err-bg:#FDE9E9;
+  --font:'Noto Sans KR','Spoqa Han Sans Neo','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --num:'Inter','Noto Sans KR',sans-serif;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:#fff;color:var(--body);font-family:var(--font);font-size:18px;line-height:1.6;-webkit-text-size-adjust:100%}
+.num{font-family:var(--num);font-variant-numeric:tabular-nums}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{border-bottom:2px solid var(--orange)}
+.hdr{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:22px 0 16px;flex-wrap:wrap}
+.brand .t{font-size:34px;font-weight:900;color:var(--ink);letter-spacing:-0.5px;line-height:1.15}
+.brand .t span{color:var(--orange)}
+.brand .s{font-size:16px;color:var(--muted);margin-top:4px}
+.asof{font-size:15px;color:var(--muted);text-align:right;line-height:1.5}
+.asof b{color:var(--blue);font-family:var(--num);font-size:17px}
+
+.searchbox{display:flex;gap:10px;margin-top:26px;position:relative}
+.searchbox input{flex:1;font:inherit;font-size:26px;font-weight:500;padding:14px 18px;border:2px solid var(--hair);border-radius:4px;outline:none;min-width:0;font-family:var(--num)}
+.searchbox input::placeholder{font-family:var(--font);font-weight:400;font-size:19px;color:var(--muted-soft)}
+.searchbox input:focus{border-color:var(--orange)}
+.btn{background:var(--orange);color:#fff;border:0;border-radius:4px;padding:0 28px;font:inherit;font-weight:700;font-size:20px;cursor:pointer;height:62px;white-space:nowrap}
+.btn:active{background:var(--orange-active)}
+.btn.ghost{background:#fff;color:var(--body);border:1px solid var(--hair);height:42px;padding:0 16px;font-size:16px;font-weight:500}
+.btn.ghost.on{background:var(--orange);color:#fff;border-color:var(--orange)}
+.sugg{position:absolute;left:0;right:0;top:64px;background:#fff;border:1px solid var(--hair);z-index:20;max-height:320px;overflow:auto;display:none;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.sugg div{padding:12px 18px;cursor:pointer;font-size:17px;border-bottom:1px solid var(--hair-soft)}
+.sugg div:hover{background:var(--subtle)}
+
+.guide{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;margin-top:22px}
+.gbox{border:1px solid var(--hair-soft);border-radius:6px;padding:20px 22px;background:var(--subtle)}
+.gbox h3{margin:0 0 10px;font-size:19px;color:var(--ink)}
+.gbox ol{margin:0;padding-left:22px;font-size:17px;color:var(--body)}
+.gbox li{margin:6px 0}
+.legend{display:flex;flex-direction:column;gap:8px;font-size:16px}
+.legend div{display:flex;align-items:center;gap:10px}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:3px;flex:none}
+.legend small{color:var(--muted)}
+
+.card{border:1px solid var(--hair);border-radius:8px;padding:26px;margin-top:24px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.card .top{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:flex-start}
+.card .name{font-size:30px;font-weight:900;color:var(--ink);letter-spacing:-0.3px}
+.card .meta{font-size:16px;color:var(--muted);margin-top:4px}
+.badge{display:inline-block;padding:8px 16px;border-radius:4px;font-size:18px;font-weight:700;color:#fff;white-space:nowrap}
+.b-pass{background:var(--ok)}.b-defer{background:var(--warn)}.b-ki{background:var(--err)}.b-risk{background:#AD624E}
+.b-redeemed{background:var(--blue)}.b-nodata{background:var(--muted-soft)}.b-matured{background:var(--muted-soft)}
+.verdict{margin-top:18px;padding:18px 20px;border-left:6px solid var(--orange);font-size:19px;color:var(--ink);line-height:1.65;background:var(--orange-bg)}
+.verdict.pass{border-color:var(--ok);background:var(--ok-bg)}.verdict.defer{border-color:var(--warn);background:var(--warn-bg)}
+.verdict.ki,.verdict.risk{border-color:var(--err);background:var(--err-bg)}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:18px}
+.kpi{border:1px solid var(--hair-soft);border-radius:6px;padding:14px 16px;background:#fff}
+.kpi .l{font-size:14px;color:var(--muted);letter-spacing:.3px;min-height:2.6em}
+.kpi .v{font-size:30px;font-weight:800;color:var(--blue);font-family:var(--num);line-height:1.15;margin-top:4px;white-space:nowrap}
+#kpi-money .v{font-size:25px}
+.kpi .v.o{color:var(--orange)}.kpi .v.g{color:var(--ok)}.kpi .v.r{color:var(--err)}
+.kpi .d{font-size:14px;color:var(--muted-soft);margin-top:2px}
+
+.principal{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px;padding:16px 18px;background:var(--blue-bg);border-radius:6px}
+.principal label{font-size:18px;font-weight:700;color:var(--blue)}
+.principal input{font:inherit;font-family:var(--num);font-size:22px;font-weight:600;padding:8px 12px;border:1px solid var(--hair);border-radius:4px;width:220px;text-align:right}
+.principal .unit{font-size:18px;color:var(--blue);font-weight:700}
+.principal .note{font-size:14px;color:var(--muted);flex-basis:100%}
+.quick{display:flex;gap:6px;flex-wrap:wrap}
+.quick button{font:inherit;font-size:14px;padding:4px 10px;border:1px solid var(--hair);background:#fff;border-radius:3px;cursor:pointer;color:var(--body)}
+
+table{width:100%;border-collapse:collapse;font-size:17px;margin-top:18px}
+th{background:var(--orange-soft);color:var(--ink);font-weight:700;text-align:left;padding:12px 12px;border:1px solid var(--hair);white-space:nowrap}
+td{padding:12px 12px;border:1px solid var(--hair-soft);vertical-align:middle}
+td.r,th.r{text-align:right}
+td.num{white-space:nowrap}
+tbody tr:hover{background:var(--subtle)}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ratio-big{font-size:22px;font-weight:800;font-family:var(--num)}
+
+h3.sec{font-size:20px;color:var(--ink);margin:26px 0 10px}
+.sched{display:flex;flex-direction:column;gap:10px}
+.step{display:grid;grid-template-columns:210px 100px 140px 1fr;gap:10px 18px;align-items:center;border:1px solid var(--hair-soft);border-radius:6px;padding:14px 18px;background:#fff}
+.step .date{font-family:var(--num);font-size:28px;font-weight:800;color:var(--ink);line-height:1.1}
+.step .date small{display:block;font-size:14px;color:var(--muted);font-family:var(--font);font-weight:400;margin-top:2px}
+.step .n{font-size:18px;font-weight:700;color:var(--ink)}
+.step .n .tag{margin-left:0;margin-top:4px;display:inline-block}
+.step .bar{font-family:var(--num);font-size:26px;font-weight:800;color:var(--blue)}
+.step .bar small{display:block;font-size:13px;color:var(--muted);font-family:var(--font);font-weight:400}
+.step .ret{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline}
+.step .ret .y{font-family:var(--num);font-size:28px;font-weight:800;color:var(--orange)}
+.step .ret .y small{font-size:14px;color:var(--muted);font-family:var(--font);font-weight:400;margin-left:4px}
+.step .ret .m{font-family:var(--num);font-size:17px;color:var(--body)}
+.step .ret .m b{font-size:19px;color:var(--ink)}
+.step .ret .m span{color:var(--muted);font-size:14px;font-family:var(--font)}
+.step.passed{background:var(--ok-bg);border-color:var(--ok)}
+.step.passed .date,.step.passed .n{color:var(--ok)}
+.step.missed{background:var(--subtle);border-color:var(--hair-soft)}
+.step.missed .date,.step.missed .bar,.step.missed .ret .y{color:var(--muted-soft)}
+.step.next{border:3px solid var(--orange);background:var(--orange-bg)}
+.step.expected{border:3px solid var(--ok);background:var(--ok-bg)}
+.tag{display:inline-block;font-size:13px;padding:2px 8px;border-radius:3px;background:var(--hl);color:var(--ink);margin-left:6px;font-weight:700}
+.tag.o{background:var(--orange);color:#fff}.tag.b{background:var(--blue);color:#fff}.tag.g{background:var(--ok);color:#fff}.tag.r{background:var(--err);color:#fff}
+.flags{margin-top:16px;font-size:16px;color:var(--muted);padding-left:20px}
+.flags li{margin:3px 0}
+.links{margin-top:16px;font-size:16px}
+.links a{color:var(--blue);margin-right:18px;font-weight:500}
+details.payoff{margin-top:14px;font-size:15px;color:var(--muted)}
+details.payoff pre{white-space:pre-wrap;font-family:var(--font);background:var(--subtle);padding:12px;margin:6px 0 0;font-size:15px}
+
+.rule{height:2px;background:var(--orange);margin:34px 0 18px}
+h2{font-size:24px;font-weight:800;color:var(--ink);margin:0 0 10px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0 8px}
+.filters input{font:inherit;font-size:16px;padding:8px 12px;border:1px solid var(--hair);border-radius:4px;width:220px}
+.counts{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.chip{font-size:15px;padding:5px 10px;border:1px solid var(--hair);border-radius:3px;color:var(--body)}
+.chip i{display:inline-block;width:10px;height:10px;margin-right:6px;border-radius:2px}
+.row-code{font-weight:800;color:var(--blue);cursor:pointer;text-decoration:underline;font-family:var(--num);font-size:18px}
+.mob{display:none}
+footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7;border-top:1px solid var(--hair-soft);padding-top:16px}
+.empty{padding:30px;text-align:center;color:var(--muted);border:1px dashed var(--hair);font-size:17px}
+.sort{cursor:pointer;user-select:none}
+.sort.on{color:var(--orange-active)}
+.yield{font-family:var(--num);font-weight:800;color:var(--orange)}
+.typetag{display:inline-block;font-size:15px;font-weight:800;padding:3px 10px;border-radius:3px;background:var(--blue);color:#fff;vertical-align:middle;margin-right:10px;font-family:var(--num);letter-spacing:.5px}
+.step .settle{font-size:17px;color:var(--body)}
+.step .settle b{font-family:var(--num);font-size:22px;color:var(--ink)}
+.step .settle span{display:block;font-size:14px;color:var(--muted)}
+.step.elt{grid-template-columns:210px 100px 140px 1fr 1fr}
+.step .settle b.yield{color:var(--orange)}
+#eltBoard{font-size:16px}
+#eltBoard th{padding:10px 8px;white-space:nowrap;font-size:15px}
+#eltBoard td{padding:9px 8px;white-space:nowrap}
+#eltBoard td.as{font-size:14px;line-height:1.35}
+#eltBoard .sub{font-size:13px;color:var(--muted-soft);font-weight:400;line-height:1.3}
+#eltBoard .badge{font-size:14px;padding:4px 8px}
+#eltBoard .row-code{font-size:17px}
+.step.missed .settle b.yield{color:var(--muted-soft)}
+.paylist{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.paylist span{font-family:var(--num);font-size:16px;padding:6px 12px;border:1px solid var(--hair);border-radius:4px;background:#fff}
+.paylist span.past{color:var(--muted-soft);background:var(--subtle);border-color:var(--hair-soft)}
+.paylist span.nx{border:2px solid var(--blue);color:var(--blue);font-weight:700}
+
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.abtn{height:48px;padding:0 22px;font:inherit;font-size:18px;font-weight:700;border-radius:4px;cursor:pointer;border:2px solid var(--orange);background:#fff;color:var(--orange-active);white-space:nowrap}
+.abtn.pri{background:var(--orange);color:#fff}
+.abtn:active{background:var(--orange-active);color:#fff}
+.abtn[disabled]{opacity:.6;cursor:wait}
+.atoast{flex-basis:100%;font-size:15px;color:var(--muted);min-height:20px}
+.atoast.err{color:var(--err)}
+.pdfroot{position:fixed;left:-12000px;top:0;width:1000px;background:#fff;padding:34px 40px 26px;font-family:var(--font);color:var(--body);font-size:16px;line-height:1.5}
+.pdfroot .phead{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:4px solid var(--orange);padding-bottom:12px;margin-bottom:18px}
+.pdfroot .phead .pt{font-size:30px;font-weight:900;color:var(--ink);letter-spacing:-.5px}
+.pdfroot .phead .pt span{color:var(--orange)}
+.pdfroot .phead .ps{font-size:14px;color:var(--muted);text-align:right;line-height:1.5}
+.pdfroot .phead .ps b{color:var(--blue);font-family:var(--num)}
+.pdfroot .card{border:0;box-shadow:none;margin:0;padding:0;border-radius:0}
+.pdfroot .card .name{font-size:28px}
+.pdfroot .kpis{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:14px}
+.pdfroot .kpi{padding:10px 12px}
+.pdfroot .kpi .v{font-size:25px}
+.pdfroot .verdict{margin-top:14px;padding:14px 18px;font-size:18px}
+.pdfroot h3.sec{margin:18px 0 8px;font-size:19px}
+.pdfroot table{margin-top:8px;font-size:16px}
+.pdfroot th,.pdfroot td{padding:8px 10px}
+.pdfroot .step{padding:9px 14px;gap:8px 14px}
+.pdfroot .sched{gap:7px}
+.pdfroot .step .date{font-size:24px}
+.pdfroot .step .bar{font-size:22px}
+.pdfroot .step .ret .y{font-size:24px}
+.pdfroot .flags{font-size:14px;margin-top:10px}
+.pdfroot.two .sched{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.pdfroot.two .step{grid-template-columns:128px 62px 84px 1fr;padding:7px 10px;gap:4px 8px}
+.pdfroot.two .step.elt{grid-template-columns:116px 52px 62px 1fr 82px;padding:7px 8px;gap:4px 6px}
+.pdfroot.two .step.elt .settle b{font-size:15px}.pdfroot.two .step.elt .settle span{font-size:11px;white-space:nowrap}
+.pdfroot.two .step.elt .settle b.yield{font-size:19px}
+.pdfroot.two .step .date{font-size:18px}.pdfroot.two .step .date small{font-size:12px}
+.pdfroot.two .step .bar{font-size:18px}.pdfroot.two .step .bar small{font-size:11px}
+.pdfroot.two .step .ret .y{font-size:19px}.pdfroot.two .step .ret .y small{display:none}
+.pdfroot.two .step .ret .m{display:block;font-size:12px}
+.pdfroot.two .step .settle b{font-size:16px}.pdfroot.two .step .settle{font-size:12px}
+.pdfroot .pfoot{margin-top:18px;padding-top:10px;border-top:1px solid var(--hair);font-size:12.5px;color:var(--muted);line-height:1.55}
+@media (max-width:760px){ .actions .abtn{flex:1 1 46%;padding:0 10px;font-size:16px} }
+
+@media (max-width:980px){ .kpis{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:760px){
+  body{font-size:17px}
+  .wrap{padding:0 16px}
+  .brand .t{font-size:28px}
+  .searchbox input{font-size:22px;padding:12px 14px}
+  .btn{padding:0 18px;height:56px;font-size:18px}
+  .guide{grid-template-columns:1fr}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .kpi .v{font-size:22px}
+  #kpi-money .v{font-size:20px}
+  .card{padding:18px}
+  .card .name{font-size:25px}
+  .verdict{font-size:17px}
+  .step{grid-template-columns:1fr 1fr;gap:6px 12px}
+  .step .date{font-size:24px}
+  .step .ret,.step .settle{grid-column:1 / -1}
+  .step.elt{grid-template-columns:1fr 1fr}
+  .step .ret .y{font-size:25px}
+  .principal input{width:160px;font-size:20px}
+  .desk{display:none}.mob{display:block}
+  .mcard{border:1px solid var(--hair-soft);border-radius:6px;padding:14px;margin-top:10px;font-size:16px}
+  .mcard .l1{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .mcard .l2{color:var(--muted);font-size:15px;margin-top:4px}
+  .mcard .l3{margin-top:6px;font-size:16px}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="hdr">
+  <div class="brand"><div class="t">MIRAE <span>ELS/ELT</span> CHECK</div><div class="s">미래에셋증권 공모 ELS · Premier ELT 조기상환 조회 · 전일 종가 기준 자동 판정</div></div>
+  <div class="asof" id="asof">데이터 불러오는 중…</div>
+</div></div></header>
+
+<main class="wrap">
+  <div class="searchbox">
+    <input id="q" type="text" inputmode="numeric" placeholder="ELS 회차(예: 38071) 또는 ELT 회차(예: 41)" autocomplete="off">
+    <button class="btn" id="go">조회</button>
+    <div class="sugg" id="sugg"></div>
+  </div>
+
+  <div class="guide" id="guide">
+    <div class="gbox">
+      <h3>사용 방법</h3>
+      <ol>
+        <li>고객 잔고 화면의 <b>미래에셋증권(ELS)38071</b>에서 숫자 <b>38071</b>만 위 칸에 입력하고 조회를 누릅니다. 두 자리만 쳐도 후보가 뜹니다.</li>
+        <li>ELT는 <b>Premier ELT 41호</b>에서 숫자 <b>41</b>만 입력하면 같은 방식으로 조회됩니다(세 자리 이하 숫자는 ELT로 조회).</li>
+        <li>맨 위 색깔 상자가 결론입니다. 전일 종가 기준으로 <b>다음 평가일에 상환되는지, 안 되면 언제 상환이 예상되는지</b>를 한 문장으로 보여줍니다.</li>
+        <li>ELS는 <b>투자원금</b>을 입력하면 평가일마다 세전 수익과 세후(15.4% 공제) 수익금, 세후 수령액이 함께 표시됩니다. ELT는 세금 계산을 표시하지 않습니다.</li>
+        <li>평가일 목록에서 초록은 상환된 회차, 주황 테두리는 다음 평가일, 회색은 조건 미충족으로 지나간 회차입니다.</li>
+      </ol>
+    </div>
+    <div class="gbox">
+      <h3>판정 색깔 보는 법</h3>
+      <div class="legend">
+        <div><i style="background:#1F7A3A"></i><b>상환 가능</b><small>현재 수준이면 다음 평가일에 상환</small></div>
+        <div><i style="background:#B8860B"></i><b>이월 예상</b><small>다음 평가일은 미달, 이후 차수에서 상환 예상</small></div>
+        <div><i style="background:#AD624E"></i><b>배리어 미달</b><small>현 수준으로는 만기 배리어까지 미달</small></div>
+        <div><i style="background:#C62828"></i><b>낙인 발생</b><small>낙인 터치 이력 있음 — 회복 여부 확인</small></div>
+        <div><i style="background:#043B72"></i><b>상환 완료</b><small>이미 상환된 것으로 계산됨</small></div>
+        <div><i style="background:#84888B"></i><b>판정 불가 · 일정 미공개</b><small>조건 확인 필요 — 담당 PB 문의</small></div>
+      </div>
+      <div style="margin-top:12px;font-size:15px;color:var(--muted)">공모 ELS와 Premier ELT가 조회됩니다. 사모 ELS는 담당 PB에게 확인해 주세요.</div>
+    </div>
+  </div>
+
+  <div id="result"></div>
+
+  <div class="rule"></div>
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+    <button class="btn" id="toggleBoard" style="height:48px;font-size:18px">ELS 전체 보기</button>
+    <span style="font-size:16px;color:var(--muted)">미상환 공모 ELS 전체를 평가일 임박순으로 봅니다</span>
+  </div>
+  <div id="boardWrap" style="display:none">
+  <h2 style="margin-top:20px">조기상환 현황판 <span style="font-size:15px;color:var(--muted);font-weight:400">미상환 공모 ELS 전체 · 평가일 임박순</span></h2>
+  <div class="counts" id="counts"></div>
+  <div class="filters">
+    <button class="btn ghost on" data-f="all">전체</button>
+    <button class="btn ghost" data-f="pass">상환 가능</button>
+    <button class="btn ghost" data-f="defer">이월 예상</button>
+    <button class="btn ghost" data-f="risk">배리어 미달</button>
+    <button class="btn ghost" data-f="ki">낙인</button>
+    <button class="btn ghost" data-f="soon">30일 내 평가</button>
+    <input id="ftext" placeholder="기초자산·회차 검색 (예: 테슬라)">
+  </div>
+  <div class="tbl-wrap desk">
+    <table id="board"><thead><tr>
+      <th class="sort" data-k="code">회차</th><th>기초자산</th><th class="r sort" data-k="worst">최저 비율</th>
+      <th class="sort on" data-k="next">다음 평가일</th><th class="r">배리어</th><th class="r">필요 상승</th><th>판정</th><th>상환 예상</th><th class="r">쿠폰(연)</th>
+    </tr></thead><tbody></tbody></table>
+  </div>
+  <div class="mob" id="boardm"></div>
+  <div id="boardempty" class="empty" style="display:none">표시할 상품이 없습니다.</div>
+  <div style="text-align:center;margin-top:14px"><button class="btn ghost" id="more" style="display:none">더 보기</button> <span id="shown" style="font-size:14px;color:var(--muted-soft)"></span></div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px">
+    <button class="btn" id="toggleElt" style="height:48px;font-size:18px;background:var(--blue)">ELT 전체 보기</button>
+    <span style="font-size:16px;color:var(--muted)">Premier ELT 전체를 평가일 임박순으로 봅니다</span>
+  </div>
+  <div id="eltWrap" style="display:none">
+    <h2 style="margin-top:20px">ELT 현황판 <span style="font-size:15px;color:var(--muted);font-weight:400">Premier ELT · 평가일 임박순</span></h2>
+    <div class="counts" id="eltCounts"></div>
+    <div class="tbl-wrap desk"><table id="eltBoard"><thead><tr>
+      <th>회차</th><th>기초자산</th><th class="r">최저 비율</th><th>다음 평가일 · 배리어</th><th class="r">필요 상승</th><th>판정</th><th>상환 예상</th><th class="r">낙인</th><th class="r">쿠폰(연)</th>
+    </tr></thead><tbody></tbody></table></div>
+    <div class="mob" id="eltBoardm"></div>
+  </div>
+
+  <footer>
+    ※ 판정은 전일(해외지수·해외주식은 한국시간 새벽 마감) 종가와 각 상품의 최초기준가격 결정일 종가를 바탕으로 자동 계산한 추정치입니다. 실제 상환 여부와 지급액은 평가일 당일 종가와 발행사의 공식 평가·투자설명서 조건에 따르며, 리자드·월지급식 등 특수 구조는 별도 확인이 필요합니다.<br>
+    ※ 세후 수익은 배당소득세 15.4%(지방소득세 포함)를 일괄 공제한 금액이며, 금융소득 종합과세 대상 여부에 따라 실제 세부담은 달라질 수 있습니다.<br>
+    ※ ELT(Premier ELT)의 최초기준가격·평가일·배리어·낙인·쿠폰은 사내 발행정보를 기준으로 하며, 누적 쿠폰은 연 쿠폰 × 경과기간 환산값입니다(정기 지급분 포함 여부는 계약서 기준). 정기 지급일의 지급 조건·금액은 신탁 계약서를 확인해 주세요. ELT는 세금 계산을 표시하지 않습니다.<br>
+    ※ 최초기준가는 공개 시세 데이터(액면분할 등 조정 반영)에서 산출하므로 발행사 공시 기준가와 미세한 차이가 있을 수 있습니다. 본 화면은 임직원 참고용이며 고객에게 그대로 전달하는 자료가 아닙니다.
+  </footer>
+</main>
+
+<script>
+let DATA=null, ELT=null, ELIST=[], ELT_ON=false, LIST=[], FILTER='all', SORT='next', SORTDIR=1, PAGE=150, SHOWN=0, BOARD_ON=false, CUR=null;
+const DETAIL={};
+const TAX=0.154;
+const isMobile=()=>window.matchMedia('(max-width:760px)').matches;
+const STATUS={pass:['상환 가능','b-pass'],defer:['이월 예상','b-defer'],risk:['배리어 미달','b-risk'],ki:['낙인 발생','b-ki'],redeemed:['상환 완료(추정)','b-redeemed'],redeemed_confirmed:['상환 완료(공시)','b-redeemed'],elb:['ELB(판정 대상 아님)','b-nodata'],pending:['발행 전(청약중)','b-nodata'],noschedule:['일정 미공개','b-nodata'],nodata:['판정 불가','b-nodata'],matured:['만기 경과','b-matured'],unknown:['판정 불가','b-nodata']};
+const COLOR={pass:'#1F7A3A',defer:'#B8860B',risk:'#AD624E',ki:'#C62828',redeemed:'#043B72',redeemed_confirmed:'#043B72',elb:'#84888B',pending:'#84888B',noschedule:'#84888B',nodata:'#84888B',matured:'#84888B'};
+const $=s=>document.querySelector(s);
+const f1=(v,d=1)=>v==null?'-':Number(v).toFixed(d);
+const fnum=v=>v==null?'-':Number(v).toLocaleString('en-US',{maximumFractionDigits:2});
+const won=v=>v==null?'-':Math.round(v).toLocaleString('ko-KR')+'원';
+function getPrincipal(){ const el=$('#principal'); const v=(el?el.value:'').replace(/[^0-9]/g,''); return v?parseInt(v,10):0; }
+function savePrincipal(v){ try{ localStorage.setItem('els_principal', String(v)); }catch(e){} }
+function loadPrincipal(){ try{ return parseInt(localStorage.getItem('els_principal')||'0',10)||0; }catch(e){ return 0; } }
+
+async function load(){
+  try{ const r=await fetch('data/els.json?t='+Date.now()); DATA=await r.json(); }
+  catch(e){ $('#asof').textContent='데이터를 불러오지 못했습니다'; return; }
+  LIST=DATA.products||[];
+  try{ const r2=await fetch('data/elt.json?t='+Date.now()); if(r2.ok){ ELT=await r2.json(); ELIST=ELT.products||[]; } }catch(e){}
+  const p=DATA.prices||{}; const ks=p['^KS200']?p['^KS200'].date:null; const sp=p['^GSPC']?p['^GSPC'].date:null;
+  $('#asof').innerHTML=`기준일 <b>${DATA.asof}</b> · 갱신 ${DATA.generated}<br>${ks?'KOSPI200 '+ks:''}${sp?' · S&amp;P500 '+sp:''} · 조회 가능 ELS ${LIST.length}건${ELIST.length?' · ELT '+ELIST.length+'건':''}`;
+  renderCounts();
+  const h=location.hash.replace('#',''); if(h){ $('#q').value=h; search(h); }
+}
+async function detail(code){
+  if(DETAIL[code]) return DETAIL[code];
+  try{ const r=await fetch(`data/p/${code}.json?t=${(DATA.generated||'').replace(/\D/g,'')}`); if(!r.ok) return null; const d=await r.json(); DETAIL[code]=d; return d; }
+  catch(e){ return null; }
+}
+function renderCounts(){
+  const c=DATA.counts||{}; const box=$('#counts'); box.innerHTML='';
+  Object.keys(STATUS).forEach(k=>{ if(!c[k])return; const d=document.createElement('span'); d.className='chip'; d.innerHTML=`<i style="background:${COLOR[k]||'#84888B'}"></i>${STATUS[k][0]} ${c[k]}`; box.appendChild(d); });
+}
+function eltNo(q){
+  const raw=(q||'').trim().toUpperCase();
+  const m=raw.match(/^(?:PREMIER)?\s*ELT\s*_?\s*(\d{1,3})\s*호?$/)||raw.match(/^(\d{1,3})\s*호?$/);
+  return m?String(parseInt(m[1],10)):null;
+}
+function findElt(q){ const n=eltNo(q); return n?ELIST.find(p=>p.code===n)||null:null; }
+function find(q){
+  q=(q||'').trim().toUpperCase().replace(/[^0-9A-Z]/g,'');
+  if(!q) return null;
+  let m=LIST.find(p=>p.isin===q); if(m) return m;
+  const digits=q.replace(/[^0-9]/g,'');
+  if(digits){ m=LIST.find(p=>p.code===digits); if(m) return m; }
+  return null;
+}
+async function search(q){
+  const box=$('#result');
+  if(eltNo(q)){
+    const e=findElt(q);
+    if(!e){ box.innerHTML=`<div class="card"><div class="name" style="font-size:22px;font-weight:800;color:var(--ink)">조회 결과 없음</div><div class="meta" style="margin-top:8px;font-size:17px">Premier ELT ${eltNo(q)}호가 등록되어 있지 않습니다. 이미 상환됐거나 아직 등록 전인 회차일 수 있습니다. 담당 PB에게 확인해 주세요.</div></div>`; return; }
+    location.hash='ELT'+e.code; CUR=null; box.innerHTML=eltCardHTML(e); mountActions('ELT_'+e.code+'호');
+    window.scrollTo({top:box.offsetTop-80,behavior:'smooth'}); return;
+  }
+  const p=find(q);
+  if(!p){ box.innerHTML=`<div class="card"><div class="name" style="font-size:22px;font-weight:800;color:var(--ink)">조회 결과 없음</div><div class="meta" style="margin-top:8px;font-size:17px">"${q}"에 해당하는 공모 ELS를 찾지 못했습니다. 사모·ELT 상품이거나 아직 수집되지 않은 회차일 수 있습니다. 담당 PB에게 확인해 주세요.</div></div>`; return; }
+  location.hash=p.code;
+  box.innerHTML=`<div class="card"><div class="meta">${p.code}회 상세를 불러오는 중…</div></div>`;
+  const d=await detail(p.code);
+  if(!d){ box.innerHTML=`<div class="card"><div class="meta">상세 데이터를 아직 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</div></div>`; return; }
+  CUR=d; box.innerHTML=cardHTML(d);
+  const pi=$('#principal'); const saved=loadPrincipal(); if(saved){ pi.value=saved.toLocaleString('ko-KR'); }
+  pi.addEventListener('input',()=>{ const v=getPrincipal(); pi.value=v?v.toLocaleString('ko-KR'):''; savePrincipal(v); refreshMoney(); });
+  document.querySelectorAll('.quick button').forEach(b=>b.addEventListener('click',()=>{ const v=parseInt(b.dataset.v,10); pi.value=v.toLocaleString('ko-KR'); savePrincipal(v); refreshMoney(); }));
+  refreshMoney();
+  mountActions('ELS_'+p.code);
+  window.scrollTo({top:box.offsetTop-80,behavior:'smooth'});
+}
+function retOf(p,ev){ if(ev&&ev.payout!=null) return ev.payout; return (p.coupon&&ev&&ev.months)?p.coupon*ev.months/12:null; }
+function moneyHTML(ret){
+  const P=getPrincipal(); if(!P||ret==null) return '';
+  const pre=P*ret/100, post=pre*(1-TAX);
+  return `<span class="m"><span>세전 수익</span> <b>${won(pre)}</b> <span>· 세후 수익</span> <b>${won(post)}</b> <span>· 세후 수령액</span> <b>${won(P+post)}</b></span>`;
+}
+function refreshMoney(){
+  if(!CUR) return;
+  PDF_CACHE=null; schedulePrebuild();
+  document.querySelectorAll('[data-ret]').forEach(el=>{ const r=parseFloat(el.dataset.ret); el.innerHTML=moneyHTML(isNaN(r)?null:r); });
+  const k=$('#kpi-money'); if(k){ const ex=(CUR.judgment||{}).expected; const r=ex?ex.ret:null; const P=getPrincipal();
+    if(P&&r!=null){ const pre=P*r/100; k.querySelector('.v').textContent=won(pre*(1-TAX)); k.querySelector('.d').textContent=`세전 ${won(pre)} · 세후 수령 ${won(P+pre*(1-TAX))}`; }
+    else { k.querySelector('.v').textContent='-'; k.querySelector('.d').textContent='원금을 입력하면 계산됩니다'; } }
+}
+function cardHTML(p){
+  const j=p.judgment||{}; const st=STATUS[j.status]||STATUS.unknown;
+  const worst=j.worst; const nx=j.next; const ex=j.expected;
+  const vcls=['pass','defer','ki','risk'].includes(j.status)?j.status:'';
+  const kpis=[
+    {l:'최저 기초자산 (현재 ÷ 최초기준가)',v:worst?f1(worst.ratio)+'%':'-',d:worst?worst.label:'',c:worst?((nx&&nx.barrier!=null&&worst.ratio>=nx.barrier)?'g':'r'):''},
+    {l:nx?(nx.is_maturity?'만기 평가일':`다음 평가일 (${nx.n}차)`):'다음 평가일',v:nx?nx.date:'-',d:nx?`D-${nx.days} · 배리어 ${nx.barrier}%`:'',c:''},
+    {l:'필요 상승률 (최저 종목 기준)',v:j.need_pct==null?'-':(j.need_pct===0?'충족':'+'+f1(j.need_pct)+'%'),d:j.need_pct===0?'현 수준 유지 시 상환':'',c:j.need_pct===0?'g':'o'},
+    {l:'상환 예상 시점 · 세전 수익률',v:ex?`${ex.is_maturity?'만기':ex.n+'차'}${ex.lizard?'(리자드)':''} ${f1(ex.ret,2)}%`:'-',d:ex?`${ex.date} · ${ex.months}개월`:'',c:'o'},
+  ];
+  const assets=(p.assets||[]).map(a=>{
+    const isW=worst&&a.label===worst.label; const ok=a.ratio!=null&&nx&&nx.barrier!=null&&a.ratio>=nx.barrier;
+    return `<tr><td style="font-weight:700;font-size:18px">${a.label||a.name}${isW?'<span class="tag r">최저</span>':''}</td><td class="r num">${fnum(a.ref)}<div style="font-size:13px;color:var(--muted-soft)">${a.ref_date||''}</div></td><td class="r num">${fnum(a.last)}<div style="font-size:13px;color:var(--muted-soft)">${a.last_date||''}</div></td><td class="r"><span class="ratio-big" style="color:${a.ratio==null?'inherit':(ok?'var(--ok)':'var(--err)')}">${a.ratio==null?'-':f1(a.ratio)+'%'}</span></td><td class="r num">${a.ki?a.ki+'%':(p.no_ki?'없음':'-')}</td><td class="r num">${a.min_ratio==null?'-':f1(a.min_ratio)+'%'}<div style="font-size:13px;color:var(--muted-soft)">${a.min_date||''}</div></td></tr>`;
+  }).join('');
+  const sched=(p.schedule||[]).map(e=>{
+    let cls='step'; let tag='';
+    if(e.result==='passed'){cls+=' passed'; tag='<span class="tag g">상환</span>';}
+    else if(e.result==='missed'){cls+=' missed'; tag='<span class="tag">미충족</span>';}
+    if(nx&&e.n===nx.n){cls+=' next'; tag='<span class="tag o">다음 평가</span>';}
+    else if(ex&&e.n===ex.n){cls+=' expected'; tag='<span class="tag g">상환 예상</span>';}
+    const ret=retOf(p,e);
+    return `<div class="${cls}">
+      <div class="date">${e.date}<small>${e.months?e.months+'개월 경과 시점':''}</small></div>
+      <div class="n">${e.is_maturity?'만기':e.n+'차'}<br>${tag}</div>
+      <div class="bar">${e.barrier!=null?e.barrier+'%':'-'}<small>배리어${e.lizard?' · 리자드 '+e.lizard+'%':''}</small></div>
+      <div class="ret"><span class="y">${ret!=null?f1(ret,2)+'%':'-'}<small>세전 수익률</small></span><span data-ret="${ret!=null?ret:''}"></span></div>
+    </div>`;
+  }).join('');
+  const flags=(p.flags||[]).map(f=>`<li>${f}</li>`).join('');
+  return `<div class="card">
+    <div class="top"><div><div class="name">${p.name}</div><div class="meta">발행 ${p.issue_date||'-'} · 만기평가 ${p.mat_eval||'-'} · ${p.mat_years?p.mat_years+'년':''}/${p.period_months?p.period_months+'개월':''} · 배리어 ${(p.ladder||[]).join('-')||'-'}${p.lizard?' · 리자드':''}${p.monthly?' · 월지급':''} · 쿠폰 <span class="yield" style="font-size:20px">연 ${f1(p.coupon,2)}%</span></div></div>
+    <span class="badge ${st[1]}">${st[0]}</span></div>
+    <div class="verdict ${vcls}">${j.message||'-'}</div>
+    <div class="kpis">${kpis.map(k=>`<div class="kpi"><div class="l">${k.l}</div><div class="v ${k.c}">${k.v}</div><div class="d">${k.d}</div></div>`).join('')}
+      <div class="kpi" id="kpi-money"><div class="l">상환 예상 시점 세후 수익 (원금 입력 시)</div><div class="v g">-</div><div class="d">원금을 입력하면 계산됩니다</div></div>
+    </div>
+    <div class="principal"><label for="principal">투자원금</label><input id="principal" inputmode="numeric" placeholder="예: 50,000,000"><span class="unit">원</span>
+      <span class="quick"><button data-v="10000000">1천만</button><button data-v="30000000">3천만</button><button data-v="50000000">5천만</button><button data-v="100000000">1억</button></span>
+      <span class="note">세후 = 세전 수익 × (1 − 15.4%). 입력한 원금은 이 브라우저에만 저장됩니다.</span></div>
+    <h3 class="sec">기초자산 현황</h3>
+    <div class="tbl-wrap"><table><thead><tr><th>기초자산</th><th class="r">최초기준가</th><th class="r">전일 종가</th><th class="r">현재 비율</th><th class="r">낙인</th><th class="r">기간 최저</th></tr></thead><tbody>${assets}</tbody></table></div>
+    <h3 class="sec">평가일별 상환 조건과 수익</h3>
+    <div class="sched">${sched}</div>
+    ${flags?`<ul class="flags">${flags}</ul>`:''}
+    <div class="links"><a href="${p.url}" target="_blank" rel="noopener">상품 상세(홈페이지)</a><a href="${p.pdf}" target="_blank" rel="noopener">요약설명서 PDF</a></div>
+    ${p.payoff?`<details class="payoff"><summary>수익구조 원문 보기</summary><pre>${esc(p.payoff)}</pre></details>`:''}
+  </div>`;
+}
+function eltCardHTML(p){
+  const j=p.judgment||{}; const st=STATUS[j.status]||STATUS.unknown;
+  const worst=j.worst, nx=j.next, ex=j.expected; const today=(ELT&&ELT.asof)||'';
+  const vcls=['pass','defer','ki','risk'].includes(j.status)?j.status:'';
+  const hasC=p.coupon!=null;
+  const exEv=ex?(p.schedule||[]).find(e=>e.n===ex.n):null;
+  const kiTxt=p.no_ki?'없음':(p.ki_level!=null?p.ki_level+'%':'-');
+  const kpis=[
+    {l:'최저 기초자산 (현재 ÷ 최초기준가)',v:worst?f1(worst.ratio)+'%':'-',d:worst?worst.label:'',c:worst?((nx&&nx.barrier!=null&&worst.ratio>=nx.barrier)?'g':'r'):''},
+    {l:nx?(nx.is_maturity?'만기 평가일':`다음 평가일 (${nx.n}차)`):'다음 평가일',v:nx?nx.date:'-',d:nx?`D-${nx.days} · 배리어 ${nx.barrier}%`:'',c:''},
+    {l:'필요 상승률 (최저 종목 기준)',v:j.need_pct==null?'-':(j.need_pct===0?'충족':'+'+f1(j.need_pct)+'%'),d:j.need_pct===0?'현 수준 유지 시 상환':'',c:j.need_pct===0?'g':'o'},
+    {l:'상환 예상 시점 · 누적 쿠폰',v:ex?`${ex.is_maturity?'만기':ex.n+'차'} ${ex.date}`:'-',d:ex?(`${ex.months}개월 · 결제일 ${exEv&&exEv.settle?exEv.settle:'-'}`+(hasC&&ex.ret!=null?` · 누적 쿠폰 ${f1(ex.ret,2)}%`:'')):'',c:'o'},
+    {l:'낙인까지 여유 (최저 종목 기준)',v:p.no_ki?'낙인 없음':(j.ki_room==null?'-':f1(j.ki_room)+'%p'),d:p.no_ki?'':`낙인 ${kiTxt}`+(j.knocked_in?' · 터치 이력 있음':''),c:j.knocked_in?'r':'g'},
+  ];
+  const assets=(p.assets||[]).map(a=>{
+    const isW=worst&&a.label===worst.label; const ok=a.ratio!=null&&nx&&nx.barrier!=null&&a.ratio>=nx.barrier;
+    return `<tr><td style="font-weight:700;font-size:18px">${a.label||a.name}${isW?'<span class="tag r">최저</span>':''}</td><td class="r num">${fnum(a.ref)}<div style="font-size:13px;color:var(--muted-soft)">${a.ref_date||''}</div></td><td class="r num">${fnum(a.last)}<div style="font-size:13px;color:var(--muted-soft)">${a.last_date||''}</div></td><td class="r"><span class="ratio-big" style="color:${a.ratio==null?'inherit':(ok?'var(--ok)':'var(--err)')}">${a.ratio==null?'-':f1(a.ratio)+'%'}</span></td><td class="r num">${kiTxt}</td><td class="r num">${a.min_ratio==null?'-':f1(a.min_ratio)+'%'}<div style="font-size:13px;color:var(--muted-soft)">${a.min_date||''}</div></td></tr>`;
+  }).join('');
+  const sched=(p.schedule||[]).map(e=>{
+    let cls='step'; let tag='';
+    if(e.result==='passed'){cls+=' passed'; tag='<span class="tag g">상환</span>';}
+    else if(e.result==='missed'){cls+=' missed'; tag='<span class="tag">미충족</span>';}
+    if(nx&&e.n===nx.n){cls+=' next'; tag='<span class="tag o">다음 평가</span>';}
+    else if(ex&&e.n===ex.n){cls+=' expected'; tag='<span class="tag g">상환 예상</span>';}
+    const ret=hasC?retOf(p,e):null;
+    return `<div class="${cls} elt">
+      <div class="date">${e.date}<small>${e.months?e.months+'개월 경과 시점':''}</small></div>
+      <div class="n">${e.is_maturity?'만기':e.n+'차'}<br>${tag}</div>
+      <div class="bar">${e.barrier!=null?e.barrier+'%':'-'}<small>배리어</small></div>
+      <div class="settle"><span>상환금 결제일</span><b>${e.settle||'-'}</b></div>
+      ${ret!=null?`<div class="settle"><span>누적 쿠폰(연 ${f1(p.coupon,2)}% × 경과기간)</span><b class="yield">${f1(ret,2)}%</b></div>`:''}
+    </div>`;
+  }).join('');
+  const pays=(p.pay_dates||[]); const nextPay=pays.find(d=>d>=today);
+  const payHTML=pays.length?`<h3 class="sec">정기 지급일 <span style="font-size:15px;color:var(--muted);font-weight:400">지급 조건·금액은 신탁 계약서 기준</span></h3><div class="paylist">${pays.map(d=>`<span class="${d<today?'past':(d===nextPay?'nx':'')}">${d}</span>`).join('')}</div>`:'';
+  const flags=[...(p.notes||[]),...(p.flags||[])].map(f=>`<li>${f}</li>`).join('');
+  const meta=[`최초기준가격 결정 ${p.trade_date||'-'}`,`만기평가 ${p.mat_eval||'-'}`,p.mat_years?p.mat_years+'년':'',p.period_months?p.period_months+'개월 주기':'',`배리어 ${(p.ladder||[]).join('-')||'-'}`,`낙인 ${kiTxt}`].filter(Boolean).join(' · ');
+  return `<div class="card">
+    <div class="top"><div><div class="name"><span class="typetag">ELT</span>${p.name}</div><div class="meta">${meta}${hasC?` · 쿠폰 <span class="yield" style="font-size:20px">연 ${f1(p.coupon,2)}%</span>`:''}</div></div>
+    <span class="badge ${st[1]}">${st[0]}</span></div>
+    <div class="verdict ${vcls}">${j.message||'-'}</div>
+    <div class="kpis">${kpis.map(k=>`<div class="kpi"><div class="l">${k.l}</div><div class="v ${k.c}">${k.v}</div><div class="d">${k.d}</div></div>`).join('')}</div>
+    ${assets?`<h3 class="sec">기초자산 현황</h3><div class="tbl-wrap"><table><thead><tr><th>기초자산</th><th class="r">최초기준가</th><th class="r">전일 종가</th><th class="r">현재 비율</th><th class="r">낙인</th><th class="r">기간 최저</th></tr></thead><tbody>${assets}</tbody></table></div>`:''}
+    <h3 class="sec">평가일별 상환 조건</h3>
+    <div class="sched">${sched}</div>
+    ${payHTML}
+    ${flags?`<ul class="flags">${flags}</ul>`:''}
+  </div>`;
+}
+function renderElt(){
+  const box=$('#eltCounts'); box.innerHTML='';
+  const c=(ELT&&ELT.counts)||{}; Object.keys(STATUS).forEach(k=>{ if(!c[k])return; const d=document.createElement('span'); d.className='chip'; d.innerHTML=`<i style="background:${COLOR[k]||'#84888B'}"></i>${STATUS[k][0]} ${c[k]}`; box.appendChild(d); });
+  const rows=[...ELIST].sort((a,b)=>{ const x=(a.judgment||{}).next, y=(b.judgment||{}).next; return (x?x.date:'9999')<(y?y.date:'9999')?-1:1; });
+  const tb=$('#eltBoard tbody'), mb=$('#eltBoardm'); tb.innerHTML=''; mb.innerHTML='';
+  rows.forEach(p=>{
+    const j=p.judgment||{}; const st=STATUS[j.status]||STATUS.unknown; const nx=j.next, ex=j.expected;
+    const assets=(p.assets||[]).map(a=>a.label||a.name).join(' · ')||'-';
+    const assetsBr=(p.assets||[]).map(a=>a.label||a.name).join('<br>')||'-';
+    const worst=j.worst?`<b class="num">${f1(j.worst.ratio)}%</b> <span style="color:var(--muted-soft);font-size:14px">${j.worst.label}</span>`:'-';
+    const worstBr=j.worst?`<b class="num">${f1(j.worst.ratio)}%</b><div class="sub">${j.worst.label}</div>`:'-';
+    const need=j.need_pct==null?'-':(j.need_pct===0?'<span style="color:var(--ok);font-weight:700">충족</span>':'+'+f1(j.need_pct)+'%');
+    const exs=ex?`${ex.is_maturity?'만기':ex.n+'차'} ${ex.date}`:'-';
+    const ki=p.no_ki?'없음':(p.ki_level!=null?p.ki_level+'%':'-');
+    const tr=document.createElement('tr');
+    const exsBr=ex?`${ex.is_maturity?'만기':ex.n+'차'}<div class="sub">${ex.date}</div>`:'-';
+    tr.innerHTML=`<td><span class="row-code" data-e="${p.code}">${p.code}호</span></td><td class="as">${assetsBr}</td><td class="r num">${worstBr}</td><td class="num"><b>${nx?nx.date:'-'}</b>${nx?`<div class="sub">D-${nx.days} · 배리어 ${nx.barrier}%</div>`:''}</td><td class="r num">${need}</td><td><span class="badge ${st[1]}">${st[0]}</span></td><td class="num">${exsBr}</td><td class="r num">${ki}</td><td class="r"><span class="yield">${p.coupon!=null?f1(p.coupon,2)+'%':'-'}</span></td>`;
+    tb.appendChild(tr);
+    const mc=document.createElement('div'); mc.className='mcard';
+    mc.innerHTML=`<div class="l1"><span class="row-code" data-e="${p.code}">ELT ${p.code}호</span><span class="badge ${st[1]}" style="font-size:14px;padding:4px 10px">${st[0]}</span></div><div class="l2">${assets}</div><div class="l3 num">최저 ${worst} · 다음 <b>${nx?nx.date:'-'}</b>${nx?' (D-'+nx.days+', '+nx.barrier+'%)':''} · 필요 ${need}</div><div class="l3 num" style="color:var(--muted)">예상 ${exs} · 낙인 ${ki} · 연 <span class="yield">${p.coupon!=null?f1(p.coupon,2)+'%':'-'}</span></div>`;
+    mb.appendChild(mc);
+  });
+}
+$('#toggleElt').addEventListener('click',()=>{
+  ELT_ON=!ELT_ON; $('#eltWrap').style.display=ELT_ON?'block':'none';
+  $('#toggleElt').textContent=ELT_ON?'ELT 현황판 닫기':'ELT 전체 보기';
+  if(ELT_ON) renderElt();
+});
+
+/* ===== PDF (결과보기 / PDF 공유) ===== */
+let PDF_CACHE=null, PDF_NAME='', PDF_TIMER=null, PDF_BUSY=null, PDF_TAG='';
+function loadScript(src){ return new Promise((res,rej)=>{ if(document.querySelector(`script[data-lib="${src}"]`)){ res(); return; } const el=document.createElement('script'); el.src=src; el.dataset.lib=src; el.onload=res; el.onerror=()=>rej(new Error('load '+src)); document.head.appendChild(el); }); }
+async function ensurePdfLibs(){
+  if(!window.html2canvas) await loadScript('lib/html2canvas.min.js');
+  if(!(window.jspdf&&window.jspdf.jsPDF)) await loadScript('lib/jspdf.umd.min.js');
+}
+function ymd(d){ return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0'); }
+function stamp(d){ const p=n=>String(n).padStart(2,'0'); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`; }
+function mountActions(tag){
+  PDF_TAG=tag; PDF_CACHE=null; PDF_NAME='';
+  const top=document.querySelector('#result .card .top'); if(!top) return;
+  top.insertAdjacentHTML('afterend','<div class="actions"><button class="abtn pri" id="btnView">📄 결과보기 (PDF)</button><button class="abtn" id="btnShare">📤 결과공유 (PDF 전송)</button><div class="atoast" id="atoast"></div></div>');
+  $('#btnView').addEventListener('click',viewPdf);
+  $('#btnShare').addEventListener('click',sharePdf);
+  schedulePrebuild();
+}
+function toast(msg,err){ const t=$('#atoast'); if(t){ t.textContent=msg||''; t.className='atoast'+(err?' err':''); } }
+function schedulePrebuild(){
+  clearTimeout(PDF_TIMER);
+  PDF_TIMER=setTimeout(()=>{ if(document.querySelector('#result .actions')) buildPdf().catch(()=>{}); },900);
+}
+async function buildPdf(){
+  if(PDF_CACHE) return {blob:PDF_CACHE,name:PDF_NAME};
+  if(PDF_BUSY) return PDF_BUSY;
+  PDF_BUSY=(async()=>{
+    try{
+      await ensurePdfLibs();
+      const card=document.querySelector('#result .card'); if(!card) throw new Error('no card');
+      const tag=PDF_TAG; const now=new Date();
+      const root=document.createElement('div'); root.className='pdfroot';
+      const clone=card.cloneNode(true);
+      clone.querySelectorAll('.actions,.principal,.links,details.payoff,.quick').forEach(e=>e.remove());
+      if(!getPrincipal()){ const km=clone.querySelector('#kpi-money'); if(km) km.remove(); }
+      clone.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));
+      const asof=(tag.startsWith('ELT')?(ELT&&ELT.asof):(DATA&&DATA.asof))||'-';
+      root.innerHTML=`<div class="phead"><div class="pt">MIRAE <span>ELS/ELT</span> CHECK</div><div class="ps">전일 종가 기준 자동 판정(추정)<br>기준일 <b>${asof}</b> · 출력 <b>${stamp(now)}</b></div></div>`;
+      root.appendChild(clone);
+      const foot=document.createElement('div'); foot.className='pfoot';
+      foot.innerHTML='※ 판정은 전일(해외지수·해외주식은 한국시간 새벽 마감) 종가와 최초기준가격을 바탕으로 자동 계산한 <b>추정치</b>입니다. 실제 상환 여부와 지급액은 평가일 당일 종가와 상품설명서(신탁계약서)에 따릅니다.<br>※ 최초기준가는 공개 시세 데이터에서 산출한 값이 포함될 수 있어 발행사 공시 기준가와 미세한 차이가 있을 수 있습니다. 본 자료는 임직원 참고용이며 고객에게 그대로 전달하는 자료가 아닙니다.'+(tag.startsWith('ELT')?'<br>※ ELT는 세금 계산을 표시하지 않으며, 누적 쿠폰은 연 쿠폰 × 경과기간 환산값입니다.':'<br>※ 세후 수익은 배당소득세 15.4%를 가정한 값이며 금융소득종합과세 대상 여부에 따라 달라질 수 있습니다.');
+      root.appendChild(foot);
+      if(clone.querySelectorAll('.sched .step').length>6){ root.classList.add('two'); clone.querySelectorAll('.step.elt .settle:last-child span').forEach(e=>{ e.textContent='누적 쿠폰'; }); }
+      document.body.appendChild(root);
+      try{ if(document.fonts&&document.fonts.ready) await document.fonts.ready; }catch(e){}
+      const canvas=await window.html2canvas(root,{scale:2,backgroundColor:'#ffffff',useCORS:true,logging:false,windowWidth:1100});
+      root.remove();
+      const {jsPDF}=window.jspdf; const pdf=new jsPDF({orientation:'p',unit:'mm',format:'a4',compress:true});
+      const PW=210, PH=297, M=7; let w=PW-2*M, h=canvas.height/canvas.width*w;
+      if(h>PH-2*M){ h=PH-2*M; w=canvas.width/canvas.height*h; }
+      pdf.addImage(canvas.toDataURL('image/jpeg',0.95),'JPEG',(PW-w)/2,M,w,h,undefined,'FAST');
+      const blob=pdf.output('blob');
+      PDF_CACHE=blob; PDF_NAME=`${tag}_결과_${ymd(now)}.pdf`;
+      return {blob,name:PDF_NAME};
+    } finally { document.querySelectorAll('.pdfroot').forEach(e=>e.remove()); PDF_BUSY=null; }
+  })();
+  return PDF_BUSY;
+}
+function saveBlob(blob,name){ const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click(); setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); },4000); }
+async function viewPdf(){
+  const btn=$('#btnView'); btn.disabled=true; toast('PDF를 만드는 중… (잠시만 기다려 주세요)');
+  const w=window.open('','_blank');
+  try{
+    const {blob,name}=await buildPdf();
+    const url=URL.createObjectURL(blob);
+    if(w){ w.location.href=url; toast('새 창에서 PDF가 열립니다.'); }
+    else { saveBlob(blob,name); toast('팝업이 차단되어 PDF를 저장했습니다. 다운로드 폴더를 확인해 주세요.'); }
+  }catch(e){ if(w) w.close(); toast('PDF를 만들지 못했습니다. 잠시 후 다시 시도해 주세요.',true); }
+  finally{ btn.disabled=false; }
+}
+async function sharePdf(){
+  const btn=$('#btnShare'); btn.disabled=true; toast(PDF_CACHE?'':'PDF를 만드는 중… (잠시만 기다려 주세요)');
+  try{
+    const {blob,name}=await buildPdf();
+    const file=new File([blob],name,{type:'application/pdf'});
+    if(navigator.canShare&&navigator.canShare({files:[file]})){
+      try{ await navigator.share({files:[file],title:name.replace('.pdf','')}); toast('공유창을 열었습니다.'); return; }
+      catch(e){
+        if(e&&e.name==='AbortError'){ toast(''); return; }
+        toast('PDF 준비가 끝났습니다. 공유 버튼을 한 번 더 누르세요.'); return;
+      }
+    }
+    saveBlob(blob,name); toast('이 기기는 바로 공유를 지원하지 않아 PDF를 저장했습니다. 저장된 파일을 카카오톡·메일 등으로 보내세요.');
+  }catch(e){ toast('PDF를 만들지 못했습니다. 잠시 후 다시 시도해 주세요.',true); }
+  finally{ btn.disabled=false; }
+}
+
+function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function boardRows(){
+  let rows=LIST.filter(p=>{
+    if(['redeemed','redeemed_confirmed','matured','pending','elb','noschedule'].includes(p.s)) return false;
+    if(FILTER==='all') return true;
+    if(FILTER==='soon') return p.n&&p.n.days<=30&&p.n.days>=0;
+    return p.s===FILTER;
+  });
+  const t=($('#ftext').value||'').trim().toLowerCase();
+  if(t){ rows=rows.filter(p=>p.code.includes(t)||(p.a||[]).some(a=>(a||'').toLowerCase().includes(t))); }
+  const key=p=>{ if(SORT==='code')return parseInt(p.code); if(SORT==='worst')return p.w?p.w.ratio:999; return p.n?p.n.date:'9999';};
+  rows.sort((a,b)=>{const x=key(a),y=key(b); return (x>y?1:x<y?-1:0)*SORTDIR;});
+  return rows;
+}
+let ROWS=[];
+function renderBoard(reset=true){
+  if(!BOARD_ON) return;
+  if(reset){ ROWS=boardRows(); SHOWN=0; $('#board tbody').innerHTML=''; $('#boardm').innerHTML=''; }
+  const tb=$('#board tbody'); const mb=$('#boardm'); const mob=isMobile();
+  $('#boardempty').style.display=ROWS.length?'none':'block';
+  const slice=ROWS.slice(SHOWN, SHOWN+PAGE); SHOWN+=slice.length;
+  const frag=document.createDocumentFragment();
+  slice.forEach(p=>{
+    const st=STATUS[p.s]||STATUS.unknown; const nx=p.n; const ex=p.e;
+    const assets=(p.a||[]).join(' · ');
+    const worst=p.w?`<b class="num">${f1(p.w.ratio)}%</b> <span style="color:var(--muted-soft);font-size:14px">${p.w.label}</span>`:'-';
+    const need=p.need==null?'-':(p.need===0?'<span style="color:var(--ok);font-weight:700">충족</span>':'+'+f1(p.need)+'%');
+    const exs=ex?`${ex.is_maturity?'만기':ex.n+'차'}${ex.lizard?' 리자드':''} ${ex.date} <span class="yield">${f1(ex.ret,2)}%</span>`:'-';
+    if(!mob){
+      const tr=document.createElement('tr');
+      tr.innerHTML=`<td><span class="row-code" data-c="${p.code}">${p.code}</span>${p.lz?'<span class="tag">리자드</span>':''}${p.mo?'<span class="tag">월지급</span>':''}</td><td>${assets}</td><td class="r num">${worst}</td><td class="num"><b>${nx?nx.date:'-'}</b>${nx?` <span style="color:var(--muted-soft);font-size:14px">D-${nx.days}</span>`:''}</td><td class="r num">${nx&&nx.barrier!=null?nx.barrier+'%':'-'}</td><td class="r num">${need}</td><td><span class="badge ${st[1]}" style="font-size:14px;padding:4px 10px">${st[0]}</span></td><td class="num">${exs}</td><td class="r"><span class="yield">${f1(p.coupon,2)}%</span></td>`;
+      frag.appendChild(tr);
+    }else{
+      const mc=document.createElement('div'); mc.className='mcard';
+      mc.innerHTML=`<div class="l1"><span class="row-code" data-c="${p.code}">${p.code}</span><span class="badge ${st[1]}" style="font-size:14px;padding:4px 10px">${st[0]}</span></div><div class="l2">${assets}</div><div class="l3 num">최저 ${worst} · 다음 <b>${nx?nx.date:'-'}</b>${nx?' (D-'+nx.days+', '+nx.barrier+'%)':''} · 필요 ${need}</div><div class="l3 num" style="color:var(--muted)">예상 ${exs} · 연 <span class="yield">${f1(p.coupon,2)}%</span></div>`;
+      frag.appendChild(mc);
+    }
+  });
+  (mob?mb:tb).appendChild(frag);
+  $('#more').style.display=SHOWN<ROWS.length?'inline-block':'none';
+  $('#shown').textContent=ROWS.length?`${SHOWN} / ${ROWS.length}건 표시`:'';
+}
+$('#toggleBoard').addEventListener('click',()=>{
+  BOARD_ON=!BOARD_ON; $('#boardWrap').style.display=BOARD_ON?'block':'none';
+  $('#toggleBoard').textContent=BOARD_ON?'ELS 현황판 닫기':'ELS 전체 보기';
+  if(BOARD_ON) renderBoard(true);
+});
+$('#more').addEventListener('click',()=>renderBoard(false));
+window.addEventListener('resize',()=>{ if(BOARD_ON) renderBoard(true); });
+document.addEventListener('click',e=>{
+  const c=e.target.closest('.row-code'); if(c){ if(c.dataset.e){ $('#q').value=c.dataset.e; search(c.dataset.e); } else { $('#q').value=c.dataset.c; search(c.dataset.c); } }
+  const f=e.target.closest('.filters .btn'); if(f){ document.querySelectorAll('.filters .btn').forEach(b=>b.classList.remove('on')); f.classList.add('on'); FILTER=f.dataset.f; renderBoard(); }
+  const s=e.target.closest('th.sort'); if(s){ if(SORT===s.dataset.k){SORTDIR*=-1;} else {SORT=s.dataset.k;SORTDIR=1;} document.querySelectorAll('th.sort').forEach(x=>x.classList.remove('on')); s.classList.add('on'); renderBoard(); }
+  if(!e.target.closest('.searchbox')) $('#sugg').style.display='none';
+});
+$('#go').addEventListener('click',()=>search($('#q').value));
+$('#q').addEventListener('keydown',e=>{ if(e.key==='Enter'){ search($('#q').value); $('#sugg').style.display='none'; } });
+$('#q').addEventListener('input',()=>{
+  const v=$('#q').value.trim().replace(/[^0-9]/g,''); const box=$('#sugg'); box.innerHTML='';
+  if(!v){ box.style.display='none'; return; }
+  const ehits=v.length<=3?ELIST.filter(p=>p.code.startsWith(v)).slice(0,6):[];
+  ehits.forEach(p=>{ const j=p.judgment||{}; const st=STATUS[j.status]||STATUS.unknown; const d=document.createElement('div'); d.innerHTML=`<span class="tag b" style="margin:0 8px 0 0">ELT</span><b class="num">${p.code}호</b> · ${(p.assets||[]).map(a=>a.label||a.name).join('·')||'정보 등록 전'} · <span style="color:${COLOR[j.status]||'#84888B'};font-weight:700">${st[0]}</span>`; d.onclick=()=>{ $('#q').value=p.code; box.style.display='none'; search(p.code); }; box.appendChild(d); });
+  const hits=(v.length>=2&&LIST.length)?LIST.filter(p=>p.code.startsWith(v)).slice(0,8):[];
+  if(!hits.length&&!ehits.length){ box.style.display='none'; return; }
+  hits.forEach(p=>{ const d=document.createElement('div'); const st=STATUS[p.s]||STATUS.unknown; d.innerHTML=`<b class="num">${p.code}</b> · ${(p.a||[]).join('·')} · <span style="color:${COLOR[p.s]||'#84888B'};font-weight:700">${st[0]}</span>`; d.onclick=()=>{ $('#q').value=p.code; box.style.display='none'; search(p.code); }; box.appendChild(d); });
+  box.style.display='block';
+});
+$('#ftext').addEventListener('input',renderBoard);
+window.addEventListener('hashchange',()=>{ const h=location.hash.replace('#',''); if(h&&h!==$('#q').value){ $('#q').value=h; search(h); } });
+load();
+</script>
+</body>
+</html>
