@@ -150,6 +150,48 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
 .paylist span.past{color:var(--muted-soft);background:var(--subtle);border-color:var(--hair-soft)}
 .paylist span.nx{border:2px solid var(--blue);color:var(--blue);font-weight:700}
 
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.abtn{height:48px;padding:0 22px;font:inherit;font-size:18px;font-weight:700;border-radius:4px;cursor:pointer;border:2px solid var(--orange);background:#fff;color:var(--orange-active);white-space:nowrap}
+.abtn.pri{background:var(--orange);color:#fff}
+.abtn:active{background:var(--orange-active);color:#fff}
+.abtn[disabled]{opacity:.6;cursor:wait}
+.atoast{flex-basis:100%;font-size:15px;color:var(--muted);min-height:20px}
+.atoast.err{color:var(--err)}
+.pdfroot{position:fixed;left:-12000px;top:0;width:1000px;background:#fff;padding:34px 40px 26px;font-family:var(--font);color:var(--body);font-size:16px;line-height:1.5}
+.pdfroot .phead{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:4px solid var(--orange);padding-bottom:12px;margin-bottom:18px}
+.pdfroot .phead .pt{font-size:30px;font-weight:900;color:var(--ink);letter-spacing:-.5px}
+.pdfroot .phead .pt span{color:var(--orange)}
+.pdfroot .phead .ps{font-size:14px;color:var(--muted);text-align:right;line-height:1.5}
+.pdfroot .phead .ps b{color:var(--blue);font-family:var(--num)}
+.pdfroot .card{border:0;box-shadow:none;margin:0;padding:0;border-radius:0}
+.pdfroot .card .name{font-size:28px}
+.pdfroot .kpis{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:14px}
+.pdfroot .kpi{padding:10px 12px}
+.pdfroot .kpi .v{font-size:25px}
+.pdfroot .verdict{margin-top:14px;padding:14px 18px;font-size:18px}
+.pdfroot h3.sec{margin:18px 0 8px;font-size:19px}
+.pdfroot table{margin-top:8px;font-size:16px}
+.pdfroot th,.pdfroot td{padding:8px 10px}
+.pdfroot .step{padding:9px 14px;gap:8px 14px}
+.pdfroot .sched{gap:7px}
+.pdfroot .step .date{font-size:24px}
+.pdfroot .step .bar{font-size:22px}
+.pdfroot .step .ret .y{font-size:24px}
+.pdfroot .flags{font-size:14px;margin-top:10px}
+.pdfroot.two .sched{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.pdfroot.two .step{grid-template-columns:128px 62px 84px 1fr;padding:7px 10px;gap:4px 8px}
+.pdfroot.two .step.elt{grid-template-columns:116px 52px 62px 1fr 82px;padding:7px 8px;gap:4px 6px}
+.pdfroot.two .step.elt .settle b{font-size:15px}.pdfroot.two .step.elt .settle span{font-size:11px;white-space:nowrap}
+.pdfroot.two .step.elt .settle b.yield{font-size:19px}
+.pdfroot.two .step .date{font-size:18px}.pdfroot.two .step .date small{font-size:12px}
+.pdfroot.two .step .bar{font-size:18px}.pdfroot.two .step .bar small{font-size:11px}
+.pdfroot.two .step .ret .y{font-size:19px}.pdfroot.two .step .ret .y small{display:none}
+.pdfroot.two .step .ret .m{display:block;font-size:12px}
+.pdfroot.two .step .settle b{font-size:16px}.pdfroot.two .step .settle{font-size:12px}
+.pdfroot .pfoot{margin-top:18px;padding-top:10px;border-top:1px solid var(--hair);font-size:12.5px;color:var(--muted);line-height:1.55}
+@media (max-width:760px){ .actions .abtn{flex:1 1 46%;padding:0 10px;font-size:16px} }
+
 @media (max-width:980px){ .kpis{grid-template-columns:repeat(3,1fr)} }
 @media (max-width:760px){
   body{font-size:17px}
@@ -320,7 +362,7 @@ async function search(q){
   if(eltNo(q)){
     const e=findElt(q);
     if(!e){ box.innerHTML=`<div class="card"><div class="name" style="font-size:22px;font-weight:800;color:var(--ink)">조회 결과 없음</div><div class="meta" style="margin-top:8px;font-size:17px">Premier ELT ${eltNo(q)}호가 등록되어 있지 않습니다. 이미 상환됐거나 아직 등록 전인 회차일 수 있습니다. 담당 PB에게 확인해 주세요.</div></div>`; return; }
-    location.hash='ELT'+e.code; CUR=null; box.innerHTML=eltCardHTML(e);
+    location.hash='ELT'+e.code; CUR=null; box.innerHTML=eltCardHTML(e); mountActions('ELT_'+e.code+'호');
     window.scrollTo({top:box.offsetTop-80,behavior:'smooth'}); return;
   }
   const p=find(q);
@@ -334,6 +376,7 @@ async function search(q){
   pi.addEventListener('input',()=>{ const v=getPrincipal(); pi.value=v?v.toLocaleString('ko-KR'):''; savePrincipal(v); refreshMoney(); });
   document.querySelectorAll('.quick button').forEach(b=>b.addEventListener('click',()=>{ const v=parseInt(b.dataset.v,10); pi.value=v.toLocaleString('ko-KR'); savePrincipal(v); refreshMoney(); }));
   refreshMoney();
+  mountActions('ELS_'+p.code);
   window.scrollTo({top:box.offsetTop-80,behavior:'smooth'});
 }
 function retOf(p,ev){ if(ev&&ev.payout!=null) return ev.payout; return (p.coupon&&ev&&ev.months)?p.coupon*ev.months/12:null; }
@@ -344,6 +387,7 @@ function moneyHTML(ret){
 }
 function refreshMoney(){
   if(!CUR) return;
+  PDF_CACHE=null; schedulePrebuild();
   document.querySelectorAll('[data-ret]').forEach(el=>{ const r=parseFloat(el.dataset.ret); el.innerHTML=moneyHTML(isNaN(r)?null:r); });
   const k=$('#kpi-money'); if(k){ const ex=(CUR.judgment||{}).expected; const r=ex?ex.ret:null; const P=getPrincipal();
     if(P&&r!=null){ const pre=P*r/100; k.querySelector('.v').textContent=won(pre*(1-TAX)); k.querySelector('.d').textContent=`세전 ${won(pre)} · 세후 수령 ${won(P+pre*(1-TAX))}`; }
@@ -474,6 +518,93 @@ $('#toggleElt').addEventListener('click',()=>{
   $('#toggleElt').textContent=ELT_ON?'ELT 현황판 닫기':'ELT 전체 보기';
   if(ELT_ON) renderElt();
 });
+
+/* ===== PDF (결과보기 / PDF 공유) ===== */
+let PDF_CACHE=null, PDF_NAME='', PDF_TIMER=null, PDF_BUSY=null, PDF_TAG='';
+function loadScript(src){ return new Promise((res,rej)=>{ if(document.querySelector(`script[data-lib="${src}"]`)){ res(); return; } const el=document.createElement('script'); el.src=src; el.dataset.lib=src; el.onload=res; el.onerror=()=>rej(new Error('load '+src)); document.head.appendChild(el); }); }
+async function ensurePdfLibs(){
+  if(!window.html2canvas) await loadScript('lib/html2canvas.min.js');
+  if(!(window.jspdf&&window.jspdf.jsPDF)) await loadScript('lib/jspdf.umd.min.js');
+}
+function ymd(d){ return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0'); }
+function stamp(d){ const p=n=>String(n).padStart(2,'0'); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`; }
+function mountActions(tag){
+  PDF_TAG=tag; PDF_CACHE=null; PDF_NAME='';
+  const top=document.querySelector('#result .card .top'); if(!top) return;
+  top.insertAdjacentHTML('afterend','<div class="actions"><button class="abtn pri" id="btnView">📄 결과보기 (PDF)</button><button class="abtn" id="btnShare">📤 결과공유 (PDF 전송)</button><div class="atoast" id="atoast"></div></div>');
+  $('#btnView').addEventListener('click',viewPdf);
+  $('#btnShare').addEventListener('click',sharePdf);
+  schedulePrebuild();
+}
+function toast(msg,err){ const t=$('#atoast'); if(t){ t.textContent=msg||''; t.className='atoast'+(err?' err':''); } }
+function schedulePrebuild(){
+  clearTimeout(PDF_TIMER);
+  PDF_TIMER=setTimeout(()=>{ if(document.querySelector('#result .actions')) buildPdf().catch(()=>{}); },900);
+}
+async function buildPdf(){
+  if(PDF_CACHE) return {blob:PDF_CACHE,name:PDF_NAME};
+  if(PDF_BUSY) return PDF_BUSY;
+  PDF_BUSY=(async()=>{
+    try{
+      await ensurePdfLibs();
+      const card=document.querySelector('#result .card'); if(!card) throw new Error('no card');
+      const tag=PDF_TAG; const now=new Date();
+      const root=document.createElement('div'); root.className='pdfroot';
+      const clone=card.cloneNode(true);
+      clone.querySelectorAll('.actions,.principal,.links,details.payoff,.quick').forEach(e=>e.remove());
+      if(!getPrincipal()){ const km=clone.querySelector('#kpi-money'); if(km) km.remove(); }
+      clone.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));
+      const asof=(tag.startsWith('ELT')?(ELT&&ELT.asof):(DATA&&DATA.asof))||'-';
+      root.innerHTML=`<div class="phead"><div class="pt">MIRAE <span>ELS/ELT</span> CHECK</div><div class="ps">전일 종가 기준 자동 판정(추정)<br>기준일 <b>${asof}</b> · 출력 <b>${stamp(now)}</b></div></div>`;
+      root.appendChild(clone);
+      const foot=document.createElement('div'); foot.className='pfoot';
+      foot.innerHTML='※ 판정은 전일(해외지수·해외주식은 한국시간 새벽 마감) 종가와 최초기준가격을 바탕으로 자동 계산한 <b>추정치</b>입니다. 실제 상환 여부와 지급액은 평가일 당일 종가와 상품설명서(신탁계약서)에 따릅니다.<br>※ 최초기준가는 공개 시세 데이터에서 산출한 값이 포함될 수 있어 발행사 공시 기준가와 미세한 차이가 있을 수 있습니다. 본 자료는 임직원 참고용이며 고객에게 그대로 전달하는 자료가 아닙니다.'+(tag.startsWith('ELT')?'<br>※ ELT는 세금 계산을 표시하지 않으며, 누적 쿠폰은 연 쿠폰 × 경과기간 환산값입니다.':'<br>※ 세후 수익은 배당소득세 15.4%를 가정한 값이며 금융소득종합과세 대상 여부에 따라 달라질 수 있습니다.');
+      root.appendChild(foot);
+      if(clone.querySelectorAll('.sched .step').length>6){ root.classList.add('two'); clone.querySelectorAll('.step.elt .settle:last-child span').forEach(e=>{ e.textContent='누적 쿠폰'; }); }
+      document.body.appendChild(root);
+      try{ if(document.fonts&&document.fonts.ready) await document.fonts.ready; }catch(e){}
+      const canvas=await window.html2canvas(root,{scale:2,backgroundColor:'#ffffff',useCORS:true,logging:false,windowWidth:1100});
+      root.remove();
+      const {jsPDF}=window.jspdf; const pdf=new jsPDF({orientation:'p',unit:'mm',format:'a4',compress:true});
+      const PW=210, PH=297, M=7; let w=PW-2*M, h=canvas.height/canvas.width*w;
+      if(h>PH-2*M){ h=PH-2*M; w=canvas.width/canvas.height*h; }
+      pdf.addImage(canvas.toDataURL('image/jpeg',0.95),'JPEG',(PW-w)/2,M,w,h,undefined,'FAST');
+      const blob=pdf.output('blob');
+      PDF_CACHE=blob; PDF_NAME=`${tag}_결과_${ymd(now)}.pdf`;
+      return {blob,name:PDF_NAME};
+    } finally { document.querySelectorAll('.pdfroot').forEach(e=>e.remove()); PDF_BUSY=null; }
+  })();
+  return PDF_BUSY;
+}
+function saveBlob(blob,name){ const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click(); setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); },4000); }
+async function viewPdf(){
+  const btn=$('#btnView'); btn.disabled=true; toast('PDF를 만드는 중… (잠시만 기다려 주세요)');
+  const w=window.open('','_blank');
+  try{
+    const {blob,name}=await buildPdf();
+    const url=URL.createObjectURL(blob);
+    if(w){ w.location.href=url; toast('새 창에서 PDF가 열립니다.'); }
+    else { saveBlob(blob,name); toast('팝업이 차단되어 PDF를 저장했습니다. 다운로드 폴더를 확인해 주세요.'); }
+  }catch(e){ if(w) w.close(); toast('PDF를 만들지 못했습니다. 잠시 후 다시 시도해 주세요.',true); }
+  finally{ btn.disabled=false; }
+}
+async function sharePdf(){
+  const btn=$('#btnShare'); btn.disabled=true; toast(PDF_CACHE?'':'PDF를 만드는 중… (잠시만 기다려 주세요)');
+  try{
+    const {blob,name}=await buildPdf();
+    const file=new File([blob],name,{type:'application/pdf'});
+    if(navigator.canShare&&navigator.canShare({files:[file]})){
+      try{ await navigator.share({files:[file],title:name.replace('.pdf','')}); toast('공유창을 열었습니다.'); return; }
+      catch(e){
+        if(e&&e.name==='AbortError'){ toast(''); return; }
+        toast('PDF 준비가 끝났습니다. 공유 버튼을 한 번 더 누르세요.'); return;
+      }
+    }
+    saveBlob(blob,name); toast('이 기기는 바로 공유를 지원하지 않아 PDF를 저장했습니다. 저장된 파일을 카카오톡·메일 등으로 보내세요.');
+  }catch(e){ toast('PDF를 만들지 못했습니다. 잠시 후 다시 시도해 주세요.',true); }
+  finally{ btn.disabled=false; }
+}
+
 function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 function boardRows(){
   let rows=LIST.filter(p=>{
