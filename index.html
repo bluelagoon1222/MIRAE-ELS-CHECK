@@ -196,6 +196,17 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
 .nw{white-space:nowrap}
 .kpi,.step>div,.verdict,.kipanel{min-width:0;overflow-wrap:anywhere}
 .step .date{white-space:nowrap}.step .date small{white-space:normal}
+.struct{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:8px}
+.struct .lad{font-family:var(--num);font-size:25px;font-weight:800;color:var(--ink);letter-spacing:.3px;overflow-wrap:anywhere}
+.struct .kib{font-family:var(--num);font-size:22px;font-weight:900;padding:2px 12px;border-radius:4px;border:2px solid;white-space:nowrap}
+.struct .kib.ki{color:var(--err);border-color:var(--err);background:var(--err-bg)}
+.struct .kib.noki{color:var(--blue);border-color:var(--blue);background:#EAF0F7}
+.struct .kib.unk{color:var(--muted);border-color:var(--hair)}
+.struct .ext{font-size:16px;font-weight:700;color:var(--muted)}
+.kicell .kp{display:block;font-size:22px;font-weight:800;font-family:var(--num);color:var(--ink);white-space:nowrap}
+.kicell .kl{display:block;font-size:20px;font-weight:800;font-family:var(--num);color:var(--ink);white-space:nowrap;margin-top:2px}
+.kicell .kl small{font-size:12px;font-weight:600;color:var(--muted);margin-right:4px}
+.kicell .kn{font-size:22px;font-weight:800;color:var(--blue)}
 .kisub{display:block;font-size:13px;color:var(--muted-soft);font-weight:400;white-space:nowrap}
 .kisub.t{color:var(--err);font-weight:700}
 .kipanel{margin-top:14px;border:2px solid;border-radius:6px;padding:16px 20px;line-height:1.55}
@@ -216,6 +227,15 @@ footer{margin:44px 0 36px;font-size:14px;color:var(--muted-soft);line-height:1.7
   .guide{grid-template-columns:1fr}
   .kpis{grid-template-columns:repeat(2,1fr)}
   .kpi .v{font-size:19px}
+  .tbl-wrap:has(.atbl){overflow:visible}
+  .atbl,.atbl tbody{display:block;min-width:0}
+  .atbl thead{display:none}
+  .atbl tr{display:grid;grid-template-columns:1fr 1fr;gap:2px 10px;padding:10px 2px;border-bottom:1px solid var(--hair)}
+  .atbl td{display:block;border:0!important;padding:4px 6px!important;text-align:left!important}
+  .atbl td::before{content:attr(data-l);display:block;font-size:12px;color:var(--muted);font-weight:600;margin-bottom:2px}
+  .atbl td:first-child{grid-column:1/-1}
+  .atbl td:first-child::before{display:none}
+  .struct .lad{font-size:20px}.struct .kib{font-size:18px}.kicell .kp{font-size:19px}.kicell .kl{font-size:16px}
   .kpi{padding:12px 11px}
   .step .bar{font-size:20px}
   .kipanel{padding:14px 14px}.kipanel .kt{font-size:20px}.kipanel .kd{font-size:16px}.kipanel .kx{font-size:14px}
@@ -413,11 +433,19 @@ function refreshMoney(){
 
 function nb(s){ return String(s==null?'':s).replace(/(\d{4}-\d{2}-\d{2})/g,'<span class="nw">$1</span>'); }
 function kiLv(p,a){ if(p.no_ki) return null; if(a&&a.ki!=null&&a.ki!=='') return +a.ki; return p.ki_level!=null?+p.ki_level:null; }
+function structHTML(p){
+  const lad=(p.ladder||[]).filter(x=>x!=null).map(x=>+x%1?(+x).toFixed(1):String(+x)).join('-');
+  let kib;
+  if(p.no_ki) kib='<span class="kib noki">노낙인 (No KI)</span>';
+  else{ const ks=(p.assets||[]).map(a=>kiLv(p,a)).filter(x=>x!=null); kib=ks.length?`<span class="kib ki">KI ${Math.max(...ks)}</span>`:'<span class="kib unk">KI 미확인</span>'; }
+  const ext=[p.lizard?'리자드':'',p.monthly?'월지급':''].filter(Boolean).join(' · ');
+  return `<div class="struct">${lad?`<span class="lad">${lad}</span>`:''}${kib}${ext?`<span class="ext">${ext}</span>`:''}</div>`;
+}
 function kiCell(p,a){
-  const k=kiLv(p,a); if(k==null) return p.no_ki?'없음':'-';
-  const lv=a.ref!=null?fnum(a.ref*k/100):'-';
+  const k=kiLv(p,a); if(k==null) return p.no_ki?'<span class="kicell"><span class="kn">노낙인</span></span>':'-';
+  const lv=a.ref!=null?(+(a.ref*k/100).toFixed(4)).toLocaleString('en-US',{maximumFractionDigits:4}):'-';
   const t=a.min_ratio!=null&&a.min_ratio<k;
-  return `${k}%<span class="kisub">KI ${lv}</span>${t?`<span class="kisub t">터치 ${a.min_date||''}</span>`:''}`;
+  return `<span class="kicell"><span class="kp">${k}%</span><span class="kl"><small>지수</small>${lv}</span></span>${t?`<span class="kisub t">터치 ${a.min_date||''}</span>`:''}`;
 }
 function kiPanel(p){
   if(p.principal_guard) return '';
@@ -488,7 +516,7 @@ function cardHTML(p){
   }).join('');
   const flags=(p.flags||[]).map(f=>`<li>${f}</li>`).join('');
   return `<div class="card">
-    <div class="top"><div><div class="name">${p.name}</div><div class="meta">발행 ${nb(p.issue_date||'-')} · 만기평가 ${nb(p.mat_eval||'-')} · ${p.mat_years?p.mat_years+'년':''}/${p.period_months?p.period_months+'개월':''} · 배리어 ${(p.ladder||[]).join('-')||'-'}${p.lizard?' · 리자드':''}${p.monthly?' · 월지급':''} · 쿠폰 <span class="yield" style="font-size:20px">연 ${f1(p.coupon,2)}%</span></div></div>
+    <div class="top"><div><div class="name">${p.name}</div>${structHTML(p)}<div class="meta">발행 ${nb(p.issue_date||'-')} · 만기평가 ${nb(p.mat_eval||'-')} · ${p.mat_years?p.mat_years+'년':''}/${p.period_months?p.period_months+'개월':''} · 배리어 ${(p.ladder||[]).join('-')||'-'}${p.lizard?' · 리자드':''}${p.monthly?' · 월지급':''} · 쿠폰 <span class="yield" style="font-size:20px">연 ${f1(p.coupon,2)}%</span></div></div>
     <span class="badge ${st[1]}">${st[0]}</span></div>
     <div class="verdict ${vcls}">${nb(j.message||'-')}</div>
     ${kiPanel(p)}
@@ -499,7 +527,7 @@ function cardHTML(p){
       <span class="quick"><button data-v="10000000">1천만</button><button data-v="30000000">3천만</button><button data-v="50000000">5천만</button><button data-v="100000000">1억</button></span>
       <span class="note">세후 = 세전 수익 × (1 − 15.4%). 입력한 원금은 이 브라우저에만 저장됩니다.</span></div>
     <h3 class="sec">기초자산 현황</h3>
-    <div class="tbl-wrap"><table><thead><tr><th>기초자산</th><th class="r">최초기준가</th><th class="r">전일 종가</th><th class="r">현재 비율</th><th class="r">낙인</th><th class="r">기간 최저</th></tr></thead><tbody>${assets}</tbody></table></div>
+    <div class="tbl-wrap"><table class="atbl"><thead><tr><th>기초자산</th><th class="r">최초기준가</th><th class="r">전일 종가</th><th class="r">현재 비율</th><th class="r">낙인 (비율·지수)</th><th class="r">기간 최저</th></tr></thead><tbody>${assets}</tbody></table></div>
     <h3 class="sec">평가일별 상환 조건과 수익</h3>
     <div class="sched">${sched}</div>
     ${flags?`<ul class="flags">${flags}</ul>`:''}
@@ -545,12 +573,12 @@ function eltCardHTML(p){
   const flags=[...(p.notes||[]),...(p.flags||[])].map(f=>`<li>${f}</li>`).join('');
   const meta=[`최초기준가격 결정 ${p.trade_date||'-'}`,`만기평가 ${p.mat_eval||'-'}`,p.mat_years?p.mat_years+'년':'',p.period_months?p.period_months+'개월 주기':'',`배리어 ${(p.ladder||[]).join('-')||'-'}`,`낙인 ${kiTxt}`].filter(Boolean).join(' · ');
   return `<div class="card">
-    <div class="top"><div><div class="name"><span class="typetag">ELT</span>${p.name}</div><div class="meta">${nb(meta)}${hasC?` · 쿠폰 <span class="yield" style="font-size:20px">연 ${f1(p.coupon,2)}%</span>`:''}</div></div>
+    <div class="top"><div><div class="name"><span class="typetag">ELT</span>${p.name}</div>${structHTML(p)}<div class="meta">${nb(meta)}${hasC?` · 쿠폰 <span class="yield" style="font-size:20px">연 ${f1(p.coupon,2)}%</span>`:''}</div></div>
     <span class="badge ${st[1]}">${st[0]}</span></div>
     <div class="verdict ${vcls}">${nb(j.message||'-')}</div>
     ${kiPanel(p)}
     <div class="kpis">${kpis.map(k=>`<div class="kpi"><div class="l">${k.l}</div><div class="v ${k.c}">${nb(k.v)}</div><div class="d">${nb(k.d)}</div></div>`).join('')}</div>
-    ${assets?`<h3 class="sec">기초자산 현황</h3><div class="tbl-wrap"><table><thead><tr><th>기초자산</th><th class="r">최초기준가</th><th class="r">전일 종가</th><th class="r">현재 비율</th><th class="r">낙인</th><th class="r">기간 최저</th></tr></thead><tbody>${assets}</tbody></table></div>`:''}
+    ${assets?`<h3 class="sec">기초자산 현황</h3><div class="tbl-wrap"><table class="atbl"><thead><tr><th>기초자산</th><th class="r">최초기준가</th><th class="r">전일 종가</th><th class="r">현재 비율</th><th class="r">낙인 (비율·지수)</th><th class="r">기간 최저</th></tr></thead><tbody>${assets}</tbody></table></div>`:''}
     <h3 class="sec">평가일별 상환 조건</h3>
     <div class="sched">${sched}</div>
     ${payHTML}
@@ -595,7 +623,14 @@ async function ensurePdfLibs(){
 }
 function ymd(d){ return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0'); }
 function stamp(d){ const p=n=>String(n).padStart(2,'0'); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`; }
+function labelTables(){
+  document.querySelectorAll('#result table.atbl').forEach(t=>{
+    const hs=[...t.querySelectorAll('thead th')].map(h=>h.textContent.trim());
+    t.querySelectorAll('tbody tr').forEach(tr=>[...tr.children].forEach((td,i)=>td.setAttribute('data-l',hs[i]||'')));
+  });
+}
 function mountActions(tag){
+  labelTables();
   PDF_TAG=tag; PDF_CACHE=null; PDF_NAME='';
   const top=document.querySelector('#result .card .top'); if(!top) return;
   top.insertAdjacentHTML('afterend','<div class="actions"><button class="abtn pri" id="btnView">📄 결과보기 (PDF)</button><button class="abtn" id="btnShare">📤 결과공유 (PDF 전송)</button><div class="atoast" id="atoast"></div></div>');
@@ -621,6 +656,7 @@ async function buildPdf(){
       clone.querySelectorAll('.actions,.principal,.links,details.payoff,.quick').forEach(e=>e.remove());
       if(!getPrincipal()){ const km=clone.querySelector('#kpi-money'); if(km) km.remove(); }
       clone.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));
+      clone.querySelectorAll('table.atbl').forEach(t=>{ t.classList.remove('atbl'); t.querySelectorAll('[data-l]').forEach(td=>td.removeAttribute('data-l')); });
       const asof=(tag.startsWith('ELT')?(ELT&&ELT.asof):(DATA&&DATA.asof))||'-';
       root.innerHTML=`<div class="phead"><div class="pt">MIRAE <span>ELS/ELT</span> CHECK</div><div class="ps">전일 종가 기준 자동 판정(추정)<br>기준일 <b>${asof}</b> · 출력 <b>${stamp(now)}</b></div></div>`;
       root.appendChild(clone);
