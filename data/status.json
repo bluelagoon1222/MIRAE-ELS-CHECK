@@ -1,123 +1,123 @@
 {
- "generated": "2026-11-10 13:26",
- "elapsed_sec": 641.7,
- "cached_products": 1809,
- "excluded": 2887,
- "redeemed_list": 1246,
+ "generated": "2026-11-11 11:16",
+ "elapsed_sec": 612.0,
+ "cached_products": 1735,
+ "excluded": 2961,
+ "redeemed_list": 1320,
  "redeemed_source_ok": false,
- "hidden_estimated": 1159,
- "active": 650,
+ "hidden_estimated": 1089,
+ "active": 646,
  "probes": 150,
  "new": 0,
  "counts": {
   "nodata": 50,
   "ki": 11,
-  "risk": 163,
-  "redeemed": 83,
+  "risk": 117,
+  "redeemed": 99,
   "redeemed_confirmed": 79,
-  "pass": 240,
+  "pass": 265,
   "noschedule": 1,
-  "defer": 21,
+  "defer": 22,
   "matured": 2
  },
  "nodata_reasons": {
   "CSI300": 50
  },
  "prices": {
-  "^STOXX50E": {
-   "rows": 1759,
+  "^N225": {
+   "rows": 1708,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "^KS200": {
    "rows": 1999,
-   "first": "2018-09-12",
-   "last": "2026-11-09"
+   "first": "2018-09-13",
+   "last": "2026-11-10"
   },
   "^GSPC": {
-   "rows": 1758,
-   "first": "2019-11-11",
-   "last": "2026-11-09"
-  },
-  "^HSCE": {
-   "rows": 1722,
+   "rows": 1759,
    "first": "2019-11-11",
    "last": "2026-11-10"
   },
-  "NVDA": {
-   "rows": 1758,
+  "^STOXX50E": {
+   "rows": 1760,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
+  },
+  "^HSCE": {
+   "rows": 1723,
+   "first": "2019-11-11",
+   "last": "2026-11-11"
+  },
+  "NVDA": {
+   "rows": 1759,
+   "first": "2019-11-11",
+   "last": "2026-11-10"
   },
   "TSLA": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "NFLX": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "AMD": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "GOOGL": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "MSFT": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "AMZN": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "000300.SS": {
    "rows": 1,
-   "first": "2026-11-10",
-   "last": "2026-11-10"
-  },
-  "^N225": {
-   "rows": 1707,
-   "first": "2019-11-11",
-   "last": "2026-11-09"
+   "first": "2026-11-11",
+   "last": "2026-11-11"
   },
   "051910.KS": {
    "rows": 1999,
-   "first": "2018-09-12",
-   "last": "2026-11-09"
+   "first": "2018-09-13",
+   "last": "2026-11-10"
   },
   "035420.KS": {
    "rows": 1999,
-   "first": "2018-09-12",
-   "last": "2026-11-09"
+   "first": "2018-09-13",
+   "last": "2026-11-10"
   },
   "005490.KS": {
    "rows": 1999,
-   "first": "2018-09-12",
-   "last": "2026-11-09"
+   "first": "2018-09-13",
+   "last": "2026-11-10"
   },
   "AAPL": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "005930.KS": {
    "rows": 1999,
-   "first": "2018-09-12",
-   "last": "2026-11-09"
+   "first": "2018-09-13",
+   "last": "2026-11-10"
   },
   "SBUX": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "META": {
    "rows": 1758,
@@ -126,13 +126,13 @@
   },
   "066570.KS": {
    "rows": 1999,
-   "first": "2018-09-12",
-   "last": "2026-11-09"
+   "first": "2018-09-13",
+   "last": "2026-11-10"
   },
   "096770.KS": {
    "rows": 1999,
-   "first": "2018-09-12",
-   "last": "2026-11-09"
+   "first": "2018-09-13",
+   "last": "2026-11-10"
   },
   "PYPL": {
    "rows": 1758,
@@ -140,29 +140,29 @@
    "last": "2026-11-09"
   },
   "INTC": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "000660.KS": {
    "rows": 1999,
-   "first": "2018-09-12",
-   "last": "2026-11-09"
+   "first": "2018-09-13",
+   "last": "2026-11-10"
   },
   "005380.KS": {
    "rows": 1999,
-   "first": "2018-09-12",
-   "last": "2026-11-09"
+   "first": "2018-09-13",
+   "last": "2026-11-10"
   },
   "QCOM": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "AVGO": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "PLTR": {
    "rows": 1535,
@@ -170,19 +170,19 @@
    "last": "2026-11-09"
   },
   "LLY": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "MU": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   },
   "AMAT": {
-   "rows": 1758,
+   "rows": 1759,
    "first": "2019-11-11",
-   "last": "2026-11-09"
+   "last": "2026-11-10"
   }
  },
  "parse_missing": {
@@ -191,26 +191,26 @@
   "evals": 0
  },
  "redeemed_debug": [
-  "[13:15:53] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
-  "[13:15:55] [redeemed] page1 rows=0 html_len=545",
-  "[13:15:57] [redeemed] GET variant rows=0",
-  "[13:15:57] [redeemed] total redeemed entries found=0 ok=False"
+  "[11:05:57] [redeemed] form action=/cnts/derivcombi/selectDerivELSDLSRedIssues.do fields=[] issuer=None=None date_fields=[]",
+  "[11:05:59] [redeemed] page1 rows=0 html_len=545",
+  "[11:06:03] [redeemed] GET variant rows=0",
+  "[11:06:03] [redeemed] total redeemed entries found=0 ok=False"
  ],
  "ksd": {
   "enabled": true,
-  "red_checked": 9,
-  "red_found": 0,
-  "cond_tried": 92,
-  "cond_filled": 69,
-  "cond_remaining": 1093,
+  "red_checked": 18,
+  "red_found": 14,
+  "cond_tried": 101,
+  "cond_filled": 68,
+  "cond_remaining": 1026,
   "usage": {
-   "date": "2026-11-10",
+   "date": "2026-11-11",
    "ops": {
-    "getErlyRedELSInfo": 13,
+    "getErlyRedELSInfo": 18,
     "getAssetXrcInfoN1": 95,
-    "getDerivCombiIsinInfoN1": 80,
-    "getRedCondiInfoN1": 80,
-    "getAssetInfoN1": 1
+    "getRedCondiInfoN1": 69,
+    "getDerivCombiIsinInfoN1": 65,
+    "getAssetInfoN1": 2
    }
   },
   "endpoint": "https://apis.data.go.kr/B552481/DerivesSvc"
@@ -219,175 +219,175 @@
   "enabled": true,
   "products": 27,
   "counts": {
-   "defer": 14,
+   "defer": 12,
    "redeemed": 2,
-   "pass": 6,
+   "pass": 8,
    "risk": 5
   }
  },
  "ksd_log": [
-  "[13:24:57] [ksd] getAssetXrcInfoN1 KR6MD0007R48 resultCode=3 NODATA_ERROR",
-  "[13:24:59] [ksd] getAssetXrcInfoN1 KR6MD0007R30 resultCode=3 NODATA_ERROR",
-  "[13:25:06] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:06] [ksd] getAssetXrcInfoN1 KR6MD0007R22 resultCode=3 NODATA_ERROR",
-  "[13:25:08] [ksd] getAssetXrcInfoN1 KR6MD0007R14 resultCode=3 NODATA_ERROR",
-  "[13:25:14] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:15] [ksd] getAssetXrcInfoN1 KR6MD0007R06 resultCode=3 NODATA_ERROR",
-  "[13:25:21] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:22] [ksd] getAssetXrcInfoN1 KR6MD0007QZ5 resultCode=3 NODATA_ERROR",
-  "[13:25:28] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:29] [ksd] getAssetXrcInfoN1 KR6MD0007QY8 resultCode=3 NODATA_ERROR",
-  "[13:25:34] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:41] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:47] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:48] [ksd] getAssetXrcInfoN1 KR6MD0007QW2 resultCode=3 NODATA_ERROR",
-  "[13:25:50] [ksd] getAssetXrcInfoN1 KR6MD0007QV4 resultCode=3 NODATA_ERROR",
-  "[13:25:52] [ksd] getAssetXrcInfoN1 KR6MD0007QT8 resultCode=3 NODATA_ERROR",
-  "[13:25:58] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:26:04] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:26:06] [ksd] getAssetXrcInfoN1 KR6MD0007QR2 resultCode=3 NODATA_ERROR"
+  "[11:14:26] [ksd] getDerivCombiIsinInfoN1 KR6MD0007MY7 resultCode=3 NODATA_ERROR",
+  "[11:14:27] [ksd] getRedCondiInfoN1 KR6MD0007MY7 resultCode=3 NODATA_ERROR",
+  "[11:14:27] [ksd] getAssetXrcInfoN1 KR6MD0007MY7 resultCode=3 NODATA_ERROR",
+  "[11:14:32] [ksd] getAssetXrcInfoN1 KR6MD0007MW1 resultCode=3 NODATA_ERROR",
+  "[11:14:34] [ksd] getAssetXrcInfoN1 KR6MD0007MV3 resultCode=3 NODATA_ERROR",
+  "[11:14:35] [ksd] getAssetXrcInfoN1 KR6MD0007MT7 resultCode=3 NODATA_ERROR",
+  "[11:14:37] [ksd] getAssetXrcInfoN1 KR6MD0007MS9 resultCode=3 NODATA_ERROR",
+  "[11:14:39] [ksd] getAssetXrcInfoN1 KR6MD0007MR1 resultCode=3 NODATA_ERROR",
+  "[11:14:40] [ksd] getAssetXrcInfoN1 KR6MD0007MQ3 resultCode=3 NODATA_ERROR",
+  "[11:14:44] [ksd] getAssetXrcInfoN1 KR6MD0007MN0 resultCode=3 NODATA_ERROR",
+  "[11:14:46] [ksd] getAssetXrcInfoN1 KR6MD0007MM2 resultCode=3 NODATA_ERROR",
+  "[11:15:16] [ksd] getDerivCombiIsinInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:15:17] [ksd] getAssetXrcInfoN1 KR6MD0007ML4 resultCode=3 NODATA_ERROR",
+  "[11:15:18] [ksd] getAssetXrcInfoN1 KR6MD0007MK6 resultCode=3 NODATA_ERROR",
+  "[11:15:20] [ksd] getAssetXrcInfoN1 KR6MD0007MH2 resultCode=3 NODATA_ERROR",
+  "[11:15:22] [ksd] getAssetXrcInfoN1 KR6MD0007MG4 resultCode=3 NODATA_ERROR",
+  "[11:15:23] [ksd] getAssetXrcInfoN1 KR6MD0007LX1 resultCode=3 NODATA_ERROR",
+  "[11:15:54] [ksd] getDerivCombiIsinInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:15:54] [ksd] getAssetXrcInfoN1 KR6MD0007LW3 resultCode=3 NODATA_ERROR",
+  "[11:15:56] [ksd] getAssetXrcInfoN1 KR6MD0007LV5 resultCode=3 NODATA_ERROR"
  ],
  "price_debug": [
-  "[13:26:08] yahoo ^KS200: 1 rows 2026-11-10..2026-11-10",
-  "[13:26:09] fchart ok KPI200: 2000 rows, last 2026-11-10",
-  "[13:26:12] yahoo 051910.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:13] fchart ok 051910: 2000 rows, last 2026-11-10",
-  "[13:26:13] yahoo 035420.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:15] fchart ok 035420: 2000 rows, last 2026-11-10",
-  "[13:26:15] yahoo 005490.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:16] fchart ok 005490: 2000 rows, last 2026-11-10",
-  "[13:26:17] yahoo 005930.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:18] fchart ok 005930: 2000 rows, last 2026-11-10",
-  "[13:26:18] yahoo 066570.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:19] fchart ok 066570: 2000 rows, last 2026-11-10",
-  "[13:26:20] yahoo 096770.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:21] fchart ok 096770: 2000 rows, last 2026-11-10",
-  "[13:26:21] yahoo 000660.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:23] fchart ok 000660: 2000 rows, last 2026-11-10",
-  "[13:26:23] yahoo 005380.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:24] fchart ok 005380: 2000 rows, last 2026-11-10"
+  "[11:14:29] yahoo ^KS200: 1 rows 2026-11-11..2026-11-11",
+  "[11:14:31] fchart ok KPI200: 2000 rows, last 2026-11-11",
+  "[11:15:57] yahoo 051910.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:15:58] fchart ok 051910: 2000 rows, last 2026-11-11",
+  "[11:15:58] yahoo 035420.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:15:59] fchart ok 035420: 2000 rows, last 2026-11-11",
+  "[11:15:59] yahoo 005490.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:16:00] fchart ok 005490: 2000 rows, last 2026-11-11",
+  "[11:16:00] yahoo 005930.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:16:01] fchart ok 005930: 2000 rows, last 2026-11-11",
+  "[11:16:02] yahoo 066570.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:16:02] fchart ok 066570: 2000 rows, last 2026-11-11",
+  "[11:16:03] yahoo 096770.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:16:03] fchart ok 096770: 2000 rows, last 2026-11-11",
+  "[11:16:04] yahoo 000660.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:16:04] fchart ok 000660: 2000 rows, last 2026-11-11",
+  "[11:16:05] yahoo 005380.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:16:05] fchart ok 005380: 2000 rows, last 2026-11-11"
  ],
- "scan_cursor": 22075,
+ "scan_cursor": 22225,
  "log": [
-  "[13:20:40] [ksd] getAssetXrcInfoN1 KR6MD0007WH1 resultCode=3 NODATA_ERROR",
-  "[13:20:42] [ksd] getAssetXrcInfoN1 KR6MD0007VV4 resultCode=3 NODATA_ERROR",
-  "[13:20:44] [ksd] getAssetXrcInfoN1 KR6MD0007VT8 resultCode=3 NODATA_ERROR",
-  "[13:20:46] [ksd] getAssetXrcInfoN1 KR6MD0007VS0 resultCode=3 NODATA_ERROR",
-  "[13:20:47] [ksd] getAssetXrcInfoN1 KR6MD0007VR2 resultCode=3 NODATA_ERROR",
-  "[13:20:53] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:20:59] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:21:06] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:21:13] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:21:14] [ksd] getAssetXrcInfoN1 KR6MD0007VN1 resultCode=3 NODATA_ERROR",
-  "[13:21:16] [ksd] getAssetXrcInfoN1 KR6MD0007VM3 resultCode=3 NODATA_ERROR",
-  "[13:21:23] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:21:30] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:21:35] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:21:38] [ksd] getAssetXrcInfoN1 KR6MD0007VJ9 resultCode=3 NODATA_ERROR",
-  "[13:21:40] [ksd] getAssetXrcInfoN1 KR6MD0007VH3 resultCode=3 NODATA_ERROR",
-  "[13:21:42] [ksd] getAssetXrcInfoN1 KR6MD0007VG5 resultCode=3 NODATA_ERROR",
-  "[13:21:48] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:21:49] [ksd] getAssetXrcInfoN1 KR6MD0007VF7 resultCode=3 NODATA_ERROR",
-  "[13:21:51] [ksd] getAssetXrcInfoN1 KR6MD0007VE0 resultCode=3 NODATA_ERROR",
-  "[13:21:57] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:22:02] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:22:08] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:22:14] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:22:15] [ksd] getAssetXrcInfoN1 KR6MD0007VC4 resultCode=3 NODATA_ERROR",
-  "[13:22:16] [ksd] getDerivCombiIsinInfoN1 KR6MD0007TQ8 resultCode=3 NODATA_ERROR",
-  "[13:22:17] [ksd] getAssetXrcInfoN1 KR6MD0007TQ8 resultCode=3 NODATA_ERROR",
-  "[13:22:18] [ksd] getDerivCombiIsinInfoN1 KR6MD0007TP0 resultCode=3 NODATA_ERROR",
-  "[13:22:19] [ksd] getAssetXrcInfoN1 KR6MD0007TP0 resultCode=3 NODATA_ERROR",
-  "[13:22:20] [ksd] getDerivCombiIsinInfoN1 KR6MD0007TN5 resultCode=3 NODATA_ERROR",
-  "[13:22:26] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:22:31] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:22:32] [ksd] getDerivCombiIsinInfoN1 KR6MD0007TF1 resultCode=3 NODATA_ERROR",
-  "[13:22:33] [ksd] getAssetXrcInfoN1 KR6MD0007TF1 resultCode=3 NODATA_ERROR",
-  "[13:22:34] [ksd] getDerivCombiIsinInfoN1 KR6MD0007T79 resultCode=3 NODATA_ERROR",
-  "[13:22:35] [ksd] getAssetXrcInfoN1 KR6MD0007T79 resultCode=3 NODATA_ERROR",
-  "[13:22:36] [ksd] getDerivCombiIsinInfoN1 KR6MD0007SG1 resultCode=3 NODATA_ERROR",
-  "[13:22:37] [ksd] getAssetXrcInfoN1 KR6MD0007SG1 resultCode=3 NODATA_ERROR",
-  "[13:22:39] [ksd] getAssetXrcInfoN1 KR6MD0007SC0 resultCode=3 NODATA_ERROR",
-  "[13:22:44] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:22:46] [ksd] getAssetXrcInfoN1 KR6MD0007SB2 resultCode=3 NODATA_ERROR",
-  "[13:22:52] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:22:52] [ksd] getAssetXrcInfoN1 KR6MD0007SA4 resultCode=3 NODATA_ERROR",
-  "[13:22:54] [ksd] getAssetXrcInfoN1 KR6MD0007S96 resultCode=3 NODATA_ERROR",
-  "[13:22:56] [ksd] getAssetXrcInfoN1 KR6MD0007S88 resultCode=3 NODATA_ERROR",
-  "[13:22:58] [ksd] getAssetXrcInfoN1 KR6MD0007S70 resultCode=3 NODATA_ERROR",
-  "[13:23:04] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:23:05] [ksd] getAssetXrcInfoN1 KR6MD0007S62 resultCode=3 NODATA_ERROR",
-  "[13:23:11] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:23:12] [ksd] getAssetXrcInfoN1 KR6MD0007S54 resultCode=3 NODATA_ERROR",
-  "[13:23:14] [ksd] getAssetXrcInfoN1 KR6MD0007S47 resultCode=3 NODATA_ERROR",
-  "[13:23:16] [ksd] getAssetXrcInfoN1 KR6MD0007S39 resultCode=3 NODATA_ERROR",
-  "[13:23:18] [ksd] getAssetXrcInfoN1 KR6MD0007S21 resultCode=3 NODATA_ERROR",
-  "[13:23:23] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:23:25] [ksd] getAssetXrcInfoN1 KR6MD0007S13 resultCode=3 NODATA_ERROR",
-  "[13:23:30] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:23:36] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:23:39] [ksd] getAssetXrcInfoN1 KR6MD0007RZ3 resultCode=3 NODATA_ERROR",
-  "[13:23:44] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:23:51] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:23:57] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:24:03] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:24:09] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:24:11] [ksd] getAssetXrcInfoN1 KR6MD0007RV2 resultCode=3 NODATA_ERROR",
-  "[13:24:13] [ksd] getAssetXrcInfoN1 KR6MD0007RT6 resultCode=3 NODATA_ERROR",
-  "[13:24:19] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:24:20] [ksd] getAssetXrcInfoN1 KR6MD0007RS8 resultCode=3 NODATA_ERROR",
-  "[13:24:22] [ksd] getAssetXrcInfoN1 KR6MD0007RD0 resultCode=3 NODATA_ERROR",
-  "[13:24:28] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:24:29] [ksd] getAssetXrcInfoN1 KR6MD0007RB4 resultCode=3 NODATA_ERROR",
-  "[13:24:35] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:24:36] [ksd] getAssetXrcInfoN1 KR6MD0007RA6 resultCode=3 NODATA_ERROR",
-  "[13:24:38] [ksd] getAssetXrcInfoN1 KR6MD0007R97 resultCode=3 NODATA_ERROR",
-  "[13:24:40] [ksd] getAssetXrcInfoN1 KR6MD0007R89 resultCode=3 NODATA_ERROR",
-  "[13:24:45] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:24:47] [ksd] getAssetXrcInfoN1 KR6MD0007R71 resultCode=3 NODATA_ERROR",
-  "[13:24:52] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:24:53] [ksd] getAssetXrcInfoN1 KR6MD0007R63 resultCode=3 NODATA_ERROR",
-  "[13:24:55] [ksd] getAssetXrcInfoN1 KR6MD0007R55 resultCode=3 NODATA_ERROR",
-  "[13:24:57] [ksd] getAssetXrcInfoN1 KR6MD0007R48 resultCode=3 NODATA_ERROR",
-  "[13:24:59] [ksd] getAssetXrcInfoN1 KR6MD0007R30 resultCode=3 NODATA_ERROR",
-  "[13:25:06] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:06] [ksd] getAssetXrcInfoN1 KR6MD0007R22 resultCode=3 NODATA_ERROR",
-  "[13:25:08] [ksd] getAssetXrcInfoN1 KR6MD0007R14 resultCode=3 NODATA_ERROR",
-  "[13:25:14] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:15] [ksd] getAssetXrcInfoN1 KR6MD0007R06 resultCode=3 NODATA_ERROR",
-  "[13:25:21] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:22] [ksd] getAssetXrcInfoN1 KR6MD0007QZ5 resultCode=3 NODATA_ERROR",
-  "[13:25:28] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:29] [ksd] getAssetXrcInfoN1 KR6MD0007QY8 resultCode=3 NODATA_ERROR",
-  "[13:25:34] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:41] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:47] [ksd] getDerivCombiIsinInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:25:48] [ksd] getAssetXrcInfoN1 KR6MD0007QW2 resultCode=3 NODATA_ERROR",
-  "[13:25:50] [ksd] getAssetXrcInfoN1 KR6MD0007QV4 resultCode=3 NODATA_ERROR",
-  "[13:25:52] [ksd] getAssetXrcInfoN1 KR6MD0007QT8 resultCode=3 NODATA_ERROR",
-  "[13:25:58] [ksd] getRedCondiInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:26:04] [ksd] getAssetXrcInfoN1 @DerivesSvc http=500 code=- body='{\\n  \"OpenAPI_ServiceResponse\": {\\n    \"cmmMsgHeader\": {\\n      \"errMsg\": \"APPLICATION_ERROR\",\\n      \"returnAuthMsg\": \"어플리케이션 에러\",\\n      \"retur'",
-  "[13:26:06] [ksd] getAssetXrcInfoN1 KR6MD0007QR2 resultCode=3 NODATA_ERROR",
-  "[13:26:08] yahoo ^KS200: 1 rows 2026-11-10..2026-11-10",
-  "[13:26:09] fchart ok KPI200: 2000 rows, last 2026-11-10",
-  "[13:26:10] ksd condition fill: need=1185 tried=92 filled=69",
-  "[13:26:10] active products: 1855 (redeemed list entries=1246, source ok=False)",
-  "[13:26:12] yahoo 051910.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:13] fchart ok 051910: 2000 rows, last 2026-11-10",
-  "[13:26:13] yahoo 035420.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:15] fchart ok 035420: 2000 rows, last 2026-11-10",
-  "[13:26:15] yahoo 005490.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:16] fchart ok 005490: 2000 rows, last 2026-11-10",
-  "[13:26:17] yahoo 005930.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:18] fchart ok 005930: 2000 rows, last 2026-11-10",
-  "[13:26:18] yahoo 066570.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:19] fchart ok 066570: 2000 rows, last 2026-11-10",
-  "[13:26:20] yahoo 096770.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:21] fchart ok 096770: 2000 rows, last 2026-11-10",
-  "[13:26:21] yahoo 000660.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:23] fchart ok 000660: 2000 rows, last 2026-11-10",
-  "[13:26:23] yahoo 005380.KS: 1714 rows 2019-11-11..2026-11-10",
-  "[13:26:24] fchart ok 005380: 2000 rows, last 2026-11-10",
-  "[13:26:27] elt: 27 products, counts={'defer': 14, 'redeemed': 2, 'pass': 6, 'risk': 5}"
+  "[11:09:15] [ksd] getAssetXrcInfoN1 KR6MD0007VR2 resultCode=3 NODATA_ERROR",
+  "[11:09:15] [ksd] getAssetXrcInfoN1 KR6MD0007VQ4 resultCode=3 NODATA_ERROR",
+  "[11:09:16] [ksd] getAssetXrcInfoN1 KR6MD0007VL5 resultCode=3 NODATA_ERROR",
+  "[11:09:17] [ksd] getAssetXrcInfoN1 KR6MD0007VF7 resultCode=3 NODATA_ERROR",
+  "[11:09:18] [ksd] getAssetXrcInfoN1 KR6MD0007VD2 resultCode=3 NODATA_ERROR",
+  "[11:09:18] [ksd] getAssetXrcInfoN1 KR6MD0007VC4 resultCode=3 NODATA_ERROR",
+  "[11:09:19] [ksd] getAssetXrcInfoN1 KR6MD0007TQ8 resultCode=3 NODATA_ERROR",
+  "[11:09:49] [ksd] getAssetXrcInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:09:51] [ksd] getAssetXrcInfoN1 KR6MD0007TN5 resultCode=3 NODATA_ERROR",
+  "[11:09:52] [ksd] getAssetXrcInfoN1 KR6MD0007TF1 resultCode=3 NODATA_ERROR",
+  "[11:09:53] [ksd] getAssetXrcInfoN1 KR6MD0007T79 resultCode=3 NODATA_ERROR",
+  "[11:09:54] [ksd] getAssetXrcInfoN1 KR6MD0007SG1 resultCode=3 NODATA_ERROR",
+  "[11:09:55] [ksd] getAssetXrcInfoN1 KR6MD0007SB2 resultCode=3 NODATA_ERROR",
+  "[11:09:55] [ksd] getAssetXrcInfoN1 KR6MD0007S88 resultCode=3 NODATA_ERROR",
+  "[11:10:27] [ksd] getAssetXrcInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:10:28] [ksd] getAssetXrcInfoN1 KR6MD0007S13 resultCode=3 NODATA_ERROR",
+  "[11:10:28] [ksd] getAssetXrcInfoN1 KR6MD0007S05 resultCode=3 NODATA_ERROR",
+  "[11:10:29] [ksd] getAssetXrcInfoN1 KR6MD0007RZ3 resultCode=3 NODATA_ERROR",
+  "[11:10:30] [ksd] getAssetXrcInfoN1 KR6MD0007RY6 resultCode=3 NODATA_ERROR",
+  "[11:10:31] [ksd] getAssetXrcInfoN1 KR6MD0007RW0 resultCode=3 NODATA_ERROR",
+  "[11:10:31] [ksd] getAssetXrcInfoN1 KR6MD0007RS8 resultCode=3 NODATA_ERROR",
+  "[11:10:32] [ksd] getAssetXrcInfoN1 KR6MD0007RB4 resultCode=3 NODATA_ERROR",
+  "[11:10:33] [ksd] getAssetXrcInfoN1 KR6MD0007RA6 resultCode=3 NODATA_ERROR",
+  "[11:10:33] [ksd] getAssetXrcInfoN1 KR6MD0007R71 resultCode=3 NODATA_ERROR",
+  "[11:10:34] [ksd] getAssetXrcInfoN1 KR6MD0007R63 resultCode=3 NODATA_ERROR",
+  "[11:10:35] [ksd] getAssetXrcInfoN1 KR6MD0007QY8 resultCode=3 NODATA_ERROR",
+  "[11:10:36] [ksd] getAssetXrcInfoN1 KR6MD0007QX0 resultCode=3 NODATA_ERROR",
+  "[11:10:36] [ksd] getAssetXrcInfoN1 KR6MD0007QW2 resultCode=3 NODATA_ERROR",
+  "[11:10:38] [ksd] getAssetXrcInfoN1 KR6MD0007Q80 resultCode=3 NODATA_ERROR",
+  "[11:10:39] [ksd] getAssetXrcInfoN1 KR6MD0007Q72 resultCode=3 NODATA_ERROR",
+  "[11:11:11] [ksd] getAssetXrcInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:11:13] [ksd] getAssetXrcInfoN1 KR6MD0007Q56 resultCode=3 NODATA_ERROR",
+  "[11:11:14] [ksd] getAssetXrcInfoN1 KR6MD0007Q49 resultCode=3 NODATA_ERROR",
+  "[11:11:16] [ksd] getAssetXrcInfoN1 KR6MD0007Q31 resultCode=3 NODATA_ERROR",
+  "[11:11:18] [ksd] getAssetXrcInfoN1 KR6MD0007Q23 resultCode=3 NODATA_ERROR",
+  "[11:11:19] [ksd] getAssetXrcInfoN1 KR6MD0007Q15 resultCode=3 NODATA_ERROR",
+  "[11:11:21] [ksd] getAssetXrcInfoN1 KR6MD0007Q07 resultCode=3 NODATA_ERROR",
+  "[11:11:22] [ksd] getAssetXrcInfoN1 KR6MD0007PZ7 resultCode=3 NODATA_ERROR",
+  "[11:11:24] [ksd] getAssetXrcInfoN1 KR6MD0007PY0 resultCode=3 NODATA_ERROR",
+  "[11:11:25] [ksd] getAssetXrcInfoN1 KR6MD0007PX2 resultCode=3 NODATA_ERROR",
+  "[11:11:57] [ksd] getAssetXrcInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:11:58] [ksd] getAssetXrcInfoN1 KR6MD0007PV6 resultCode=3 NODATA_ERROR",
+  "[11:12:00] [ksd] getAssetXrcInfoN1 KR6MD0007PT0 resultCode=3 NODATA_ERROR",
+  "[11:12:02] [ksd] getAssetXrcInfoN1 KR6MD0007PS2 resultCode=3 NODATA_ERROR",
+  "[11:12:03] [ksd] getAssetXrcInfoN1 KR6MD0007PR4 resultCode=3 NODATA_ERROR",
+  "[11:12:05] [ksd] getAssetXrcInfoN1 KR6MD0007PQ6 resultCode=3 NODATA_ERROR",
+  "[11:12:36] [ksd] getAssetXrcInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:12:38] [ksd] getAssetXrcInfoN1 KR6MD0007PN3 resultCode=3 NODATA_ERROR",
+  "[11:12:39] [ksd] getAssetXrcInfoN1 KR6MD0007PM5 resultCode=3 NODATA_ERROR",
+  "[11:12:41] [ksd] getAssetXrcInfoN1 KR6MD0007PC6 resultCode=3 NODATA_ERROR",
+  "[11:12:42] [ksd] getAssetXrcInfoN1 KR6MD0007P08 resultCode=3 NODATA_ERROR",
+  "[11:12:44] [ksd] getAssetXrcInfoN1 KR6MD0007NZ2 resultCode=3 NODATA_ERROR",
+  "[11:12:45] [ksd] getAssetXrcInfoN1 KR6MD0007NY5 resultCode=3 NODATA_ERROR",
+  "[11:13:17] [ksd] getAssetXrcInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:13:18] [ksd] getAssetXrcInfoN1 KR6MD0007NW9 resultCode=3 NODATA_ERROR",
+  "[11:13:20] [ksd] getAssetXrcInfoN1 KR6MD0007NV1 resultCode=3 NODATA_ERROR",
+  "[11:13:22] [ksd] getAssetXrcInfoN1 KR6MD0007NT5 resultCode=3 NODATA_ERROR",
+  "[11:13:23] [ksd] getAssetXrcInfoN1 KR6MD0007NS7 resultCode=3 NODATA_ERROR",
+  "[11:13:25] [ksd] getAssetXrcInfoN1 KR6MD0007NR9 resultCode=3 NODATA_ERROR",
+  "[11:13:26] [ksd] getAssetXrcInfoN1 KR6MD0007NQ1 resultCode=3 NODATA_ERROR",
+  "[11:13:28] [ksd] getAssetXrcInfoN1 KR6MD0007NP3 resultCode=3 NODATA_ERROR",
+  "[11:13:30] [ksd] getAssetXrcInfoN1 KR6MD0007NN8 resultCode=3 NODATA_ERROR",
+  "[11:13:31] [ksd] getAssetXrcInfoN1 KR6MD0007NM0 resultCode=3 NODATA_ERROR",
+  "[11:13:33] [ksd] getAssetXrcInfoN1 KR6MD0007NL2 resultCode=3 NODATA_ERROR",
+  "[11:13:35] [ksd] getAssetXrcInfoN1 KR6MD0007NK4 resultCode=3 NODATA_ERROR",
+  "[11:13:36] [ksd] getAssetXrcInfoN1 KR6MD0007NJ6 resultCode=3 NODATA_ERROR",
+  "[11:13:38] [ksd] getAssetXrcInfoN1 KR6MD0007NH0 resultCode=3 NODATA_ERROR",
+  "[11:13:39] [ksd] getAssetXrcInfoN1 KR6MD0007NG2 resultCode=3 NODATA_ERROR",
+  "[11:14:10] [ksd] getRedCondiInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:14:11] [ksd] getAssetXrcInfoN1 KR6MD0007NF4 resultCode=3 NODATA_ERROR",
+  "[11:14:13] [ksd] getAssetXrcInfoN1 KR6MD0007NE7 resultCode=3 NODATA_ERROR",
+  "[11:14:15] [ksd] getAssetXrcInfoN1 KR6MD0007ND9 resultCode=3 NODATA_ERROR",
+  "[11:14:15] [ksd] getDerivCombiIsinInfoN1 KR6MD0007N59 resultCode=3 NODATA_ERROR",
+  "[11:14:17] [ksd] getAssetXrcInfoN1 KR6MD0007N59 resultCode=3 NODATA_ERROR",
+  "[11:14:18] [ksd] getAssetXrcInfoN1 KR6MD0007N34 resultCode=3 NODATA_ERROR",
+  "[11:14:20] [ksd] getAssetXrcInfoN1 KR6MD0007N26 resultCode=3 NODATA_ERROR",
+  "[11:14:22] [ksd] getAssetXrcInfoN1 KR6MD0007N18 resultCode=3 NODATA_ERROR",
+  "[11:14:24] [ksd] getAssetXrcInfoN1 KR6MD0007N00 resultCode=3 NODATA_ERROR",
+  "[11:14:26] [ksd] getAssetXrcInfoN1 KR6MD0007MZ4 resultCode=3 NODATA_ERROR",
+  "[11:14:26] [ksd] getDerivCombiIsinInfoN1 KR6MD0007MY7 resultCode=3 NODATA_ERROR",
+  "[11:14:27] [ksd] getRedCondiInfoN1 KR6MD0007MY7 resultCode=3 NODATA_ERROR",
+  "[11:14:27] [ksd] getAssetXrcInfoN1 KR6MD0007MY7 resultCode=3 NODATA_ERROR",
+  "[11:14:29] yahoo ^KS200: 1 rows 2026-11-11..2026-11-11",
+  "[11:14:31] fchart ok KPI200: 2000 rows, last 2026-11-11",
+  "[11:14:32] [ksd] getAssetXrcInfoN1 KR6MD0007MW1 resultCode=3 NODATA_ERROR",
+  "[11:14:34] [ksd] getAssetXrcInfoN1 KR6MD0007MV3 resultCode=3 NODATA_ERROR",
+  "[11:14:35] [ksd] getAssetXrcInfoN1 KR6MD0007MT7 resultCode=3 NODATA_ERROR",
+  "[11:14:37] [ksd] getAssetXrcInfoN1 KR6MD0007MS9 resultCode=3 NODATA_ERROR",
+  "[11:14:39] [ksd] getAssetXrcInfoN1 KR6MD0007MR1 resultCode=3 NODATA_ERROR",
+  "[11:14:40] [ksd] getAssetXrcInfoN1 KR6MD0007MQ3 resultCode=3 NODATA_ERROR",
+  "[11:14:44] [ksd] getAssetXrcInfoN1 KR6MD0007MN0 resultCode=3 NODATA_ERROR",
+  "[11:14:46] [ksd] getAssetXrcInfoN1 KR6MD0007MM2 resultCode=3 NODATA_ERROR",
+  "[11:15:16] [ksd] getDerivCombiIsinInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:15:17] [ksd] getAssetXrcInfoN1 KR6MD0007ML4 resultCode=3 NODATA_ERROR",
+  "[11:15:18] [ksd] getAssetXrcInfoN1 KR6MD0007MK6 resultCode=3 NODATA_ERROR",
+  "[11:15:20] [ksd] getAssetXrcInfoN1 KR6MD0007MH2 resultCode=3 NODATA_ERROR",
+  "[11:15:22] [ksd] getAssetXrcInfoN1 KR6MD0007MG4 resultCode=3 NODATA_ERROR",
+  "[11:15:23] [ksd] getAssetXrcInfoN1 KR6MD0007LX1 resultCode=3 NODATA_ERROR",
+  "[11:15:54] [ksd] getDerivCombiIsinInfoN1 error at https://apis.data.go.kr/B552481/DerivesSvc: HTTPSConnectionPool(host='apis.data.go.kr', port=443): Read timed out. (read timeout=30)",
+  "[11:15:54] [ksd] getAssetXrcInfoN1 KR6MD0007LW3 resultCode=3 NODATA_ERROR",
+  "[11:15:56] [ksd] getAssetXrcInfoN1 KR6MD0007LV5 resultCode=3 NODATA_ERROR",
+  "[11:15:56] ksd condition fill: need=1127 tried=101 filled=68",
+  "[11:15:56] active products: 1809 (redeemed list entries=1320, source ok=False)",
+  "[11:15:57] yahoo 051910.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:15:58] fchart ok 051910: 2000 rows, last 2026-11-11",
+  "[11:15:58] yahoo 035420.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:15:59] fchart ok 035420: 2000 rows, last 2026-11-11",
+  "[11:15:59] yahoo 005490.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:16:00] fchart ok 005490: 2000 rows, last 2026-11-11",
+  "[11:16:00] yahoo 005930.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:16:01] fchart ok 005930: 2000 rows, last 2026-11-11",
+  "[11:16:02] yahoo 066570.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:16:02] fchart ok 066570: 2000 rows, last 2026-11-11",
+  "[11:16:03] yahoo 096770.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:16:03] fchart ok 096770: 2000 rows, last 2026-11-11",
+  "[11:16:04] yahoo 000660.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:16:04] fchart ok 000660: 2000 rows, last 2026-11-11",
+  "[11:16:05] yahoo 005380.KS: 1715 rows 2019-11-11..2026-11-11",
+  "[11:16:05] fchart ok 005380: 2000 rows, last 2026-11-11",
+  "[11:16:07] elt: 27 products, counts={'defer': 12, 'redeemed': 2, 'pass': 8, 'risk': 5}"
  ]
 }
