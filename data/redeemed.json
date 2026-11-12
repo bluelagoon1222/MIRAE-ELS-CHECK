@@ -7918,5 +7918,593 @@
   "kind": "상환",
   "name": "미래에셋증권37240(ELS)",
   "source": "ksd"
+ },
+ "KR6MD00070C2": {
+  "date": "2025-11-17",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36302",
+  "source": "ksd"
+ },
+ "KR6MD00070B4": {
+  "date": "2025-11-17",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36301",
+  "source": "ksd"
+ },
+ "KR6MD00070A6": {
+  "date": "2025-11-17",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36300",
+  "source": "ksd"
+ },
+ "KR6MD0006F50": {
+  "date": "2025-05-13",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36047",
+  "source": "ksd"
+ },
+ "KR6MD0006F43": {
+  "date": "2025-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36036",
+  "source": "ksd"
+ },
+ "KR6MD0006EM1": {
+  "date": "2025-05-13",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36046",
+  "source": "ksd"
+ },
+ "KR6MD0006EJ7": {
+  "date": "2025-05-13",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)36044",
+  "source": "ksd"
+ },
+ "KR6MD0006E77": {
+  "date": "2025-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35679",
+  "source": "ksd"
+ },
+ "KR6MD0006E51": {
+  "date": "2025-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35677",
+  "source": "ksd"
+ },
+ "KR6MD0006DY8": {
+  "date": "2025-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35670",
+  "source": "ksd"
+ },
+ "KR6MD0005XK7": {
+  "date": "2024-11-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35365",
+  "source": "ksd"
+ },
+ "KR6MD0005XJ9": {
+  "date": "2026-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35364",
+  "source": "ksd"
+ },
+ "KR6MD0005XD2": {
+  "date": "2024-11-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35359",
+  "source": "ksd"
+ },
+ "KR6MD0005XB6": {
+  "date": "2025-11-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35357",
+  "source": "ksd"
+ },
+ "KR6MD0005P00": {
+  "date": "2024-05-16",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35214",
+  "source": "ksd"
+ },
+ "KR6MD0007LT9": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37237(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LR3": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37235(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LQ5": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37234(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LP7": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37233(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LN2": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37232(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LM4": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37231(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LL6": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37230(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LK8": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37229(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LH4": {
+  "date": "2026-05-13",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)37227",
+  "source": "ksd"
+ },
+ "KR6MD0007LG6": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37226(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LF8": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37225(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LE1": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37224(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LD3": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37223(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LC5": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37222(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LB7": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37221(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007LA9": {
+  "date": "2026-05-13",
+  "kind": "상환",
+  "name": "미래에셋증권37220(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0006E44": {
+  "date": "2025-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35676",
+  "source": "ksd"
+ },
+ "KR6MD0006E36": {
+  "date": "2025-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35675",
+  "source": "ksd"
+ },
+ "KR6MD0006E28": {
+  "date": "2025-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35674",
+  "source": "ksd"
+ },
+ "KR6MD0006E10": {
+  "date": "2025-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35673",
+  "source": "ksd"
+ },
+ "KR6MD0006E02": {
+  "date": "2025-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35672",
+  "source": "ksd"
+ },
+ "KR6MD0006DZ5": {
+  "date": "2025-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35671",
+  "source": "ksd"
+ },
+ "KR6MD0005Y74": {
+  "date": "2024-11-12",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)34450",
+  "source": "ksd"
+ },
+ "KR6MD0005XH3": {
+  "date": "2024-11-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35363",
+  "source": "ksd"
+ },
+ "KR6MD0005XG5": {
+  "date": "2024-11-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35362",
+  "source": "ksd"
+ },
+ "KR6MD0005XF7": {
+  "date": "2024-11-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35361",
+  "source": "ksd"
+ },
+ "KR6MD0005XE0": {
+  "date": "2024-11-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35360",
+  "source": "ksd"
+ },
+ "KR6MD0005XC4": {
+  "date": "2024-11-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35358",
+  "source": "ksd"
+ },
+ "KR6MD0005AZ3": {
+  "date": "2024-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35049",
+  "source": "ksd"
+ },
+ "KR6MD0005AY6": {
+  "date": "2024-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35048",
+  "source": "ksd"
+ },
+ "KR6MD0005AX8": {
+  "date": "2024-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35047",
+  "source": "ksd"
+ },
+ "KR6MD0005AW0": {
+  "date": "2024-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35046",
+  "source": "ksd"
+ },
+ "KR6MD0005AV2": {
+  "date": "2024-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35045",
+  "source": "ksd"
+ },
+ "KR6MD0005AT6": {
+  "date": "2024-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35044",
+  "source": "ksd"
+ },
+ "KR6MD0005AS8": {
+  "date": "2024-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35043",
+  "source": "ksd"
+ },
+ "KR6MD0005AR0": {
+  "date": "2024-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35042",
+  "source": "ksd"
+ },
+ "KR6MD0005AQ2": {
+  "date": "2024-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35041",
+  "source": "ksd"
+ },
+ "KR6MD0005AP4": {
+  "date": "2024-05-14",
+  "kind": "조기상환",
+  "name": "미래에셋증권(ELS)35040",
+  "source": "ksd"
+ },
+ "KR6MD0007LS1": {
+  "date": "2026-05-18",
+  "kind": "상환",
+  "name": "미래에셋증권37236(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007JR7": {
+  "date": "2026-11-04",
+  "kind": "상환",
+  "name": "미래에셋증권37194(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007JQ9": {
+  "date": "2026-11-04",
+  "kind": "상환",
+  "name": "미래에셋증권37193(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007JP1": {
+  "date": "2026-11-04",
+  "kind": "상환",
+  "name": "미래에셋증권37192(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007HL4": {
+  "date": "2026-10-28",
+  "kind": "상환",
+  "name": "미래에셋증권37173(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007HG4": {
+  "date": "2026-10-28",
+  "kind": "상환",
+  "name": "미래에셋증권37169(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007G41": {
+  "date": "2026-10-08",
+  "kind": "상환",
+  "name": "미래에셋증권37150(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007FR5": {
+  "date": "2026-10-02",
+  "kind": "상환",
+  "name": "미래에셋증권37138(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DR0": {
+  "date": "2026-03-05",
+  "kind": "상환",
+  "name": "미래에셋증권37094(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DQ2": {
+  "date": "2026-03-16",
+  "kind": "상환",
+  "name": "미래에셋증권37093(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DP4": {
+  "date": "2026-03-16",
+  "kind": "상환",
+  "name": "미래에셋증권37092(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DN9": {
+  "date": "2026-03-16",
+  "kind": "상환",
+  "name": "미래에셋증권37091(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DM1": {
+  "date": "2026-03-16",
+  "kind": "상환",
+  "name": "미래에셋증권37090(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DK5": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37088(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DJ7": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37087(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DH1": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37086(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DG3": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37085(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DE8": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37083(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DD0": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37082(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DC2": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37081(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DB4": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37080(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007DA6": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37079(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007D93": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37078(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007D85": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37077(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007D77": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37076(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007D69": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37075(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007D51": {
+  "date": "2026-03-11",
+  "kind": "상환",
+  "name": "미래에셋증권37074(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CW2": {
+  "date": "2026-03-06",
+  "kind": "상환",
+  "name": "미래에셋증권37072(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CV4": {
+  "date": "2026-03-06",
+  "kind": "상환",
+  "name": "미래에셋증권37071(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CT8": {
+  "date": "2026-03-06",
+  "kind": "상환",
+  "name": "미래에셋증권37070(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CS0": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37069(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CR2": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37068(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CQ4": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37067(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CP6": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37066(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CN1": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37065(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CM3": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37064(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CL5": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37063(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CK7": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37062(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CJ9": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37061(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CH3": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37060(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CG5": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37059(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CF7": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37058(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CE0": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37057(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CD2": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37056(ELS)",
+  "source": "ksd"
+ },
+ "KR6MD0007CC4": {
+  "date": "2026-03-04",
+  "kind": "상환",
+  "name": "미래에셋증권37055(ELS)",
+  "source": "ksd"
  }
 }
